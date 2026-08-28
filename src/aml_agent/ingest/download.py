@@ -23,13 +23,30 @@ import httpx
 from ..config import settings
 from .manifest import ManifestEntry, load_manifest
 
-# Some publishers reject the default client string outright.
+# Some publishers sit behind bot management that refuses a request lacking the
+# fetch-metadata headers a browser always sends. FATF's CDN is one: without
+# these it answers 403 no matter what User-Agent is supplied, and with them it
+# serves the PDF to a client that identifies itself honestly as a script.
+#
+# The User-Agent below is deliberately truthful. Impersonating Chrome also
+# works, but these documents are published for free public download and the
+# honest header is enough, so there is no reason to lie about what is making
+# the request.
 HEADERS = {
     "User-Agent": (
-        "Mozilla/5.0 (compatible; aml-guidance-agent/0.1; "
-        "+https://github.com/Leonardasvekrikas-source/aml-guidance-agent)"
+        "aml-guidance-agent/0.1 "
+        "(+https://github.com/Leonardasvekrikas-source/aml-guidance-agent)"
     ),
-    "Accept": "application/pdf,*/*",
+    "Accept": (
+        "text/html,application/xhtml+xml,application/xml;q=0.9,"
+        "application/pdf,*/*;q=0.8"
+    ),
+    "Accept-Language": "en-US,en;q=0.9",
+    "Sec-Fetch-Dest": "document",
+    "Sec-Fetch-Mode": "navigate",
+    "Sec-Fetch-Site": "none",
+    "Sec-Fetch-User": "?1",
+    "Upgrade-Insecure-Requests": "1",
 }
 
 PDF_MAGIC = b"%PDF-"
@@ -85,7 +102,8 @@ def _download_via_curl(url: str, destination: Path, timeout: int = 180) -> tuple
                 "--max-time", str(timeout),
                 "--retry", "2", "--retry-delay", "3",
                 "--user-agent", HEADERS["User-Agent"],
-                "--header", "Accept: application/pdf,*/*",
+                *[arg for key, value in HEADERS.items() if key != "User-Agent"
+                  for arg in ("--header", f"{key}: {value}")],
                 "--output", str(destination),
                 url,
             ],
