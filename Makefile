@@ -71,6 +71,14 @@ eval-retrieval:  ## M1: recall@5, recall@10, MRR for BM25 / dense / hybrid
 eval-answers:  ## M4: groundedness, citation validity, refusal accuracy
 	$(RUN) aml_agent.evaluation.answers
 
+.PHONY: judge-audit
+judge-audit:  ## Sample 20 judge decisions into results/judge_agreement.md for grading
+	$(RUN) aml_agent.evaluation.judge_audit
+
+.PHONY: judge-audit-score
+judge-audit-score:  ## After grading, compute the judge-human disagreement rate
+	$(RUN) aml_agent.evaluation.judge_audit --score
+
 .PHONY: report
 report:  ## Rewrite the README results tables from results/*.json
 	$(RUN) aml_agent.evaluation.report

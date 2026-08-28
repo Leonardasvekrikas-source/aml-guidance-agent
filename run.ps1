@@ -42,6 +42,8 @@ switch ($Target) {
         Write-Host '  eval-retrieval M1 retrieval metrics'
         Write-Host '  eval-answers   M4 answer-quality metrics'
         Write-Host '  report         Rewrite README tables from results/'
+        Write-Host '  judge-audit    Sample judge decisions for human grading'
+        Write-Host '  judge-audit-score  Compute judge-human disagreement rate'
         Write-Host '  serve          Run the API in the foreground'
         Write-Host '  ask "<q>"      Ask one question end to end'
         Write-Host '  test           Run the test suite'
@@ -85,6 +87,8 @@ switch ($Target) {
     'eval-retrieval' { Invoke-App @('aml_agent.evaluation.retrieval') }
     'eval-answers'   { Invoke-App @('aml_agent.evaluation.answers') }
     'report'         { Invoke-App @('aml_agent.evaluation.report') }
+    'judge-audit'    { Invoke-App @('aml_agent.evaluation.judge_audit') }
+    'judge-audit-score' { Invoke-App @('aml_agent.evaluation.judge_audit', '--score') }
 
     'eval' {
         Invoke-App @('aml_agent.evaluation.retrieval')
