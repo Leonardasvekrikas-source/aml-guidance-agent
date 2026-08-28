@@ -84,7 +84,7 @@ class Settings:
 
     # --- generation ---
     anthropic_api_key: str = field(default_factory=lambda: _env("ANTHROPIC_API_KEY", ""))
-    anthropic_model: str = field(default_factory=lambda: _env("ANTHROPIC_MODEL", "claude-sonnet-5"))
+    anthropic_model: str = field(default_factory=lambda: _env("ANTHROPIC_MODEL", "claude-opus-5"))
 
     # --- paths ---
     manifest_path: Path = REPO_ROOT / "corpus" / "manifest.yaml"

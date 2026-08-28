@@ -1,0 +1,83 @@
+{
+  "documents": 30,
+  "profiles": [
+    {
+      "chunk_profile": "t256",
+      "chunks": 5710,
+      "embedded": 5710,
+      "avg_chars": "1226",
+      "avg_tokens": "256",
+      "documents": 30
+    },
+    {
+      "chunk_profile": "t480",
+      "chunks": 2864,
+      "embedded": 2864,
+      "avg_chars": "2293",
+      "avg_tokens": "478",
+      "documents": 30
+    }
+  ],
+  "by_publisher": [
+    {
+      "publisher": "FATF",
+      "n": 6
+    },
+    {
+      "publisher": "Financial Crimes Enforcement Network (FinCEN), U.S. Department of the Treasury",
+      "n": 5
+    },
+    {
+      "publisher": "European Banking Authority (EBA)",
+      "n": 3
+    },
+    {
+      "publisher": "The Wolfsberg Group",
+      "n": 3
+    },
+    {
+      "publisher": "FATF / Egmont Group of Financial Intelligence Units",
+      "n": 2
+    },
+    {
+      "publisher": "World Bank / UNODC Stolen Asset Recovery Initiative (StAR)",
+      "n": 2
+    },
+    {
+      "publisher": "Asia/Pacific Group on Money Laundering (APG)",
+      "n": 1
+    },
+    {
+      "publisher": "Basel Committee on Banking Supervision",
+      "n": 1
+    },
+    {
+      "publisher": "Eastern and Southern Africa Anti-Money Laundering Group (ESAAMLG)",
+      "n": 1
+    },
+    {
+      "publisher": "Europol",
+      "n": 1
+    },
+    {
+      "publisher": "Financial Conduct Authority (FCA)",
+      "n": 1
+    },
+    {
+      "publisher": "HM Treasury and Home Office",
+      "n": 1
+    },
+    {
+      "publisher": "The Wolfsberg Group, International Chamber of Commerce (ICC) and BAFT",
+      "n": 1
+    },
+    {
+      "publisher": "United Nations Office on Drugs and Crime (UNODC), Regional Office for Southeast Asia and the Pacific",
+      "n": 1
+    },
+    {
+      "publisher": "U.S. Department of the Treasury",
+      "n": 1
+    }
+  ]
+}

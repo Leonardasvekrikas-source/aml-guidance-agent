@@ -1,0 +1,21 @@
+# Optional GPU override. Ingestion embeds ~20k chunks; on a CPU that is
+# minutes, on a consumer GPU it is seconds.
+#
+#   docker compose -f docker-compose.yml -f docker-compose.gpu.yml up -d
+#
+# This is a separate file rather than part of docker-compose.yml on purpose:
+# a device reservation in the base file makes `docker compose up` fail
+# outright on a machine with no NVIDIA runtime, which would break the repo
+# for most people who clone it.
+
+services:
+  app:
+    environment:
+      EMBEDDING_DEVICE: cuda
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]

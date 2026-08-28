@@ -45,7 +45,16 @@ def get_tokenizer(model_name: str):
     """
     from transformers import AutoTokenizer
 
-    return AutoTokenizer.from_pretrained(model_name)
+    tokenizer = AutoTokenizer.from_pretrained(model_name)
+
+    # This tokenizer is used only to compute token offsets across a whole
+    # document, never to feed the model. Leaving model_max_length at 512 makes
+    # transformers emit a "sequence longer than maximum" warning for every
+    # document, which is alarming and wrong here: the windows this function
+    # produces are all well under the limit, and it is those windows, not the
+    # document, that reach the model.
+    tokenizer.model_max_length = int(1e9)
+    return tokenizer
 
 
 def _join_pages(pages: Sequence[Page]) -> tuple[str, list[tuple[int, int, Page]]]:
