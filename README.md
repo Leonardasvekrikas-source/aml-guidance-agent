@@ -4,8 +4,10 @@ A retrieval-augmented agent that answers questions about AML typologies and
 regulatory expectations, grounded in public guidance documents — and refuses when
 the corpus doesn't support an answer.
 
-Built to be run by a stranger: `docker compose up`, then one command to reproduce
-every number below.
+Built to be run by a stranger, and actually tested that way: the repository was
+cloned into a fresh directory and driven from this README alone. That test found
+three real defects, all logged in
+[`findings/what-broke.md`](findings/what-broke.md).
 
 > **Status.** The corpus, retrieval benchmark and per-question analysis have
 > been run and their numbers appear below. The agent loop, citation validation
@@ -274,6 +276,15 @@ flattering.
 cited chunk but misleading in context; errors of omission; two individually
 supported claims that together imply something neither supports; and a claim
 faithfully citing a guidance document that is itself out of date.
+
+**Retrieval figures carry two error bars, both larger than they look.** With 30
+answerable questions, one question moves recall@5 by 3.3 points, so differences
+smaller than that are noise. Separately, HNSW is an approximate index whose
+graph depends on insertion order, so dense and hybrid figures wobble by roughly
+±0.02 at the tail between index builds — verified by rebuilding from a clean
+clone, where exact-gold figures reproduced to the digit and two page-level
+dense numbers moved slightly. Neither error bar is small enough to support a
+claim that one retriever beats another by a point or two.
 
 **Page-level and exact gold are not comparable.** They are separate tables for
 that reason. Page-level figures are systematically higher because a page can
