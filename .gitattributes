@@ -1,0 +1,11 @@
+# The repo is developed on Windows and runs in Linux containers. Normalising
+# to LF in the repository keeps shell scripts and the Makefile working inside
+# the image regardless of the checkout platform.
+* text=auto eol=lf
+
+# run.ps1 is only ever executed by PowerShell on Windows.
+*.ps1 text eol=crlf
+
+*.pdf binary
+*.png binary
+*.jpg binary
