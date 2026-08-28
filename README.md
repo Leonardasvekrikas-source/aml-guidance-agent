@@ -7,8 +7,15 @@ the corpus doesn't support an answer.
 Built to be run by a stranger: `docker compose up`, then one command to reproduce
 every number below.
 
-> **Status:** in progress. Numbers below are filled in as milestones land; nothing
-> is claimed here that isn't reproducible from `make eval`.
+> **Status.** The corpus, retrieval benchmark and per-question analysis have
+> been run and their numbers appear below. The agent loop, citation validation
+> and the LLM judge are implemented and unit-tested, but have **not been
+> executed end to end**, because that needs an `ANTHROPIC_API_KEY` and none was
+> available on the machine this was built on. The answer-quality table is
+> therefore empty rather than estimated, and the groundedness and refusal
+> figures should be treated as unmeasured until `make eval-answers` has run.
+>
+> Nothing in this README is claimed that a committed script cannot reproduce.
 
 ---
 
@@ -244,12 +251,44 @@ that cannot show you a rejection has not demonstrated anything.
 
 Written honestly, and kept current.
 
-- The evaluation set is authored by one person. It reflects one analyst's view of
-  what a correct answer looks like, and inter-annotator agreement is unmeasured.
-- Groundedness is scored by an LLM judge. Judge–human disagreement is measured on
-  a sample and reported in `results/judge_agreement.md` rather than assumed away.
-- The corpus is guidance, not case law or enforcement actions. Questions about
-  specific enforcement outcomes are out of scope by construction.
-- Retrieval is over English-language documents only.
-- This is a portfolio system, not a compliance tool. It has no place in a real
-  reporting workflow.
+**Not yet measured.** The agent loop, citation validation and the LLM judge
+have never been run end to end — no API key was available during development.
+They are unit-tested with the model stubbed out, which tests the wiring and not
+the behaviour. Until `make eval-answers` and `make judge-audit` have run, this
+project has a *measured* retrieval benchmark and an *unmeasured* answer layer,
+and the README should be read that way.
+
+**The evaluation set has a single author.** It reflects one view of what a
+correct answer looks like. Inter-annotator agreement is unmeasured, and with 30
+answerable questions the confidence interval on any recall figure is wide —
+a difference of one or two questions moves recall@5 by three points.
+
+**Groundedness will be scored by an LLM judge.** An unaudited judge is a second
+model's opinion with a decimal point on it. `make judge-audit` samples its
+decisions for human grading and reports the disagreement rate; that number is
+the error bar on groundedness and belongs in the repo whether or not it is
+flattering.
+
+**Validation cannot catch several real failure modes**, documented in full in
+`src/aml_agent/validation/validator.py`. Briefly: a claim supported by its
+cited chunk but misleading in context; errors of omission; two individually
+supported claims that together imply something neither supports; and a claim
+faithfully citing a guidance document that is itself out of date.
+
+**Page-level and exact gold are not comparable.** They are separate tables for
+that reason. Page-level figures are systematically higher because a page can
+hold several chunks and any of them counts.
+
+**The corpus is guidance, not case law or enforcement actions.** Questions
+about specific enforcement outcomes are out of scope by construction — several
+of the ten unanswerable questions are precisely that shape.
+
+**English only.** All 30 documents are English. A Spanish-language GAFILAT
+typology report was dropped from the manifest during sourcing for that reason.
+
+**Chunk boundaries lose context.** An answer split across a chunk boundary is
+retrievable only in part, and the `t256` / `t480` comparison measures the
+symptom without fixing it. No reranker and no query expansion.
+
+**This is a portfolio system, not a compliance tool.** It has no place in a
+real reporting workflow.
