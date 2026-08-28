@@ -64,3 +64,44 @@ on the machine the author uses, that guarantee is theoretical.
 
 **Fix.** `run.ps1` mirrors every Makefile target with the same names. The
 Makefile stays for Linux and macOS. Both are committed and both are documented.
+
+---
+
+## M0 — every FATF document 403'd, and the User-Agent was not the cause
+
+**Symptom.** 22 of 30 documents downloaded. All 8 FATF documents failed with
+`HTTP 403`, including URLs that had been individually verified as live public
+PDFs during corpus sourcing.
+
+**First wrong diagnosis.** The obvious reading was rate limiting, since FATF's
+CDN had returned intermittent 403s during verification. Retry with exponential
+backoff was added. It changed nothing — four attempts over eighteen seconds,
+still 403.
+
+**Second wrong diagnosis.** The next obvious reading was the User-Agent, since
+the client identified itself as a bot. But `curl` with *that same bot
+User-Agent* returned 200 and a 2MB PDF. So the header was not the cause either.
+
+**Actual cause.** httpx receives 403 for these URLs under every combination of
+User-Agent, Accept, Accept-Language, Referer and HTTP version tried, including
+a full browser header set and HTTP/2. curl succeeds with a minimal header set.
+The distinguishing factor is not anything in the request headers — it is the
+TLS handshake. FATF's CDN runs bot management that fingerprints the client's
+TLS profile, and Python's `ssl` module produces a different fingerprint from
+curl's.
+
+**Why it matters.** These 8 documents are the core FATF typology reports — the
+substantive centre of the corpus. Silently dropping them would have left a
+corpus that looked fine by document count and was missing the material most of
+the evaluation questions depend on. It would also have been easy to misread the
+403 as "the link is dead" and quietly replace good URLs with worse ones.
+
+**Fix.** Downloads try httpx first and fall back to a curl subprocess when a
+document is refused. curl was already a declared dependency in the Dockerfile.
+The fallback is reported per document rather than hidden, so the output says
+`HTTP 403 -> recovered via curl` and the condition stays visible.
+
+**Not fixed.** No attempt is made to disguise the client's TLS fingerprint. A
+library that impersonates a browser handshake would work, but the documents are
+freely published and the polite fix is a different HTTP client, not a
+fingerprint that lies about what is making the request.

@@ -1,0 +1,225 @@
+# Corpus manifest.
+#
+# Every document is public regulatory or typology guidance, downloadable
+# without registration. The PDFs themselves are not committed; this file plus
+# src/aml_agent/ingest/download.py reproduces the corpus from scratch.
+#
+# Each entry was link-verified by fetching the URL and confirming the bytes
+# served were the stated document. Publication dates were checked against the
+# publisher's own record rather than the PDF creation timestamp, which is
+# frequently a later re-save and would misdate the edition.
+#
+# retrieval_date is recorded per ingestion run in the documents table rather
+# than here, because it changes every time the corpus is rebuilt.
+
+documents:
+
+  - id: fatf-tbml-risk-indicators
+    title: "Trade-Based Money Laundering: Risk Indicators"
+    publisher: "FATF / Egmont Group of Financial Intelligence Units"
+    source_url: "https://www.fatf-gafi.org/content/dam/fatf-gafi/reports/Trade-Based-Money-Laundering-Risk-Indicators.pdf"
+    publication_date: "2021-03"
+    doc_type: "typology report"
+
+  - id: fatf-tbml-trends
+    title: "Trade-Based Money Laundering: Trends and Developments"
+    publisher: "FATF / Egmont Group of Financial Intelligence Units"
+    source_url: "https://www.fatf-gafi.org/content/dam/fatf-gafi/reports/Trade-Based-Money-Laundering-Trends-and-Developments.pdf"
+    publication_date: "2020-12"
+    doc_type: "typology report"
+
+  - id: fatf-rba-virtual-assets
+    title: "Updated Guidance for a Risk-Based Approach to Virtual Assets and Virtual Asset Service Providers"
+    publisher: "FATF"
+    source_url: "https://www.fatf-gafi.org/content/dam/fatf-gafi/guidance/Updated-Guidance-VA-VASP.pdf"
+    publication_date: "2021-10"
+    doc_type: "guidance"
+
+  - id: fatf-virtual-assets-red-flags
+    title: "Virtual Assets Red Flag Indicators of Money Laundering and Terrorist Financing"
+    publisher: "FATF"
+    source_url: "https://www.fatf-gafi.org/content/dam/fatf-gafi/reports/Virtual-Assets-Red-Flag-Indicators.pdf"
+    publication_date: "2020-09"
+    doc_type: "typology report"
+
+  - id: fatf-professional-money-laundering
+    title: "Professional Money Laundering"
+    publisher: "FATF"
+    source_url: "https://www.fatf-gafi.org/content/dam/fatf-gafi/reports/Professional-Money-Laundering.pdf"
+    publication_date: "2018-07"
+    doc_type: "typology report"
+
+  - id: fatf-rba-real-estate
+    title: "Guidance for a Risk-Based Approach to the Real Estate Sector"
+    publisher: "FATF"
+    source_url: "https://www.fatf-gafi.org/content/dam/fatf-gafi/guidance/RBA-Real-Estate-Sector.pdf.coredownload.pdf"
+    publication_date: "2022-07"
+    doc_type: "guidance"
+
+  - id: fatf-terrorist-financing-risks
+    title: "Comprehensive Update on Terrorist Financing Risks"
+    publisher: "FATF"
+    source_url: "https://www.fatf-gafi.org/content/dam/fatf-gafi/publications/Comprehensive-Update-on-Terrorist-Financing-Risks-2025.pdf.coredownload.inline.pdf"
+    publication_date: "2025-07"
+    doc_type: "typology report"
+
+  - id: fatf-correspondent-banking
+    title: "Guidance on Correspondent Banking Services"
+    publisher: "FATF"
+    source_url: "https://www.fatf-gafi.org/content/dam/fatf-gafi/guidance/Guidance-Correspondent-Banking-Services.pdf"
+    publication_date: "2016-10"
+    doc_type: "guidance"
+
+  - id: eba-ml-tf-risk-factors
+    title: "Guidelines under Articles 17 and 18(4) of Directive (EU) 2015/849 on customer due diligence and the factors credit and financial institutions should consider when assessing the money laundering and terrorist financing risk associated with individual business relationships and occasional transactions ('The ML/TF Risk Factors Guidelines'), repealing and replacing Guidelines JC/2017/37 — EBA/GL/2021/02 (consolidated version)"
+    publisher: "European Banking Authority (EBA)"
+    source_url: "https://www.eba.europa.eu/sites/default/files/document_library/Publications/Guidelines/2023/EBA-GL-2023-03/1061654/Guidelines%20ML%20TF%20Risk%20Factors_conslidated.pdf.pdf"
+    publication_date: "2021-03-01"
+    doc_type: "guidance"
+
+  - id: eba-remote-onboarding
+    title: "Final Report — Guidelines on the use of Remote Customer Onboarding Solutions under Article 13(1) of Directive (EU) 2015/849 — EBA/GL/2022/15"
+    publisher: "European Banking Authority (EBA)"
+    source_url: "https://www.eba.europa.eu/sites/default/files/document_library/Publications/Guidelines/2022/EBA-GL-2022-15%20GL%20on%20remote%20customer%20onboarding/1043884/Guidelines%20on%20the%20use%20of%20Remote%20Customer%20Onboarding%20Solutions.pdf"
+    publication_date: "2022-11-22"
+    doc_type: "guidance"
+
+  - id: eba-opinion-ml-tf-risks
+    title: "Opinion of the European Banking Authority on money laundering and terrorist financing risks affecting the EU's financial sector — EBA/Op/2025/10"
+    publisher: "European Banking Authority (EBA)"
+    source_url: "https://www.eba.europa.eu/sites/default/files/2025-07/13ae2f94-dc04-4a50-9f24-af2808e78944/Opinion%20and%20Report%20on%20ML%20TF%20risks.pdf"
+    publication_date: "2025-07-28"
+    doc_type: "risk assessment"
+
+  - id: fincen-real-estate-advisory
+    title: "Advisory to Financial Institutions and Real Estate Firms and Professionals (FIN-2017-A003)"
+    publisher: "Financial Crimes Enforcement Network (FinCEN), U.S. Department of the Treasury"
+    source_url: "https://www.fincen.gov/system/files/advisory/2017-08-22/Risk%20in%20Real%20Estate%20Advisory_FINAL%20508%20Tuesday%20%28002%29.pdf"
+    publication_date: "2017-08-22"
+    doc_type: "advisory"
+
+  - id: fincen-illicit-schemes
+    title: "Advisory to Financial Institutions on Illicit Financial Schemes and Methods Related to the Trafficking of Fentanyl and Other Synthetic Opioids (FIN-2019-A006)"
+    publisher: "Financial Crimes Enforcement Network (FinCEN), U.S. Department of the Treasury"
+    source_url: "https://www.fincen.gov/system/files/advisory/2019-08-21/Fentanyl%20Advisory%20FINAL%20508.pdf"
+    publication_date: "2019-08-21"
+    doc_type: "advisory"
+
+  - id: fincen-human-trafficking
+    title: "Supplemental Advisory on Identifying and Reporting Human Trafficking and Related Activity (FIN-2020-A008)"
+    publisher: "Financial Crimes Enforcement Network (FinCEN), U.S. Department of the Treasury"
+    source_url: "https://www.fincen.gov/system/files/advisory/2020-10-15/Advisory%20Human%20Trafficking%20508%20FINAL_0.pdf"
+    publication_date: "2020-10-15"
+    doc_type: "advisory"
+
+  - id: fincen-ransomware
+    title: "Advisory on Ransomware and the Use of the Financial System to Facilitate Ransom Payments (FIN-2021-A004)"
+    publisher: "Financial Crimes Enforcement Network (FinCEN), U.S. Department of the Treasury"
+    source_url: "https://www.fincen.gov/system/files/advisory/2021-11-08/FinCEN%20Ransomware%20Advisory_FINAL_508_.pdf"
+    publication_date: "2021-11-08"
+    doc_type: "advisory"
+
+  - id: us-national-ml-risk-assessment
+    title: "2024 National Money Laundering Risk Assessment"
+    publisher: "U.S. Department of the Treasury"
+    source_url: "https://home.treasury.gov/system/files/136/2024-National-Money-Laundering-Risk-Assessment.pdf"
+    publication_date: "2024-02-07"
+    doc_type: "risk assessment"
+
+  - id: fincen-fentanyl-trend-analysis
+    title: "Financial Trend Analysis: Fentanyl-Related Illicit Finance: 2024 Threat Pattern and Trend Information"
+    publisher: "Financial Crimes Enforcement Network (FinCEN), U.S. Department of the Treasury"
+    source_url: "https://www.fincen.gov/system/files/shared/FinCEN-FTA-Fentanyl.pdf"
+    publication_date: "2025-04-09"
+    doc_type: "typology report"
+
+  - id: wolfsberg-trade-finance-principles
+    title: "The Wolfsberg Group, ICC and BAFT Trade Finance Principles (2019 amendment)"
+    publisher: "The Wolfsberg Group, International Chamber of Commerce (ICC) and BAFT"
+    source_url: "https://db.wolfsberg-group.org/assets/5c770f68-6277-4443-931b-7750478f08e7/Trade%20Finance%20Principles.pdf"
+    publication_date: "2019-03"
+    doc_type: "principles"
+
+  - id: wolfsberg-cbddq
+    title: "The Wolfsberg Group Correspondent Banking Due Diligence Questionnaire (CBDDQ) Guidance, version 2.0"
+    publisher: "The Wolfsberg Group"
+    source_url: "https://db.wolfsberg-group.org/assets/09bafec3-4b77-428b-9113-f4203d290a2f/EN_CBDDQ%20Guidance%20(2023).pdf"
+    publication_date: "2023-02-10"
+    doc_type: "guidance"
+
+  - id: wolfsberg-negative-news-screening
+    title: "The Wolfsberg Group Frequently Asked Questions (FAQs) on Negative News Screening"
+    publisher: "The Wolfsberg Group"
+    source_url: "https://db.wolfsberg-group.org/assets/b3a010d9-7b32-4580-92d7-db9a7e78cbaf/Negative%20News%20Screening%20FAQs%20(2022).pdf"
+    publication_date: "2022-05-11"
+    doc_type: "guidance"
+
+  - id: wolfsberg-source-of-wealth-faq
+    title: "The Wolfsberg Group Frequently Asked Questions (FAQs) on Source of Wealth and Source of Funds (Private Banking/Wealth Management)"
+    publisher: "The Wolfsberg Group"
+    source_url: "https://db.wolfsberg-group.org/assets/a27f9bf6-b4a8-41d2-a390-6f1aaf797241/Wolfsberg%20SoW%20and%20SoF%20FAQs%20August%202020%20(FFP).pdf"
+    publication_date: "2020-08-07"
+    doc_type: "guidance"
+
+  - id: europol-socta
+    title: "EU Serious and Organised Crime Threat Assessment 2025 (EU-SOCTA 2025) — The changing DNA of serious and organised crime"
+    publisher: "Europol"
+    source_url: "https://www.europol.europa.eu/cms/sites/default/files/documents/EU-SOCTA-2025.pdf"
+    publication_date: "2025-03-18"
+    doc_type: "risk assessment"
+
+  - id: uk-national-risk-assessment
+    title: "National Risk Assessment of Money Laundering and Terrorist Financing 2025"
+    publisher: "HM Treasury and Home Office"
+    source_url: "https://assets.publishing.service.gov.uk/media/6877be59760bf6cedaf5bd4f/National_Risk_Assessment_of_Money_Laundering_and_Terrorist_Financing_2025_FINAL.pdf"
+    publication_date: "2025-07-17"
+    doc_type: "risk assessment"
+
+  - id: fca-financial-crime-guide
+    title: "Financial Crime Guide: A firm's guide to countering financial crime risks (FCG)"
+    publisher: "Financial Conduct Authority (FCA)"
+    source_url: "https://api-handbook.fca.org.uk/files/sourcebook/FCG.pdf"
+    publication_date: "2026-05"
+    doc_type: "guidance"
+
+  - id: basel-sound-management-ml-tf
+    title: "Guidelines: Sound management of risks related to money laundering and financing of terrorism"
+    publisher: "Basel Committee on Banking Supervision"
+    source_url: "https://www.bis.org/bcbs/publ/d505.pdf"
+    publication_date: "2020-07-02"
+    doc_type: "guidance"
+
+  - id: apg-yearly-typologies
+    title: "APG Yearly Typologies Report 2025: Methods and Trends of Money Laundering, Terrorism Financing and Proliferation Financing"
+    publisher: "Asia/Pacific Group on Money Laundering (APG)"
+    source_url: "https://www.apgml.org/sites/default/files/2026-06/2025%20APG%20Yearly%20Typologies%20Report%20-%20for%20adoption.pdf"
+    publication_date: "2025-11"
+    doc_type: "typology report"
+
+  - id: esaamlg-gold-diamond-typologies
+    title: "Illicit Dealings in Gold, Diamond, Rubies and Associated Money Laundering and Terrorist Financing in the ESAAMLG Region"
+    publisher: "Eastern and Southern Africa Anti-Money Laundering Group (ESAAMLG)"
+    source_url: "https://www.esaamlg.org/reports/ILLICIT_DEALING_SEPT_2022.pdf"
+    publication_date: "2022-09"
+    doc_type: "typology report"
+
+  - id: worldbank-politically-exposed-persons
+    title: "Politically Exposed Persons: Preventive Measures for the Banking Sector"
+    publisher: "World Bank / UNODC Stolen Asset Recovery Initiative (StAR)"
+    source_url: "https://documents1.worldbank.org/curated/en/611261468155103854/pdf/542500PUB0Expo101Official0Use0Only1.pdf"
+    publication_date: "2010-04"
+    doc_type: "guidance"
+
+  - id: worldbank-puppet-masters
+    title: "The Puppet Masters: How the Corrupt Use Legal Structures to Hide Stolen Assets and What to Do About It"
+    publisher: "World Bank / UNODC Stolen Asset Recovery Initiative (StAR)"
+    source_url: "https://documents1.worldbank.org/curated/en/784961468152973030/pdf/The-puppet-masters-how-the-corrupt-use-legal-structures-to-hide-stolen-assets-and-what-to-do-about-it.pdf"
+    publication_date: "2011-10"
+    doc_type: "typology report"
+
+  - id: unodc-casinos-underground-banking
+    title: "Casinos, Money Laundering, Underground Banking, and Transnational Organized Crime in East and Southeast Asia: A Hidden and Accelerating Threat"
+    publisher: "United Nations Office on Drugs and Crime (UNODC), Regional Office for Southeast Asia and the Pacific"
+    source_url: "https://www.unodc.org/roseap/uploads/documents/Publications/2024/Casino_Underground_Banking_Report_2024.pdf"
+    publication_date: "2024-01"
+    doc_type: "typology report"
