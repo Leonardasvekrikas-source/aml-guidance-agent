@@ -31,28 +31,43 @@ class MissingCredentials(RuntimeError):
     pass
 
 
+def _resolved_key(client: anthropic.Anthropic) -> str:
+    """The credential the SDK actually resolved, if any.
+
+    Constructing the client is NOT proof of credentials: with no key anywhere,
+    anthropic.Anthropic() constructs happily with api_key set to the empty
+    string and only fails later, at request time, as a 401 that says nothing
+    about which setup step was missed.
+    """
+    for attribute in ("api_key", "auth_token"):
+        value = getattr(client, attribute, None)
+        if value:
+            return str(value)
+    return ""
+
+
 def make_client() -> anthropic.Anthropic:
     if settings.anthropic_api_key:
         return anthropic.Anthropic(api_key=settings.anthropic_api_key)
 
-    # No explicit key. The SDK may still find a profile or auth token; if it
-    # cannot, it raises at construction time and we translate the message.
     try:
-        return anthropic.Anthropic()
+        client = anthropic.Anthropic()
     except Exception as exc:  # noqa: BLE001 - re-raised with a usable message
         raise MissingCredentials(_SETUP_HELP) from exc
 
+    if not _resolved_key(client):
+        raise MissingCredentials(_SETUP_HELP)
+    return client
+
 
 def have_credentials() -> bool:
-    """Whether an LLM-backed step can run at all.
+    """Whether an LLM-backed step can actually run.
 
-    Used by the evaluation harness so that a missing key produces a clear
-    "this metric was not computed" rather than forty identical stack traces.
+    Used by the evaluation harness and /health so that a missing key produces a
+    clear "this cannot run" rather than forty identical 401s.
     """
-    if settings.anthropic_api_key:
-        return True
     try:
-        anthropic.Anthropic()
+        make_client()
         return True
-    except Exception:  # noqa: BLE001
+    except MissingCredentials:
         return False

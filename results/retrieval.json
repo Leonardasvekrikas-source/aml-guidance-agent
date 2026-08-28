@@ -1,0 +1,4748 @@
+{
+  "settings": {
+    "embedding_model": "BAAI/bge-base-en-v1.5",
+    "embedding_dim": 768,
+    "anthropic_model": "claude-opus-5",
+    "chunk_profiles": [
+      {
+        "name": "t256",
+        "target_tokens": 256,
+        "overlap_tokens": 48
+      },
+      {
+        "name": "t480",
+        "target_tokens": 480,
+        "overlap_tokens": 64
+      }
+    ]
+  },
+  "questions": 30,
+  "authoring_profile": "t480",
+  "gold_definitions": {
+    "exact": "A retrieved chunk counts only if it is literally the gold chunk. Only computed for t480, the profile the questions were authored against.",
+    "page_level": "Gold is the set of (document, page) pairs the gold chunks came from; a retrieved chunk counts if it comes from one of those pages. Profile-independent, so this is the only definition under which the chunk-size comparison is valid. Looser than exact, so the two must not be compared."
+  },
+  "profiles": {
+    "t256": {
+      "bm25": {
+        "questions": 30,
+        "median_latency_ms": 17.311920993961394,
+        "page_level": {
+          "recall_at_5": 0.65,
+          "recall_at_10": 0.6666666666666666,
+          "hit_at_5": 0.6666666666666666,
+          "mrr": 0.5352777777777777
+        },
+        "per_question": [
+          {
+            "question_id": "a01",
+            "topic": "trade-based-money-laundering",
+            "gold_chunk_ids": [
+              26
+            ],
+            "retrieved_chunk_ids": [
+              785,
+              18,
+              2117,
+              2114,
+              6203,
+              787,
+              788,
+              6110,
+              2843,
+              786
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 0.5
+          },
+          {
+            "question_id": "a02",
+            "topic": "trade-mis-invoicing",
+            "gold_chunk_ids": [
+              202
+            ],
+            "retrieved_chunk_ids": [
+              89,
+              34,
+              53,
+              3781,
+              47,
+              2827,
+              33,
+              3780,
+              1713,
+              48
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0
+          },
+          {
+            "question_id": "a03",
+            "topic": "trade-document-review",
+            "gold_chunk_ids": [
+              187
+            ],
+            "retrieved_chunk_ids": [
+              123,
+              16,
+              1124,
+              2244,
+              2827,
+              122,
+              3781,
+              62,
+              3841,
+              124
+            ],
+            "page_recall_at_5": 0.0,
+            "page_recall_at_10": 0.0,
+            "page_hit_at_5": 0.0,
+            "page_reciprocal_rank": 0.0
+          },
+          {
+            "question_id": "a04",
+            "topic": "virtual-assets-red-flags",
+            "gold_chunk_ids": [
+              827
+            ],
+            "retrieved_chunk_ids": [
+              793,
+              535,
+              772,
+              814,
+              778,
+              779,
+              808,
+              788,
+              815,
+              2892
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0
+          },
+          {
+            "question_id": "a05",
+            "topic": "virtual-asset-transfer-obligations",
+            "gold_chunk_ids": [
+              692
+            ],
+            "retrieved_chunk_ids": [
+              2948,
+              2262,
+              2306,
+              2308,
+              790,
+              3823,
+              363,
+              2153,
+              448,
+              3796
+            ],
+            "page_recall_at_5": 0.0,
+            "page_recall_at_10": 0.0,
+            "page_hit_at_5": 0.0,
+            "page_reciprocal_rank": 0.0
+          },
+          {
+            "question_id": "a06",
+            "topic": "correspondent-banking-mvts-accounts",
+            "gold_chunk_ids": [
+              2086
+            ],
+            "retrieved_chunk_ids": [
+              7052,
+              5370,
+              4906,
+              7048,
+              7262,
+              5455,
+              4905,
+              3925,
+              2228,
+              960
+            ],
+            "page_recall_at_5": 0.0,
+            "page_recall_at_10": 0.0,
+            "page_hit_at_5": 0.0,
+            "page_reciprocal_rank": 0.0
+          },
+          {
+            "question_id": "a07",
+            "topic": "professional-money-laundering-fees",
+            "gold_chunk_ids": [
+              1003
+            ],
+            "retrieved_chunk_ids": [
+              883,
+              884,
+              871,
+              2446,
+              2449,
+              5270,
+              881,
+              891,
+              874,
+              6846
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0
+          },
+          {
+            "question_id": "a08",
+            "topic": "real-estate-transaction-red-flags",
+            "gold_chunk_ids": [
+              1291
+            ],
+            "retrieved_chunk_ids": [
+              1150,
+              6065,
+              8265,
+              1151,
+              785,
+              4989,
+              1096,
+              787,
+              6662,
+              4099
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0
+          },
+          {
+            "question_id": "a09",
+            "topic": "terrorist-financing-e-commerce-value-transfer",
+            "gold_chunk_ids": [
+              1922,
+              1921
+            ],
+            "retrieved_chunk_ids": [
+              8172,
+              788,
+              4794,
+              33,
+              8111,
+              6043,
+              104,
+              6093,
+              520,
+              1575
+            ],
+            "page_recall_at_5": 0.0,
+            "page_recall_at_10": 0.0,
+            "page_hit_at_5": 0.0,
+            "page_reciprocal_rank": 0.0
+          },
+          {
+            "question_id": "a10",
+            "topic": "trade-based-money-laundering",
+            "gold_chunk_ids": [
+              2405
+            ],
+            "retrieved_chunk_ids": [
+              3778,
+              3866,
+              3813,
+              3944,
+              2245,
+              3893,
+              3927,
+              111,
+              3760,
+              3937
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 0.2
+          },
+          {
+            "question_id": "a11",
+            "topic": "life-insurance-red-flags",
+            "gold_chunk_ids": [
+              2410
+            ],
+            "retrieved_chunk_ids": [
+              2254,
+              2252,
+              2253,
+              2251,
+              5304,
+              2256,
+              5747,
+              2261,
+              2260,
+              4896
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 0.2
+          },
+          {
+            "question_id": "a12",
+            "topic": "remote-onboarding-identity-verification",
+            "gold_chunk_ids": [
+              2543
+            ],
+            "retrieved_chunk_ids": [
+              2475,
+              2493,
+              2467,
+              2476,
+              2521,
+              2477,
+              2474,
+              2464,
+              2520,
+              2483
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0
+          },
+          {
+            "question_id": "a13",
+            "topic": "virtual-ibans",
+            "gold_chunk_ids": [
+              2722
+            ],
+            "retrieved_chunk_ids": [
+              2601,
+              2588,
+              2609,
+              4906,
+              2600,
+              368,
+              2603,
+              2650,
+              5047,
+              2449
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0
+          },
+          {
+            "question_id": "a14",
+            "topic": "ransomware-victim-payment-indicators",
+            "gold_chunk_ids": [
+              2969
+            ],
+            "retrieved_chunk_ids": [
+              7061,
+              2948,
+              1145,
+              3256,
+              5439,
+              8168,
+              7060,
+              3830,
+              7074,
+              563
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 0.5
+          },
+          {
+            "question_id": "a15",
+            "topic": "human-trafficking-financial-indicators",
+            "gold_chunk_ids": [
+              2918
+            ],
+            "retrieved_chunk_ids": [
+              2898,
+              2842,
+              18,
+              2841,
+              84,
+              3228,
+              2832,
+              1772,
+              786,
+              3393
+            ],
+            "page_recall_at_5": 0.0,
+            "page_recall_at_10": 0.0,
+            "page_hit_at_5": 0.0,
+            "page_reciprocal_rank": 0.0
+          },
+          {
+            "question_id": "a16",
+            "topic": "shell-company-red-flags",
+            "gold_chunk_ids": [
+              2871,
+              2872
+            ],
+            "retrieved_chunk_ids": [
+              2844,
+              2843,
+              12,
+              7228,
+              4098,
+              7322,
+              5414,
+              2842,
+              7229,
+              2186
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0
+          },
+          {
+            "question_id": "a17",
+            "topic": "fentanyl-precursor-procurement",
+            "gold_chunk_ids": [
+              3725
+            ],
+            "retrieved_chunk_ids": [
+              3681,
+              3669,
+              3684,
+              3677,
+              3690,
+              3685,
+              3692,
+              3686,
+              3678,
+              3689
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 0.2
+          },
+          {
+            "question_id": "a18",
+            "topic": "money-order-recordkeeping-gap",
+            "gold_chunk_ids": [
+              3553,
+              3554
+            ],
+            "retrieved_chunk_ids": [
+              3212,
+              441,
+              5679,
+              439,
+              440,
+              3818,
+              5771,
+              1234,
+              7112,
+              2183
+            ],
+            "page_recall_at_5": 0.5,
+            "page_recall_at_10": 0.5,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0
+          },
+          {
+            "question_id": "a19",
+            "topic": "source-of-funds-corroboration",
+            "gold_chunk_ids": [
+              4391
+            ],
+            "retrieved_chunk_ids": [
+              6841,
+              7396,
+              903,
+              785,
+              5307,
+              2126,
+              1771,
+              904,
+              941,
+              4990
+            ],
+            "page_recall_at_5": 0.0,
+            "page_recall_at_10": 0.0,
+            "page_hit_at_5": 0.0,
+            "page_reciprocal_rank": 0.0
+          },
+          {
+            "question_id": "a20",
+            "topic": "negative-news-screening",
+            "gold_chunk_ids": [
+              4350,
+              4351
+            ],
+            "retrieved_chunk_ids": [
+              4317,
+              4316,
+              4176,
+              4154,
+              4318,
+              4315,
+              4370,
+              4319,
+              4305,
+              4302
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0
+          },
+          {
+            "question_id": "a21",
+            "topic": "correspondent-banking-product-risk",
+            "gold_chunk_ids": [
+              4236,
+              4237
+            ],
+            "retrieved_chunk_ids": [
+              4099,
+              4098,
+              6046,
+              4884,
+              4100,
+              2038,
+              5744,
+              2053,
+              4117,
+              5683
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0
+          },
+          {
+            "question_id": "a22",
+            "topic": "trade-based-money-laundering",
+            "gold_chunk_ids": [
+              3980
+            ],
+            "retrieved_chunk_ids": [
+              3781,
+              3782,
+              3783,
+              4820,
+              1603,
+              1715,
+              929,
+              3894,
+              3867,
+              33
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0
+          },
+          {
+            "question_id": "a23",
+            "topic": "underground-banking-cash-for-value-swap",
+            "gold_chunk_ids": [
+              5099
+            ],
+            "retrieved_chunk_ids": [
+              4808,
+              4807,
+              4857,
+              8350,
+              4804,
+              4805,
+              4838,
+              905,
+              940,
+              8351
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0
+          },
+          {
+            "question_id": "a24",
+            "topic": "mtic-carousel-vat-fraud",
+            "gold_chunk_ids": [
+              4706
+            ],
+            "retrieved_chunk_ids": [
+              4555,
+              4554,
+              4553,
+              4556,
+              4399,
+              3030,
+              4550,
+              3021,
+              4623,
+              5343
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0
+          },
+          {
+            "question_id": "a25",
+            "topic": "sanctions-evasion-detection-beyond-name-screening",
+            "gold_chunk_ids": [
+              5585
+            ],
+            "retrieved_chunk_ids": [
+              5404,
+              5405,
+              5234,
+              7183,
+              3803,
+              5409,
+              3947,
+              4162,
+              5408,
+              5414
+            ],
+            "page_recall_at_5": 0.0,
+            "page_recall_at_10": 0.0,
+            "page_hit_at_5": 0.0,
+            "page_reciprocal_rank": 0.0
+          },
+          {
+            "question_id": "a26",
+            "topic": "correspondent-banking-payment-message-transparency",
+            "gold_chunk_ids": [
+              5886
+            ],
+            "retrieved_chunk_ids": [
+              5322,
+              7380,
+              5321,
+              5239,
+              4410,
+              7029,
+              2302,
+              3428,
+              5450,
+              4411
+            ],
+            "page_recall_at_5": 0.0,
+            "page_recall_at_10": 0.0,
+            "page_hit_at_5": 0.0,
+            "page_reciprocal_rank": 0.0
+          },
+          {
+            "question_id": "a27",
+            "topic": "gold-smuggling-typology-precious-metals",
+            "gold_chunk_ids": [
+              6591
+            ],
+            "retrieved_chunk_ids": [
+              5062,
+              5468,
+              76,
+              931,
+              4941,
+              2214,
+              4943,
+              4803,
+              3134,
+              4942
+            ],
+            "page_recall_at_5": 0.0,
+            "page_recall_at_10": 0.0,
+            "page_hit_at_5": 0.0,
+            "page_reciprocal_rank": 0.0
+          },
+          {
+            "question_id": "a28",
+            "topic": "cyber-scam-hubs-offshore-gaming-red-flags",
+            "gold_chunk_ids": [
+              6286
+            ],
+            "retrieved_chunk_ids": [
+              5957,
+              5942,
+              5958,
+              5941,
+              5949,
+              8108,
+              8107,
+              3405,
+              8311,
+              6051
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0
+          },
+          {
+            "question_id": "a29",
+            "topic": "pep-screening-database-calibration",
+            "gold_chunk_ids": [
+              6939
+            ],
+            "retrieved_chunk_ids": [
+              3803,
+              7287,
+              6763,
+              6762,
+              4324,
+              4411,
+              4745,
+              7033,
+              3429,
+              6662
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 0.3333333333333333
+          },
+          {
+            "question_id": "a30",
+            "topic": "client-onboarding-governance",
+            "gold_chunk_ids": [
+              7892,
+              7900
+            ],
+            "retrieved_chunk_ids": [
+              5281,
+              6775,
+              5311,
+              6782,
+              6774,
+              5280,
+              5743,
+              7314,
+              6811,
+              2160
+            ],
+            "page_recall_at_5": 0.0,
+            "page_recall_at_10": 0.5,
+            "page_hit_at_5": 0.0,
+            "page_reciprocal_rank": 0.125
+          }
+        ]
+      },
+      "dense": {
+        "questions": 30,
+        "median_latency_ms": 14.147962967399508,
+        "page_level": {
+          "recall_at_5": 0.7333333333333333,
+          "recall_at_10": 0.7666666666666667,
+          "hit_at_5": 0.7666666666666667,
+          "mrr": 0.5164285714285713
+        },
+        "per_question": [
+          {
+            "question_id": "a01",
+            "topic": "trade-based-money-laundering",
+            "gold_chunk_ids": [
+              26
+            ],
+            "retrieved_chunk_ids": [
+              19,
+              18,
+              12,
+              16,
+              10,
+              3835,
+              2843,
+              17,
+              3952,
+              3685
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0
+          },
+          {
+            "question_id": "a02",
+            "topic": "trade-mis-invoicing",
+            "gold_chunk_ids": [
+              202
+            ],
+            "retrieved_chunk_ids": [
+              48,
+              53,
+              89,
+              139,
+              65,
+              47,
+              54,
+              4820,
+              929,
+              3780
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 0.3333333333333333
+          },
+          {
+            "question_id": "a03",
+            "topic": "trade-document-review",
+            "gold_chunk_ids": [
+              187
+            ],
+            "retrieved_chunk_ids": [
+              48,
+              123,
+              89,
+              3835,
+              139,
+              4104,
+              2244,
+              138,
+              929,
+              150
+            ],
+            "page_recall_at_5": 0.0,
+            "page_recall_at_10": 0.0,
+            "page_hit_at_5": 0.0,
+            "page_reciprocal_rank": 0.0
+          },
+          {
+            "question_id": "a04",
+            "topic": "virtual-assets-red-flags",
+            "gold_chunk_ids": [
+              827
+            ],
+            "retrieved_chunk_ids": [
+              793,
+              410,
+              810,
+              3266,
+              409,
+              776,
+              535,
+              511,
+              530,
+              780
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0
+          },
+          {
+            "question_id": "a05",
+            "topic": "virtual-asset-transfer-obligations",
+            "gold_chunk_ids": [
+              692
+            ],
+            "retrieved_chunk_ids": [
+              439,
+              2478,
+              437,
+              440,
+              528,
+              5319,
+              5333,
+              5320,
+              5748,
+              2052
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 0.3333333333333333
+          },
+          {
+            "question_id": "a06",
+            "topic": "correspondent-banking-mvts-accounts",
+            "gold_chunk_ids": [
+              2086
+            ],
+            "retrieved_chunk_ids": [
+              1770,
+              2230,
+              1771,
+              1768,
+              2228,
+              4093,
+              2222,
+              5727,
+              2225,
+              1540
+            ],
+            "page_recall_at_5": 0.0,
+            "page_recall_at_10": 0.0,
+            "page_hit_at_5": 0.0,
+            "page_reciprocal_rank": 0.0
+          },
+          {
+            "question_id": "a07",
+            "topic": "professional-money-laundering-fees",
+            "gold_chunk_ids": [
+              1003
+            ],
+            "retrieved_chunk_ids": [
+              884,
+              883,
+              871,
+              897,
+              874,
+              944,
+              878,
+              882,
+              872,
+              891
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0
+          },
+          {
+            "question_id": "a08",
+            "topic": "real-estate-transaction-red-flags",
+            "gold_chunk_ids": [
+              1291
+            ],
+            "retrieved_chunk_ids": [
+              1150,
+              1151,
+              785,
+              2268,
+              1770,
+              2246,
+              2255,
+              2843,
+              2256,
+              2200
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0
+          },
+          {
+            "question_id": "a09",
+            "topic": "terrorist-financing-e-commerce-value-transfer",
+            "gold_chunk_ids": [
+              1922,
+              1921
+            ],
+            "retrieved_chunk_ids": [
+              104,
+              106,
+              1542,
+              1775,
+              1603,
+              1551,
+              1404,
+              1504,
+              105,
+              1575
+            ],
+            "page_recall_at_5": 0.5,
+            "page_recall_at_10": 0.5,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 0.2
+          },
+          {
+            "question_id": "a10",
+            "topic": "trade-based-money-laundering",
+            "gold_chunk_ids": [
+              2405
+            ],
+            "retrieved_chunk_ids": [
+              16,
+              3948,
+              2245,
+              3866,
+              17,
+              3894,
+              3917,
+              3937,
+              2244,
+              3893
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 0.3333333333333333
+          },
+          {
+            "question_id": "a11",
+            "topic": "life-insurance-red-flags",
+            "gold_chunk_ids": [
+              2410
+            ],
+            "retrieved_chunk_ids": [
+              2260,
+              2252,
+              2251,
+              5304,
+              2261,
+              2256,
+              2263,
+              2264,
+              2585,
+              2255
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 0.2
+          },
+          {
+            "question_id": "a12",
+            "topic": "remote-onboarding-identity-verification",
+            "gold_chunk_ids": [
+              2543
+            ],
+            "retrieved_chunk_ids": [
+              2475,
+              2476,
+              2474,
+              2467,
+              2477,
+              2493,
+              2478,
+              2464,
+              2494,
+              2461
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0
+          },
+          {
+            "question_id": "a13",
+            "topic": "virtual-ibans",
+            "gold_chunk_ids": [
+              2722
+            ],
+            "retrieved_chunk_ids": [
+              2601,
+              2600,
+              1736,
+              2599,
+              4907,
+              1737,
+              560,
+              556,
+              530,
+              4905
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0
+          },
+          {
+            "question_id": "a14",
+            "topic": "ransomware-victim-payment-indicators",
+            "gold_chunk_ids": [
+              2969
+            ],
+            "retrieved_chunk_ids": [
+              1150,
+              2948,
+              2309,
+              563,
+              2210,
+              1151,
+              2815,
+              2200,
+              2167,
+              3256
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 0.5
+          },
+          {
+            "question_id": "a15",
+            "topic": "human-trafficking-financial-indicators",
+            "gold_chunk_ids": [
+              2918
+            ],
+            "retrieved_chunk_ids": [
+              2898,
+              2843,
+              8124,
+              786,
+              4873,
+              3202,
+              2890,
+              8234,
+              2886,
+              4796
+            ],
+            "page_recall_at_5": 0.0,
+            "page_recall_at_10": 0.0,
+            "page_hit_at_5": 0.0,
+            "page_reciprocal_rank": 0.0
+          },
+          {
+            "question_id": "a16",
+            "topic": "shell-company-red-flags",
+            "gold_chunk_ids": [
+              2871,
+              2872
+            ],
+            "retrieved_chunk_ids": [
+              7102,
+              2843,
+              4141,
+              7103,
+              4143,
+              7307,
+              2781,
+              7285,
+              7394,
+              2782
+            ],
+            "page_recall_at_5": 0.5,
+            "page_recall_at_10": 0.5,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 0.5
+          },
+          {
+            "question_id": "a17",
+            "topic": "fentanyl-precursor-procurement",
+            "gold_chunk_ids": [
+              3725
+            ],
+            "retrieved_chunk_ids": [
+              3684,
+              3681,
+              3685,
+              3678,
+              3690,
+              3682,
+              3693,
+              3689,
+              3669,
+              3677
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 0.25
+          },
+          {
+            "question_id": "a18",
+            "topic": "money-order-recordkeeping-gap",
+            "gold_chunk_ids": [
+              3553,
+              3554
+            ],
+            "retrieved_chunk_ids": [
+              3212,
+              437,
+              439,
+              3210,
+              553,
+              7280,
+              440,
+              2230,
+              554,
+              442
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0
+          },
+          {
+            "question_id": "a19",
+            "topic": "source-of-funds-corroboration",
+            "gold_chunk_ids": [
+              4391
+            ],
+            "retrieved_chunk_ids": [
+              4369,
+              7274,
+              785,
+              7330,
+              4376,
+              6767,
+              4170,
+              6771,
+              4368,
+              7397
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 0.2
+          },
+          {
+            "question_id": "a20",
+            "topic": "negative-news-screening",
+            "gold_chunk_ids": [
+              4350,
+              4351
+            ],
+            "retrieved_chunk_ids": [
+              4317,
+              4316,
+              4318,
+              4319,
+              4305,
+              4177,
+              4154,
+              4312,
+              4109,
+              4304
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0
+          },
+          {
+            "question_id": "a21",
+            "topic": "correspondent-banking-product-risk",
+            "gold_chunk_ids": [
+              4236,
+              4237
+            ],
+            "retrieved_chunk_ids": [
+              4099,
+              2843,
+              6039,
+              1771,
+              1770,
+              4098,
+              3875,
+              3856,
+              786,
+              3891
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0
+          },
+          {
+            "question_id": "a22",
+            "topic": "trade-based-money-laundering",
+            "gold_chunk_ids": [
+              3980
+            ],
+            "retrieved_chunk_ids": [
+              3781,
+              3782,
+              3948,
+              3953,
+              4823,
+              2240,
+              15,
+              1715,
+              3894,
+              34
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0
+          },
+          {
+            "question_id": "a23",
+            "topic": "underground-banking-cash-for-value-swap",
+            "gold_chunk_ids": [
+              5099
+            ],
+            "retrieved_chunk_ids": [
+              4838,
+              4794,
+              4807,
+              4799,
+              4800,
+              4795,
+              4858,
+              4801,
+              4796,
+              905
+            ],
+            "page_recall_at_5": 0.0,
+            "page_recall_at_10": 0.0,
+            "page_hit_at_5": 0.0,
+            "page_reciprocal_rank": 0.0
+          },
+          {
+            "question_id": "a24",
+            "topic": "mtic-carousel-vat-fraud",
+            "gold_chunk_ids": [
+              4706
+            ],
+            "retrieved_chunk_ids": [
+              4555,
+              4554,
+              4553,
+              4556,
+              4552,
+              5474,
+              48,
+              4825,
+              76,
+              5473
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0
+          },
+          {
+            "question_id": "a25",
+            "topic": "sanctions-evasion-detection-beyond-name-screening",
+            "gold_chunk_ids": [
+              5585
+            ],
+            "retrieved_chunk_ids": [
+              5418,
+              5404,
+              5408,
+              5419,
+              5405,
+              5398,
+              4154,
+              5410,
+              4162,
+              5415
+            ],
+            "page_recall_at_5": 0.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 0.0,
+            "page_reciprocal_rank": 0.14285714285714285
+          },
+          {
+            "question_id": "a26",
+            "topic": "correspondent-banking-payment-message-transparency",
+            "gold_chunk_ids": [
+              5886
+            ],
+            "retrieved_chunk_ids": [
+              5322,
+              3941,
+              123,
+              5747,
+              3864,
+              4206,
+              7270,
+              4205,
+              2053,
+              5993
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 0.25
+          },
+          {
+            "question_id": "a27",
+            "topic": "gold-smuggling-typology-precious-metals",
+            "gold_chunk_ids": [
+              6591
+            ],
+            "retrieved_chunk_ids": [
+              8173,
+              79,
+              8130,
+              77,
+              3359,
+              5468,
+              4193,
+              98,
+              8285,
+              1716
+            ],
+            "page_recall_at_5": 0.0,
+            "page_recall_at_10": 0.0,
+            "page_hit_at_5": 0.0,
+            "page_reciprocal_rank": 0.0
+          },
+          {
+            "question_id": "a28",
+            "topic": "cyber-scam-hubs-offshore-gaming-red-flags",
+            "gold_chunk_ids": [
+              6286
+            ],
+            "retrieved_chunk_ids": [
+              5942,
+              5943,
+              8385,
+              5957,
+              5958,
+              8190,
+              8108,
+              8192,
+              8298,
+              6183
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 0.25
+          },
+          {
+            "question_id": "a29",
+            "topic": "pep-screening-database-calibration",
+            "gold_chunk_ids": [
+              6939
+            ],
+            "retrieved_chunk_ids": [
+              6763,
+              3803,
+              4162,
+              5408,
+              4166,
+              5414,
+              5407,
+              4154,
+              4326,
+              7235
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0
+          },
+          {
+            "question_id": "a30",
+            "topic": "client-onboarding-governance",
+            "gold_chunk_ids": [
+              7892,
+              7900
+            ],
+            "retrieved_chunk_ids": [
+              4195,
+              2270,
+              4194,
+              2170,
+              2271,
+              4092,
+              5311,
+              2268,
+              2055,
+              2313
+            ],
+            "page_recall_at_5": 0.0,
+            "page_recall_at_10": 0.0,
+            "page_hit_at_5": 0.0,
+            "page_reciprocal_rank": 0.0
+          }
+        ]
+      },
+      "hybrid": {
+        "questions": 30,
+        "median_latency_ms": 35.5986530194059,
+        "page_level": {
+          "recall_at_5": 0.7166666666666667,
+          "recall_at_10": 0.8,
+          "hit_at_5": 0.7333333333333333,
+          "mrr": 0.5784126984126984
+        },
+        "per_question": [
+          {
+            "question_id": "a01",
+            "topic": "trade-based-money-laundering",
+            "gold_chunk_ids": [
+              26
+            ],
+            "retrieved_chunk_ids": [
+              18,
+              2843,
+              3835,
+              19,
+              785,
+              12,
+              2117,
+              16,
+              2114,
+              10
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0
+          },
+          {
+            "question_id": "a02",
+            "topic": "trade-mis-invoicing",
+            "gold_chunk_ids": [
+              202
+            ],
+            "retrieved_chunk_ids": [
+              89,
+              53,
+              48,
+              47,
+              3780,
+              31,
+              1713,
+              121,
+              52,
+              929
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0
+          },
+          {
+            "question_id": "a03",
+            "topic": "trade-document-review",
+            "gold_chunk_ids": [
+              187
+            ],
+            "retrieved_chunk_ids": [
+              123,
+              2244,
+              122,
+              2827,
+              89,
+              139,
+              150,
+              48,
+              16,
+              1124
+            ],
+            "page_recall_at_5": 0.0,
+            "page_recall_at_10": 0.0,
+            "page_hit_at_5": 0.0,
+            "page_reciprocal_rank": 0.0
+          },
+          {
+            "question_id": "a04",
+            "topic": "virtual-assets-red-flags",
+            "gold_chunk_ids": [
+              827
+            ],
+            "retrieved_chunk_ids": [
+              793,
+              535,
+              776,
+              778,
+              810,
+              3266,
+              779,
+              788,
+              2891,
+              791
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0
+          },
+          {
+            "question_id": "a05",
+            "topic": "virtual-asset-transfer-obligations",
+            "gold_chunk_ids": [
+              692
+            ],
+            "retrieved_chunk_ids": [
+              439,
+              437,
+              2052,
+              462,
+              438,
+              2948,
+              2262,
+              2478,
+              2306,
+              440
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 0.5
+          },
+          {
+            "question_id": "a06",
+            "topic": "correspondent-banking-mvts-accounts",
+            "gold_chunk_ids": [
+              2086
+            ],
+            "retrieved_chunk_ids": [
+              2228,
+              4931,
+              1770,
+              7052,
+              2230,
+              5370,
+              1771,
+              4906,
+              1768,
+              7048
+            ],
+            "page_recall_at_5": 0.0,
+            "page_recall_at_10": 0.0,
+            "page_hit_at_5": 0.0,
+            "page_reciprocal_rank": 0.0
+          },
+          {
+            "question_id": "a07",
+            "topic": "professional-money-laundering-fees",
+            "gold_chunk_ids": [
+              1003
+            ],
+            "retrieved_chunk_ids": [
+              883,
+              884,
+              871,
+              874,
+              891,
+              881,
+              886,
+              872,
+              878,
+              882
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0
+          },
+          {
+            "question_id": "a08",
+            "topic": "real-estate-transaction-red-flags",
+            "gold_chunk_ids": [
+              1291
+            ],
+            "retrieved_chunk_ids": [
+              1150,
+              1151,
+              785,
+              1097,
+              1149,
+              6065,
+              8265,
+              2268,
+              1770,
+              2246
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0
+          },
+          {
+            "question_id": "a09",
+            "topic": "terrorist-financing-e-commerce-value-transfer",
+            "gold_chunk_ids": [
+              1922,
+              1921
+            ],
+            "retrieved_chunk_ids": [
+              104,
+              1575,
+              105,
+              1542,
+              106,
+              1603,
+              1605,
+              1509,
+              8172,
+              788
+            ],
+            "page_recall_at_5": 0.5,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 0.2
+          },
+          {
+            "question_id": "a10",
+            "topic": "trade-based-money-laundering",
+            "gold_chunk_ids": [
+              2405
+            ],
+            "retrieved_chunk_ids": [
+              3866,
+              2245,
+              3893,
+              3937,
+              3948,
+              3902,
+              3920,
+              16,
+              3778,
+              3813
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 0.5
+          },
+          {
+            "question_id": "a11",
+            "topic": "life-insurance-red-flags",
+            "gold_chunk_ids": [
+              2410
+            ],
+            "retrieved_chunk_ids": [
+              2252,
+              2251,
+              5304,
+              2260,
+              2256,
+              2261,
+              2253,
+              2254,
+              2255,
+              2263
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 0.2
+          },
+          {
+            "question_id": "a12",
+            "topic": "remote-onboarding-identity-verification",
+            "gold_chunk_ids": [
+              2543
+            ],
+            "retrieved_chunk_ids": [
+              2475,
+              2476,
+              2467,
+              2493,
+              2474,
+              2477,
+              2464,
+              2521,
+              2478,
+              2483
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0
+          },
+          {
+            "question_id": "a13",
+            "topic": "virtual-ibans",
+            "gold_chunk_ids": [
+              2722
+            ],
+            "retrieved_chunk_ids": [
+              2601,
+              2600,
+              2588,
+              4906,
+              2575,
+              456,
+              2574,
+              473,
+              1736,
+              2609
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0
+          },
+          {
+            "question_id": "a14",
+            "topic": "ransomware-victim-payment-indicators",
+            "gold_chunk_ids": [
+              2969
+            ],
+            "retrieved_chunk_ids": [
+              2948,
+              563,
+              3256,
+              2309,
+              2815,
+              1151,
+              1150,
+              7061,
+              1145,
+              2210
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0
+          },
+          {
+            "question_id": "a15",
+            "topic": "human-trafficking-financial-indicators",
+            "gold_chunk_ids": [
+              2918
+            ],
+            "retrieved_chunk_ids": [
+              2898,
+              786,
+              2841,
+              18,
+              785,
+              2886,
+              2890,
+              1769,
+              2888,
+              2842
+            ],
+            "page_recall_at_5": 0.0,
+            "page_recall_at_10": 0.0,
+            "page_hit_at_5": 0.0,
+            "page_reciprocal_rank": 0.0
+          },
+          {
+            "question_id": "a16",
+            "topic": "shell-company-red-flags",
+            "gold_chunk_ids": [
+              2871,
+              2872
+            ],
+            "retrieved_chunk_ids": [
+              2843,
+              7102,
+              2113,
+              2844,
+              12,
+              4141,
+              7103,
+              7228,
+              4098,
+              4143
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0
+          },
+          {
+            "question_id": "a17",
+            "topic": "fentanyl-precursor-procurement",
+            "gold_chunk_ids": [
+              3725
+            ],
+            "retrieved_chunk_ids": [
+              3681,
+              3684,
+              3685,
+              3690,
+              3669,
+              3678,
+              3677,
+              3682,
+              3692,
+              3689
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 0.3333333333333333
+          },
+          {
+            "question_id": "a18",
+            "topic": "money-order-recordkeeping-gap",
+            "gold_chunk_ids": [
+              3553,
+              3554
+            ],
+            "retrieved_chunk_ids": [
+              3212,
+              439,
+              440,
+              5679,
+              3210,
+              437,
+              3211,
+              438,
+              506,
+              441
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0
+          },
+          {
+            "question_id": "a19",
+            "topic": "source-of-funds-corroboration",
+            "gold_chunk_ids": [
+              4391
+            ],
+            "retrieved_chunk_ids": [
+              785,
+              6841,
+              7397,
+              7083,
+              2239,
+              4369,
+              7274,
+              7396,
+              903,
+              7330
+            ],
+            "page_recall_at_5": 0.0,
+            "page_recall_at_10": 0.0,
+            "page_hit_at_5": 0.0,
+            "page_reciprocal_rank": 0.0
+          },
+          {
+            "question_id": "a20",
+            "topic": "negative-news-screening",
+            "gold_chunk_ids": [
+              4350,
+              4351
+            ],
+            "retrieved_chunk_ids": [
+              4317,
+              4316,
+              4318,
+              4154,
+              4319,
+              4305,
+              4302,
+              4176,
+              4177,
+              2112
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0
+          },
+          {
+            "question_id": "a21",
+            "topic": "correspondent-banking-product-risk",
+            "gold_chunk_ids": [
+              4236,
+              4237
+            ],
+            "retrieved_chunk_ids": [
+              4099,
+              4098,
+              4100,
+              5745,
+              2843,
+              6039,
+              6046,
+              1771,
+              4884,
+              1770
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0
+          },
+          {
+            "question_id": "a22",
+            "topic": "trade-based-money-laundering",
+            "gold_chunk_ids": [
+              3980
+            ],
+            "retrieved_chunk_ids": [
+              3781,
+              3782,
+              1715,
+              3894,
+              3783,
+              34,
+              3948,
+              4821,
+              84,
+              3954
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0
+          },
+          {
+            "question_id": "a23",
+            "topic": "underground-banking-cash-for-value-swap",
+            "gold_chunk_ids": [
+              5099
+            ],
+            "retrieved_chunk_ids": [
+              4807,
+              4838,
+              4808,
+              905,
+              4795,
+              4777,
+              4776,
+              4801,
+              4794,
+              4858
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 0.3333333333333333
+          },
+          {
+            "question_id": "a24",
+            "topic": "mtic-carousel-vat-fraud",
+            "gold_chunk_ids": [
+              4706
+            ],
+            "retrieved_chunk_ids": [
+              4555,
+              4554,
+              4553,
+              4556,
+              5473,
+              79,
+              5474,
+              4399,
+              4552,
+              3030
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0
+          },
+          {
+            "question_id": "a25",
+            "topic": "sanctions-evasion-detection-beyond-name-screening",
+            "gold_chunk_ids": [
+              5585
+            ],
+            "retrieved_chunk_ids": [
+              5404,
+              5405,
+              5408,
+              4162,
+              5409,
+              5414,
+              4154,
+              5410,
+              5407,
+              5419
+            ],
+            "page_recall_at_5": 0.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 0.0,
+            "page_reciprocal_rank": 0.14285714285714285
+          },
+          {
+            "question_id": "a26",
+            "topic": "correspondent-banking-payment-message-transparency",
+            "gold_chunk_ids": [
+              5886
+            ],
+            "retrieved_chunk_ids": [
+              5322,
+              3941,
+              7380,
+              123,
+              5321,
+              5239,
+              5747,
+              3864,
+              4410,
+              4206
+            ],
+            "page_recall_at_5": 0.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 0.0,
+            "page_reciprocal_rank": 0.14285714285714285
+          },
+          {
+            "question_id": "a27",
+            "topic": "gold-smuggling-typology-precious-metals",
+            "gold_chunk_ids": [
+              6591
+            ],
+            "retrieved_chunk_ids": [
+              5468,
+              76,
+              4803,
+              4941,
+              4942,
+              77,
+              79,
+              5062,
+              8173,
+              8130
+            ],
+            "page_recall_at_5": 0.0,
+            "page_recall_at_10": 0.0,
+            "page_hit_at_5": 0.0,
+            "page_reciprocal_rank": 0.0
+          },
+          {
+            "question_id": "a28",
+            "topic": "cyber-scam-hubs-offshore-gaming-red-flags",
+            "gold_chunk_ids": [
+              6286
+            ],
+            "retrieved_chunk_ids": [
+              5942,
+              5957,
+              5958,
+              8108,
+              6054,
+              8159,
+              5943,
+              8385,
+              6183,
+              8190
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 0.5
+          },
+          {
+            "question_id": "a29",
+            "topic": "pep-screening-database-calibration",
+            "gold_chunk_ids": [
+              6939
+            ],
+            "retrieved_chunk_ids": [
+              3803,
+              6763,
+              6764,
+              5414,
+              6751,
+              7287,
+              4162,
+              5408,
+              6762,
+              4166
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 0.5
+          },
+          {
+            "question_id": "a30",
+            "topic": "client-onboarding-governance",
+            "gold_chunk_ids": [
+              7892,
+              7900
+            ],
+            "retrieved_chunk_ids": [
+              5311,
+              6774,
+              2058,
+              2312,
+              4195,
+              5281,
+              2270,
+              6775,
+              4194,
+              2170
+            ],
+            "page_recall_at_5": 0.0,
+            "page_recall_at_10": 0.0,
+            "page_hit_at_5": 0.0,
+            "page_reciprocal_rank": 0.0
+          }
+        ]
+      }
+    },
+    "t480": {
+      "bm25": {
+        "questions": 30,
+        "median_latency_ms": 10.93558396678418,
+        "page_level": {
+          "recall_at_5": 0.6833333333333333,
+          "recall_at_10": 0.7166666666666667,
+          "hit_at_5": 0.7,
+          "mrr": 0.5924999999999999
+        },
+        "per_question": [
+          {
+            "question_id": "a01",
+            "topic": "trade-based-money-laundering",
+            "gold_chunk_ids": [
+              26
+            ],
+            "retrieved_chunk_ids": [
+              26,
+              823,
+              6362,
+              824,
+              25,
+              6408,
+              5113,
+              229,
+              2339,
+              209
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0,
+            "recall_at_5": 1.0,
+            "recall_at_10": 1.0,
+            "hit_at_5": 1.0,
+            "reciprocal_rank": 1.0,
+            "precision_at_5": 0.2
+          },
+          {
+            "question_id": "a02",
+            "topic": "trade-mis-invoicing",
+            "gold_chunk_ids": [
+              202
+            ],
+            "retrieved_chunk_ids": [
+              202,
+              174,
+              3980,
+              184,
+              181,
+              3979,
+              196,
+              21,
+              207,
+              195
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0,
+            "recall_at_5": 1.0,
+            "recall_at_10": 1.0,
+            "hit_at_5": 1.0,
+            "reciprocal_rank": 1.0,
+            "precision_at_5": 0.2
+          },
+          {
+            "question_id": "a03",
+            "topic": "trade-document-review",
+            "gold_chunk_ids": [
+              187
+            ],
+            "retrieved_chunk_ids": [
+              219,
+              218,
+              25,
+              202,
+              5105,
+              2404,
+              3980,
+              4024,
+              1278,
+              2403
+            ],
+            "page_recall_at_5": 0.0,
+            "page_recall_at_10": 0.0,
+            "page_hit_at_5": 0.0,
+            "page_reciprocal_rank": 0.0,
+            "recall_at_5": 0.0,
+            "recall_at_10": 0.0,
+            "hit_at_5": 0.0,
+            "reciprocal_rank": 0.0,
+            "precision_at_5": 0.0
+          },
+          {
+            "question_id": "a04",
+            "topic": "virtual-assets-red-flags",
+            "gold_chunk_ids": [
+              827
+            ],
+            "retrieved_chunk_ids": [
+              827,
+              741,
+              740,
+              837,
+              816,
+              819,
+              820,
+              835,
+              830,
+              678
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0,
+            "recall_at_5": 1.0,
+            "recall_at_10": 1.0,
+            "hit_at_5": 1.0,
+            "reciprocal_rank": 1.0,
+            "precision_at_5": 0.2
+          },
+          {
+            "question_id": "a05",
+            "topic": "virtual-asset-transfer-obligations",
+            "gold_chunk_ids": [
+              692
+            ],
+            "retrieved_chunk_ids": [
+              2969,
+              655,
+              2413,
+              2012,
+              2436,
+              5849,
+              2404,
+              692,
+              4001,
+              2435
+            ],
+            "page_recall_at_5": 0.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 0.0,
+            "page_reciprocal_rank": 0.125,
+            "recall_at_5": 0.0,
+            "recall_at_10": 1.0,
+            "hit_at_5": 0.0,
+            "reciprocal_rank": 0.125,
+            "precision_at_5": 0.0
+          },
+          {
+            "question_id": "a06",
+            "topic": "correspondent-banking-mvts-accounts",
+            "gold_chunk_ids": [
+              2086
+            ],
+            "retrieved_chunk_ids": [
+              5147,
+              5162,
+              1041,
+              7761,
+              5206,
+              4259,
+              5148,
+              5565,
+              3663,
+              5143
+            ],
+            "page_recall_at_5": 0.0,
+            "page_recall_at_10": 0.0,
+            "page_hit_at_5": 0.0,
+            "page_reciprocal_rank": 0.0,
+            "recall_at_5": 0.0,
+            "recall_at_10": 0.0,
+            "hit_at_5": 0.0,
+            "reciprocal_rank": 0.0,
+            "precision_at_5": 0.0
+          },
+          {
+            "question_id": "a07",
+            "topic": "professional-money-laundering-fees",
+            "gold_chunk_ids": [
+              1003
+            ],
+            "retrieved_chunk_ids": [
+              1003,
+              997,
+              1002,
+              2528,
+              1012,
+              2529,
+              1007,
+              998,
+              1008,
+              7807
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0,
+            "recall_at_5": 1.0,
+            "recall_at_10": 1.0,
+            "hit_at_5": 1.0,
+            "reciprocal_rank": 1.0,
+            "precision_at_5": 0.2
+          },
+          {
+            "question_id": "a08",
+            "topic": "real-estate-transaction-red-flags",
+            "gold_chunk_ids": [
+              1291
+            ],
+            "retrieved_chunk_ids": [
+              1291,
+              5189,
+              1264,
+              6318,
+              5208,
+              5190,
+              823,
+              6339,
+              5203,
+              1282
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0,
+            "recall_at_5": 1.0,
+            "recall_at_10": 1.0,
+            "hit_at_5": 1.0,
+            "reciprocal_rank": 1.0,
+            "precision_at_5": 0.2
+          },
+          {
+            "question_id": "a09",
+            "topic": "terrorist-financing-e-commerce-value-transfer",
+            "gold_chunk_ids": [
+              1922,
+              1921
+            ],
+            "retrieved_chunk_ids": [
+              203,
+              1907,
+              830,
+              8455,
+              1873,
+              2011,
+              1914,
+              6353,
+              210,
+              8434
+            ],
+            "page_recall_at_5": 0.0,
+            "page_recall_at_10": 0.0,
+            "page_hit_at_5": 0.0,
+            "page_reciprocal_rank": 0.0,
+            "recall_at_5": 0.0,
+            "recall_at_10": 0.0,
+            "hit_at_5": 0.0,
+            "reciprocal_rank": 0.0,
+            "precision_at_5": 0.0
+          },
+          {
+            "question_id": "a10",
+            "topic": "trade-based-money-laundering",
+            "gold_chunk_ids": [
+              2405
+            ],
+            "retrieved_chunk_ids": [
+              3978,
+              4061,
+              4022,
+              5588,
+              213,
+              4063,
+              2404,
+              3996,
+              4055,
+              4053
+            ],
+            "page_recall_at_5": 0.0,
+            "page_recall_at_10": 0.0,
+            "page_hit_at_5": 0.0,
+            "page_reciprocal_rank": 0.0,
+            "recall_at_5": 0.0,
+            "recall_at_10": 0.0,
+            "hit_at_5": 0.0,
+            "reciprocal_rank": 0.0,
+            "precision_at_5": 0.0
+          },
+          {
+            "question_id": "a11",
+            "topic": "life-insurance-red-flags",
+            "gold_chunk_ids": [
+              2410
+            ],
+            "retrieved_chunk_ids": [
+              2408,
+              2412,
+              2409,
+              2410,
+              2407,
+              5532,
+              5886,
+              2746,
+              5143,
+              5531
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 0.25,
+            "recall_at_5": 1.0,
+            "recall_at_10": 1.0,
+            "hit_at_5": 1.0,
+            "reciprocal_rank": 0.25,
+            "precision_at_5": 0.2
+          },
+          {
+            "question_id": "a12",
+            "topic": "remote-onboarding-identity-verification",
+            "gold_chunk_ids": [
+              2543
+            ],
+            "retrieved_chunk_ids": [
+              2543,
+              2566,
+              2552,
+              2565,
+              2544,
+              2539,
+              2546,
+              2561,
+              2558,
+              2542
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0,
+            "recall_at_5": 1.0,
+            "recall_at_10": 1.0,
+            "hit_at_5": 1.0,
+            "reciprocal_rank": 1.0,
+            "precision_at_5": 0.2
+          },
+          {
+            "question_id": "a13",
+            "topic": "virtual-ibans",
+            "gold_chunk_ids": [
+              2722
+            ],
+            "retrieved_chunk_ids": [
+              2722,
+              2723,
+              2716,
+              2726,
+              5148,
+              3585,
+              657,
+              2734,
+              1273,
+              2710
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0,
+            "recall_at_5": 1.0,
+            "recall_at_10": 1.0,
+            "hit_at_5": 1.0,
+            "reciprocal_rank": 1.0,
+            "precision_at_5": 0.2
+          },
+          {
+            "question_id": "a14",
+            "topic": "ransomware-victim-payment-indicators",
+            "gold_chunk_ids": [
+              2969
+            ],
+            "retrieved_chunk_ids": [
+              7765,
+              1288,
+              4004,
+              7892,
+              2969,
+              834,
+              755,
+              3576,
+              2857,
+              8453
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 0.2,
+            "recall_at_5": 1.0,
+            "recall_at_10": 1.0,
+            "hit_at_5": 1.0,
+            "reciprocal_rank": 0.2,
+            "precision_at_5": 0.2
+          },
+          {
+            "question_id": "a15",
+            "topic": "human-trafficking-financial-indicators",
+            "gold_chunk_ids": [
+              2918
+            ],
+            "retrieved_chunk_ids": [
+              2918,
+              2871,
+              26,
+              2870,
+              6338,
+              823,
+              2912,
+              3562,
+              23,
+              4016
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0,
+            "recall_at_5": 1.0,
+            "recall_at_10": 1.0,
+            "hit_at_5": 1.0,
+            "reciprocal_rank": 1.0,
+            "precision_at_5": 0.2
+          },
+          {
+            "question_id": "a16",
+            "topic": "shell-company-red-flags",
+            "gold_chunk_ids": [
+              2871,
+              2872
+            ],
+            "retrieved_chunk_ids": [
+              2872,
+              2871,
+              23,
+              4236,
+              7849,
+              4023,
+              5893,
+              2081,
+              2389,
+              2565
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0,
+            "recall_at_5": 1.0,
+            "recall_at_10": 1.0,
+            "hit_at_5": 1.0,
+            "reciprocal_rank": 1.0,
+            "precision_at_5": 0.4
+          },
+          {
+            "question_id": "a17",
+            "topic": "fentanyl-precursor-procurement",
+            "gold_chunk_ids": [
+              3725
+            ],
+            "retrieved_chunk_ids": [
+              3722,
+              3726,
+              3723,
+              3718,
+              3714,
+              3725,
+              3720,
+              3721,
+              3715,
+              3724
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 0.5,
+            "recall_at_5": 0.0,
+            "recall_at_10": 1.0,
+            "hit_at_5": 0.0,
+            "reciprocal_rank": 0.16666666666666666,
+            "precision_at_5": 0.0
+          },
+          {
+            "question_id": "a18",
+            "topic": "money-order-recordkeeping-gap",
+            "gold_chunk_ids": [
+              3553,
+              3554
+            ],
+            "retrieved_chunk_ids": [
+              3554,
+              3553,
+              2392,
+              693,
+              694,
+              2405,
+              1333,
+              3998,
+              692,
+              2373
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0,
+            "recall_at_5": 1.0,
+            "recall_at_10": 1.0,
+            "hit_at_5": 1.0,
+            "reciprocal_rank": 1.0,
+            "precision_at_5": 0.4
+          },
+          {
+            "question_id": "a19",
+            "topic": "source-of-funds-corroboration",
+            "gold_chunk_ids": [
+              4391
+            ],
+            "retrieved_chunk_ids": [
+              7933,
+              1013,
+              1291,
+              1032,
+              5533,
+              8431,
+              6978,
+              8487,
+              822,
+              6945
+            ],
+            "page_recall_at_5": 0.0,
+            "page_recall_at_10": 0.0,
+            "page_hit_at_5": 0.0,
+            "page_reciprocal_rank": 0.0,
+            "recall_at_5": 0.0,
+            "recall_at_10": 0.0,
+            "hit_at_5": 0.0,
+            "reciprocal_rank": 0.0,
+            "precision_at_5": 0.0
+          },
+          {
+            "question_id": "a20",
+            "topic": "negative-news-screening",
+            "gold_chunk_ids": [
+              4350,
+              4351
+            ],
+            "retrieved_chunk_ids": [
+              4350,
+              4349,
+              4264,
+              4351,
+              4275,
+              4276,
+              4242,
+              4342,
+              680,
+              4345
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0,
+            "recall_at_5": 1.0,
+            "recall_at_10": 1.0,
+            "hit_at_5": 1.0,
+            "reciprocal_rank": 1.0,
+            "precision_at_5": 0.4
+          },
+          {
+            "question_id": "a21",
+            "topic": "correspondent-banking-product-risk",
+            "gold_chunk_ids": [
+              4236,
+              4237
+            ],
+            "retrieved_chunk_ids": [
+              4236,
+              4237,
+              5137,
+              4238,
+              6330,
+              5854,
+              2082,
+              4246,
+              4234,
+              2075
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0,
+            "recall_at_5": 1.0,
+            "recall_at_10": 1.0,
+            "hit_at_5": 1.0,
+            "reciprocal_rank": 1.0,
+            "precision_at_5": 0.4
+          },
+          {
+            "question_id": "a22",
+            "topic": "trade-based-money-laundering",
+            "gold_chunk_ids": [
+              3980
+            ],
+            "retrieved_chunk_ids": [
+              3980,
+              5105,
+              1977,
+              4036,
+              3981,
+              202,
+              1921,
+              1920,
+              4023,
+              5107
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0,
+            "recall_at_5": 1.0,
+            "recall_at_10": 1.0,
+            "hit_at_5": 1.0,
+            "reciprocal_rank": 1.0,
+            "precision_at_5": 0.2
+          },
+          {
+            "question_id": "a23",
+            "topic": "underground-banking-cash-for-value-swap",
+            "gold_chunk_ids": [
+              5099
+            ],
+            "retrieved_chunk_ids": [
+              5097,
+              5099,
+              5098,
+              5123,
+              1027,
+              8544,
+              5083,
+              1013,
+              5133,
+              4236
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 0.5,
+            "recall_at_5": 1.0,
+            "recall_at_10": 1.0,
+            "hit_at_5": 1.0,
+            "reciprocal_rank": 0.5,
+            "precision_at_5": 0.2
+          },
+          {
+            "question_id": "a24",
+            "topic": "mtic-carousel-vat-fraud",
+            "gold_chunk_ids": [
+              4706
+            ],
+            "retrieved_chunk_ids": [
+              4706,
+              4705,
+              3463,
+              756,
+              6333,
+              4628,
+              196,
+              5549,
+              4668,
+              203
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0,
+            "recall_at_5": 1.0,
+            "recall_at_10": 1.0,
+            "hit_at_5": 1.0,
+            "reciprocal_rank": 1.0,
+            "precision_at_5": 0.2
+          },
+          {
+            "question_id": "a25",
+            "topic": "sanctions-evasion-detection-beyond-name-screening",
+            "gold_chunk_ids": [
+              5585
+            ],
+            "retrieved_chunk_ids": [
+              5582,
+              5583,
+              5584,
+              5496,
+              5495,
+              5589,
+              5497,
+              5499,
+              5578,
+              5548
+            ],
+            "page_recall_at_5": 0.0,
+            "page_recall_at_10": 0.0,
+            "page_hit_at_5": 0.0,
+            "page_reciprocal_rank": 0.0,
+            "recall_at_5": 0.0,
+            "recall_at_10": 0.0,
+            "hit_at_5": 0.0,
+            "reciprocal_rank": 0.0,
+            "precision_at_5": 0.0
+          },
+          {
+            "question_id": "a26",
+            "topic": "correspondent-banking-payment-message-transparency",
+            "gold_chunk_ids": [
+              5886
+            ],
+            "retrieved_chunk_ids": [
+              5540,
+              5541,
+              7925,
+              5499,
+              4633,
+              3662,
+              5614,
+              7749,
+              2433,
+              5557
+            ],
+            "page_recall_at_5": 0.0,
+            "page_recall_at_10": 0.0,
+            "page_hit_at_5": 0.0,
+            "page_reciprocal_rank": 0.0,
+            "recall_at_5": 0.0,
+            "recall_at_10": 0.0,
+            "hit_at_5": 0.0,
+            "reciprocal_rank": 0.0,
+            "precision_at_5": 0.0
+          },
+          {
+            "question_id": "a27",
+            "topic": "gold-smuggling-typology-precious-metals",
+            "gold_chunk_ids": [
+              6591
+            ],
+            "retrieved_chunk_ids": [
+              5166,
+              5614,
+              5161,
+              6400,
+              5226,
+              8542,
+              2389,
+              195,
+              8576,
+              4284
+            ],
+            "page_recall_at_5": 0.0,
+            "page_recall_at_10": 0.0,
+            "page_hit_at_5": 0.0,
+            "page_reciprocal_rank": 0.0,
+            "recall_at_5": 0.0,
+            "recall_at_10": 0.0,
+            "hit_at_5": 0.0,
+            "reciprocal_rank": 0.0,
+            "precision_at_5": 0.0
+          },
+          {
+            "question_id": "a28",
+            "topic": "cyber-scam-hubs-offshore-gaming-red-flags",
+            "gold_chunk_ids": [
+              6286
+            ],
+            "retrieved_chunk_ids": [
+              6285,
+              6278,
+              6286,
+              6277,
+              6281,
+              8423,
+              6407,
+              8460,
+              831,
+              8493
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0,
+            "recall_at_5": 1.0,
+            "recall_at_10": 1.0,
+            "hit_at_5": 1.0,
+            "reciprocal_rank": 0.3333333333333333,
+            "precision_at_5": 0.2
+          },
+          {
+            "question_id": "a29",
+            "topic": "pep-screening-database-calibration",
+            "gold_chunk_ids": [
+              6939
+            ],
+            "retrieved_chunk_ids": [
+              6939,
+              4353,
+              3991,
+              7878,
+              4286,
+              6938,
+              4634,
+              4633,
+              4266,
+              4352
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0,
+            "recall_at_5": 1.0,
+            "recall_at_10": 1.0,
+            "hit_at_5": 1.0,
+            "reciprocal_rank": 1.0,
+            "precision_at_5": 0.2
+          },
+          {
+            "question_id": "a30",
+            "topic": "client-onboarding-governance",
+            "gold_chunk_ids": [
+              7892,
+              7900
+            ],
+            "retrieved_chunk_ids": [
+              5520,
+              5535,
+              6945,
+              6948,
+              7892,
+              6961,
+              4357,
+              3996,
+              1299,
+              2348
+            ],
+            "page_recall_at_5": 0.5,
+            "page_recall_at_10": 0.5,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 0.2,
+            "recall_at_5": 0.5,
+            "recall_at_10": 0.5,
+            "hit_at_5": 1.0,
+            "reciprocal_rank": 0.2,
+            "precision_at_5": 0.2
+          }
+        ],
+        "exact": {
+          "recall_at_5": 0.65,
+          "recall_at_10": 0.7166666666666667,
+          "hit_at_5": 0.6666666666666666,
+          "mrr": 0.5591666666666666,
+          "precision_at_5": 0.16000000000000003
+        }
+      },
+      "dense": {
+        "questions": 30,
+        "median_latency_ms": 14.150489994790405,
+        "page_level": {
+          "recall_at_5": 0.6666666666666666,
+          "recall_at_10": 0.75,
+          "hit_at_5": 0.7,
+          "mrr": 0.5775
+        },
+        "per_question": [
+          {
+            "question_id": "a01",
+            "topic": "trade-based-money-laundering",
+            "gold_chunk_ids": [
+              26
+            ],
+            "retrieved_chunk_ids": [
+              26,
+              23,
+              25,
+              22,
+              4007,
+              4037,
+              199,
+              230,
+              227,
+              2871
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0,
+            "recall_at_5": 1.0,
+            "recall_at_10": 1.0,
+            "hit_at_5": 1.0,
+            "reciprocal_rank": 1.0,
+            "precision_at_5": 0.2
+          },
+          {
+            "question_id": "a02",
+            "topic": "trade-mis-invoicing",
+            "gold_chunk_ids": [
+              202
+            ],
+            "retrieved_chunk_ids": [
+              184,
+              202,
+              5105,
+              181,
+              186,
+              227,
+              180,
+              231,
+              230,
+              218
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 0.5,
+            "recall_at_5": 1.0,
+            "recall_at_10": 1.0,
+            "hit_at_5": 1.0,
+            "reciprocal_rank": 0.5,
+            "precision_at_5": 0.2
+          },
+          {
+            "question_id": "a03",
+            "topic": "trade-document-review",
+            "gold_chunk_ids": [
+              187
+            ],
+            "retrieved_chunk_ids": [
+              202,
+              4007,
+              181,
+              219,
+              186,
+              227,
+              184,
+              5105,
+              2404,
+              232
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 0.2,
+            "recall_at_5": 0.0,
+            "recall_at_10": 0.0,
+            "hit_at_5": 0.0,
+            "reciprocal_rank": 0.0,
+            "precision_at_5": 0.0
+          },
+          {
+            "question_id": "a04",
+            "topic": "virtual-assets-red-flags",
+            "gold_chunk_ids": [
+              827
+            ],
+            "retrieved_chunk_ids": [
+              827,
+              678,
+              729,
+              820,
+              826,
+              3581,
+              835,
+              741,
+              823,
+              4238
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0,
+            "recall_at_5": 1.0,
+            "recall_at_10": 1.0,
+            "hit_at_5": 1.0,
+            "reciprocal_rank": 1.0,
+            "precision_at_5": 0.2
+          },
+          {
+            "question_id": "a05",
+            "topic": "virtual-asset-transfer-obligations",
+            "gold_chunk_ids": [
+              692
+            ],
+            "retrieved_chunk_ids": [
+              692,
+              693,
+              5540,
+              727,
+              694,
+              733,
+              750,
+              674
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0,
+            "recall_at_5": 1.0,
+            "recall_at_10": 1.0,
+            "hit_at_5": 1.0,
+            "reciprocal_rank": 1.0,
+            "precision_at_5": 0.2
+          },
+          {
+            "question_id": "a06",
+            "topic": "correspondent-banking-mvts-accounts",
+            "gold_chunk_ids": [
+              2086
+            ],
+            "retrieved_chunk_ids": [
+              2396,
+              2004,
+              2397,
+              2871,
+              4019,
+              4020,
+              2013,
+              4234,
+              2341,
+              4034
+            ],
+            "page_recall_at_5": 0.0,
+            "page_recall_at_10": 0.0,
+            "page_hit_at_5": 0.0,
+            "page_reciprocal_rank": 0.0,
+            "recall_at_5": 0.0,
+            "recall_at_10": 0.0,
+            "hit_at_5": 0.0,
+            "reciprocal_rank": 0.0,
+            "precision_at_5": 0.0
+          },
+          {
+            "question_id": "a07",
+            "topic": "professional-money-laundering-fees",
+            "gold_chunk_ids": [
+              1003
+            ],
+            "retrieved_chunk_ids": [
+              1003,
+              997,
+              1004,
+              998,
+              999,
+              1010,
+              1000,
+              1021,
+              1007,
+              1002
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0,
+            "recall_at_5": 1.0,
+            "recall_at_10": 1.0,
+            "hit_at_5": 1.0,
+            "reciprocal_rank": 1.0,
+            "precision_at_5": 0.2
+          },
+          {
+            "question_id": "a08",
+            "topic": "real-estate-transaction-red-flags",
+            "gold_chunk_ids": [
+              1291
+            ],
+            "retrieved_chunk_ids": [
+              1291,
+              2004,
+              823,
+              2416,
+              4005,
+              1264,
+              2410,
+              1333,
+              2404,
+              2345
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0,
+            "recall_at_5": 1.0,
+            "recall_at_10": 1.0,
+            "hit_at_5": 1.0,
+            "reciprocal_rank": 1.0,
+            "precision_at_5": 0.2
+          },
+          {
+            "question_id": "a09",
+            "topic": "terrorist-financing-e-commerce-value-transfer",
+            "gold_chunk_ids": [
+              1922,
+              1921
+            ],
+            "retrieved_chunk_ids": [
+              1921,
+              2007,
+              1889,
+              1977,
+              1890,
+              1895,
+              210,
+              5167,
+              1870,
+              2005
+            ],
+            "page_recall_at_5": 0.5,
+            "page_recall_at_10": 0.5,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0,
+            "recall_at_5": 0.5,
+            "recall_at_10": 0.5,
+            "hit_at_5": 1.0,
+            "reciprocal_rank": 1.0,
+            "precision_at_5": 0.2
+          },
+          {
+            "question_id": "a10",
+            "topic": "trade-based-money-laundering",
+            "gold_chunk_ids": [
+              2405
+            ],
+            "retrieved_chunk_ids": [
+              25,
+              2404,
+              2403,
+              4036,
+              4048,
+              24,
+              4063,
+              4037,
+              4058,
+              23
+            ],
+            "page_recall_at_5": 0.0,
+            "page_recall_at_10": 0.0,
+            "page_hit_at_5": 0.0,
+            "page_reciprocal_rank": 0.0,
+            "recall_at_5": 0.0,
+            "recall_at_10": 0.0,
+            "hit_at_5": 0.0,
+            "reciprocal_rank": 0.0,
+            "precision_at_5": 0.0
+          },
+          {
+            "question_id": "a11",
+            "topic": "life-insurance-red-flags",
+            "gold_chunk_ids": [
+              2410
+            ],
+            "retrieved_chunk_ids": [
+              2412,
+              2408,
+              2410,
+              5532,
+              2407,
+              2409,
+              2414,
+              2411,
+              2073,
+              2746
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 0.3333333333333333,
+            "recall_at_5": 1.0,
+            "recall_at_10": 1.0,
+            "hit_at_5": 1.0,
+            "reciprocal_rank": 0.3333333333333333,
+            "precision_at_5": 0.2
+          },
+          {
+            "question_id": "a12",
+            "topic": "remote-onboarding-identity-verification",
+            "gold_chunk_ids": [
+              2543
+            ],
+            "retrieved_chunk_ids": [
+              2543,
+              2539,
+              2544,
+              2538,
+              2542,
+              2547,
+              2565,
+              2552,
+              2537,
+              2559
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0,
+            "recall_at_5": 1.0,
+            "recall_at_10": 1.0,
+            "hit_at_5": 1.0,
+            "reciprocal_rank": 1.0,
+            "precision_at_5": 0.2
+          },
+          {
+            "question_id": "a13",
+            "topic": "virtual-ibans",
+            "gold_chunk_ids": [
+              2722
+            ],
+            "retrieved_chunk_ids": [
+              2722,
+              1987,
+              5147,
+              5148,
+              2710,
+              2709,
+              2721,
+              1988,
+              2763,
+              717
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0,
+            "recall_at_5": 1.0,
+            "recall_at_10": 1.0,
+            "hit_at_5": 1.0,
+            "reciprocal_rank": 1.0,
+            "precision_at_5": 0.2
+          },
+          {
+            "question_id": "a14",
+            "topic": "ransomware-victim-payment-indicators",
+            "gold_chunk_ids": [
+              2969
+            ],
+            "retrieved_chunk_ids": [
+              1291,
+              5531,
+              2386,
+              2345,
+              754,
+              2961,
+              4005,
+              3578,
+              755,
+              2004
+            ],
+            "page_recall_at_5": 0.0,
+            "page_recall_at_10": 0.0,
+            "page_hit_at_5": 0.0,
+            "page_reciprocal_rank": 0.0,
+            "recall_at_5": 0.0,
+            "recall_at_10": 0.0,
+            "hit_at_5": 0.0,
+            "reciprocal_rank": 0.0,
+            "precision_at_5": 0.0
+          },
+          {
+            "question_id": "a15",
+            "topic": "human-trafficking-financial-indicators",
+            "gold_chunk_ids": [
+              2918
+            ],
+            "retrieved_chunk_ids": [
+              2918,
+              5093,
+              823,
+              2004,
+              3549,
+              2871,
+              8432,
+              8485,
+              26,
+              2917
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0,
+            "recall_at_5": 1.0,
+            "recall_at_10": 1.0,
+            "hit_at_5": 1.0,
+            "reciprocal_rank": 1.0,
+            "precision_at_5": 0.2
+          },
+          {
+            "question_id": "a16",
+            "topic": "shell-company-red-flags",
+            "gold_chunk_ids": [
+              2871,
+              2872
+            ],
+            "retrieved_chunk_ids": [
+              7786,
+              4258,
+              4259,
+              7747,
+              7940,
+              7888,
+              7945,
+              7932,
+              7889,
+              2374
+            ],
+            "page_recall_at_5": 0.0,
+            "page_recall_at_10": 0.0,
+            "page_hit_at_5": 0.0,
+            "page_reciprocal_rank": 0.0,
+            "recall_at_5": 0.0,
+            "recall_at_10": 0.0,
+            "hit_at_5": 0.0,
+            "reciprocal_rank": 0.0,
+            "precision_at_5": 0.0
+          },
+          {
+            "question_id": "a17",
+            "topic": "fentanyl-precursor-procurement",
+            "gold_chunk_ids": [
+              3725
+            ],
+            "retrieved_chunk_ids": [
+              3721,
+              3722,
+              3725,
+              3719,
+              3714,
+              3723,
+              3715,
+              3726,
+              3720,
+              3718
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 0.3333333333333333,
+            "recall_at_5": 1.0,
+            "recall_at_10": 1.0,
+            "hit_at_5": 1.0,
+            "reciprocal_rank": 0.3333333333333333,
+            "precision_at_5": 0.2
+          },
+          {
+            "question_id": "a18",
+            "topic": "money-order-recordkeeping-gap",
+            "gold_chunk_ids": [
+              3553,
+              3554
+            ],
+            "retrieved_chunk_ids": [
+              3554,
+              692,
+              750,
+              693,
+              7877,
+              5899,
+              5895,
+              5901,
+              5898,
+              3553
+            ],
+            "page_recall_at_5": 0.5,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0,
+            "recall_at_5": 0.5,
+            "recall_at_10": 1.0,
+            "hit_at_5": 1.0,
+            "reciprocal_rank": 1.0,
+            "precision_at_5": 0.2
+          },
+          {
+            "question_id": "a19",
+            "topic": "source-of-funds-corroboration",
+            "gold_chunk_ids": [
+              4391
+            ],
+            "retrieved_chunk_ids": [
+              7900,
+              7872,
+              6941,
+              4387,
+              2401,
+              1264,
+              4388,
+              4391,
+              6943,
+              1291
+            ],
+            "page_recall_at_5": 0.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 0.0,
+            "page_reciprocal_rank": 0.125,
+            "recall_at_5": 0.0,
+            "recall_at_10": 1.0,
+            "hit_at_5": 0.0,
+            "reciprocal_rank": 0.125,
+            "precision_at_5": 0.0
+          },
+          {
+            "question_id": "a20",
+            "topic": "negative-news-screening",
+            "gold_chunk_ids": [
+              4350,
+              4351
+            ],
+            "retrieved_chunk_ids": [
+              4350,
+              4351,
+              4349,
+              4344,
+              4276,
+              4389,
+              4361,
+              4342,
+              4345,
+              4242
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0,
+            "recall_at_5": 1.0,
+            "recall_at_10": 1.0,
+            "hit_at_5": 1.0,
+            "reciprocal_rank": 1.0,
+            "precision_at_5": 0.4
+          },
+          {
+            "question_id": "a21",
+            "topic": "correspondent-banking-product-risk",
+            "gold_chunk_ids": [
+              4236,
+              4237
+            ],
+            "retrieved_chunk_ids": [
+              4236,
+              4237,
+              2871,
+              2005,
+              2080,
+              4035,
+              1013,
+              4027,
+              6330,
+              2004
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0,
+            "recall_at_5": 1.0,
+            "recall_at_10": 1.0,
+            "hit_at_5": 1.0,
+            "reciprocal_rank": 1.0,
+            "precision_at_5": 0.4
+          },
+          {
+            "question_id": "a22",
+            "topic": "trade-based-money-laundering",
+            "gold_chunk_ids": [
+              3980
+            ],
+            "retrieved_chunk_ids": [
+              3980,
+              4038,
+              4066,
+              2402,
+              175,
+              5106,
+              2403,
+              25,
+              4052,
+              174
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0,
+            "recall_at_5": 1.0,
+            "recall_at_10": 1.0,
+            "hit_at_5": 1.0,
+            "reciprocal_rank": 1.0,
+            "precision_at_5": 0.2
+          },
+          {
+            "question_id": "a23",
+            "topic": "underground-banking-cash-for-value-swap",
+            "gold_chunk_ids": [
+              5099
+            ],
+            "retrieved_chunk_ids": [
+              5095,
+              5092,
+              5098,
+              5114,
+              5123,
+              5124,
+              5094,
+              5161,
+              1014,
+              5084
+            ],
+            "page_recall_at_5": 0.0,
+            "page_recall_at_10": 0.0,
+            "page_hit_at_5": 0.0,
+            "page_reciprocal_rank": 0.0,
+            "recall_at_5": 0.0,
+            "recall_at_10": 0.0,
+            "hit_at_5": 0.0,
+            "reciprocal_rank": 0.0,
+            "precision_at_5": 0.0
+          },
+          {
+            "question_id": "a24",
+            "topic": "mtic-carousel-vat-fraud",
+            "gold_chunk_ids": [
+              4706
+            ],
+            "retrieved_chunk_ids": [
+              4706,
+              4705,
+              5617,
+              211,
+              202,
+              4704,
+              197,
+              836,
+              818,
+              624
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0,
+            "recall_at_5": 1.0,
+            "recall_at_10": 1.0,
+            "hit_at_5": 1.0,
+            "reciprocal_rank": 1.0,
+            "precision_at_5": 0.2
+          },
+          {
+            "question_id": "a25",
+            "topic": "sanctions-evasion-detection-beyond-name-screening",
+            "gold_chunk_ids": [
+              5585
+            ],
+            "retrieved_chunk_ids": [
+              5589,
+              5582,
+              5584,
+              5579,
+              5588,
+              5585,
+              5581,
+              4292,
+              5580,
+              4267
+            ],
+            "page_recall_at_5": 0.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 0.0,
+            "page_reciprocal_rank": 0.16666666666666666,
+            "recall_at_5": 0.0,
+            "recall_at_10": 1.0,
+            "hit_at_5": 0.0,
+            "reciprocal_rank": 0.16666666666666666,
+            "precision_at_5": 0.0
+          },
+          {
+            "question_id": "a26",
+            "topic": "correspondent-banking-payment-message-transparency",
+            "gold_chunk_ids": [
+              5886
+            ],
+            "retrieved_chunk_ids": [
+              5541,
+              5540,
+              5886,
+              4060,
+              4290,
+              4236,
+              5887,
+              2412,
+              7870,
+              4037
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 0.3333333333333333,
+            "recall_at_5": 1.0,
+            "recall_at_10": 1.0,
+            "hit_at_5": 1.0,
+            "reciprocal_rank": 0.3333333333333333,
+            "precision_at_5": 0.2
+          },
+          {
+            "question_id": "a27",
+            "topic": "gold-smuggling-typology-precious-metals",
+            "gold_chunk_ids": [
+              6591
+            ],
+            "retrieved_chunk_ids": [
+              5614,
+              5166,
+              196,
+              197,
+              4284,
+              8511,
+              211,
+              8456,
+              8435,
+              5226
+            ],
+            "page_recall_at_5": 0.0,
+            "page_recall_at_10": 0.0,
+            "page_hit_at_5": 0.0,
+            "page_reciprocal_rank": 0.0,
+            "recall_at_5": 0.0,
+            "recall_at_10": 0.0,
+            "hit_at_5": 0.0,
+            "reciprocal_rank": 0.0,
+            "precision_at_5": 0.0
+          },
+          {
+            "question_id": "a28",
+            "topic": "cyber-scam-hubs-offshore-gaming-red-flags",
+            "gold_chunk_ids": [
+              6286
+            ],
+            "retrieved_chunk_ids": [
+              6278,
+              8562,
+              6285,
+              6329,
+              8501,
+              6286,
+              6356,
+              8466,
+              8495,
+              6357
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 0.3333333333333333,
+            "recall_at_5": 0.0,
+            "recall_at_10": 1.0,
+            "hit_at_5": 0.0,
+            "reciprocal_rank": 0.16666666666666666,
+            "precision_at_5": 0.0
+          },
+          {
+            "question_id": "a29",
+            "topic": "pep-screening-database-calibration",
+            "gold_chunk_ids": [
+              6939
+            ],
+            "retrieved_chunk_ids": [
+              6939,
+              3991,
+              3990,
+              4351,
+              5584,
+              6981,
+              4361,
+              6938,
+              6907,
+              7852
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0,
+            "recall_at_5": 1.0,
+            "recall_at_10": 1.0,
+            "hit_at_5": 1.0,
+            "reciprocal_rank": 1.0,
+            "precision_at_5": 0.2
+          },
+          {
+            "question_id": "a30",
+            "topic": "client-onboarding-governance",
+            "gold_chunk_ids": [
+              7892,
+              7900
+            ],
+            "retrieved_chunk_ids": [
+              4285,
+              2416,
+              4233,
+              2417,
+              4260,
+              2367,
+              2400,
+              2438,
+              4271,
+              4262
+            ],
+            "page_recall_at_5": 0.0,
+            "page_recall_at_10": 0.0,
+            "page_hit_at_5": 0.0,
+            "page_reciprocal_rank": 0.0,
+            "recall_at_5": 0.0,
+            "recall_at_10": 0.0,
+            "hit_at_5": 0.0,
+            "reciprocal_rank": 0.0,
+            "precision_at_5": 0.0
+          }
+        ],
+        "exact": {
+          "recall_at_5": 0.6,
+          "recall_at_10": 0.7166666666666667,
+          "hit_at_5": 0.6333333333333333,
+          "mrr": 0.5652777777777778,
+          "precision_at_5": 0.14
+        }
+      },
+      "hybrid": {
+        "questions": 30,
+        "median_latency_ms": 27.69750397419557,
+        "page_level": {
+          "recall_at_5": 0.75,
+          "recall_at_10": 0.7833333333333333,
+          "hit_at_5": 0.7666666666666667,
+          "mrr": 0.615
+        },
+        "per_question": [
+          {
+            "question_id": "a01",
+            "topic": "trade-based-money-laundering",
+            "gold_chunk_ids": [
+              26
+            ],
+            "retrieved_chunk_ids": [
+              26,
+              25,
+              2871,
+              4007,
+              199,
+              23,
+              823,
+              6362,
+              22,
+              824
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0,
+            "recall_at_5": 1.0,
+            "recall_at_10": 1.0,
+            "hit_at_5": 1.0,
+            "reciprocal_rank": 1.0,
+            "precision_at_5": 0.2
+          },
+          {
+            "question_id": "a02",
+            "topic": "trade-mis-invoicing",
+            "gold_chunk_ids": [
+              202
+            ],
+            "retrieved_chunk_ids": [
+              202,
+              184,
+              181,
+              5105,
+              174,
+              3979,
+              218,
+              173,
+              219,
+              227
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0,
+            "recall_at_5": 1.0,
+            "recall_at_10": 1.0,
+            "hit_at_5": 1.0,
+            "reciprocal_rank": 1.0,
+            "precision_at_5": 0.2
+          },
+          {
+            "question_id": "a03",
+            "topic": "trade-document-review",
+            "gold_chunk_ids": [
+              187
+            ],
+            "retrieved_chunk_ids": [
+              202,
+              219,
+              5105,
+              2404,
+              218,
+              231,
+              4007,
+              225,
+              201,
+              232
+            ],
+            "page_recall_at_5": 0.0,
+            "page_recall_at_10": 0.0,
+            "page_hit_at_5": 0.0,
+            "page_reciprocal_rank": 0.0,
+            "recall_at_5": 0.0,
+            "recall_at_10": 0.0,
+            "hit_at_5": 0.0,
+            "reciprocal_rank": 0.0,
+            "precision_at_5": 0.0
+          },
+          {
+            "question_id": "a04",
+            "topic": "virtual-assets-red-flags",
+            "gold_chunk_ids": [
+              827
+            ],
+            "retrieved_chunk_ids": [
+              827,
+              741,
+              820,
+              678,
+              835,
+              826,
+              819,
+              2915,
+              823,
+              818
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0,
+            "recall_at_5": 1.0,
+            "recall_at_10": 1.0,
+            "hit_at_5": 1.0,
+            "reciprocal_rank": 1.0,
+            "precision_at_5": 0.2
+          },
+          {
+            "question_id": "a05",
+            "topic": "virtual-asset-transfer-obligations",
+            "gold_chunk_ids": [
+              692
+            ],
+            "retrieved_chunk_ids": [
+              692,
+              693,
+              2969,
+              655,
+              2413,
+              5540,
+              727,
+              2012,
+              694,
+              2436
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0,
+            "recall_at_5": 1.0,
+            "recall_at_10": 1.0,
+            "hit_at_5": 1.0,
+            "reciprocal_rank": 1.0,
+            "precision_at_5": 0.2
+          },
+          {
+            "question_id": "a06",
+            "topic": "correspondent-banking-mvts-accounts",
+            "gold_chunk_ids": [
+              2086
+            ],
+            "retrieved_chunk_ids": [
+              4259,
+              2396,
+              5147,
+              2004,
+              5162,
+              1041,
+              2397,
+              2871,
+              7761,
+              4019
+            ],
+            "page_recall_at_5": 0.0,
+            "page_recall_at_10": 0.0,
+            "page_hit_at_5": 0.0,
+            "page_reciprocal_rank": 0.0,
+            "recall_at_5": 0.0,
+            "recall_at_10": 0.0,
+            "hit_at_5": 0.0,
+            "reciprocal_rank": 0.0,
+            "precision_at_5": 0.0
+          },
+          {
+            "question_id": "a07",
+            "topic": "professional-money-laundering-fees",
+            "gold_chunk_ids": [
+              1003
+            ],
+            "retrieved_chunk_ids": [
+              1003,
+              997,
+              998,
+              1002,
+              1007,
+              1004,
+              1012,
+              1000,
+              999,
+              1021
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0,
+            "recall_at_5": 1.0,
+            "recall_at_10": 1.0,
+            "hit_at_5": 1.0,
+            "reciprocal_rank": 1.0,
+            "precision_at_5": 0.2
+          },
+          {
+            "question_id": "a08",
+            "topic": "real-estate-transaction-red-flags",
+            "gold_chunk_ids": [
+              1291
+            ],
+            "retrieved_chunk_ids": [
+              1291,
+              1264,
+              823,
+              1290,
+              1333,
+              4063,
+              2004,
+              5189,
+              2416,
+              6318
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0,
+            "recall_at_5": 1.0,
+            "recall_at_10": 1.0,
+            "hit_at_5": 1.0,
+            "reciprocal_rank": 1.0,
+            "precision_at_5": 0.2
+          },
+          {
+            "question_id": "a09",
+            "topic": "terrorist-financing-e-commerce-value-transfer",
+            "gold_chunk_ids": [
+              1922,
+              1921
+            ],
+            "retrieved_chunk_ids": [
+              1921,
+              1907,
+              210,
+              203,
+              1890,
+              2007,
+              830,
+              1889,
+              1977,
+              8455
+            ],
+            "page_recall_at_5": 0.5,
+            "page_recall_at_10": 0.5,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0,
+            "recall_at_5": 0.5,
+            "recall_at_10": 0.5,
+            "hit_at_5": 1.0,
+            "reciprocal_rank": 1.0,
+            "precision_at_5": 0.2
+          },
+          {
+            "question_id": "a10",
+            "topic": "trade-based-money-laundering",
+            "gold_chunk_ids": [
+              2405
+            ],
+            "retrieved_chunk_ids": [
+              2404,
+              4063,
+              4036,
+              4058,
+              4048,
+              3979,
+              2403,
+              3976,
+              4037,
+              25
+            ],
+            "page_recall_at_5": 0.0,
+            "page_recall_at_10": 0.0,
+            "page_hit_at_5": 0.0,
+            "page_reciprocal_rank": 0.0,
+            "recall_at_5": 0.0,
+            "recall_at_10": 0.0,
+            "hit_at_5": 0.0,
+            "reciprocal_rank": 0.0,
+            "precision_at_5": 0.0
+          },
+          {
+            "question_id": "a11",
+            "topic": "life-insurance-red-flags",
+            "gold_chunk_ids": [
+              2410
+            ],
+            "retrieved_chunk_ids": [
+              2408,
+              2412,
+              2410,
+              2409,
+              5532,
+              2407,
+              2746,
+              2411,
+              2413,
+              2715
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 0.3333333333333333,
+            "recall_at_5": 1.0,
+            "recall_at_10": 1.0,
+            "hit_at_5": 1.0,
+            "reciprocal_rank": 0.3333333333333333,
+            "precision_at_5": 0.2
+          },
+          {
+            "question_id": "a12",
+            "topic": "remote-onboarding-identity-verification",
+            "gold_chunk_ids": [
+              2543
+            ],
+            "retrieved_chunk_ids": [
+              2543,
+              2539,
+              2544,
+              2552,
+              2565,
+              2566,
+              2542,
+              2547,
+              2538,
+              2537
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0,
+            "recall_at_5": 1.0,
+            "recall_at_10": 1.0,
+            "hit_at_5": 1.0,
+            "reciprocal_rank": 1.0,
+            "precision_at_5": 0.2
+          },
+          {
+            "question_id": "a13",
+            "topic": "virtual-ibans",
+            "gold_chunk_ids": [
+              2722
+            ],
+            "retrieved_chunk_ids": [
+              2722,
+              5148,
+              2710,
+              2709,
+              2721,
+              5147,
+              1987,
+              2723,
+              2716,
+              2726
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0,
+            "recall_at_5": 1.0,
+            "recall_at_10": 1.0,
+            "hit_at_5": 1.0,
+            "reciprocal_rank": 1.0,
+            "precision_at_5": 0.2
+          },
+          {
+            "question_id": "a14",
+            "topic": "ransomware-victim-payment-indicators",
+            "gold_chunk_ids": [
+              2969
+            ],
+            "retrieved_chunk_ids": [
+              1291,
+              755,
+              2969,
+              3576,
+              3578,
+              823,
+              831,
+              7765,
+              1288,
+              5531
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 0.3333333333333333,
+            "recall_at_5": 1.0,
+            "recall_at_10": 1.0,
+            "hit_at_5": 1.0,
+            "reciprocal_rank": 0.3333333333333333,
+            "precision_at_5": 0.2
+          },
+          {
+            "question_id": "a15",
+            "topic": "human-trafficking-financial-indicators",
+            "gold_chunk_ids": [
+              2918
+            ],
+            "retrieved_chunk_ids": [
+              2918,
+              2871,
+              823,
+              26,
+              2870,
+              2912,
+              2004,
+              23,
+              830,
+              4037
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0,
+            "recall_at_5": 1.0,
+            "recall_at_10": 1.0,
+            "hit_at_5": 1.0,
+            "reciprocal_rank": 1.0,
+            "precision_at_5": 0.2
+          },
+          {
+            "question_id": "a16",
+            "topic": "shell-company-red-flags",
+            "gold_chunk_ids": [
+              2871,
+              2872
+            ],
+            "retrieved_chunk_ids": [
+              7814,
+              4258,
+              7786,
+              7788,
+              2374,
+              2872,
+              2871,
+              23,
+              4259,
+              4236
+            ],
+            "page_recall_at_5": 0.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 0.0,
+            "page_reciprocal_rank": 0.16666666666666666,
+            "recall_at_5": 0.0,
+            "recall_at_10": 1.0,
+            "hit_at_5": 0.0,
+            "reciprocal_rank": 0.16666666666666666,
+            "precision_at_5": 0.0
+          },
+          {
+            "question_id": "a17",
+            "topic": "fentanyl-precursor-procurement",
+            "gold_chunk_ids": [
+              3725
+            ],
+            "retrieved_chunk_ids": [
+              3722,
+              3721,
+              3723,
+              3725,
+              3726,
+              3714,
+              3718,
+              3719,
+              3715,
+              3720
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 0.3333333333333333,
+            "recall_at_5": 1.0,
+            "recall_at_10": 1.0,
+            "hit_at_5": 1.0,
+            "reciprocal_rank": 0.25,
+            "precision_at_5": 0.2
+          },
+          {
+            "question_id": "a18",
+            "topic": "money-order-recordkeeping-gap",
+            "gold_chunk_ids": [
+              3553,
+              3554
+            ],
+            "retrieved_chunk_ids": [
+              3554,
+              693,
+              692,
+              3553,
+              2392,
+              694,
+              5898,
+              5852,
+              2395,
+              5899
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0,
+            "recall_at_5": 1.0,
+            "recall_at_10": 1.0,
+            "hit_at_5": 1.0,
+            "reciprocal_rank": 1.0,
+            "precision_at_5": 0.4
+          },
+          {
+            "question_id": "a19",
+            "topic": "source-of-funds-corroboration",
+            "gold_chunk_ids": [
+              4391
+            ],
+            "retrieved_chunk_ids": [
+              1291,
+              5533,
+              823,
+              2401,
+              1264,
+              7900,
+              7933,
+              1013,
+              7872,
+              6941
+            ],
+            "page_recall_at_5": 0.0,
+            "page_recall_at_10": 0.0,
+            "page_hit_at_5": 0.0,
+            "page_reciprocal_rank": 0.0,
+            "recall_at_5": 0.0,
+            "recall_at_10": 0.0,
+            "hit_at_5": 0.0,
+            "reciprocal_rank": 0.0,
+            "precision_at_5": 0.0
+          },
+          {
+            "question_id": "a20",
+            "topic": "negative-news-screening",
+            "gold_chunk_ids": [
+              4350,
+              4351
+            ],
+            "retrieved_chunk_ids": [
+              4350,
+              4349,
+              4351,
+              4276,
+              4264,
+              4342,
+              4344,
+              4242,
+              4345,
+              4361
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0,
+            "recall_at_5": 1.0,
+            "recall_at_10": 1.0,
+            "hit_at_5": 1.0,
+            "reciprocal_rank": 1.0,
+            "precision_at_5": 0.4
+          },
+          {
+            "question_id": "a21",
+            "topic": "correspondent-banking-product-risk",
+            "gold_chunk_ids": [
+              4236,
+              4237
+            ],
+            "retrieved_chunk_ids": [
+              4236,
+              4237,
+              6330,
+              2871,
+              2374,
+              5137,
+              2005,
+              4238,
+              2080,
+              4035
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0,
+            "recall_at_5": 1.0,
+            "recall_at_10": 1.0,
+            "hit_at_5": 1.0,
+            "reciprocal_rank": 1.0,
+            "precision_at_5": 0.4
+          },
+          {
+            "question_id": "a22",
+            "topic": "trade-based-money-laundering",
+            "gold_chunk_ids": [
+              3980
+            ],
+            "retrieved_chunk_ids": [
+              3980,
+              3981,
+              174,
+              2404,
+              4038,
+              2403,
+              4066,
+              5105,
+              1977,
+              2402
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0,
+            "recall_at_5": 1.0,
+            "recall_at_10": 1.0,
+            "hit_at_5": 1.0,
+            "reciprocal_rank": 1.0,
+            "precision_at_5": 0.2
+          },
+          {
+            "question_id": "a23",
+            "topic": "underground-banking-cash-for-value-swap",
+            "gold_chunk_ids": [
+              5099
+            ],
+            "retrieved_chunk_ids": [
+              5098,
+              5123,
+              5095,
+              5092,
+              5099,
+              5114,
+              5083,
+              1014,
+              5094,
+              5163
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 0.2,
+            "recall_at_5": 1.0,
+            "recall_at_10": 1.0,
+            "hit_at_5": 1.0,
+            "reciprocal_rank": 0.2,
+            "precision_at_5": 0.2
+          },
+          {
+            "question_id": "a24",
+            "topic": "mtic-carousel-vat-fraud",
+            "gold_chunk_ids": [
+              4706
+            ],
+            "retrieved_chunk_ids": [
+              4706,
+              4705,
+              211,
+              196,
+              197,
+              3463,
+              5617,
+              756,
+              202,
+              6333
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0,
+            "recall_at_5": 1.0,
+            "recall_at_10": 1.0,
+            "hit_at_5": 1.0,
+            "reciprocal_rank": 1.0,
+            "precision_at_5": 0.2
+          },
+          {
+            "question_id": "a25",
+            "topic": "sanctions-evasion-detection-beyond-name-screening",
+            "gold_chunk_ids": [
+              5585
+            ],
+            "retrieved_chunk_ids": [
+              5582,
+              5584,
+              5589,
+              5585,
+              5583,
+              5579,
+              5587,
+              5577,
+              4292,
+              5525
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 0.25,
+            "recall_at_5": 1.0,
+            "recall_at_10": 1.0,
+            "hit_at_5": 1.0,
+            "reciprocal_rank": 0.25,
+            "precision_at_5": 0.2
+          },
+          {
+            "question_id": "a26",
+            "topic": "correspondent-banking-payment-message-transparency",
+            "gold_chunk_ids": [
+              5886
+            ],
+            "retrieved_chunk_ids": [
+              5540,
+              5541,
+              5886,
+              7925,
+              4060,
+              5499,
+              4290,
+              4633,
+              3662,
+              4236
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 0.3333333333333333,
+            "recall_at_5": 1.0,
+            "recall_at_10": 1.0,
+            "hit_at_5": 1.0,
+            "reciprocal_rank": 0.3333333333333333,
+            "precision_at_5": 0.2
+          },
+          {
+            "question_id": "a27",
+            "topic": "gold-smuggling-typology-precious-metals",
+            "gold_chunk_ids": [
+              6591
+            ],
+            "retrieved_chunk_ids": [
+              5166,
+              5614,
+              4284,
+              5226,
+              196,
+              197,
+              5096,
+              5161,
+              6400,
+              8511
+            ],
+            "page_recall_at_5": 0.0,
+            "page_recall_at_10": 0.0,
+            "page_hit_at_5": 0.0,
+            "page_reciprocal_rank": 0.0,
+            "recall_at_5": 0.0,
+            "recall_at_10": 0.0,
+            "hit_at_5": 0.0,
+            "reciprocal_rank": 0.0,
+            "precision_at_5": 0.0
+          },
+          {
+            "question_id": "a28",
+            "topic": "cyber-scam-hubs-offshore-gaming-red-flags",
+            "gold_chunk_ids": [
+              6286
+            ],
+            "retrieved_chunk_ids": [
+              6278,
+              6285,
+              6286,
+              8525,
+              8562,
+              6332,
+              8461,
+              8466,
+              8482,
+              6277
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 0.5,
+            "recall_at_5": 1.0,
+            "recall_at_10": 1.0,
+            "hit_at_5": 1.0,
+            "reciprocal_rank": 0.3333333333333333,
+            "precision_at_5": 0.2
+          },
+          {
+            "question_id": "a29",
+            "topic": "pep-screening-database-calibration",
+            "gold_chunk_ids": [
+              6939
+            ],
+            "retrieved_chunk_ids": [
+              6939,
+              3991,
+              6938,
+              3990,
+              4351,
+              4353,
+              7878,
+              4286,
+              5584,
+              6981
+            ],
+            "page_recall_at_5": 1.0,
+            "page_recall_at_10": 1.0,
+            "page_hit_at_5": 1.0,
+            "page_reciprocal_rank": 1.0,
+            "recall_at_5": 1.0,
+            "recall_at_10": 1.0,
+            "hit_at_5": 1.0,
+            "reciprocal_rank": 1.0,
+            "precision_at_5": 0.2
+          },
+          {
+            "question_id": "a30",
+            "topic": "client-onboarding-governance",
+            "gold_chunk_ids": [
+              7892,
+              7900
+            ],
+            "retrieved_chunk_ids": [
+              5535,
+              2362,
+              2438,
+              2366,
+              4285,
+              5520,
+              2416,
+              4233,
+              6945,
+              2417
+            ],
+            "page_recall_at_5": 0.0,
+            "page_recall_at_10": 0.0,
+            "page_hit_at_5": 0.0,
+            "page_reciprocal_rank": 0.0,
+            "recall_at_5": 0.0,
+            "recall_at_10": 0.0,
+            "hit_at_5": 0.0,
+            "reciprocal_rank": 0.0,
+            "precision_at_5": 0.0
+          }
+        ],
+        "exact": {
+          "recall_at_5": 0.75,
+          "recall_at_10": 0.7833333333333333,
+          "hit_at_5": 0.7666666666666667,
+          "mrr": 0.6066666666666667,
+          "precision_at_5": 0.17333333333333334
+        }
+      }
+    }
+  }
+}

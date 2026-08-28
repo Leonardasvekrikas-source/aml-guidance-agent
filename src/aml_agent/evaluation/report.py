@@ -49,30 +49,62 @@ def retrieval_table() -> str:
         )
 
     profiles = data["profiles"]
+    authoring = data.get("authoring_profile", "t480")
     lines: list[str] = []
 
-    for profile_name in sorted(profiles):
-        results = profiles[profile_name]
-        lines.append(f"**Chunk profile `{profile_name}`**")
-        lines.append("")
-        lines.append("| Method | Recall@5 | Recall@10 | MRR | Hit@5 | Median latency |")
-        lines.append("|---|---|---|---|---|---|")
-        for key in ("bm25", "dense", "hybrid"):
-            if key not in results:
-                continue
-            row = results[key]
-            lines.append(
-                f"| {LABELS[key]} | {_fmt(row['recall_at_5'])} | "
-                f"{_fmt(row['recall_at_10'])} | {_fmt(row['mrr'])} | "
-                f"{_fmt(row['hit_at_5'])} | {row['median_latency_ms']:.0f} ms |"
-            )
-        lines.append("")
+    # Primary table: exact chunk-id gold, on the authoring profile only.
+    lines.append(f"**Exact gold, chunk profile `{authoring}`** — the primary result.")
+    lines.append("")
+    lines.append("| Method | Recall@5 | Recall@10 | MRR | Hit@5 |")
+    lines.append("|---|---|---|---|---|")
+    for key in ("bm25", "dense", "hybrid"):
+        row = profiles.get(authoring, {}).get(key, {}).get("exact")
+        if not row:
+            continue
+        lines.append(
+            f"| {LABELS[key]} | {_fmt(row['recall_at_5'])} | "
+            f"{_fmt(row['recall_at_10'])} | {_fmt(row['mrr'])} | "
+            f"{_fmt(row['hit_at_5'])} |"
+        )
+    lines.append("")
+    lines.append(
+        "A retrieved chunk counts only if it is literally the gold chunk. "
+        "Recall is per-question recall over the gold set, not hit-rate; Hit@5 "
+        "is shown beside it so the difference is visible rather than hidden by "
+        "a label."
+    )
+    lines.append("")
 
+    # Chunk-size comparison: page-level gold, the only profile-independent one.
+    lines.append("**Chunk-size comparison, page-level gold**")
+    lines.append("")
+    lines.append("| Profile | Method | Recall@5 | Recall@10 | MRR | Median latency |")
+    lines.append("|---|---|---|---|---|---|")
+    for profile_name in sorted(profiles):
+        for key in ("bm25", "dense", "hybrid"):
+            entry = profiles[profile_name].get(key)
+            if not entry:
+                continue
+            row = entry["page_level"]
+            lines.append(
+                f"| `{profile_name}` | {LABELS[key]} | {_fmt(row['recall_at_5'])} | "
+                f"{_fmt(row['recall_at_10'])} | {_fmt(row['mrr'])} | "
+                f"{entry['median_latency_ms']:.0f} ms |"
+            )
+    lines.append("")
+    lines.append(
+        "Gold chunk ids belong to the profile the questions were authored "
+        f"against (`{authoring}`), and chunks are separate rows per profile, so "
+        "chunk-id gold cannot compare chunk sizes at all. Page-level gold — did "
+        "retrieval return a chunk from a page the answer is on — is "
+        "profile-independent and is the only definition under which this "
+        "comparison means anything. It is looser than exact gold, so the two "
+        "tables must not be compared with each other."
+    )
+    lines.append("")
     lines.append(
         f"Computed over {data['questions']} answerable questions with "
-        "hand-authored gold passages. Recall is per-question recall over the "
-        "gold set, not hit-rate; Hit@5 is shown alongside so the difference is "
-        "visible rather than hidden by a label."
+        "hand-authored gold passages."
     )
     return "\n".join(lines)
 

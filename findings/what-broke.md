@@ -105,3 +105,65 @@ The fallback is reported per document rather than hidden, so the output says
 library that impersonates a browser handshake would work, but the documents are
 freely published and the polite fix is a different HTTP client, not a
 fingerprint that lies about what is making the request.
+
+---
+
+## M5 — the missing-API-key path returned a 500 instead of an explanation
+
+**Symptom.** With no `ANTHROPIC_API_KEY` set, `GET /health` cheerfully reported
+`"credentials": true` and `POST /ask` returned a bare
+`500 Internal Server Error`.
+
+**Cause.** The credential check was "does `anthropic.Anthropic()` construct
+without raising". It does. With no key anywhere, the SDK constructs a client
+whose `api_key` is the empty string and fails much later, at request time, with
+a 401 that says nothing about which setup step was missed. Constructing a
+client is not evidence of having credentials.
+
+**Why it matters.** This is one of the questions the milestone list asks about
+this system directly — what happens when the API key is missing — and the
+honest answer was "it lies in the health check, then 500s". A stranger
+following the README who forgot step two would have had nothing to go on.
+
+**Fix.** The check now inspects the credential the SDK actually resolved, and
+an empty one raises `MissingCredentials` carrying the three setup steps. The
+service returns `503` with that message, `/health` reports
+`"credentials": false`, and the evaluation harness exits early with the same
+guidance rather than emitting forty identical 401s.
+
+**Found by** actually calling the endpoint rather than trusting that the code
+path worked. The unit tests did not catch it and could not have: they stub the
+client out.
+
+---
+
+## M1 — gold chunk ids could not compare chunk sizes, and the benchmark refused to run
+
+**Symptom.** The first run of `make eval-retrieval` aborted with 30 lines of
+`gold chunk id(s) [...] not present in profile 't256'`.
+
+**Cause.** Not a bug — a category error in the metric, caught by a guard.
+Chunks are stored as separate rows per profile, so a gold id authored against
+`t480` simply does not exist in `t256`. The evaluation set names gold by chunk
+id, which is precise and strict but inherently tied to one profile.
+
+**Why it matters.** Without the guard this would not have crashed. It would
+have reported recall of 0.000 for every question at `t256` and looked like
+catastrophic retrieval failure at the smaller chunk size — a plausible-looking
+result, a confident wrong conclusion, and a number that could easily have
+reached the README.
+
+**Fix.** Two gold definitions, both reported and clearly separated:
+
+- **Exact (chunk id)** — the retrieved chunk must literally be the gold chunk.
+  Strictest, and the primary number, but only meaningful on the authoring
+  profile.
+- **Page-level** — gold is the set of (document, page) pairs the gold chunks
+  came from. Profile-independent, so it is the only definition under which the
+  chunk-size comparison means anything. Looser, so the two are never compared
+  with each other, and the README says so directly under the tables.
+
+**Rejected alternative.** Remapping gold across profiles by text overlap. A
+smaller profile splits one gold chunk into two partial matches, so any overlap
+threshold hands it extra chances at the same passage and biases the exact
+comparison the experiment exists to make.

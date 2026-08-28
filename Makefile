@@ -61,7 +61,7 @@ corpus-stats:  ## Print document and chunk counts per chunk profile
 # --- evaluation -----------------------------------------------------------
 
 .PHONY: eval
-eval: eval-retrieval eval-answers  ## Regenerate every number in the README
+eval: eval-retrieval eval-analysis eval-answers  ## Regenerate every number in the README
 
 .PHONY: eval-retrieval
 eval-retrieval:  ## M1: recall@5, recall@10, MRR for BM25 / dense / hybrid
@@ -70,6 +70,10 @@ eval-retrieval:  ## M1: recall@5, recall@10, MRR for BM25 / dense / hybrid
 .PHONY: eval-answers
 eval-answers:  ## M4: groundedness, citation validity, refusal accuracy
 	$(RUN) aml_agent.evaluation.answers
+
+.PHONY: eval-analysis
+eval-analysis:  ## Per-question breakdown of where each retriever wins
+	$(RUN) aml_agent.evaluation.analysis
 
 .PHONY: judge-audit
 judge-audit:  ## Sample 20 judge decisions into results/judge_agreement.md for grading

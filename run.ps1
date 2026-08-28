@@ -87,6 +87,7 @@ switch ($Target) {
     'eval-retrieval' { Invoke-App @('aml_agent.evaluation.retrieval') }
     'eval-answers'   { Invoke-App @('aml_agent.evaluation.answers') }
     'report'         { Invoke-App @('aml_agent.evaluation.report') }
+    'eval-analysis'  { Invoke-App @('aml_agent.evaluation.analysis') }
     'judge-audit'    { Invoke-App @('aml_agent.evaluation.judge_audit') }
     'judge-audit-score' { Invoke-App @('aml_agent.evaluation.judge_audit', '--score') }
 
