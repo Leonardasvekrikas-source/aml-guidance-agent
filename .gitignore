@@ -42,3 +42,8 @@ corpus/pdfs/
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# --- local only ---
+AUTHORSHIP.md
+NOTES.md
+MISTAKES.md

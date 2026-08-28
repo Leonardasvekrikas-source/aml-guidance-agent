@@ -101,9 +101,10 @@ question
       answer + citations, or refusal
 ```
 
-**No agent framework.** The loop is roughly 80 lines of Python. This is deliberate:
-in an interview you will be asked what your framework is doing on your behalf, and
-the only good answer is one you wrote.
+**No agent framework.** The loop is a few hundred lines of plain Python. This is
+deliberate: LangChain or LlamaIndex would hide the two things this project is
+actually about — when the loop decides to stop, and what happens to a claim that
+fails validation. Both are explicit here and can be read top to bottom.
 
 ---
 

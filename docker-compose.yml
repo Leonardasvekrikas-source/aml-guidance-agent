@@ -1,0 +1,54 @@
+services:
+  db:
+    image: pgvector/pgvector:pg16
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-aml}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-aml}
+      POSTGRES_DB: ${POSTGRES_DB:-aml}
+    ports:
+      # Published on 5434: 5432 is the usual host Postgres and 5433 is
+      # taken by another project on this machine. Inside the compose network
+      # the app still reaches this service as db:5432, regardless.
+      - "${POSTGRES_HOST_PORT:-5434}:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      # Applied by the postgres entrypoint on first initialisation of an
+      # empty volume, in filename order. `make migrate` reapplies them
+      # against an existing database.
+      - ./migrations:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-aml} -d ${POSTGRES_DB:-aml}"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+    restart: unless-stopped
+
+  app:
+    build: .
+    env_file:
+      # Optional so that `docker compose up` works on a fresh clone before
+      # anyone has copied .env.example. Retrieval and the M1 benchmark run
+      # without a key; drafting and the judge do not.
+      - path: .env
+        required: false
+    environment:
+      # Overrides .env: inside the network the database is a service name,
+      # never localhost.
+      POSTGRES_HOST: db
+      POSTGRES_PORT: 5432
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./:/app
+      # Model weights cached outside the image so rebuilds do not re-download
+      # ~440MB of embedding model.
+      - hfcache:/root/.cache/huggingface
+    working_dir: /app
+    command: ["uvicorn", "aml_agent.api.main:app", "--host", "0.0.0.0", "--port", "8000"]
+
+volumes:
+  pgdata:
+  hfcache:
