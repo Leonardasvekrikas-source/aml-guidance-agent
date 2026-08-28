@@ -1,7 +1,3 @@
-# --- local working notes, not part of the published repo ---
-CLAUDE.md
-.claude/
-
 # --- secrets ---
 .env
 .env.*
@@ -43,9 +39,3 @@ corpus/pdfs/
 Thumbs.db
 desktop.ini
 
-# --- local only ---
-AUTHORSHIP.md
-NOTES.md
-MISTAKES.md
-_*.json
-_gen_*.py
