@@ -167,3 +167,80 @@ reached the README.
 smaller profile splits one gold chunk into two partial matches, so any overlap
 threshold hands it extra chances at the same passage and biases the exact
 comparison the experiment exists to make.
+
+---
+
+## M5 — the stranger test found the corpus was not reproducible on Linux
+
+**Symptom.** Cloning the repository into a fresh directory and following only
+the README produced **22 of 30 documents**. The eight FATF reports failed with
+`HTTP 403` — the same failure that had supposedly been fixed earlier.
+
+**Cause.** The earlier fix worked, but it was never tested where it mattered.
+Every previous download had been run on the Windows host, whose `curl` links
+against **Schannel**. Inside the Linux container, `curl` links against
+**OpenSSL**, and FATF's CDN answers OpenSSL clients with 403 and Schannel
+clients with 200 for the identical URL and identical User-Agent. The curl
+fallback was therefore useless in the only environment the README tells people
+to use.
+
+**Actual trigger, on further testing.** Not the TLS stack after all, or not
+only. Adding the `Sec-Fetch-*` fetch-metadata headers that browsers always
+send makes plain `httpx` succeed from inside the container. The CDN is checking
+for headers a scripted client usually omits.
+
+**Fix.** The downloader sends those headers. The User-Agent stays honest about
+being a script — impersonating Chrome also works, but these are freely
+published public documents and there is no reason to lie about what is making
+the request. A clean Linux clone now retrieves 30 of 30.
+
+**The lesson worth keeping.** "It works on my machine" was literally true and
+completely worthless. The bug was invisible until the repository was run the
+way the README says to run it.
+
+---
+
+## M5 — the evaluation set scored zero on a fresh clone
+
+**Symptom.** With all 30 documents ingested in the fresh clone,
+`make eval-retrieval` failed every question:
+`gold chunk id(s) [4350, 4351] not present in profile 't480'`.
+
+**Cause.** Gold passages were named by `chunk.id`, a `bigserial` column. Serial
+ids depend on insertion order and on the history of the table — the fresh
+clone had ingested 22 documents, then 30, so its ids were offset from the ones
+the questions were authored against. Same corpus, same chunker, same text,
+different numbers.
+
+**Why it matters.** This is worse than the download failure. The retrieval
+benchmark is the centrepiece of this repository, and it was reproducible only
+on the machine that produced it. Without the guard that refuses to compute
+metrics against unresolvable gold, it would have reported recall of 0.000
+across the board on anybody else's clone.
+
+**Fix.** Gold is now named by `(document_id, chunk_index)` and resolved to ids
+at evaluation time. That triple is deterministic given the same corpus and
+chunker, and the schema already enforced it as unique. The numbers are
+unchanged, and the fresh clone now reproduces them.
+
+---
+
+## M1 — dense retrieval is not bit-identical between index builds
+
+**Symptom.** The fresh clone reproduced every exact-gold figure precisely, but
+two page-level dense numbers differed slightly: `t256` dense MRR 0.516 against
+0.518, and `t480` dense page recall@10 0.750 against 0.733.
+
+**Cause.** Not a bug. HNSW is an *approximate* nearest-neighbour index. Its
+graph depends on insertion order, so two builds over identical data can return
+slightly different neighbours near the tail of the ranking. BM25 is exact and
+reproduced to the digit; the hybrid figures were unaffected because RRF
+depends on rank positions, which did not move at the top.
+
+**Why it is recorded rather than fixed.** Making it exact would mean a flat
+scan instead of an index, which is the wrong trade at any realistic corpus
+size. The honest statement is that dense and hybrid figures carry roughly a
+±0.02 build-to-build wobble at the tail, and a difference smaller than that
+between two configurations should not be treated as a result. With 30
+questions the sampling error is already larger than this, which is the more
+important caveat.
