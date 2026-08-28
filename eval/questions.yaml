@@ -4,18 +4,20 @@
 # corpus genuinely cannot answer.
 #
 # ORDER MATTERS, and this file was built in the right one: the questions were
-# written from the corpus text before any retrieval was run over them. Writing
+# written from the corpus text BEFORE any retrieval was run over them. Writing
 # questions after seeing what retrieval returns produces a set that flatters
 # the system, and it is the most common way a RAG benchmark fools its author.
 #
-# Every gold_chunk_ids entry was checked by opening the chunk and confirming
-# the text answers the question, not merely that it discusses the topic.
-# Bibliographies, contents pages and annex tables were excluded as gold: they
-# match keywords without containing answers.
+# GOLD PASSAGES ARE NAMED BY (document, chunk_index), NOT by database id.
+# Chunk ids are bigserial values that depend on ingestion order and history, so
+# they differ between one machine and the next. An evaluation set keyed on them
+# scores zero on anybody else's clone and the benchmark is not reproducible.
+# (document_id, chunk_profile, chunk_index) is deterministic given the same
+# corpus and chunker, and the schema already enforces it as unique.
 #
-# Gold ids refer to the t480 chunk profile. `make eval-retrieval` validates
-# that every id exists before computing a single metric, because a stale gold
-# id would sink recall and look exactly like a retrieval failure.
+# Indices refer to the t480 profile, the one the questions were authored
+# against. `make eval-retrieval` resolves them and refuses to compute a single
+# metric if any cannot be found.
 
 questions:
 
@@ -23,210 +25,246 @@ questions:
     question: "A trading company's account keeps receiving large incoming wires that are broken up and pushed out the same day to accounts with no obvious commercial link, so the balance sits near zero overnight. Which trade-based laundering indicator does that pattern correspond to?"
     topic: "trade-based-money-laundering"
     answerable: true
-    gold_chunk_ids: [26]
+    gold:
+      - {doc: fatf-tbml-risk-indicators, chunk: 6}
     answer_summary: "It matches the FATF/Egmont indicator that a trade entity's account is functioning as a \"pay-through\" or \"transit\" account: rapid movement of high-volume transactions with a small end-of-day balance and no clear business reason. The same indicator covers incoming wires that are split and forwarded to non-related multiple accounts with little or no connection to commercial activity, and cash deposits later moved to persons or entities in free trade zones or offshore jurisdictions that have no business relationship with the account holder."
 
   - id: a02
     question: "Which of the foundational TBML techniques identified in the 2006 FATF report does NOT depend on misrepresenting the price of the goods, and how do criminals use several financial institutions to keep it from being spotted?"
     topic: "trade-mis-invoicing"
     answerable: true
-    gold_chunk_ids: [202]
+    gold:
+      - {doc: fatf-tbml-trends, chunk: 31}
     answer_summary: "Multiple invoicing of goods and services. It does not require misrepresenting price; instead it reuses existing documentation to justify multiple payments for the same shipment or service delivery, and criminals extend the scheme by presenting the same documents across multiple financial institutions so that no single institution can identify it."
 
   - id: a03
     question: "Apart from checking price and quantity discrepancies, what practical checks on the paperwork a bank receives to pay a trade transaction have actually helped identify TBML?"
     topic: "trade-document-review"
     answerable: true
-    gold_chunk_ids: [187]
+    gold:
+      - {doc: fatf-tbml-trends, chunk: 16}
     answer_summary: "Three data points are cited: use of a personal email address instead of a legitimate business email; obvious recycling of previous documentation with few or no edits (even something as basic as the date being unchanged); and research showing the exporter has no trading presence at all, including exporters of significant quantities of goods operating from residential rather than business premises."
 
   - id: a04
     question: "When does a customer's use of a virtual asset ATM or kiosk actually amount to a red flag, and when is it not enough on its own?"
     topic: "virtual-assets-red-flags"
     answerable: true
-    gold_chunk_ids: [827]
+    gold:
+      - {doc: fatf-virtual-assets-red-flags, chunk: 11}
     answer_summary: "A single use of a VA ATM/kiosk is not by itself enough to constitute a red flag; it becomes one when combined with the machine being in a high-risk area, or with repeated small transactions, or other additional factors. The underlying indicator covers using VA ATMs/kiosks despite the higher transaction fees (including machines commonly used by mules or scam victims) or in high-risk locations where increased criminal activity occurs."
 
   - id: a05
     question: "When a crypto exchange sends a customer's coins to another regulated exchange, which details about the sending customer must the exchange itself have verified, and which details about the receiving party can it pass on without verifying?"
     topic: "virtual-asset-transfer-obligations"
     answerable: true
-    gold_chunk_ids: [692]
+    gold:
+      - {doc: fatf-rba-virtual-assets, chunk: 97}
     answer_summary: "The sending institution must obtain and hold the sender's accurate (verified) full name; the sender's account number, which in the virtual asset context can be the wallet address; and the sender's physical geographical address (verified for accuracy as part of KYC) or national identity number, or a customer identification number that uniquely identifies them, or date and place of birth. The receiving party's name is not required to be verified for accuracy by the sending institution, but must be reviewed for STR monitoring and sanctions screening, along with the beneficiary's account number/wallet address."
 
   - id: a06
     question: "A money-remittance business banks with us and runs everything through a single account - its own operating costs and the payments it pushes through for the people who use its service. Should we make it split those flows into separate accounts, and are we obliged to identify its end users ourselves?"
     topic: "correspondent-banking-mvts-accounts"
     answerable: true
-    gold_chunk_ids: [2086]
+    gold:
+      - {doc: fatf-correspondent-banking, chunk: 23}
     answer_summary: "The bank can encourage or require the remitter to hold one account for its own corporate or settlement activity and a separate account for the correspondent-type services it offers its own customers, since this makes monitoring of the two very different risk types easier (further separate accounts can be used for higher-risk activity and nested/downstream relationships). The bank is not obliged to apply CDD to the remitter's own customers."
 
   - id: a07
     question: "What factors influence the commission rate a professional money launderer charges a criminal client, and in what forms do PMLs actually take that commission?"
     topic: "professional-money-laundering-fees"
     answerable: true
-    gold_chunk_ids: [1003]
+    gold:
+      - {doc: fatf-professional-money-laundering, chunk: 22}
     answer_summary: "The fee depends on the complexity of the scheme, the methods used, knowledge of the predicate offence and the level of risk the launderer assumes, and is further influenced by the countries or regions involved, the PML's reputation, the total amount laundered, the denomination of the banknotes in cash cases, the speed demanded by the client (shorter timeframes mean higher commission) and new regulation or law-enforcement activity. Commission is taken in cash in advance, by transferring a portion of the laundered money to the launderer's own accounts, or by integrating it into the business transaction."
 
   - id: a08
     question: "A buyer asks our agency to hold a large deposit in our client account and then wants it refunded to a different bank account than the one it came from. The same property was also resold twice within a few months with price changes nobody can explain. Are both of these treated as high-risk indicators in property transactions?"
     topic: "real-estate-transaction-red-flags"
     answerable: true
-    gold_chunk_ids: [1291]
+    gold:
+      - {doc: fatf-rba-real-estate, chunk: 49}
     answer_summary: "Yes - FATF lists both among the transaction factors suggesting a real estate deal is high risk: clients asking the business to hold a large sum in its client account and then requesting a refund to a different bank account from the one used for the original transaction, and successive transactions of the same property within a short period with unexplained changes in value."
 
   - id: a09
     question: "How can an online shopping platform be used to shift value from one member of a terrorist cell to another abroad, when no bank transfer ever passes between the two of them?"
     topic: "terrorist-financing-e-commerce-value-transfer"
     answerable: true
-    gold_chunk_ids: [1922, 1921]
+    gold:
+      - {doc: fatf-terrorist-financing-risks, chunk: 134}
+      - {doc: fatf-terrorist-financing-risks, chunk: 133}
     answer_summary: "The goods themselves carry the value: one participant buys items on the platform and ships them to an accomplice, who sells them in another jurisdiction and uses the sale proceeds to finance terrorism. Participants can also pose as multiple buyers and sellers through fraudulent or complicit online shop fronts and apply trade-based techniques such as over- and under-invoicing to move value between each other."
 
   - id: a10
     question: "What signs in a trade finance file suggest the two counterparties to the deal are not genuinely independent of one another?"
     topic: "trade-based-money-laundering"
     answerable: true
-    gold_chunk_ids: [2405]
+    gold:
+      - {doc: eba-ml-tf-risk-factors, chunk: 79}
     answer_summary: "Indicators that the buyer and seller may be colluding include the buyer and seller being controlled by the same person, the transacting businesses sharing the same address or providing only a registered agent's address (or other address inconsistencies), and the buyer being willing or keen to accept or waive documentary discrepancies. Related signals are a customer unable or reluctant to provide supporting documentation, a customer who cannot explain the rationale of the export process or the meaning of the underlying LC/BC documents, and a buyer whose legal structure prevents identification of its owners or which uses agents or third parties to represent its rights and interests."
 
   - id: a11
     question: "On a life insurance policy, which premium payment patterns and which beneficiary changes should prompt a closer look?"
     topic: "life-insurance-red-flags"
     answerable: true
-    gold_chunk_ids: [2410]
+    gold:
+      - {doc: eba-ml-tf-risk-factors, chunk: 84}
     answer_summary: "On the payments side: unusual payment methods such as cash, structured monetary instruments or other anonymity-fostering vehicles; payments from different bank accounts without explanation; payments from banks not established in the customer's country of residence; frequent or high-value overpayments that were not expected; payments received from unrelated third parties; and a catch-up contribution to a retirement plan close to the retirement date. On the beneficiary side: the insurer learning of a beneficiary change only when the claim is made; the customer changing the beneficiary clause to nominate an apparently unrelated third party; and the insurer, customer, beneficial owner, beneficiary or the beneficiary's beneficial owner being in different jurisdictions."
 
   - id: a12
     question: "Where a firm uses an unattended remote customer onboarding solution in which the customer does not interact with an employee, what must the verification process include, and what should happen if the evidence captured is of insufficient quality?"
     topic: "remote-onboarding-identity-verification"
     answerable: true
-    gold_chunk_ids: [2543]
+    gold:
+      - {doc: eba-remote-onboarding, chunk: 15}
     answer_summary: "For unattended solutions the institution should ensure any photograph or video is taken under adequate lighting conditions with the required properties captured clearly, ensure it is taken at the time the customer is performing the verification, perform liveness detection verifications (either requiring a specific action from the customer or based on analysis of the received data without a specific action), and use strong and reliable algorithms to verify that the photograph or video matches the picture retrieved from the customer's official document. Where the evidence provided is of insufficient quality, causing ambiguity or uncertainty that affects the remote checks, the individual onboarding process should be interrupted and restarted, or redirected to face-to-face verification."
 
   - id: a13
     question: "Which virtual IBAN (vIBAN) arrangements do EU competent authorities rate as very significant risk, and what mitigating measure does the AML Regulation introduce for the lack of vIBAN transparency?"
     topic: "virtual-ibans"
     answerable: true
-    gold_chunk_ids: [2722]
+    gold:
+      - {doc: eba-opinion-ml-tf-risks, chunk: 15}
     answer_summary: "Competent authorities for both payment institutions and credit institutions regard cascading vIBANs - where a PSP provides its customers with vIBANs generated by another institution for use in payment transactions or for further transfer to its own customers, also known as reissuing - as very significant; another notable risk arises where the master account is held in a different Member State from the end customer and the vIBAN contains a different country code from the IBAN of the master account. The AML Regulation, applying from 10 July 2027, mitigates the lack of transparency by requiring vIBANs to be registered in national central registers of bank accounts, and the proposed RTS under Article 28 AMLR recommend identifying and verifying the identity of the persons using a virtual IBAN."
 
   - id: a14
     question: "A corporate client with no prior history of buying digital currency contacts us in a hurry to purchase a large amount of Bitcoin, and in conversation shows they barely understand how it works. What does FinCEN say that combination is likely to mean?"
     topic: "ransomware-victim-payment-indicators"
     answerable: true
-    gold_chunk_ids: [2969]
+    gold:
+      - {doc: fincen-ransomware, chunk: 12}
     answer_summary: "FinCEN treats a customer who shows limited knowledge of convertible virtual currency yet inquires about or purchases it, especially in a large amount or as a rush request, as an indicator that the customer is likely a victim of ransomware making an extortion payment. A related indicator is a customer with no or limited history of CVC transactions sending a large CVC transaction outside the company's normal business practices."
 
   - id: a15
     question: "A day-spa business account we monitor takes in nearly all of its money as cash, with most deposits posting late at night and far exceeding what a single storefront should earn, and it never sends any payroll or ACH payments. The listed phone number also appears on escort advertising sites. Which specific indicators does this combination match?"
     topic: "human-trafficking-financial-indicators"
     answerable: true
-    gold_chunk_ids: [2918]
+    gold:
+      - {doc: fincen-human-trafficking, chunk: 10}
     answer_summary: "It matches three of FinCEN's financial red flag indicators of human trafficking: transactional activity occurring outside normal business operating hours that is almost always in cash with deposits larger than expected for the business and its size; frequent cash deposits with no ACH payments; and an account sharing common identifiers such as a telephone number, email, social media handle or address with escort agency websites and commercial sex advertisements."
 
   - id: a16
     question: "What shell company red flags should a depository institution look for when the registration data on a business customer does not line up with its stated business - specifically around NAICS codes, addresses, name variations, and EINs?"
     topic: "shell-company-red-flags"
     answerable: true
-    gold_chunk_ids: [2871, 2872]
+    gold:
+      - {doc: fincen-illicit-schemes, chunk: 17}
+      - {doc: fincen-illicit-schemes, chunk: 18}
     answer_summary: "The advisory groups them as unclear business model (NAICS code in a different industry than the business name indicates, commercial databases linking the company to multiple businesses in unrelated industries, no or vague website); address or location discrepancy (open-source search on the address shows a different business or an operating location inconsistent with the model, such as a residence; multiple active addresses with no sign of franchises, branches, subsidiaries or agents); name discrepancy (vague or non-descriptive name that does not align with the business model, three or more name variations or multiple dba names); and EIN discrepancy (a small business with fewer than 500 employees holding multiple EINs or sharing EINs with other businesses)."
 
   - id: a17
     question: "A Mexican importer client is wiring money to a Chinese chemical manufacturer, and the payment instructions and supporting invoice identify the substance only by a numeric registry identifier rather than naming it. Why do BSA filers treat that as an indicator of illicit precursor procurement?"
     topic: "fentanyl-precursor-procurement"
     answerable: true
-    gold_chunk_ids: [3725]
+    gold:
+      - {doc: fincen-fentanyl-trend-analysis, chunk: 12}
     answer_summary: "Those numeric identifiers are Chemical Abstracts Service (CAS) numbers, and criminals use them to evade scrutiny by omitting any explicit reference to fentanyl; BSA filers reported CAS numbers for fentanyl precursors appearing both in open-source advertisements and in payment instructions and client-supplied invoices. FinCEN lists the precursor CAS numbers seen in 2024 reporting, including 1-Boc-4-piperidone (79099-07-3), 4-anilinopiperidine (99918-43-1) and 1-benzyl-4-piperidone (3612-20-2)."
 
   - id: a18
     question: "Why is a money order seller usually unable to screen the payee's name, and at what currency amount is it actually required to obtain and verify the purchaser's identity?"
     topic: "money-order-recordkeeping-gap"
     answerable: true
-    gold_chunk_ids: [3553, 3554]
+    gold:
+      - {doc: us-national-ml-risk-assessment, chunk: 118}
+      - {doc: us-national-ml-risk-assessment, chunk: 119}
     answer_summary: "There is no explicit requirement for sellers of money orders to collect payee information, and the issuer does not learn the payee's name until the payee negotiates the instrument and it clears the banking system, so the seller has no name to screen. The BSA recordkeeping obligation only requires issuers and sellers to obtain, verify and record customer identification on purchases of money orders of $3,000 or more in currency - a threshold criminals structure below."
 
   - id: a19
     question: "A new wealth management client wants to open an account funded by a very large cash deposit plus a payment arriving from a casino. At what point do we need independent evidence about where that money came from instead of accepting the client's own explanation?"
     topic: "source-of-funds-corroboration"
     answerable: true
-    gold_chunk_ids: [4391]
+    gold:
+      - {doc: wolfsberg-source-of-wealth-faq, chunk: 7}
     answer_summary: "The client's stated source of funds needs further investigation and independent evidence where the customer is already rated higher risk from the due diligence process, where the funding itself presents increased risk (specifically named examples: material amounts of physical cash presented, or material amounts remitted from a gambling institution), or where there are inconsistencies with the customer's background and the information already collected. The type of evidence required depends on the specific origin and means of transfer, and evidence used to corroborate source of wealth may also be used for source of funds where the two are indistinct."
 
   - id: a20
     question: "When assessing whether a media source is credible enough to rely on for negative news screening, what characteristics indicate a reputable source and what indicators suggest a source is not reliable?"
     topic: "negative-news-screening"
     answerable: true
-    gold_chunk_ids: [4350, 4351]
+    gold:
+      - {doc: wolfsberg-negative-news-screening, chunk: 9}
+      - {doc: wolfsberg-negative-news-screening, chunk: 10}
     answer_summary: "Typical characteristics of reputable sources are: Media Type (international news agencies and national newspapers usually give higher quality reporting; regional/local providers may only be material to a specific location); Content (credibility is higher where there is editorial oversight, while unreliability is indicated where content is corroborated from social media or appears non-professional, can be edited online by network participants, or appears opinion-based); Geopolitical context (politically neutral publications are generally more credible; consider news from countries with weaker democracies or non-democratic states where media may be controlled, and refer to sources such as the Press Freedom Index); Redundancy (content substantiated by other reputable sources is more reliable); Editorial Coherence (publishers giving statistics, dates, names, locations and original sources/quotes/footnotes are higher quality, while typographical and spelling errors, or emotional, eye-catching wording and extensive punctuation, may indicate filtering of facts); and Website Layout and Appearance (poorly laid out or badly maintained websites may indicate less reliable content)."
 
   - id: a21
     question: "A respondent bank sends us bundles of physical cheques to clear through the account it holds with us. What patterns on those cheque items should make an analyst suspicious, and why is this activity hard to monitor?"
     topic: "correspondent-banking-product-risk"
     answerable: true
-    gold_chunk_ids: [4236, 4237]
+    gold:
+      - {doc: wolfsberg-cbddq, chunk: 14}
+      - {doc: wolfsberg-cbddq, chunk: 15}
     answer_summary: "This is International Cash Letter activity, where a respondent sends bulk cheques to its correspondent for clearing. It remains risky because the processes are inherently manual, it is difficult to identify the depositor of the cheques and to monitor the activity effectively, and the clearing bank cannot know every depository customer of the correspondent bank that may present a cheque for deposit. The red flags seen on cash letter items are blank payee lines, cheques bearing stamps or codes indicating possible use by third parties, and multiple sequentially-numbered cheques to the same payee in repetitive amounts."
 
   - id: a22
     question: "In trade finance, how do over invoicing, under invoicing and short shipping each transfer excess value, and which party to the trade gains in each case?"
     topic: "trade-based-money-laundering"
     answerable: true
-    gold_chunk_ids: [3980]
+    gold:
+      - {doc: wolfsberg-trade-finance-principles, chunk: 22}
     answer_summary: "Over invoicing misrepresents the price of the goods above their true value in the invoice and other documentation, so the seller gains excess value from the payment. Under invoicing states the price below true value, so the buyer gains excess value when payment is made. Short shipping is where the seller ships less than the invoiced quantity or quality of goods, misrepresenting the true value in the documents, with an effect similar to over invoicing (over shipping is the mirror, with an effect similar to under invoicing). These techniques generally rely on collusion between seller and buyer, which may arise because both parties are controlled by the same persons."
 
   - id: a23
     question: "When a UK organised crime group hands its cash takings to an informal banking network that supplies funds to a diaspora community whose home country caps how much money residents may send overseas each year, what does the crime group get back in exchange, and why is that network so hungry for physical cash in the UK?"
     topic: "underground-banking-cash-for-value-swap"
     answerable: true
-    gold_chunk_ids: [5099]
+    gold:
+      - {doc: uk-national-risk-assessment, chunk: 33}
     answer_summary: "In return for the criminally derived cash, the network makes payments to the crime group's international suppliers or makes funds available to group members in other countries. The network needs large volumes of UK cash because the community uses it heavily - notably students and property purchases - demand driven by home-country foreign exchange restrictions limiting residents to sending $50,000 abroad per year."
 
   - id: a24
     question: "In MTIC carousel fraud, what does a contra-trading scheme add on top of the basic carousel, and which commodity is identified as an emerging one in VAT fraud schemes?"
     topic: "mtic-carousel-vat-fraud"
     answerable: true
-    gold_chunk_ids: [4706]
+    gold:
+      - {doc: europol-socta, chunk: 80}
     answer_summary: "Contra-trading is the most complex and emerging form of MTIC carousel fraud, in which criminal networks add an extra layer of companies to create a second trading circuit or carousel. Precious metals, including gold, are an emerging commodity in VAT fraud schemes, exploited through misdeclaration."
 
   - id: a25
     question: "Our screening only compares customer names against the UK sanctions list and it never produces a hit. What does the FCA say that approach can miss, what detection technique does it point firms towards, and where can we get warning indicators for that behaviour?"
     topic: "sanctions-evasion-detection-beyond-name-screening"
     answerable: true
-    gold_chunk_ids: [5585]
+    gold:
+      - {doc: fca-financial-crime-guide, chunk: 91}
     answer_summary: "The FCA warns that simple screening of names against the Consolidated List may not identify sanctions evasion involving third parties, so alternative detection techniques may be needed. Good practice is using techniques such as data analytics to find customers who may be close associates or dependents of, or have transactional links with, designated persons; potential red flags for sanctions evasion are set out in alerts issued by the National Economic Crime Centre (NECC)."
 
   - id: a26
     question: "A bank we clear payments for keeps sending us instructions where the payer field holds filler text instead of a real name. What are we as the intermediary supposed to do when we spot that, and who ultimately has to make sure the payer's details are accurate?"
     topic: "correspondent-banking-payment-message-transparency"
     answerable: true
-    gold_chunk_ids: [5886]
+    gold:
+      - {doc: basel-sound-management-ml-tf, chunk: 60}
     answer_summary: "The correspondent bank, as intermediary, must treat the quality of payment message information as part of ongoing monitoring: it should monitor messages from the respondent to detect those lacking required originator and/or beneficiary information, including meaningless fields (information that makes no obvious sense, such as \"one of my customers\" or a pure string of characters), and verify the reliability of the respondent's controls, for instance via sample testing of a few transactions against the wire transfer information requirements. Responsibility for accuracy stays with the respondent bank, which as ordering financial institution remains responsible for CDD on the originator and must verify originator information for accuracy and maintain it."
 
   - id: a27
     question: "We have a group buying several high-value cars with cash and putting the registrations in the names of people outside the group, while the same principals run a number of used-jewellery outlets. What scheme does that combination point to?"
     topic: "gold-smuggling-typology-precious-metals"
     answerable: true
-    gold_chunk_ids: [6591]
+    gold:
+      - {doc: esaamlg-gold-diamond-typologies, chunk: 30}
     answer_summary: "It matches a gold-smuggling typology reported by FIC Zambia: the syndicate buys several luxury motor vehicles in cash and registers them to people not linked to the syndicate, while syndicate members remain the beneficial owners; the vehicles are then used to smuggle gold in hidden fitted compartments, and syndicate members also own several second-hand shops dealing in jewellery."
 
   - id: a28
     question: "What red flags turned up in the bank accounts of persons of interest connected to a Philippine offshore gaming operator that was actually running scam operations?"
     topic: "cyber-scam-hubs-offshore-gaming-red-flags"
     answerable: true
-    gold_chunk_ids: [6286]
+    gold:
+      - {doc: apg-yearly-typologies, chunk: 16}
     answer_summary: "The AMLC's financial analysis found: a significant increase in transaction volume and amounts in a POI's accounts once the POGOs began; many foreign exchange transactions funded by cash or cheque deposits made on or near the date of the exchange; cheque payments for real estate totalling PHP 409.7 million (~USD 7.1 million); layering between accounts, multiple deposits in one day, large withdrawals after deposits, creation of transit bank accounts, and misrepresentation of figures in Audited Financial Statements; potential shell companies in real estate development and high-end second-hand car retail; incorporation documents sharing the same email addresses and contact persons connected to one POI; and inconsistencies in a POI's declared personal and financial information on customer due diligence documents."
 
   - id: a29
     question: "A vendor tool we use to flag senior public officials among our customer base returns an unmanageable number of irrelevant name hits. What is the underlying reason these tools generate so much noise, why can't the vendors simply resolve it, and what goes wrong if we tighten the match settings to bring the hit volume down?"
     topic: "pep-screening-database-calibration"
     answerable: true
-    gold_chunk_ids: [6939]
+    gold:
+      - {doc: worldbank-politically-exposed-persons, chunk: 71}
     answer_summary: "The volume of hits arises because the databases often lack additional name identifiers such as date of birth or sex that would narrow matches; providers are adding identifiers but are constrained by lack of information, by collecting only open-source material, and by privacy reasons that stop them drawing on other publicly accessible sources such as birth registries. Narrowing search parameters does lower hit volume, but calibrating screening rules too narrowly increases the risk that genuine PEPs go unidentified, so the database must never be the sole means of determining PEP status."
 
   - id: a30
     question: "Our relationship managers and compliance officers keep deadlocking over whether to take on high-risk corporate clients, and when the decision is escalated the revenue side usually prevails. How should that escalation body be structured so commercial interests cannot carry the decision?"
     topic: "client-onboarding-governance"
     answerable: true
-    gold_chunk_ids: [7892, 7900]
+    gold:
+      - {doc: worldbank-puppet-masters, chunk: 161}
+      - {doc: worldbank-puppet-masters, chunk: 169}
     answer_summary: "The escalation body (a client acceptance committee) should require unanimous consent of all participating business and compliance members, give the highest-ranking compliance member an absolute veto over acceptance, draw its business-side members from other account or product lines so they gain no direct benefit from the client, and meet face-to-face rather than deciding by email. More broadly, compliance must be able to make its voice heard at the highest managerial level, and once compliance has raised a concern the relationship manager should not have the final say on accepting the client."
 
   - id: u01

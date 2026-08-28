@@ -30,7 +30,7 @@ from ..config import DEFAULT_PROFILE, settings
 from ..llm import have_credentials
 from ..retrieval import build_retriever
 from .judge import GroundednessJudge
-from .questions import load_questions
+from .questions import load_questions, resolve_gold_ids
 from .metrics import mean
 
 
@@ -38,6 +38,7 @@ def evaluate(profile: str = DEFAULT_PROFILE, limit: int | None = None) -> dict[s
     from ..agent.pipeline import Pipeline, write_trace
 
     questions = load_questions()
+    resolve_gold_ids([q for q in questions if q.answerable], profile)
     if limit:
         answerable = [q for q in questions if q.answerable][:limit]
         unanswerable = [q for q in questions if not q.answerable][: max(1, limit // 3)]

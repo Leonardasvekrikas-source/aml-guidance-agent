@@ -65,12 +65,12 @@ A retrieved chunk counts only if it is literally the gold chunk. Recall is per-q
 
 | Profile | Method | Recall@5 | Recall@10 | MRR | Median latency |
 |---|---|---|---|---|---|
-| `t256` | Lexical (BM25) | 0.650 | 0.667 | 0.535 | 17 ms |
-| `t256` | Dense (pgvector) | 0.733 | 0.767 | 0.516 | 14 ms |
-| `t256` | Hybrid (RRF) | 0.717 | 0.800 | 0.578 | 36 ms |
-| `t480` | Lexical (BM25) | 0.683 | 0.717 | 0.592 | 11 ms |
-| `t480` | Dense (pgvector) | 0.667 | 0.750 | 0.578 | 14 ms |
-| `t480` | Hybrid (RRF) | 0.750 | 0.783 | 0.615 | 28 ms |
+| `t256` | Lexical (BM25) | 0.650 | 0.667 | 0.535 | 18 ms |
+| `t256` | Dense (pgvector) | 0.733 | 0.767 | 0.516 | 22 ms |
+| `t256` | Hybrid (RRF) | 0.717 | 0.800 | 0.578 | 38 ms |
+| `t480` | Lexical (BM25) | 0.683 | 0.717 | 0.592 | 10 ms |
+| `t480` | Dense (pgvector) | 0.667 | 0.750 | 0.578 | 17 ms |
+| `t480` | Hybrid (RRF) | 0.750 | 0.783 | 0.615 | 30 ms |
 
 Gold chunk ids belong to the profile the questions were authored against (`t480`), and chunks are separate rows per profile, so chunk-id gold cannot compare chunk sizes at all. Page-level gold — did retrieval return a chunk from a page the answer is on — is profile-independent and is the only definition under which this comparison means anything. It is looser than exact gold, so the two tables must not be compared with each other.
 

@@ -26,7 +26,7 @@
     "t256": {
       "bm25": {
         "questions": 30,
-        "median_latency_ms": 17.311920993961394,
+        "median_latency_ms": 17.993202956859022,
         "page_level": {
           "recall_at_5": 0.65,
           "recall_at_10": 0.6666666666666666,
@@ -734,7 +734,7 @@
       },
       "dense": {
         "questions": 30,
-        "median_latency_ms": 14.147962967399508,
+        "median_latency_ms": 21.97794505627826,
         "page_level": {
           "recall_at_5": 0.7333333333333333,
           "recall_at_10": 0.7666666666666667,
@@ -1442,7 +1442,7 @@
       },
       "hybrid": {
         "questions": 30,
-        "median_latency_ms": 35.5986530194059,
+        "median_latency_ms": 38.20532403187826,
         "page_level": {
           "recall_at_5": 0.7166666666666667,
           "recall_at_10": 0.8,
@@ -2152,7 +2152,7 @@
     "t480": {
       "bm25": {
         "questions": 30,
-        "median_latency_ms": 10.93558396678418,
+        "median_latency_ms": 9.738787019159645,
         "page_level": {
           "recall_at_5": 0.6833333333333333,
           "recall_at_10": 0.7166666666666667,
@@ -3017,7 +3017,7 @@
       },
       "dense": {
         "questions": 30,
-        "median_latency_ms": 14.150489994790405,
+        "median_latency_ms": 17.05544302240014,
         "page_level": {
           "recall_at_5": 0.6666666666666666,
           "recall_at_10": 0.75,
@@ -3880,7 +3880,7 @@
       },
       "hybrid": {
         "questions": 30,
-        "median_latency_ms": 27.69750397419557,
+        "median_latency_ms": 29.54263798892498,
         "page_level": {
           "recall_at_5": 0.75,
           "recall_at_10": 0.7833333333333333,

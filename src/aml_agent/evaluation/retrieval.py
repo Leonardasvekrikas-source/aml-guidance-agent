@@ -24,7 +24,7 @@ from ..config import CHUNK_PROFILES, DEFAULT_PROFILE, settings
 from ..retrieval import build_retrievers
 from .gold import gold_pages, resolve_gold, retrieved_pages
 from .metrics import hit_at_k, mean, precision_at_k, recall_at_k, reciprocal_rank
-from .questions import load_questions, validate_gold_chunks
+from .questions import load_questions, resolve_gold_ids
 
 MAX_K = 10
 AUTHORING_PROFILE = DEFAULT_PROFILE
@@ -127,11 +127,11 @@ def main() -> int:
         f"({len(answerable)} answerable, {len(questions) - len(answerable)} unanswerable)"
     )
 
-    # Gold ids must exist in the profile they were authored against. A stale id
-    # would sink recall and look exactly like a retrieval failure, so this
-    # refuses rather than reporting a number that is wrong for an invisible
-    # reason.
-    problems = validate_gold_chunks(answerable, AUTHORING_PROFILE)
+    # Gold is named by (document, chunk_index) and resolved to ids here. An
+    # unresolvable reference would sink recall and look exactly like a
+    # retrieval failure, so this refuses rather than reporting a number that is
+    # wrong for an invisible reason.
+    problems = resolve_gold_ids(answerable, AUTHORING_PROFILE)
     if problems:
         print(f"\nevaluation set is inconsistent with profile {AUTHORING_PROFILE!r}:")
         for problem in problems:
