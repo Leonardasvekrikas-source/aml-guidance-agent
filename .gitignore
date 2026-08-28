@@ -47,3 +47,5 @@ desktop.ini
 AUTHORSHIP.md
 NOTES.md
 MISTAKES.md
+_*.json
+_gen_*.py
