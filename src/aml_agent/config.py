@@ -82,9 +82,26 @@ class Settings:
     embedding_device: str = field(default_factory=lambda: _env("EMBEDDING_DEVICE", "cuda"))
     embedding_batch_size: int = field(default_factory=lambda: _env_int("EMBEDDING_BATCH_SIZE", 32))
 
+    # --- reranking ---
+    # bge-reranker-v2-m3 is a cross-encoder: it scores a (query, passage) pair
+    # in one forward pass rather than comparing independently-computed vectors.
+    reranker_model: str = field(
+        default_factory=lambda: _env("RERANKER_MODEL", "BAAI/bge-reranker-v2-m3")
+    )
+    # First-stage candidates handed to the reranker. This is a hard ceiling on
+    # the whole pipeline: a gold passage outside this pool can never be
+    # recovered, however good the reranker is.
+    rerank_candidates: int = field(default_factory=lambda: _env_int("RERANK_CANDIDATES", 50))
+    rerank_batch_size: int = field(default_factory=lambda: _env_int("RERANK_BATCH_SIZE", 32))
+
     # --- generation ---
     anthropic_api_key: str = field(default_factory=lambda: _env("ANTHROPIC_API_KEY", ""))
     anthropic_model: str = field(default_factory=lambda: _env("ANTHROPIC_MODEL", "claude-opus-5"))
+    # Required only for identity-linked API keys, which must name the
+    # workspace a request acts in. Ordinary keys ignore this.
+    anthropic_workspace_id: str = field(
+        default_factory=lambda: _env("ANTHROPIC_WORKSPACE_ID", "")
+    )
 
     # --- paths ---
     manifest_path: Path = REPO_ROOT / "corpus" / "manifest.yaml"
@@ -113,6 +130,8 @@ class Settings:
         """The settings worth recording next to a result."""
         return {
             "embedding_model": self.embedding_model,
+            "reranker_model": self.reranker_model,
+            "rerank_candidates": self.rerank_candidates,
             "embedding_dim": self.embedding_dim,
             "anthropic_model": self.anthropic_model,
             "chunk_profiles": [asdict(p) for p in CHUNK_PROFILES],

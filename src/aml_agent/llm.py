@@ -46,12 +46,27 @@ def _resolved_key(client: anthropic.Anthropic) -> str:
     return ""
 
 
+def _extra_headers() -> dict[str, str]:
+    """Headers every request needs, if any.
+
+    Identity-linked API keys must name the workspace the request acts in, and
+    the API rejects them with a 400 otherwise. Ordinary keys ignore the header,
+    so it is safe to send whenever it is configured.
+    """
+    if settings.anthropic_workspace_id:
+        return {"anthropic-workspace-id": settings.anthropic_workspace_id}
+    return {}
+
+
 def make_client() -> anthropic.Anthropic:
     if settings.anthropic_api_key:
-        return anthropic.Anthropic(api_key=settings.anthropic_api_key)
+        return anthropic.Anthropic(
+            api_key=settings.anthropic_api_key,
+            default_headers=_extra_headers() or None,
+        )
 
     try:
-        client = anthropic.Anthropic()
+        client = anthropic.Anthropic(default_headers=_extra_headers() or None)
     except Exception as exc:  # noqa: BLE001 - re-raised with a usable message
         raise MissingCredentials(_SETUP_HELP) from exc
 

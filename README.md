@@ -60,6 +60,7 @@ Corpus: **30 documents** from 15 publishers — 5710 chunks at profile `t256`, 2
 | Lexical (BM25) | 0.650 | 0.717 | 0.559 | 0.667 |
 | Dense (pgvector) | 0.600 | 0.717 | 0.565 | 0.633 |
 | Hybrid (RRF) | 0.750 | 0.783 | 0.607 | 0.767 |
+| Hybrid + cross-encoder rerank | 0.867 | 0.867 | 0.781 | 0.900 |
 
 A retrieved chunk counts only if it is literally the gold chunk. Recall is per-question recall over the gold set, not hit-rate; Hit@5 is shown beside it so the difference is visible rather than hidden by a label.
 
@@ -67,17 +68,56 @@ A retrieved chunk counts only if it is literally the gold chunk. Recall is per-q
 
 | Profile | Method | Recall@5 | Recall@10 | MRR | Median latency |
 |---|---|---|---|---|---|
-| `t256` | Lexical (BM25) | 0.650 | 0.667 | 0.535 | 18 ms |
-| `t256` | Dense (pgvector) | 0.733 | 0.767 | 0.516 | 22 ms |
+| `t256` | Lexical (BM25) | 0.650 | 0.667 | 0.535 | 28 ms |
+| `t256` | Dense (pgvector) | 0.733 | 0.767 | 0.516 | 17 ms |
 | `t256` | Hybrid (RRF) | 0.717 | 0.800 | 0.578 | 38 ms |
-| `t480` | Lexical (BM25) | 0.683 | 0.717 | 0.592 | 10 ms |
-| `t480` | Dense (pgvector) | 0.667 | 0.750 | 0.578 | 17 ms |
-| `t480` | Hybrid (RRF) | 0.750 | 0.783 | 0.615 | 30 ms |
+| `t256` | Hybrid + cross-encoder rerank | 0.833 | 0.833 | 0.711 | 404 ms |
+| `t480` | Lexical (BM25) | 0.683 | 0.717 | 0.592 | 13 ms |
+| `t480` | Dense (pgvector) | 0.667 | 0.750 | 0.578 | 16 ms |
+| `t480` | Hybrid (RRF) | 0.750 | 0.783 | 0.615 | 31 ms |
+| `t480` | Hybrid + cross-encoder rerank | 0.867 | 0.867 | 0.781 | 536 ms |
 
 Gold chunk ids belong to the profile the questions were authored against (`t480`), and chunks are separate rows per profile, so chunk-id gold cannot compare chunk sizes at all. Page-level gold — did retrieval return a chunk from a page the answer is on — is profile-independent and is the only definition under which this comparison means anything. It is looser than exact gold, so the two tables must not be compared with each other.
 
 Computed over 30 answerable questions with hand-authored gold passages.
 <!-- END retrieval-table -->
+
+### Reranking, and where the bottleneck actually is
+
+A cross-encoder second stage (`bge-reranker-v2-m3`) reranks the top 50 hybrid
+candidates. Exact gold on `t480`:
+
+| | Recall@5 | MRR | Median latency |
+|---|---|---|---|
+| Hybrid RRF | 0.750 | 0.607 | 31 ms |
+| **Hybrid + rerank** | **0.867** | **0.781** | 536 ms |
+
++11.7 points of recall and +17.4 of MRR, for a 17x latency cost. That cost is
+real and is why reranking sits behind the first stage rather than replacing it.
+
+**The reranker is not the bottleneck — the first stage is.** The candidate
+sweep (`make eval-sweep`, [`results/candidate_sweep.json`](results/candidate_sweep.json))
+measures the ceiling — recall of the first stage over the whole candidate pool,
+the best the reranker could possibly do — against what it achieved:
+
+| Candidates | Ceiling | Achieved@5 | Headroom used | Median latency |
+|---|---|---|---|---|
+| 10 | 0.783 | 0.783 | 100% | 135 ms |
+| 25 | 0.833 | 0.833 | 100% | 279 ms |
+| **50** | **0.867** | **0.867** | **100%** | 534 ms |
+| 100 | 0.867 | 0.867 | 100% | 663 ms |
+| 200 | 0.867 | 0.867 | 100% | 650 ms |
+
+The reranker delivers **100% of the available headroom at every candidate
+count** — every gold passage that reached the pool ended up in the top 5. And
+the ceiling saturates at 50 candidates: going to 100 or 200 adds latency and
+nothing else, because the missing passages are not in the top 200 of hybrid
+retrieval at all.
+
+So the remaining 13.3% of failures are first-stage recall misses, not ranking
+errors. Improving them means improving retrieval or chunking — a better
+reranker or a bigger candidate pool would do nothing, which is worth knowing
+before spending effort on either.
 
 ### What the retrieval numbers actually show
 

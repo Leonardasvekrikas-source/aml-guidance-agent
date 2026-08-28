@@ -108,3 +108,47 @@ would mean the reproducibility claims were never actually exercised.
 
 **Cost.** Two entry points to keep in sync. The alternative was one entry point
 that half the readers cannot run.
+
+---
+
+## Cross-encoder reranking as a second stage, not a replacement
+
+**Chosen because** BM25 and dense retrieval both score a query against a
+passage without letting the two interact — BM25 counts term overlap, and a
+dense passage embedding is computed before the query exists. That independence
+is what makes them fast enough to search 8,000 chunks, and it is also their
+ceiling: neither can represent "this passage answers *that* question" as
+opposed to "this passage is about the same subject". A cross-encoder puts both
+in one forward pass and can.
+
+Measured: recall@5 0.750 to 0.867, MRR 0.607 to 0.781.
+
+**Cost.** Every candidate costs a model forward pass, so median query latency
+goes from 31 ms to 536 ms — roughly 17x. That is why it reranks 50 candidates
+rather than searching the corpus: a cross-encoder over 8,000 chunks would take
+minutes per query.
+
+**Candidate count: 50.** Measured, not guessed. The ceiling saturates there;
+100 and 200 candidates cost more and retrieve nothing new.
+
+**Different context.** Under a hard latency budget below ~200 ms, rerank 25
+candidates instead: it keeps most of the gain (0.833) at half the cost. Below
+that, drop reranking and accept 0.750.
+
+---
+
+## Reporting the first-stage ceiling separately from the achieved score
+
+**Chosen because** "recall@5 is 0.867" does not say which stage to improve. The
+ceiling — what fraction of gold passages reached the candidate pool at all —
+separates a pool that never contained the answer from a reranker that mis-ordered
+one that did.
+
+The answer here turned out to be unambiguous: the reranker uses 100% of the
+available headroom at every candidate count, so every remaining failure is a
+first-stage recall miss. That rules out two plausible next steps (a stronger
+reranker, a larger candidate pool) and points at the ones that remain — a better
+embedding model, contextual retrieval, different chunking.
+
+Without this measurement the obvious move would have been "try more candidates",
+which the sweep shows would have bought exactly nothing.

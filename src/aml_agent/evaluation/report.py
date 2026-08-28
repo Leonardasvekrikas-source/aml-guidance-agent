@@ -24,7 +24,13 @@ ANSWER_END = "<!-- END answer-table -->"
 CORPUS_START = "<!-- BEGIN corpus-line -->"
 CORPUS_END = "<!-- END corpus-line -->"
 
-LABELS = {"bm25": "Lexical (BM25)", "dense": "Dense (pgvector)", "hybrid": "Hybrid (RRF)"}
+LABELS = {
+    "bm25": "Lexical (BM25)",
+    "dense": "Dense (pgvector)",
+    "hybrid": "Hybrid (RRF)",
+    "hybrid+rerank": "Hybrid + cross-encoder rerank",
+}
+ORDER = ("bm25", "dense", "hybrid", "hybrid+rerank")
 
 
 def _load(name: str) -> dict[str, Any] | None:
@@ -57,7 +63,7 @@ def retrieval_table() -> str:
     lines.append("")
     lines.append("| Method | Recall@5 | Recall@10 | MRR | Hit@5 |")
     lines.append("|---|---|---|---|---|")
-    for key in ("bm25", "dense", "hybrid"):
+    for key in ORDER:
         row = profiles.get(authoring, {}).get(key, {}).get("exact")
         if not row:
             continue
@@ -81,7 +87,7 @@ def retrieval_table() -> str:
     lines.append("| Profile | Method | Recall@5 | Recall@10 | MRR | Median latency |")
     lines.append("|---|---|---|---|---|---|")
     for profile_name in sorted(profiles):
-        for key in ("bm25", "dense", "hybrid"):
+        for key in ORDER:
             entry = profiles[profile_name].get(key)
             if not entry:
                 continue

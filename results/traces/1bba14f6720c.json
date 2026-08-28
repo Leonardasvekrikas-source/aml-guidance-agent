@@ -1,0 +1,38 @@
+{
+  "trace_id": "1bba14f6720c",
+  "question": "What indicators suggest trade-based money laundering in invoice documentation?",
+  "outcome": "error",
+  "summary": "",
+  "citations": [],
+  "refusal_reason": "BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'anthropic-workspace-id is required when authenticating with an identity-linked API key; send the id of the workspace this request acts in.'}, 'request_id': None}",
+  "attempts": 1,
+  "searches": 0,
+  "input_tokens": 0,
+  "output_tokens": 0,
+  "latency_ms": 217.0,
+  "validation": null,
+  "drafts": [
+    {
+      "trace_id": "1bba14f6720c",
+      "question": "What indicators suggest trade-based money laundering in invoice documentation?",
+      "outcome": "error",
+      "summary": "",
+      "claims": [],
+      "refusal_reason": "",
+      "iterations": 1,
+      "searches": 0,
+      "retrieved_chunk_ids": [],
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "latency_ms": 217.0,
+      "error": "BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'anthropic-workspace-id is required when authenticating with an identity-linked API key; send the id of the workspace this request acts in.'}, 'request_id': None}",
+      "trace": [
+        {
+          "step": "api_error",
+          "detail": "BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'anthropic-workspace-id is required when authenticating with an identity-linked API key; send the id of the workspace this request acts in.'}, 'request_id': None}"
+        }
+      ]
+    }
+  ],
+  "written_at": "2026-08-28T20:19:33+00:00"
+}

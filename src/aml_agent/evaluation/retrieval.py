@@ -22,6 +22,7 @@ from typing import Any
 
 from ..config import CHUNK_PROFILES, DEFAULT_PROFILE, settings
 from ..retrieval import build_retrievers
+from ..retrieval.rerank import RerankedRetriever
 from .gold import gold_pages, resolve_gold, retrieved_pages
 from .metrics import hit_at_k, mean, precision_at_k, recall_at_k, reciprocal_rank
 from .questions import load_questions, resolve_gold_ids
@@ -44,6 +45,20 @@ def evaluate_profile(
     for name, retriever in retrievers.items():
         rows: list[dict[str, Any]] = []
         latencies: list[float] = []
+
+        # For a reranked retriever, the first stage sets a hard ceiling: a
+        # gold passage outside the candidate pool cannot be recovered no matter
+        # how good the reranker is. Measuring it separates "the pool was wrong"
+        # from "the reranker mis-ordered a pool that contained the answer",
+        # which is the difference between improving stage one and stage two.
+        # Only meaningful under exact gold: the ceiling is measured against
+        # gold chunk ids, which exist only in the authoring profile.
+        ceiling_base = (
+            retriever.base
+            if exact_applies and isinstance(retriever, RerankedRetriever)
+            else None
+        )
+        ceiling_k = retriever.candidate_k if ceiling_base else 0
 
         for question in answerable:
             started = time.perf_counter()
@@ -78,6 +93,10 @@ def evaluate_profile(
                     }
                 )
 
+            if ceiling_base is not None:
+                pool = [h.chunk_id for h in ceiling_base.search(question.question, ceiling_k)]
+                row["ceiling_recall"] = recall_at_k(pool, gold_ids, ceiling_k)
+
             rows.append(row)
 
         latencies.sort()
@@ -93,6 +112,12 @@ def evaluate_profile(
             "per_question": rows,
         }
 
+        if ceiling_base is not None:
+            summary["first_stage_ceiling"] = {
+                "candidates": ceiling_k,
+                "recall": mean([r["ceiling_recall"] for r in rows]),
+            }
+
         if exact_applies:
             summary["exact"] = {
                 "recall_at_5": mean([r["recall_at_5"] for r in rows]),
@@ -104,6 +129,13 @@ def evaluate_profile(
 
         per_retriever[name] = summary
 
+        ceiling_note = ""
+        if "first_stage_ceiling" in summary:
+            ceiling_note = (
+                f"  |  ceiling@{summary['first_stage_ceiling']['candidates']} "
+                f"{summary['first_stage_ceiling']['recall']:.3f}"
+            )
+
         exact_note = ""
         if exact_applies:
             e = summary["exact"]
@@ -112,7 +144,7 @@ def evaluate_profile(
         print(
             f"  {profile:<6} {name:<8} page R@5 {p['recall_at_5']:.3f}  "
             f"R@10 {p['recall_at_10']:.3f}  MRR {p['mrr']:.3f}  "
-            f"{summary['median_latency_ms']:.0f}ms{exact_note}",
+            f"{summary['median_latency_ms']:.0f}ms{exact_note}{ceiling_note}",
             flush=True,
         )
 

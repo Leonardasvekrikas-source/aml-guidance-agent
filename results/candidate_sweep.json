@@ -1,0 +1,61 @@
+{
+  "settings": {
+    "embedding_model": "BAAI/bge-base-en-v1.5",
+    "reranker_model": "BAAI/bge-reranker-v2-m3",
+    "rerank_candidates": 50,
+    "embedding_dim": 768,
+    "anthropic_model": "claude-opus-5",
+    "chunk_profiles": [
+      {
+        "name": "t256",
+        "target_tokens": 256,
+        "overlap_tokens": 48
+      },
+      {
+        "name": "t480",
+        "target_tokens": 480,
+        "overlap_tokens": 64
+      }
+    ]
+  },
+  "profile": "t480",
+  "top_k": 5,
+  "questions": 30,
+  "sweep": [
+    {
+      "candidates": 10,
+      "ceiling_recall": 0.7833333333333333,
+      "achieved_recall_at_5": 0.7833333333333333,
+      "headroom_used": 1.0,
+      "median_latency_ms": 135.012821003329
+    },
+    {
+      "candidates": 25,
+      "ceiling_recall": 0.8333333333333334,
+      "achieved_recall_at_5": 0.8333333333333334,
+      "headroom_used": 1.0,
+      "median_latency_ms": 278.79175601992756
+    },
+    {
+      "candidates": 50,
+      "ceiling_recall": 0.8666666666666667,
+      "achieved_recall_at_5": 0.8666666666666667,
+      "headroom_used": 1.0,
+      "median_latency_ms": 534.0418689884245
+    },
+    {
+      "candidates": 100,
+      "ceiling_recall": 0.8666666666666667,
+      "achieved_recall_at_5": 0.8666666666666667,
+      "headroom_used": 1.0,
+      "median_latency_ms": 662.747734982986
+    },
+    {
+      "candidates": 200,
+      "ceiling_recall": 0.8666666666666667,
+      "achieved_recall_at_5": 0.8666666666666667,
+      "headroom_used": 1.0,
+      "median_latency_ms": 649.6024390216917
+    }
+  ]
+}
