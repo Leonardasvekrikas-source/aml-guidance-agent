@@ -1,0 +1,44 @@
+# --- local working notes, not part of the published repo ---
+CLAUDE.md
+.claude/
+
+# --- secrets ---
+.env
+.env.*
+!.env.example
+
+# --- python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+
+# --- model / embedding caches (large, re-downloadable) ---
+.cache/
+models/
+*.safetensors
+*.bin
+
+# --- corpus source documents ---
+# The manifest + download script are committed; the PDFs are not.
+# Every document is publicly downloadable from the URL in corpus/manifest.yaml.
+corpus/raw/
+corpus/pdfs/
+*.pdf
+
+# --- NOT ignored, deliberately: results/ ---
+# Every number claimed in the README must be reproducible from a committed
+# artifact. results/*.json, results/traces/ and results/judge_agreement.md
+# are part of the repo's evidence, not build output.
+
+# --- editors / os ---
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
