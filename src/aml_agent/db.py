@@ -83,18 +83,24 @@ def insert_chunks(conn: psycopg.Connection, rows: Sequence[dict[str, Any]]) -> i
     """
     if not rows:
         return 0
+    # The embedding column is chosen by the active model, not by the caller:
+    # a 1024-wide vector cannot go into a 768-wide column, and letting call
+    # sites pick would make that a runtime surprise.
+    column = settings.embedding_column
     with conn.cursor() as cur:
         cur.executemany(
-            """
+            f"""
             INSERT INTO chunks (
                 document_id, chunk_profile, chunk_index, page,
-                section_heading, text, char_count, token_count, embedding
+                section_heading, text, char_count, token_count, {column}
             )
             VALUES (
                 %(document_id)s, %(chunk_profile)s, %(chunk_index)s, %(page)s,
                 %(section_heading)s, %(text)s, %(char_count)s, %(token_count)s,
                 %(embedding)s
             )
+            ON CONFLICT (document_id, chunk_profile, chunk_index) DO UPDATE
+                SET {column} = EXCLUDED.{column}
             """,
             rows,
         )
@@ -112,7 +118,7 @@ def fetch_chunks(
     line up with chunk ids the same way on every run, or a benchmark is not
     reproducible.
     """
-    embedding_col = ", embedding" if with_embeddings else ""
+    embedding_col = f", {settings.embedding_column}" if with_embeddings else ""
     cur = conn.execute(
         f"""
         SELECT c.id, c.document_id, c.chunk_index, c.page, c.section_heading,
@@ -136,7 +142,8 @@ def corpus_stats(conn: psycopg.Connection) -> dict[str, Any]:
             """
             SELECT chunk_profile,
                    count(*)                              AS chunks,
-                   count(embedding)                      AS embedded,
+                   count(embedding)                      AS embedded_768,
+                   count(embedding_lg)                   AS embedded_1024,
                    round(avg(char_count))                AS avg_chars,
                    round(avg(token_count))               AS avg_tokens,
                    count(DISTINCT document_id)           AS documents

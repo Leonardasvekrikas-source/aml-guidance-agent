@@ -244,3 +244,67 @@ size. The honest statement is that dense and hybrid figures carry roughly a
 between two configurations should not be treated as a result. With 30
 questions the sampling error is already larger than this, which is the more
 important caveat.
+
+---
+
+## Phase B — an embedding ablation that silently changed two variables
+
+**Symptom.** Re-embedding the corpus with `bge-m3` produced **9,392 chunks**
+where `bge-base` had produced 8,574 — from the same 30 PDFs, in a step whose
+only stated purpose was to write a second set of vectors.
+
+**Cause.** The chunker tokenised with *the active embedding model's* tokenizer.
+bge-base uses WordPiece, bge-m3 uses SentencePiece; the same document splits at
+different boundaries and into a different number of chunks. Switching the model
+therefore changed the corpus as well.
+
+**Why it matters.** The result would have been an "embedding model A vs B"
+table that was actually measuring A-with-A's-chunking against
+B-with-B's-chunking. Two variables, one number, no conclusion — and it would
+have looked completely normal, because both configurations are individually
+valid. This is the failure mode that quietly invalidates most published
+ablations.
+
+It also corrupted the database. `--embed-only` upserts on
+`(document_id, chunk_profile, chunk_index)`, so the first 8,574 rows kept
+bge-base's text while receiving vectors computed from bge-m3's *different*
+text, and 818 further rows were inserted with no 768-dimensional vector at all.
+Every row looked fine individually.
+
+**Fix.** Chunk boundaries are now computed with one fixed reference tokenizer
+(`REFERENCE_TOKENIZER` in `chunk.py`) regardless of which embedding model is
+active, so the corpus is a constant across embedding experiments. The chunks
+table was truncated and rebuilt; re-ingesting reproduced 8,574 chunks exactly,
+which is the check that the fix works.
+
+**Second-order consequence, handled.** Holding chunking constant means
+`token_count` is exact for the reference model and approximate for others, and
+a model with a smaller window could silently truncate a chunk — leaving text
+findable by BM25 and invisible to dense retrieval. `check_no_truncation()` now
+measures the real token count under the active model and refuses to embed
+rather than truncating quietly.
+
+**How it was caught.** A chunk count that should not have moved, moved. Worth
+remembering: the bug was not in the number being measured, it was in something
+adjacent that had no business changing.
+
+---
+
+## Phase B — torch 2.5 could not load bge-m3 at all
+
+**Symptom.**
+
+```
+ValueError: Due to a serious vulnerability issue in torch.load ... we now
+require users to upgrade torch to at least v2.6 (CVE-2025-32434)
+```
+
+**Cause.** `transformers` refuses `torch.load` on torch below 2.6, which blocks
+any model whose weights are not published as safetensors. The pinned stack was
+torch 2.5.1 and sentence-transformers 3.3.1 — both roughly two years stale.
+
+**Fix.** Upgraded to torch 2.13.0, sentence-transformers 6.0.0 and
+transformers 5.16.1, and verified afterwards that CUDA, the baseline embedding
+model and the cross-encoder all still load. The BM25 control row in the
+ablation is identical to three decimal places across the upgrade, which is the
+evidence that the dependency change did not move the benchmark.

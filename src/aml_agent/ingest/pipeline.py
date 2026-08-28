@@ -14,12 +14,12 @@ from ..config import CHUNK_PROFILES, settings
 from ..db import connect, delete_chunks, insert_chunks, upsert_document
 from .chunk import chunk_document
 from .download import download_all
-from .embed import embed_passages
+from .embed import check_no_truncation, embed_passages
 from .extract import ExtractionError, extract_pages, page_count
 from .manifest import load_manifest
 
 
-def ingest(skip_download: bool = False) -> int:
+def ingest(skip_download: bool = False, embed_only: bool = False) -> int:
     entries = load_manifest()
     print(f"manifest: {len(entries)} documents")
 
@@ -35,7 +35,11 @@ def ingest(skip_download: bool = False) -> int:
         print("\nnothing available to ingest.")
         return 1
 
-    print(f"\n=== extract, chunk, embed, load ===")
+    print(
+        f"\n=== extract, chunk, embed, load ===\n"
+        f"embedding model: {settings.embedding_key} ({settings.embedding_model}) "
+        f"-> chunks.{settings.embedding_column}"
+    )
     retrieved_at = datetime.now(timezone.utc)
     failures: list[tuple[str, str]] = []
     loaded_documents = 0
@@ -77,11 +81,20 @@ def ingest(skip_download: bool = False) -> int:
                 if not chunks:
                     continue
 
-                vectors = embed_passages([c.text for c in chunks])
+                texts = [c.text for c in chunks]
+                check_no_truncation(texts)
+                vectors = embed_passages(texts)
 
                 # Replace rather than append: re-ingesting must not double the
                 # corpus and silently move every retrieval number.
-                delete_chunks(conn, entry.id, profile.name)
+                #
+                # embed_only skips the delete so that switching embedding model
+                # fills its column on the existing rows instead of destroying
+                # the other model's vectors. The insert upserts on
+                # (document_id, chunk_profile, chunk_index), which is exactly
+                # the uniqueness the schema already enforces.
+                if not embed_only:
+                    delete_chunks(conn, entry.id, profile.name)
                 insert_chunks(
                     conn,
                     [
@@ -121,7 +134,10 @@ def ingest(skip_download: bool = False) -> int:
 
 
 def main() -> int:
-    return ingest(skip_download="--skip-download" in sys.argv)
+    return ingest(
+        skip_download="--skip-download" in sys.argv,
+        embed_only="--embed-only" in sys.argv,
+    )
 
 
 if __name__ == "__main__":

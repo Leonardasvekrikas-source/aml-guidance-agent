@@ -152,3 +152,49 @@ embedding model, contextual retrieval, different chunking.
 
 Without this measurement the obvious move would have been "try more candidates",
 which the sweep shows would have bought exactly nothing.
+
+---
+
+## Chunk boundaries come from a fixed reference tokenizer, not the active model
+
+**Chosen because** an ablation must vary one thing. Tokenizers disagree: the
+same corpus chunked with bge-base's WordPiece and bge-m3's SentencePiece
+produced 8,574 and 9,392 chunks respectively. Letting the chunker follow the
+embedding model meant every embedding experiment silently changed the corpus
+too, and the resulting comparison would have measured two variables at once.
+
+**Cost.** `token_count` is exact for the reference model and approximate for
+others, and a model with a smaller context window might not fit a chunk built
+for the reference. That is why `check_no_truncation()` measures the real token
+count under the active model and refuses rather than truncating silently — the
+alternative is a passage whose tail is findable by BM25 and invisible to dense
+retrieval.
+
+**Different context.** If only one embedding model will ever be used,
+chunking to that model's tokenizer is strictly better. The fixed reference only
+earns its cost when models are compared.
+
+---
+
+## bge-m3 over bge-base-en-v1.5
+
+**Chosen because** it measurably raises the first-stage ceiling from 0.867 to
+0.917 — see `results/embedding_ablation.md`. That is the number that matters:
+the candidate sweep established that the reranker already uses 100% of the
+headroom it is given, so the only route to a better final answer is putting
+more gold passages into the candidate pool.
+
+Dense recall@5 rose from 0.600 to 0.700 on identical chunks.
+
+**Why the ablation is trustworthy.** BM25 does not use embeddings, so it is the
+control: it is identical to three decimals across both runs. If it had moved,
+the comparison would have been void.
+
+**Cost.** 1024 dimensions rather than 768, so a larger index and a second
+vector column (a pgvector column has a fixed width, so two models of different
+width cannot share one). bge-m3 is also a considerably larger model to load.
+
+**Different context.** For an English-only corpus with a hard memory budget,
+bge-base is 33% narrower and gives up about 5 points of ceiling. That is a
+reasonable trade to make deliberately, and it is why the model stays selectable
+rather than being deleted.

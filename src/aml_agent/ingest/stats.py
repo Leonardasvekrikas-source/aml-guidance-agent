@@ -17,19 +17,25 @@ def main() -> int:
             print("no chunks ingested yet — run `make ingest`")
             return 1
 
-        print(f"\n{'profile':<10}{'docs':>6}{'chunks':>9}{'embedded':>10}"
+        # Both embedding columns are reported. A profile fully embedded by one
+        # model and not the other is the normal state while an embedding
+        # ablation is in progress, and it must not look like corruption.
+        print(f"\n{'profile':<10}{'docs':>6}{'chunks':>9}{'768d':>8}{'1024d':>8}"
               f"{'avg chars':>11}{'avg tokens':>12}")
         for row in stats["profiles"]:
             print(
                 f"{row['chunk_profile']:<10}{row['documents']:>6}{row['chunks']:>9}"
-                f"{row['embedded']:>10}{row['avg_chars'] or 0:>11}"
-                f"{row['avg_tokens'] or 0:>12}"
+                f"{row['embedded_768']:>8}{row['embedded_1024']:>8}"
+                f"{row['avg_chars'] or 0:>11}{row['avg_tokens'] or 0:>12}"
             )
 
-        missing = [r for r in stats["profiles"] if r["chunks"] != r["embedded"]]
+        active = "embedded_768" if settings.embedding_dim == 768 else "embedded_1024"
+        missing = [r for r in stats["profiles"] if r["chunks"] != r[active]]
         if missing:
-            print("\nWARNING: some chunks have no embedding. Dense retrieval will "
-                  "silently miss them. Re-run ingestion.")
+            print(
+                f"\nWARNING: some chunks have no {settings.embedding_key} embedding. "
+                "Dense retrieval will silently miss them. Re-run ingestion."
+            )
 
         by_publisher = list(
             conn.execute(

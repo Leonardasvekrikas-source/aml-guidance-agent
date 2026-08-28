@@ -187,7 +187,12 @@ def main() -> int:
         print()
 
     settings.results_dir.mkdir(parents=True, exist_ok=True)
-    output = settings.results_dir / "retrieval.json"
+    # --tag writes to a suffixed file so an ablation can keep each run's full
+    # per-question detail instead of only the summary line it printed.
+    tag = ""
+    if "--tag" in sys.argv:
+        tag = "_" + sys.argv[sys.argv.index("--tag") + 1]
+    output = settings.results_dir / f"retrieval{tag}.json"
     output.write_text(
         json.dumps(
             {

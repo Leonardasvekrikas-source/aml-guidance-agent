@@ -19,9 +19,10 @@ import numpy as np
 
 from ..config import settings
 
-# Prefix specified by the model's authors for retrieval queries. Passages get
-# no prefix.
-QUERY_INSTRUCTION = "Represent this sentence for searching relevant passages: "
+# Prefixes come from the active model's spec in config, because they differ
+# per model: bge-base prefixes only queries, e5 prefixes both sides with
+# different strings, and bge-m3 prefixes neither. Applying the wrong one does
+# not error, it quietly costs recall.
 
 
 @lru_cache(maxsize=2)
@@ -49,9 +50,10 @@ def embed_passages(texts: Sequence[str], batch_size: int | None = None) -> np.nd
     if not texts:
         return np.zeros((0, settings.embedding_dim), dtype=np.float32)
 
+    prefix = settings.embedding.passage_prefix
     model = get_model()
     vectors = model.encode(
-        list(texts),
+        [prefix + t for t in texts] if prefix else list(texts),
         batch_size=batch_size or settings.embedding_batch_size,
         normalize_embeddings=True,
         convert_to_numpy=True,
@@ -64,13 +66,47 @@ def embed_passages(texts: Sequence[str], batch_size: int | None = None) -> np.nd
 def embed_query(text: str) -> np.ndarray:
     model = get_model()
     vector = model.encode(
-        QUERY_INSTRUCTION + text,
+        settings.embedding.query_prefix + text,
         normalize_embeddings=True,
         convert_to_numpy=True,
         show_progress_bar=False,
     )
     _check_dim(vector.reshape(1, -1))
     return vector.astype(np.float32)
+
+
+def check_no_truncation(texts: Sequence[str], sample: int = 200) -> None:
+    """Fail loudly if the active model would truncate these chunks.
+
+    Chunk boundaries come from a fixed reference tokenizer, so a model with a
+    different tokenizer or a smaller window may not fit them. Truncation does
+    not raise — it silently drops the tail of a passage, leaving text that BM25
+    can find and dense retrieval cannot. That is exactly the kind of failure
+    this project exists to avoid reporting as a result.
+    """
+    if not texts:
+        return
+
+    model = get_model()
+    window = getattr(model, "max_seq_length", None)
+    if not window:
+        return
+
+    tokenizer = model.tokenizer
+    step = max(1, len(texts) // sample)
+    worst = 0
+    for text in texts[::step]:
+        count = len(tokenizer(text, add_special_tokens=True)["input_ids"])
+        worst = max(worst, count)
+
+    if worst > window:
+        raise ValueError(
+            f"{settings.embedding_model} truncates at {window} tokens, but chunks "
+            f"reach {worst} tokens under its tokenizer. Chunk boundaries are set by "
+            f"the reference tokenizer, so this model needs a smaller chunk profile. "
+            "Embedding anyway would silently drop the tail of long passages, making "
+            "them findable by BM25 and invisible to dense retrieval."
+        )
 
 
 def _check_dim(vectors: np.ndarray) -> None:
@@ -83,8 +119,9 @@ def _check_dim(vectors: np.ndarray) -> None:
     width = vectors.shape[1]
     if width != settings.embedding_dim:
         raise ValueError(
-            f"{settings.embedding_model} produces {width}-dimensional vectors but "
-            f"EMBEDDING_DIM is {settings.embedding_dim} and the chunks table "
-            f"declares vector({settings.embedding_dim}). Change both, and write a "
-            "migration — the existing index cannot hold a different width."
+            f"{settings.embedding_model} produces {width}-dimensional vectors, but "
+            f"the {settings.embedding_key!r} spec declares {settings.embedding_dim} "
+            f"and writes to chunks.{settings.embedding_column}. Fix the spec in "
+            "config, and add a migration if no column of that width exists — a "
+            "pgvector column has a fixed dimension."
         )

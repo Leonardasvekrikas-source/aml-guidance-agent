@@ -71,6 +71,10 @@ eval-retrieval:  ## M1: recall@5, recall@10, MRR for BM25 / dense / hybrid
 eval-answers:  ## M4: groundedness, citation validity, refusal accuracy
 	$(RUN) aml_agent.evaluation.answers
 
+.PHONY: eval-ablation
+eval-ablation:  ## Compare tagged benchmark runs (embedding-model ablation)
+	$(RUN) aml_agent.evaluation.ablation bge-base bge-m3
+
 .PHONY: eval-sweep
 eval-sweep:  ## Sweep reranker candidate counts: ceiling vs achieved vs latency
 	$(RUN) aml_agent.evaluation.candidate_sweep

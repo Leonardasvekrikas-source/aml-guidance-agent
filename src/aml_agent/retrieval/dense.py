@@ -8,6 +8,7 @@ of those three out of step degrades recall silently rather than erroring.
 
 from __future__ import annotations
 
+from ..config import settings
 from ..ingest.embed import embed_query
 from ..db import connect
 from .base import Hit, row_to_hit
@@ -22,18 +23,23 @@ class DenseRetriever:
     def search(self, query: str, k: int = 10) -> list[Hit]:
         vector = embed_query(query)
 
+        # Column follows the active embedding model. Querying a column that
+        # holds a different model's vectors would return nonsense rather than
+        # an error, so this is never a caller's choice.
+        column = settings.embedding_column
+
         with connect() as conn:
             rows = list(
                 conn.execute(
-                    """
+                    f"""
                     SELECT c.id, c.document_id, c.page, c.section_heading, c.text,
                            d.title, d.publisher, d.source_url,
-                           c.embedding <=> %s AS distance
+                           c.{column} <=> %s AS distance
                     FROM chunks c
                     JOIN documents d ON d.id = c.document_id
                     WHERE c.chunk_profile = %s
-                      AND c.embedding IS NOT NULL
-                    ORDER BY c.embedding <=> %s
+                      AND c.{column} IS NOT NULL
+                    ORDER BY c.{column} <=> %s
                     LIMIT %s
                     """,
                     (vector, self.profile, vector, k),

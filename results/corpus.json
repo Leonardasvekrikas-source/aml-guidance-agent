@@ -4,7 +4,8 @@
     {
       "chunk_profile": "t256",
       "chunks": 5710,
-      "embedded": 5710,
+      "embedded_768": 5710,
+      "embedded_1024": 5710,
       "avg_chars": "1226",
       "avg_tokens": "256",
       "documents": 30
@@ -12,7 +13,8 @@
     {
       "chunk_profile": "t480",
       "chunks": 2864,
-      "embedded": 2864,
+      "embedded_768": 2864,
+      "embedded_1024": 2864,
       "avg_chars": "2293",
       "avg_tokens": "478",
       "documents": 30

@@ -23,6 +23,22 @@ from .extract import Page
 # 12-token chunk is never independently useful and skews average-length stats.
 MIN_TAIL_TOKENS = 32
 
+# Chunk boundaries are computed with ONE fixed tokenizer, regardless of which
+# embedding model is active.
+#
+# This is not an oversight, it is the point. Tokenizers disagree: the same
+# document chunked with bge-base's WordPiece and bge-m3's SentencePiece
+# produces different boundaries and a different number of chunks. If the
+# chunker followed the active model, swapping embedding models would silently
+# change the corpus as well, and an "embedding model A vs B" experiment would
+# actually be measuring A-with-its-chunking against B-with-its-chunking - two
+# variables, one number, no conclusion.
+#
+# Holding this constant means token_count is exact for the reference model and
+# approximate for others, which is why embed.py verifies that the active model
+# does not truncate rather than assuming it.
+REFERENCE_TOKENIZER = "BAAI/bge-base-en-v1.5"
+
 
 @dataclass
 class Chunk:
@@ -93,7 +109,7 @@ def chunk_document(
     if not pages:
         return []
 
-    tokenizer = get_tokenizer(model_name or settings.embedding_model)
+    tokenizer = get_tokenizer(model_name or REFERENCE_TOKENIZER)
     document_text, spans = _join_pages(pages)
 
     encoding = tokenizer(
