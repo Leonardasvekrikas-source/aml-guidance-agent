@@ -113,6 +113,16 @@ jobs:
             SELECT 1 FROM information_schema.tables WHERE table_name = 'documents';
             SELECT 1 FROM information_schema.columns
               WHERE table_name = 'chunks' AND column_name = 'embedding_lg';
+            SELECT 1 FROM information_schema.columns
+              WHERE table_name = 'chunks' AND column_name = 'page_end';
           "
-          PGPASSWORD=aml psql -h localhost -U aml -d aml -tAc \
-            "SELECT count(*) FROM schema_migrations" | grep -qx "2"
+
+      - name: Every migration file recorded itself
+        # Counted from the files rather than hardcoded, so adding a migration
+        # does not fail CI for the wrong reason - and a migration that forgets
+        # its schema_migrations row still does.
+        run: |
+          expected=$(ls migrations/*.sql | wc -l)
+          actual=$(PGPASSWORD=aml psql -h localhost -U aml -d aml -tAc             "SELECT count(*) FROM schema_migrations")
+          echo "migration files: $expected, recorded: $actual"
+          test "$expected" = "$actual"
