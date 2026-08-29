@@ -63,10 +63,13 @@ jobs:
           pip install -r requirements-ci.txt
 
       - name: Validate the manifest
-        run: python -c "
-          from aml_agent.ingest.manifest import load_manifest;
-          e = load_manifest();
-          print(f'manifest valid: {len(e)} documents')"
+        run: |
+          python - <<'PY'
+          from aml_agent.ingest.manifest import load_manifest
+
+          entries = load_manifest()
+          print(f"manifest valid: {len(entries)} documents")
+          PY
 
       - name: Check every source URL still resolves
         # The corpus is defined by URLs on other people's servers. They rot.
