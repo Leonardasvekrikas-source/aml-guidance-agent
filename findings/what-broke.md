@@ -355,3 +355,72 @@ Responses are now classified three ways, and only one of them fails the build:
 between "this is broken" and "I could not verify this from here" is the
 difference between a useful signal and noise, and it was not obvious until the
 job ran somewhere other than a laptop.
+
+---
+
+## Phase B — a chunk-size experiment that measured two bugs instead of chunk size
+
+Adding a 1024-token profile produced an apparently decisive result: page-level
+recall@5 of **0.483** against 0.883 for the 480-token profile. Larger chunks
+looked catastrophic. Both halves of that gap turned out to be measurement.
+
+**Artifact one — chunks were credited to the page they started on.**
+`chunks.page` recorded the first page and nothing else. That was fine while
+chunks fitted inside a page or two. A 1024-token chunk averages ~4,900
+characters against ~2,700 characters per page, so it spans two to three pages —
+measured afterwards at 2.86 on average, up to 9.
+
+Page-level scoring asks whether retrieval returned a chunk from a page the
+answer is on. Under start-page attribution, a large chunk that *contained the
+answer* was scored as a miss whenever the answer sat on its second or third
+page. The metric was penalising chunks for being large, which is precisely the
+variable the experiment existed to measure.
+
+Fixed by recording a page span (`migrations/003_chunk_page_span.sql`) and
+scoring over the whole range on both sides. `t1024` moved 0.483 → 0.606.
+
+**Artifact two — the reranker was truncating passages.**
+`CrossEncoder(..., max_length=512)` was hardcoded. bge-reranker-v2-m3 supports
+8192. So every 1024-token chunk was scored on its opening half, with the rest
+invisible to the model. No error, no warning: just a worse ranking that looked
+exactly like the chunk size being bad.
+
+`t1024` moved 0.606 → 0.717 with a window that fits it. The window is now
+configurable, and the reranker prints a warning when its window is smaller than
+the passages it is being asked to score.
+
+**What survived.** `t480` still beats `t1024` (0.811 vs 0.639 page recall@5),
+so the original direction was right — but the honest margin is a third of what
+the broken measurement showed, and the reason is dilution rather than anything
+the first table could have told you.
+
+**Why this one matters most.** Both artifacts produced a plausible, decisive,
+completely wrong answer, and neither raised an error. "Bigger chunks are much
+worse" is exactly the sort of conclusion that gets written into a README and
+repeated in an interview. The only reason it was caught is that a 45-point drop
+was too large to believe without checking what the metric was actually doing.
+
+---
+
+## Phase B — resisting a config that scored better
+
+With the reranker window configurable, a sweep on `t480` gave:
+
+| max_length | Recall@5 | MRR |
+|---|---|---|
+| 512 | 0.883 | 0.811 |
+| 640 | 0.883 | 0.733 |
+| 768 | 0.883 | 0.733 |
+| 1536 | 0.883 | 0.733 |
+
+512 reports the best MRR by 0.078. It is also the only setting that truncates
+the passage — a 480-token chunk plus a query exceeds a 512-token window.
+
+Recall is identical at every setting, so nothing is actually being retrieved
+differently; only the ordering of already-retrieved passages moves. On 30
+questions, two passages swapping rank 1 and rank 2 is worth about 0.067 of MRR,
+which covers the whole difference.
+
+The default is 640. Choosing 512 would mean shipping a configuration that
+scores better *because* it throws data away, on evidence too thin to support
+it. Worth recording as a decision that was made against the number.

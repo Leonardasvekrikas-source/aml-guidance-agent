@@ -50,7 +50,11 @@ def get_reranker(model_name: str | None = None, device: str | None = None):
         print("  CUDA requested but not available; reranking on CPU instead")
         requested = "cpu"
 
-    return CrossEncoder(name, device=requested, max_length=512)
+    # max_length must cover the largest chunk profile. At 512 a t1024 chunk
+    # is scored on its first half only, and the missing half is invisible —
+    # no error, just a worse ranking that looks like the chunk size being
+    # bad.
+    return CrossEncoder(name, device=requested, max_length=settings.rerank_max_length)
 
 
 class RerankedRetriever:
@@ -80,6 +84,7 @@ class RerankedRetriever:
             return []
 
         model = get_reranker(self.model_name)
+        _warn_if_truncating(model, candidates)
         scores = model.predict(
             [(query, hit.text) for hit in candidates],
             batch_size=settings.rerank_batch_size,
@@ -113,6 +118,32 @@ class RerankedRetriever:
                 )
             )
         return reranked
+
+
+_TRUNCATION_WARNED: set[str] = set()
+
+
+def _warn_if_truncating(model, candidates: list[Hit]) -> None:
+    """Say so, once, if the reranker cannot see whole passages.
+
+    Truncation here is invisible: the model returns a score either way, and the
+    only symptom is a slightly worse ranking that looks like the chunk size
+    being wrong. Silence is exactly what makes it dangerous.
+    """
+    window = settings.rerank_max_length
+    longest = max((hit.token_count or 0) for hit in candidates) if candidates else 0
+    if not longest or longest + 32 <= window:
+        return
+
+    key = f"{settings.reranker_model}:{window}"
+    if key in _TRUNCATION_WARNED:
+        return
+    _TRUNCATION_WARNED.add(key)
+    print(
+        f"  WARNING: reranker window is {window} tokens but candidates reach "
+        f"{longest}. Passages are being scored on their opening only. "
+        f"Raise RERANK_MAX_LENGTH above the chunk profile in use."
+    )
 
 
 def first_stage_ceiling(base: Retriever, query: str, candidate_k: int) -> list[int]:

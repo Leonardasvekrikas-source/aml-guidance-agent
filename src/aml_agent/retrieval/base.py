@@ -21,8 +21,10 @@ class Hit:
     publisher: str
     source_url: str
     page: int | None
+    page_end: int | None
     section_heading: str | None
     retriever: str
+    token_count: int | None = None
     components: dict[str, Any] = field(default_factory=dict)
 
     def citation(self) -> str:
@@ -39,6 +41,7 @@ class Hit:
             "publisher": self.publisher,
             "source_url": self.source_url,
             "page": self.page,
+            "page_end": self.page_end,
             "section_heading": self.section_heading,
             "retriever": self.retriever,
             "components": self.components,
@@ -62,6 +65,8 @@ def row_to_hit(row: dict[str, Any], score: float, rank: int, retriever: str) -> 
         publisher=row["publisher"],
         source_url=row["source_url"],
         page=row.get("page"),
+        page_end=row.get("page_end"),
         section_heading=row.get("section_heading"),
         retriever=retriever,
+        token_count=row.get("token_count"),
     )

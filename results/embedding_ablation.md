@@ -13,14 +13,14 @@ Profile `t480`, exact gold, 30 questions.
 | Lexical (BM25) — control | Recall@10 | 0.717 | 0.717 | — |
 | Lexical (BM25) — control | MRR | 0.559 | 0.559 | — |
 | Dense | Recall@5 | 0.600 | 0.700 | +0.100 |
-| Dense | Recall@10 | 0.700 | 0.717 | +0.017 |
-| Dense | MRR | 0.565 | 0.639 | +0.074 |
+| Dense | Recall@10 | 0.717 | 0.750 | +0.033 |
+| Dense | MRR | 0.565 | 0.660 | +0.095 |
 | Hybrid (RRF) | Recall@5 | 0.750 | 0.767 | +0.017 |
 | Hybrid (RRF) | Recall@10 | 0.783 | 0.833 | +0.050 |
 | Hybrid (RRF) | MRR | 0.607 | 0.694 | +0.087 |
-| Hybrid + rerank | Recall@5 | 0.867 | 0.883 | +0.017 |
+| Hybrid + rerank | Recall@5 | 0.833 | 0.883 | +0.050 |
 | Hybrid + rerank | Recall@10 | 0.867 | 0.917 | +0.050 |
-| Hybrid + rerank | MRR | 0.781 | 0.811 | +0.031 |
+| Hybrid + rerank | MRR | 0.713 | 0.733 | +0.021 |
 | First-stage ceiling@50 | recall | 0.867 | 0.917 | +0.050 |
 
 ## Reading this

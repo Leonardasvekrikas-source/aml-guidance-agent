@@ -60,6 +60,16 @@ class ChunkProfile:
 CHUNK_PROFILES: tuple[ChunkProfile, ...] = (
     ChunkProfile(name="t256", target_tokens=256, overlap_tokens=48),
     ChunkProfile(name="t480", target_tokens=480, overlap_tokens=64),
+    # t1024 exists only because the embedding model changed. bge-base truncates
+    # at 512 tokens, so this profile would have been silently cut in half under
+    # it — half the passage searchable by BM25 and invisible to dense
+    # retrieval. bge-m3 has an 8192-token window, which makes the experiment
+    # possible at all.
+    #
+    # check_no_truncation() enforces this rather than trusting the comment: run
+    # an ingest with EMBEDDING_MODEL_KEY=bge-base and it refuses this profile
+    # instead of quietly producing a corrupted index.
+    ChunkProfile(name="t1024", target_tokens=1024, overlap_tokens=128),
 )
 
 DEFAULT_PROFILE = "t480"
@@ -160,6 +170,21 @@ class Settings:
     # recovered, however good the reranker is.
     rerank_candidates: int = field(default_factory=lambda: _env_int("RERANK_CANDIDATES", 50))
     rerank_batch_size: int = field(default_factory=lambda: _env_int("RERANK_BATCH_SIZE", 32))
+    # The cross-encoder's input window. bge-reranker-v2-m3 supports 8192.
+    #
+    # 640 fits the default t480 profile plus a query with headroom. It must
+    # be at least as large as the chunk profile in use, or the reranker
+    # scores only the first part of each passage - no error, just a worse
+    # ranking that looks like the chunk size being bad. The t1024 profile
+    # needs 1536.
+    #
+    # Measured, and deliberately NOT tuned to the best number: recall@5 is
+    # 0.883 at 512, 640, 768 and 1536 alike, while MRR reads 0.811 at 512
+    # and 0.733 above it. 512 truncates the passage, so its MRR edge is two
+    # questions swapping rank on a 30-question set, not a finding. Choosing
+    # the truncating setting because it scores better would be tuning on
+    # noise.
+    rerank_max_length: int = field(default_factory=lambda: _env_int("RERANK_MAX_LENGTH", 640))
 
     # --- generation ---
     anthropic_api_key: str = field(default_factory=lambda: _env("ANTHROPIC_API_KEY", ""))

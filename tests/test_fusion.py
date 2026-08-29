@@ -24,6 +24,7 @@ def hit(chunk_id: int, rank: int, retriever: str, score: float = 0.0) -> Hit:
         publisher="Pub",
         source_url="https://example.org/d.pdf",
         page=1,
+        page_end=1,
         section_heading=None,
         retriever=retriever,
     )

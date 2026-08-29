@@ -198,3 +198,41 @@ width cannot share one). bge-m3 is also a considerably larger model to load.
 bge-base is 33% narrower and gives up about 5 points of ceiling. That is a
 reasonable trade to make deliberately, and it is why the model stays selectable
 rather than being deleted.
+
+---
+
+## Chunk profile `t480`, and keeping `t1024` in the repository
+
+**Chosen because** it measures best: page-level recall@5 of 0.811 against 0.794
+for `t256` and 0.639 for `t1024`, and recall@10 of 0.911 against 0.861 and
+0.767.
+
+**Why `t1024` stays.** It is the evidence that the conclusion survived two
+measurement bugs. Its first reading was 0.483, and both the page-attribution
+artifact and the reranker-truncation artifact had to be fixed before the real
+figure emerged. Deleting the profile would leave the README asserting that
+larger chunks are worse with nothing to show for it.
+
+It also exercises a path nothing else does: `t1024` is the only profile
+`bge-base` cannot embed, so it is what proves the truncation guard fires rather
+than corrupting an index.
+
+---
+
+## Reranker candidate count 50, chosen against a rising ceiling
+
+**Chosen because** it is the measured optimum, not the largest pool. The sweep
+shows the first-stage ceiling still climbing at 100 candidates (0.950), while
+achieved recall@5 *falls* from 0.883 to 0.850 — the reranker uses 96.4% of the
+headroom at 50 and only 89.5% at 100.
+
+More candidates means more plausible distractors, and past a point the
+cross-encoder loses more to confusion than the wider pool contributes. This is
+the opposite of the earlier finding under `bge-base`, where the reranker
+absorbed 100% of headroom at every pool size and the first stage was the sole
+bottleneck. Improving one stage moved the constraint to the other, which is
+worth stating because it means the sweep has to be re-run after any first-stage
+change rather than assumed to still hold.
+
+**Cost.** 687 ms median at 50 candidates against 187 ms at 10, for 5 points of
+recall.

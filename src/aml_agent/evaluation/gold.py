@@ -45,7 +45,7 @@ class GoldResolution:
 def resolve_gold(
     gold_chunk_ids: Iterable[int],
     authoring_profile: str = "t480",
-) -> dict[int, tuple[str, int | None]]:
+) -> dict[int, tuple[str, int | None, int | None]]:
     """Map gold chunk ids to their (document_id, page).
 
     Looked up once for the whole evaluation set rather than per question.
@@ -57,14 +57,16 @@ def resolve_gold(
     with connect() as conn:
         rows = conn.execute(
             """
-            SELECT id, document_id, page
+            SELECT id, document_id, page, page_end
             FROM chunks
             WHERE id = ANY(%s) AND chunk_profile = %s
             """,
             (wanted, authoring_profile),
         ).fetchall()
 
-    return {row["id"]: (row["document_id"], row["page"]) for row in rows}
+    return {
+        row["id"]: (row["document_id"], row["page"], row["page_end"] or row["page"]) for row in rows
+    }
 
 
 def page_key(document_id: str, page: int | None) -> tuple[str, int]:
@@ -74,14 +76,27 @@ def page_key(document_id: str, page: int | None) -> tuple[str, int]:
 
 def gold_pages(
     gold_chunk_ids: Iterable[int],
-    location: dict[int, tuple[str, int | None]],
+    location: dict[int, tuple[str, int | None, int | None]],
 ) -> frozenset[tuple[str, int]]:
+    """Every page a gold chunk covers, not just the one it starts on."""
     pages = set()
     for chunk_id in gold_chunk_ids:
-        if chunk_id in location:
-            document_id, page = location[chunk_id]
+        if chunk_id not in location:
+            continue
+        document_id, first, last = location[chunk_id]
+        for page in _span(first, last):
             pages.add(page_key(document_id, page))
     return frozenset(pages)
+
+
+def _span(first: int | None, last: int | None) -> list[int]:
+    if first is None:
+        return [0]
+    if last is None or last < first:
+        return [first]
+    # Guard against a pathological span; a chunk covering hundreds of pages
+    # would mean extraction went wrong, not that the chunk is that large.
+    return list(range(first, min(last, first + 50) + 1))
 
 
 def retrieved_pages(hits) -> list[tuple[str, int]]:
@@ -94,8 +109,9 @@ def retrieved_pages(hits) -> list[tuple[str, int]]:
     seen: set[tuple[str, int]] = set()
     ordered: list[tuple[str, int]] = []
     for hit in hits:
-        key = page_key(hit.document_id, hit.page)
-        if key not in seen:
-            seen.add(key)
-            ordered.append(key)
+        for page in _span(hit.page, hit.page_end):
+            key = page_key(hit.document_id, page)
+            if key not in seen:
+                seen.add(key)
+                ordered.append(key)
     return ordered

@@ -28,6 +28,7 @@ def make_hit(chunk_id: int, text: str = "Some retrieved passage text.") -> Hit:
         publisher="FATF",
         source_url="https://example.org/doc.pdf",
         page=12,
+        page_end=12,
         section_heading="3.1 Indicators",
         retriever="hybrid",
     )

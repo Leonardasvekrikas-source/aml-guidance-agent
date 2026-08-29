@@ -46,6 +46,7 @@ class Chunk:
     chunk_profile: str
     chunk_index: int
     page: int | None
+    page_end: int | None
     section_heading: str | None
     text: str
     char_count: int
@@ -100,6 +101,29 @@ def _page_at(char_offset: int, spans: list[tuple[int, int, Page]]) -> Page | Non
     return spans[-1][2] if spans else None
 
 
+def _pages_covered(
+    char_start: int, char_end: int, spans: list[tuple[int, int, Page]]
+) -> tuple[Page | None, Page | None]:
+    """First and last page a character range touches.
+
+    A chunk large enough to cross a page boundary belongs to every page it
+    covers. Recording only the first would make page-level scoring treat a
+    chunk that contains the answer as a miss whenever the answer sits on its
+    second page.
+    """
+    first: Page | None = None
+    last: Page | None = None
+    for start, end, page in spans:
+        if start < char_end and char_start < end:
+            if first is None:
+                first = page
+            last = page
+    if first is None:
+        fallback = _page_at(char_start, spans)
+        return fallback, fallback
+    return first, last
+
+
 def chunk_document(
     document_id: str,
     pages: Sequence[Page],
@@ -140,13 +164,14 @@ def chunk_document(
         text = document_text[char_start:char_end].strip()
 
         if text:
-            page = _page_at(char_start, spans)
+            page, last_page = _pages_covered(char_start, char_end, spans)
             chunks.append(
                 Chunk(
                     document_id=document_id,
                     chunk_profile=profile.name,
                     chunk_index=index,
                     page=page.number if page else None,
+                    page_end=last_page.number if last_page else None,
                     section_heading=page.heading if page else None,
                     text=text,
                     char_count=len(text),

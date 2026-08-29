@@ -32,7 +32,7 @@ class DenseRetriever:
             rows = list(
                 conn.execute(
                     f"""
-                    SELECT c.id, c.document_id, c.page, c.section_heading, c.text,
+                    SELECT c.id, c.document_id, c.page, c.page_end, c.section_heading, c.text,
                            d.title, d.publisher, d.source_url,
                            c.{column} <=> %s AS distance
                     FROM chunks c

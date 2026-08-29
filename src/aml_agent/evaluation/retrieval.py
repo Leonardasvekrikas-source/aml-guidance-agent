@@ -35,7 +35,7 @@ AUTHORING_PROFILE = DEFAULT_PROFILE
 def evaluate_profile(
     profile: str,
     questions: list,
-    location: dict[int, tuple[str, int | None]],
+    location: dict[int, tuple[str, int | None, int | None]],
 ) -> dict[str, Any]:
     answerable = [q for q in questions if q.answerable]
     exact_applies = profile == AUTHORING_PROFILE

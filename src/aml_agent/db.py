@@ -97,12 +97,13 @@ def insert_chunks(conn: psycopg.Connection[DictRow], rows: Sequence[dict[str, An
         cur.executemany(
             f"""
             INSERT INTO chunks (
-                document_id, chunk_profile, chunk_index, page,
+                document_id, chunk_profile, chunk_index, page, page_end,
                 section_heading, text, char_count, token_count, {column}
             )
             VALUES (
                 %(document_id)s, %(chunk_profile)s, %(chunk_index)s, %(page)s,
-                %(section_heading)s, %(text)s, %(char_count)s, %(token_count)s,
+                %(page_end)s, %(section_heading)s, %(text)s, %(char_count)s,
+                %(token_count)s,
                 %(embedding)s
             )
             ON CONFLICT (document_id, chunk_profile, chunk_index) DO UPDATE
@@ -127,7 +128,7 @@ def fetch_chunks(
     embedding_col = f", {settings.embedding_column}" if with_embeddings else ""
     cur = conn.execute(
         f"""
-        SELECT c.id, c.document_id, c.chunk_index, c.page, c.section_heading,
+        SELECT c.id, c.document_id, c.chunk_index, c.page, c.page_end, c.section_heading,
                c.text, c.char_count, c.token_count,
                d.title, d.publisher, d.source_url, d.publication_date
                {embedding_col}

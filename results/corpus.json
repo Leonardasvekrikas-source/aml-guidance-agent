@@ -2,6 +2,15 @@
   "documents": 30,
   "profiles": [
     {
+      "chunk_profile": "t1024",
+      "chunks": 1336,
+      "embedded_768": 0,
+      "embedded_1024": 1336,
+      "avg_chars": "4867",
+      "avg_tokens": "1014",
+      "documents": 30
+    },
+    {
       "chunk_profile": "t256",
       "chunks": 5710,
       "embedded_768": 5710,

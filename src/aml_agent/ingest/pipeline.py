@@ -41,6 +41,7 @@ def ingest(skip_download: bool = False, embed_only: bool = False) -> int:
         f"-> chunks.{settings.embedding_column}"
     )
     retrieved_at = datetime.now(UTC)
+    skipped_profiles: dict[str, str] = {}
     failures: list[tuple[str, str]] = []
     loaded_documents = 0
     loaded_chunks = 0
@@ -82,7 +83,19 @@ def ingest(skip_download: bool = False, embed_only: bool = False) -> int:
                     continue
 
                 texts = [c.text for c in chunks]
-                check_no_truncation(texts)
+
+                # A profile can be too large for the active model's context
+                # window — t1024 exists only because bge-m3 has one big enough.
+                # Skip that pairing loudly and carry on with the profiles the
+                # model can handle, rather than aborting the whole ingest or,
+                # worse, embedding truncated text.
+                try:
+                    check_no_truncation(texts)
+                except ValueError as exc:
+                    if profile.name not in skipped_profiles:
+                        skipped_profiles[profile.name] = str(exc)
+                    continue
+
                 vectors = embed_passages(texts)
 
                 # Replace rather than append: re-ingesting must not double the
@@ -103,6 +116,7 @@ def ingest(skip_download: bool = False, embed_only: bool = False) -> int:
                             "chunk_profile": c.chunk_profile,
                             "chunk_index": c.chunk_index,
                             "page": c.page,
+                            "page_end": c.page_end,
                             "section_heading": c.section_heading,
                             "text": c.text,
                             "char_count": c.char_count,
