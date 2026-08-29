@@ -308,3 +308,50 @@ transformers 5.16.1, and verified afterwards that CUDA, the baseline embedding
 model and the cross-encoder all still load. The BM25 control row in the
 ablation is identical to three decimal places across the upgrade, which is the
 evidence that the dependency change did not move the benchmark.
+
+---
+
+## Phase C — CI found real link rot on its first run, and two bugs in the checker
+
+The link-check job failed the first time it ran, with three different things
+mixed together. Separating them was the whole value.
+
+**1. Genuine link rot — the Basel guidelines had moved.**
+`https://www.bis.org/bcbs/publ/d505.pdf` returned 404. BIS had restructured
+their URLs, and the redirect they left behind points at a filename that does
+not exist: `...revisions-supervisory-cooperation.pdf` 404s, while the landing
+page links `...revisions-supervisory.pdf`. So following BIS's own 301 lands on
+a dead file.
+
+Fixed by taking the URL from the landing page and confirming it serves the
+identical document — sha256 of the newly downloaded bytes matches the copy
+already in the corpus exactly. Swapping in a URL that merely *looks* right
+would have silently changed the corpus.
+
+This is precisely what the job exists to catch, and it caught it within a
+minute of existing.
+
+**2. The checker reported its own request as a broken link.**
+The World Bank URL returned `416 Range Not Satisfiable`. The checker fetches
+with `Range: bytes=0-1023` to avoid pulling whole PDFs; some servers reject a
+Range request outright rather than ignoring it. That is the checker's fault,
+not the publisher's. It now retries without the header on 416.
+
+**3. The checker could not tell "blocked" from "gone".**
+All eight FATF documents returned 403 from GitHub's runners. They are not dead
+— they download fine from a residential connection; FATF's CDN bot-blocks
+datacenter IP ranges. Reporting that as link rot every single run would have
+trained everyone to ignore the job, which is worse than not having it.
+
+Responses are now classified three ways, and only one of them fails the build:
+
+| Verdict | Statuses | Build |
+|---|---|---|
+| `gone` | 404, 410, non-PDF content | fails |
+| `blocked` | 401/403/405/451, timeouts, transient 5xx | reported, does not fail |
+| `ok` | 200/206 with PDF magic bytes | passes |
+
+**The lesson.** A check that cries wolf gets switched off. The distinction
+between "this is broken" and "I could not verify this from here" is the
+difference between a useful signal and noise, and it was not obvious until the
+job ran somewhere other than a laptop.

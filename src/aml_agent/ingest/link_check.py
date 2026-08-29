@@ -22,32 +22,64 @@ from .download import HEADERS
 from .manifest import load_manifest
 
 TIMEOUT = httpx.Timeout(45.0, connect=15.0)
-# Statuses that mean "try again", not "gone".
+
+# Three different things a bad response can mean, and only one of them is a
+# reason to fail the build.
+#
+# GONE      the document is not there any more. Real link rot. Fail.
+# BLOCKED   the server refused this client or this network. Several publishers
+#           bot-block datacenter IP ranges, so a URL that works from a laptop
+#           returns 403 from CI. Reporting that as link rot trains everyone to
+#           ignore the check, which is worse than not having it.
+# TRANSIENT rate limiting or a hiccup. Retry, then treat as blocked.
+GONE = frozenset({404, 410})
+BLOCKED = frozenset({401, 402, 403, 405, 451})
 TRANSIENT = frozenset({408, 429, 500, 502, 503, 504})
 
 
-def check_one(client: httpx.Client, url: str) -> tuple[bool, str]:
-    """Fetch the first bytes and confirm they look like a PDF."""
+def check_one(client: httpx.Client, url: str) -> tuple[str, str]:
+    """Return (verdict, detail) where verdict is ok | gone | blocked."""
     try:
-        with client.stream("GET", url, headers={**HEADERS, "Range": "bytes=0-1023"}) as response:
-            status = response.status_code
-            if status in TRANSIENT:
-                return False, f"HTTP {status} (transient — may be rate limiting)"
-            if status >= 400:
-                return False, f"HTTP {status}"
+        response, head = _fetch_head(client, url)
+    except httpx.HTTPError as exc:
+        return "blocked", f"{type(exc).__name__}: {exc}"
 
+    status = response.status_code
+
+    if status in GONE:
+        return "gone", f"HTTP {status}"
+    if status in BLOCKED:
+        return "blocked", f"HTTP {status} (bot protection or IP range?)"
+    if status in TRANSIENT:
+        return "blocked", f"HTTP {status} (transient)"
+    if status >= 400:
+        return "gone", f"HTTP {status}"
+
+    if not head.startswith(b"%PDF-"):
+        content_type = response.headers.get("content-type", "?")
+        return "gone", f"served {content_type}, not a PDF (dead deep link?)"
+
+    return "ok", f"HTTP {status}"
+
+
+def _fetch_head(client: httpx.Client, url: str) -> tuple[httpx.Response, bytes]:
+    """Fetch the first bytes, preferring a Range request.
+
+    Some servers answer a Range request with 416 rather than ignoring it, so a
+    Range-only checker reports its own request as a broken link. On 416 this
+    retries without the header.
+    """
+    for headers in ({**HEADERS, "Range": "bytes=0-1023"}, dict(HEADERS)):
+        with client.stream("GET", url, headers=headers) as response:
+            if response.status_code == 416:
+                continue
             head = b""
             for block in response.iter_bytes(1024):
                 head = block
                 break
+            return response, head
 
-        if not head.startswith(b"%PDF-"):
-            content_type = response.headers.get("content-type", "?")
-            return False, f"served {content_type}, not a PDF (dead deep link?)"
-
-        return True, f"HTTP {status}"
-    except httpx.HTTPError as exc:
-        return False, f"{type(exc).__name__}: {exc}"
+    return response, b""
 
 
 def main() -> int:
