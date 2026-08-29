@@ -1,0 +1,44 @@
+# CI dependency set: everything the test suite imports, minus the ML stack.
+#
+# torch, sentence-transformers and transformers are ~2.5GB and are loaded
+# lazily inside functions, never at import time. Excluding them takes CI from
+# several minutes to well under one, and nothing in the suite touches them —
+# the tests that involve a model stub it out, because asserting on model
+# behaviour in a unit test measures the model, not the code.
+# Pinned. A portfolio repo that installs differently next month is not
+# reproducible, and every number in the README depends on reproducibility.
+
+# --- database ---
+psycopg[binary]==3.2.3
+pgvector==0.3.6
+
+# --- retrieval ---
+rank-bm25==0.2.2
+# torch >= 2.6 is a hard requirement, not a preference: transformers refuses
+# torch.load on older versions (CVE-2025-32434), which blocks any model whose
+# weights are not published as safetensors - bge-m3 among them.
+
+# --- ingestion ---
+pypdf==5.1.0
+httpx==0.28.1
+PyYAML==6.0.2
+
+# --- generation ---
+anthropic==0.40.0
+
+# --- service ---
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+pydantic==2.10.4
+python-dotenv==1.0.1
+
+# --- results formatting ---
+tabulate==0.9.0
+
+# --- tests ---
+pytest==8.3.4
+
+# --- linting and types, CI only ---
+ruff==0.9.4
+mypy==1.14.1
+types-PyYAML==6.0.12.20241230

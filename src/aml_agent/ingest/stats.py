@@ -20,8 +20,10 @@ def main() -> int:
         # Both embedding columns are reported. A profile fully embedded by one
         # model and not the other is the normal state while an embedding
         # ablation is in progress, and it must not look like corruption.
-        print(f"\n{'profile':<10}{'docs':>6}{'chunks':>9}{'768d':>8}{'1024d':>8}"
-              f"{'avg chars':>11}{'avg tokens':>12}")
+        print(
+            f"\n{'profile':<10}{'docs':>6}{'chunks':>9}{'768d':>8}{'1024d':>8}"
+            f"{'avg chars':>11}{'avg tokens':>12}"
+        )
         for row in stats["profiles"]:
             print(
                 f"{row['chunk_profile']:<10}{row['documents']:>6}{row['chunks']:>9}"

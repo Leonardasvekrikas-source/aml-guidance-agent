@@ -1,0 +1,48 @@
+[project]
+name = "aml-guidance-agent"
+version = "0.1.0"
+description = "Retrieval-augmented agent over public AML regulatory guidance"
+requires-python = ">=3.12"
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = [
+    "E",    # pycodestyle
+    "F",    # pyflakes
+    "I",    # import sorting
+    "UP",   # pyupgrade
+    "B",    # bugbear
+    "SIM",  # simplify
+    "C4",   # comprehensions
+]
+ignore = [
+    "E501",  # line length is handled by the formatter
+    "B008",  # FastAPI depends() idiom
+]
+
+[tool.ruff.lint.per-file-ignores]
+# Tests deliberately reach into private helpers to pin behaviour that the
+# public surface does not expose.
+"tests/*" = ["SLF001"]
+
+[tool.mypy]
+python_version = "3.12"
+files = ["src"]
+ignore_missing_imports = true
+warn_unused_ignores = true
+warn_redundant_casts = true
+# Not strict. This codebase is deliberately thin on abstraction, and full
+# strictness here would mostly generate annotations for dict payloads that are
+# already described by the SQL and the JSON schemas next to them. The value
+# mypy adds is catching genuine None-handling mistakes, and that works without
+# it.
+disallow_untyped_defs = false
+check_untyped_defs = true
+
+[[tool.mypy.overrides]]
+module = ["pgvector.*", "rank_bm25.*", "sentence_transformers.*", "transformers.*"]
+ignore_missing_imports = true

@@ -45,7 +45,9 @@ def main() -> int:
     first_stage = retrievers["hybrid"]
 
     rows: list[dict[str, Any]] = []
-    print(f"{'candidates':>11}{'ceiling':>10}{'achieved':>10}{'headroom used':>15}{'median ms':>11}")
+    print(
+        f"{'candidates':>11}{'ceiling':>10}{'achieved':>10}{'headroom used':>15}{'median ms':>11}"
+    )
 
     for count in CANDIDATE_COUNTS:
         reranked = RerankedRetriever(first_stage, candidate_k=count)

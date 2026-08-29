@@ -59,9 +59,7 @@ class TestFusion:
         assert fused[0].score == pytest.approx(1.0 / (RRF_K + 1))
 
     def test_ranks_are_renumbered_from_one(self):
-        fused = reciprocal_rank_fusion(
-            {"a": [hit(1, 1, "a"), hit(2, 2, "a"), hit(3, 3, "a")]}, k=3
-        )
+        fused = reciprocal_rank_fusion({"a": [hit(1, 1, "a"), hit(2, 2, "a"), hit(3, 3, "a")]}, k=3)
         assert [f.rank for f in fused] == [1, 2, 3]
 
     def test_components_record_where_each_hit_came_from(self):
@@ -87,7 +85,5 @@ class TestFusion:
         assert reciprocal_rank_fusion({"a": [], "b": []}, k=5) == []
 
     def test_k_truncates_output(self):
-        fused = reciprocal_rank_fusion(
-            {"a": [hit(i, i, "a") for i in range(1, 11)]}, k=3
-        )
+        fused = reciprocal_rank_fusion({"a": [hit(i, i, "a") for i in range(1, 11)]}, k=3)
         assert len(fused) == 3

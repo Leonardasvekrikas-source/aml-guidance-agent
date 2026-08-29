@@ -12,8 +12,8 @@ equivalent and matches the `vector_cosine_ops` index in the migration.
 
 from __future__ import annotations
 
+from collections.abc import Sequence
 from functools import lru_cache
-from typing import Sequence
 
 import numpy as np
 
@@ -33,14 +33,14 @@ def get_model(model_name: str | None = None, device: str | None = None):
     stranger cloning this repository will not necessarily have a GPU and the
     corpus is small enough that CPU ingestion is slow but tolerable.
     """
-    from sentence_transformers import SentenceTransformer
     import torch
+    from sentence_transformers import SentenceTransformer
 
     name = model_name or settings.embedding_model
     requested = device or settings.embedding_device
 
     if requested.startswith("cuda") and not torch.cuda.is_available():
-        print(f"  CUDA requested but not available; embedding on CPU instead")
+        print("  CUDA requested but not available; embedding on CPU instead")
         requested = "cpu"
 
     return SentenceTransformer(name, device=requested)

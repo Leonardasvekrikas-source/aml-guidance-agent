@@ -12,11 +12,11 @@ a human can turn to.
 
 from __future__ import annotations
 
+from collections.abc import Sequence
 from dataclasses import dataclass
 from functools import lru_cache
-from typing import Sequence
 
-from ..config import ChunkProfile, settings
+from ..config import ChunkProfile
 from .extract import Page
 
 # Below this, a trailing fragment is merged backwards instead of stored. A

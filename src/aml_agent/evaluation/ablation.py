@@ -76,24 +76,34 @@ def build(tags: list[str]) -> str:
 
     for row in ROWS:
         for key, label in METRICS:
-            values = []
+            values: list[float] = []
+            complete = True
             for tag in tags:
                 entry = runs[tag]["profiles"].get(profile, {}).get(row, {}).get("exact")
-                values.append(entry[key] if entry else None)
-            if any(v is None for v in values):
+                if not entry:
+                    # A retriever measured in one run and not another cannot be
+                    # compared, so the row is omitted rather than half-filled.
+                    complete = False
+                    break
+                values.append(float(entry[key]))
+
+            if not complete:
                 continue
+
             delta = values[-1] - values[0]
             cells = " | ".join(f"{v:.3f}" for v in values)
             out.append(f"| {LABELS[row]} | {label} | {cells} | {_fmt_delta(delta)} |")
 
     # The ceiling is the headline: it says whether the candidate pool improved,
     # which is the thing the reranker cannot fix.
-    ceilings = []
+    ceilings: list[float] = []
     for tag in tags:
         entry = runs[tag]["profiles"].get(profile, {}).get("hybrid+rerank", {})
         ceiling = entry.get("first_stage_ceiling")
-        ceilings.append(ceiling["recall"] if ceiling else None)
-    if all(c is not None for c in ceilings):
+        if ceiling:
+            ceilings.append(float(ceiling["recall"]))
+
+    if len(ceilings) == len(tags):
         cells = " | ".join(f"{c:.3f}" for c in ceilings)
         out.append(
             f"| First-stage ceiling@50 | recall | {cells} | "

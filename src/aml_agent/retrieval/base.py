@@ -14,7 +14,7 @@ from typing import Any, Protocol
 class Hit:
     chunk_id: int
     score: float
-    rank: int                    # 1-based position in this retriever's ranking
+    rank: int  # 1-based position in this retriever's ranking
     text: str
     document_id: str
     title: str

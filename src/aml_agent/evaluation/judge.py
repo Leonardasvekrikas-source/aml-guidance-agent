@@ -15,7 +15,7 @@ with a decimal point. So two things are true of this module by design:
 from __future__ import annotations
 
 from dataclasses import dataclass
-from typing import Any
+from typing import Any, cast
 
 import anthropic
 
@@ -102,7 +102,9 @@ class GroundednessJudge:
         if not answer.strip():
             return Judgement(False, [], "Empty answer.")
         if not passages:
-            return Judgement(False, [], "No passages were retrieved, so nothing can ground the answer.")
+            return Judgement(
+                False, [], "No passages were retrieved, so nothing can ground the answer."
+            )
 
         body = "\n\n---\n\n".join(passages)
         prompt = (
@@ -113,7 +115,10 @@ class GroundednessJudge:
         )
 
         try:
-            response = self._get_client().messages.create(
+            # The tool and message payloads are plain dicts matching the
+            # documented wire format. The SDK types them as TypedDicts,
+            # which a dict literal does not satisfy structurally.
+            response = self._get_client().messages.create(  # type: ignore[call-overload]
                 model=self.model,
                 max_tokens=2000,
                 system=JUDGE_SYSTEM,
@@ -130,7 +135,7 @@ class GroundednessJudge:
 
         for block in response.content:
             if block.type == "tool_use" and block.name == "record_judgement":
-                data = dict(block.input)
+                data = cast(dict[str, Any], block.input)
                 return Judgement(
                     grounded=bool(data.get("grounded")),
                     unsupported=[str(x) for x in (data.get("unsupported_assertions") or [])],

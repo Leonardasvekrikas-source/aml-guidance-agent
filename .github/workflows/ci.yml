@@ -1,0 +1,115 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  PYTHONPATH: src
+
+jobs:
+  quality:
+    name: lint, types, tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements-ci.txt
+
+      - name: Install dependencies
+        # The ML stack is excluded deliberately: it is ~2.5GB and is imported
+        # lazily inside functions, so nothing in the test suite needs it.
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements-ci.txt
+
+      - name: Lint
+        run: ruff check src tests
+
+      - name: Format check
+        run: ruff format --check src tests
+
+      - name: Type check
+        run: mypy src
+
+      - name: Tests
+        run: pytest -q
+
+  corpus:
+    name: corpus manifest is valid and reachable
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements-ci.txt
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements-ci.txt
+
+      - name: Validate the manifest
+        run: python -c "
+          from aml_agent.ingest.manifest import load_manifest;
+          e = load_manifest();
+          print(f'manifest valid: {len(e)} documents')"
+
+      - name: Check every source URL still resolves
+        # The corpus is defined by URLs on other people's servers. They rot.
+        # This is the check that tells us before a reader finds out, and it is
+        # a separate job so a dead upstream link does not fail the code CI.
+        run: python -m aml_agent.ingest.link_check
+
+  schema:
+    name: migrations apply to a clean database
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: pgvector/pgvector:pg16
+        env:
+          POSTGRES_USER: aml
+          POSTGRES_PASSWORD: aml
+          POSTGRES_DB: aml
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U aml -d aml"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Apply every migration in order
+        # Proves the schema is reproducible from the migration files alone,
+        # which is the claim M0 makes.
+        run: |
+          for f in migrations/*.sql; do
+            echo "applying $f"
+            PGPASSWORD=aml psql -h localhost -U aml -d aml -v ON_ERROR_STOP=1 -f "$f"
+          done
+
+      - name: Verify the expected objects exist
+        run: |
+          PGPASSWORD=aml psql -h localhost -U aml -d aml -v ON_ERROR_STOP=1 -c "
+            SELECT 1 FROM information_schema.tables WHERE table_name = 'chunks';
+            SELECT 1 FROM information_schema.tables WHERE table_name = 'documents';
+            SELECT 1 FROM information_schema.columns
+              WHERE table_name = 'chunks' AND column_name = 'embedding_lg';
+          "
+          PGPASSWORD=aml psql -h localhost -U aml -d aml -tAc \
+            "SELECT count(*) FROM schema_migrations" | grep -qx "2"

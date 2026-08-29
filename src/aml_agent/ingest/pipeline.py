@@ -8,7 +8,7 @@ and quietly change every retrieval metric.
 from __future__ import annotations
 
 import sys
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 
 from ..config import CHUNK_PROFILES, settings
 from ..db import connect, delete_chunks, insert_chunks, upsert_document
@@ -40,7 +40,7 @@ def ingest(skip_download: bool = False, embed_only: bool = False) -> int:
         f"embedding model: {settings.embedding_key} ({settings.embedding_model}) "
         f"-> chunks.{settings.embedding_column}"
     )
-    retrieved_at = datetime.now(timezone.utc)
+    retrieved_at = datetime.now(UTC)
     failures: list[tuple[str, str]] = []
     loaded_documents = 0
     loaded_chunks = 0
@@ -109,7 +109,7 @@ def ingest(skip_download: bool = False, embed_only: bool = False) -> int:
                             "token_count": c.token_count,
                             "embedding": vector,
                         }
-                        for c, vector in zip(chunks, vectors)
+                        for c, vector in zip(chunks, vectors, strict=False)
                     ],
                 )
                 document_chunk_total += len(chunks)

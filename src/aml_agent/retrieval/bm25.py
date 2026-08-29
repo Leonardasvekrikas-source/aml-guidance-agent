@@ -43,9 +43,7 @@ class BM25Retriever:
             with connect() as conn:
                 rows = fetch_chunks(conn, profile)
         if not rows:
-            raise RuntimeError(
-                f"no chunks for profile {profile!r}. Run `make ingest` first."
-            )
+            raise RuntimeError(f"no chunks for profile {profile!r}. Run `make ingest` first.")
         self.rows = rows
         self.index = BM25Okapi([tokenize(row["text"]) for row in rows])
 

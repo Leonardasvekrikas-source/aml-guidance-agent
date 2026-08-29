@@ -59,5 +59,7 @@ class TestMakeClient:
 
     def test_have_credentials_is_true_with_a_key(self, monkeypatch):
         monkeypatch.setattr(llm, "settings", _settings_with_key("sk-ant-real"))
-        monkeypatch.setattr(llm.anthropic, "Anthropic", lambda **kw: FakeClient(api_key="sk-ant-real"))
+        monkeypatch.setattr(
+            llm.anthropic, "Anthropic", lambda **kw: FakeClient(api_key="sk-ant-real")
+        )
         assert llm.have_credentials() is True

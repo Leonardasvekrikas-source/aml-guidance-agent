@@ -129,7 +129,9 @@ class TestSupportCheckStub:
 
     def test_supported_claim_passes(self, monkeypatch):
         validator = Validator(check_support=True)
-        monkeypatch.setattr(validator, "_check_support", lambda claim, hits: (True, "stated on p.12"))
+        monkeypatch.setattr(
+            validator, "_check_support", lambda claim, hits: (True, "stated on p.12")
+        )
 
         report = validator.validate(make_result([Claim("Supported.", [1])], retrieved=[1]))
         assert report.passed

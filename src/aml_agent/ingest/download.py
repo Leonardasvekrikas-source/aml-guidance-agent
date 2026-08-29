@@ -15,7 +15,7 @@ import subprocess
 import sys
 import time
 from dataclasses import dataclass
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 
 import httpx
@@ -34,13 +34,9 @@ from .manifest import ManifestEntry, load_manifest
 # the request.
 HEADERS = {
     "User-Agent": (
-        "aml-guidance-agent/0.1 "
-        "(+https://github.com/Leonardasvekrikas-source/aml-guidance-agent)"
+        "aml-guidance-agent/0.1 (+https://github.com/Leonardasvekrikas-source/aml-guidance-agent)"
     ),
-    "Accept": (
-        "text/html,application/xhtml+xml,application/xml;q=0.9,"
-        "application/pdf,*/*;q=0.8"
-    ),
+    "Accept": ("text/html,application/xhtml+xml,application/xml;q=0.9,application/pdf,*/*;q=0.8"),
     "Accept-Language": "en-US,en;q=0.9",
     "Sec-Fetch-Dest": "document",
     "Sec-Fetch-Mode": "navigate",
@@ -98,13 +94,27 @@ def _download_via_curl(url: str, destination: Path, timeout: int = 180) -> tuple
     try:
         completed = subprocess.run(
             [
-                curl, "--silent", "--show-error", "--location", "--fail",
-                "--max-time", str(timeout),
-                "--retry", "2", "--retry-delay", "3",
-                "--user-agent", HEADERS["User-Agent"],
-                *[arg for key, value in HEADERS.items() if key != "User-Agent"
-                  for arg in ("--header", f"{key}: {value}")],
-                "--output", str(destination),
+                curl,
+                "--silent",
+                "--show-error",
+                "--location",
+                "--fail",
+                "--max-time",
+                str(timeout),
+                "--retry",
+                "2",
+                "--retry-delay",
+                "3",
+                "--user-agent",
+                HEADERS["User-Agent"],
+                *[
+                    arg
+                    for key, value in HEADERS.items()
+                    if key != "User-Agent"
+                    for arg in ("--header", f"{key}: {value}")
+                ],
+                "--output",
+                str(destination),
                 url,
             ],
             capture_output=True,
@@ -207,7 +217,11 @@ def download_one(
     if head != PDF_MAGIC:
         temporary.unlink(missing_ok=True)
         return DownloadResult(
-            entry, None, None, written, "failed",
+            entry,
+            None,
+            None,
+            written,
+            "failed",
             "response was not a PDF (probably an HTML error or search page)",
         )
 
@@ -246,14 +260,11 @@ def download_all(force: bool = False) -> list[DownloadResult]:
 
 
 def main() -> int:
-    print(f"retrieval started {datetime.now(timezone.utc).isoformat(timespec='seconds')}")
+    print(f"retrieval started {datetime.now(UTC).isoformat(timespec='seconds')}")
     results = download_all(force="--force" in sys.argv)
 
     failed = [r for r in results if not r.ok]
-    print(
-        f"\n{len(results) - len(failed)}/{len(results)} available, "
-        f"{len(failed)} failed"
-    )
+    print(f"\n{len(results) - len(failed)}/{len(results)} available, {len(failed)} failed")
     if failed:
         print("\nfailed documents — fix the URL in corpus/manifest.yaml or drop the entry:")
         for result in failed:

@@ -107,6 +107,14 @@ ask:  ## Ask one question end to end. Usage: make ask Q="your question"
 
 # --- development ----------------------------------------------------------
 
+.PHONY: lint
+lint:  ## ruff check + format check + mypy, the same gates CI runs
+	$(COMPOSE) run --rm app sh -c "ruff check src tests && ruff format --check src tests && mypy src"
+
+.PHONY: link-check
+link-check:  ## Verify every corpus source URL still resolves
+	$(RUN) aml_agent.ingest.link_check
+
 .PHONY: test
 test:  ## Run the test suite
 	$(COMPOSE) run --rm app python -m pytest -q

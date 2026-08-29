@@ -109,8 +109,7 @@ def retrieval_table() -> str:
     )
     lines.append("")
     lines.append(
-        f"Computed over {data['questions']} answerable questions with "
-        "hand-authored gold passages."
+        f"Computed over {data['questions']} answerable questions with hand-authored gold passages."
     )
     return "\n".join(lines)
 
@@ -119,8 +118,7 @@ def answer_table() -> str:
     data = _load("answers.json")
     if not data:
         return (
-            "_Not yet run._ Requires an `ANTHROPIC_API_KEY`. Regenerate with "
-            "`make eval-answers`."
+            "_Not yet run._ Requires an `ANTHROPIC_API_KEY`. Regenerate with `make eval-answers`."
         )
 
     metrics = data["metrics"]
@@ -154,9 +152,7 @@ def corpus_line() -> str:
         return "_Corpus not yet ingested._"
 
     profiles = data.get("profiles", [])
-    parts = ", ".join(
-        f"{p['chunks']} chunks at profile `{p['chunk_profile']}`" for p in profiles
-    )
+    parts = ", ".join(f"{p['chunks']} chunks at profile `{p['chunk_profile']}`" for p in profiles)
     return (
         f"Corpus: **{data['documents']} documents** from "
         f"{len(data.get('by_publisher', []))} publishers — {parts}."

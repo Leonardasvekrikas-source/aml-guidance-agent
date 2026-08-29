@@ -21,7 +21,7 @@ from __future__ import annotations
 import json
 import time
 from dataclasses import dataclass, field
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from typing import Any
 
 from ..config import settings
@@ -36,7 +36,7 @@ MAX_DRAFTS = 2
 class PipelineResult:
     question: str
     trace_id: str
-    outcome: str                      # answered | refused | error
+    outcome: str  # answered | refused | error
     summary: str = ""
     citations: list[dict[str, Any]] = field(default_factory=list)
     refusal_reason: str = ""
@@ -167,5 +167,5 @@ def write_trace(result: PipelineResult) -> None:
     settings.traces_dir.mkdir(parents=True, exist_ok=True)
     path = settings.traces_dir / f"{result.trace_id}.json"
     payload = result.to_dict()
-    payload["written_at"] = datetime.now(timezone.utc).isoformat(timespec="seconds")
+    payload["written_at"] = datetime.now(UTC).isoformat(timespec="seconds")
     path.write_text(json.dumps(payload, indent=2, default=str), encoding="utf-8")

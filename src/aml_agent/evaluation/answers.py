@@ -23,15 +23,15 @@ from __future__ import annotations
 
 import json
 import sys
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from typing import Any
 
 from ..config import DEFAULT_PROFILE, settings
 from ..llm import have_credentials
 from ..retrieval import build_retriever
 from .judge import GroundednessJudge
-from .questions import load_questions, resolve_gold_ids
 from .metrics import mean
+from .questions import load_questions, resolve_gold_ids
 
 
 def evaluate(profile: str = DEFAULT_PROFILE, limit: int | None = None) -> dict[str, Any]:
@@ -107,7 +107,7 @@ def summarise(rows: list[dict[str, Any]]) -> dict[str, Any]:
     searches = [r["searches"] for r in rows]
 
     return {
-        "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+        "generated_at": datetime.now(UTC).isoformat(timespec="seconds"),
         "settings": settings.provenance(),
         "counts": {
             "questions": len(rows),
@@ -121,7 +121,9 @@ def summarise(rows: list[dict[str, Any]]) -> dict[str, Any]:
                 mean([1.0 if r["judge"]["grounded"] else 0.0 for r in judged]) if judged else None
             ),
             "citation_validity": (
-                mean([r["citation_validity"] for r in answered if r["citation_validity"] is not None])
+                mean(
+                    [r["citation_validity"] for r in answered if r["citation_validity"] is not None]
+                )
                 if answered
                 else None
             ),

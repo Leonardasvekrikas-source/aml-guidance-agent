@@ -22,6 +22,7 @@ from typing import Any
 
 from ..config import CHUNK_PROFILES, DEFAULT_PROFILE, settings
 from ..retrieval import build_retrievers
+from ..retrieval.base import Retriever
 from ..retrieval.rerank import RerankedRetriever
 from .gold import gold_pages, resolve_gold, retrieved_pages
 from .metrics import hit_at_k, mean, precision_at_k, recall_at_k, reciprocal_rank
@@ -53,12 +54,11 @@ def evaluate_profile(
         # which is the difference between improving stage one and stage two.
         # Only meaningful under exact gold: the ceiling is measured against
         # gold chunk ids, which exist only in the authoring profile.
-        ceiling_base = (
-            retriever.base
-            if exact_applies and isinstance(retriever, RerankedRetriever)
-            else None
-        )
-        ceiling_k = retriever.candidate_k if ceiling_base else 0
+        ceiling_base: Retriever | None = None
+        ceiling_k = 0
+        if exact_applies and isinstance(retriever, RerankedRetriever):
+            ceiling_base = retriever.base
+            ceiling_k = retriever.candidate_k
 
         for question in answerable:
             started = time.perf_counter()

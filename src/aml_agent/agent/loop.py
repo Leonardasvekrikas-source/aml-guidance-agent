@@ -20,7 +20,7 @@ from __future__ import annotations
 import time
 import uuid
 from dataclasses import dataclass, field
-from typing import Any
+from typing import Any, cast
 
 import anthropic
 
@@ -130,7 +130,7 @@ class Claim:
 class AgentResult:
     question: str
     trace_id: str
-    outcome: str                      # answered | refused | exhausted | error
+    outcome: str  # answered | refused | exhausted | error
     summary: str = ""
     claims: list[Claim] = field(default_factory=list)
     refusal_reason: str = ""
@@ -187,7 +187,7 @@ class AgentLoop:
             trace_id=uuid.uuid4().hex[:12],
             outcome="error",
         )
-        messages: list[dict[str, Any]] = [{"role": "user", "content": question}]
+        messages: list[Any] = [{"role": "user", "content": question}]
 
         finished = False
         while not finished:
@@ -198,8 +198,7 @@ class AgentLoop:
             if result.iterations >= self.max_iterations:
                 result.outcome = "exhausted"
                 result.refusal_reason = (
-                    f"Reached the {self.max_iterations}-iteration cap without "
-                    "reaching an answer."
+                    f"Reached the {self.max_iterations}-iteration cap without reaching an answer."
                 )
                 result.trace.append({"step": "halt", "reason": "iteration cap reached"})
                 break
@@ -207,11 +206,13 @@ class AgentLoop:
             result.iterations += 1
 
             try:
+                # Tool and message payloads are plain dicts matching the
+                # documented wire format; the SDK types them as TypedDicts.
                 response = self.client.messages.create(
                     model=self.model,
                     max_tokens=MAX_TOKENS,
                     system=SYSTEM_PROMPT,
-                    tools=TOOLS,
+                    tools=TOOLS,  # type: ignore[arg-type]  # plain dicts, not SDK TypedDicts
                     messages=messages,
                 )
             except anthropic.APIError as exc:
@@ -256,8 +257,14 @@ class AgentLoop:
             tool_results: list[dict[str, Any]] = []
 
             for block in tool_uses:
+                # The SDK types tool input as `object` because its shape is
+                # defined by the schema we supplied, which it cannot see.
+                # Casting here states that assumption once, at the boundary,
+                # rather than at every field access below.
+                payload = cast(dict[str, Any], block.input)
+
                 if block.name == "search":
-                    rendered, hits = run_search(self.retriever, dict(block.input))
+                    rendered, hits = run_search(self.retriever, payload)
                     result.searches += 1
                     for hit in hits:
                         result.retrieved_chunk_ids.add(hit.chunk_id)
@@ -266,8 +273,8 @@ class AgentLoop:
                         {
                             "step": "search",
                             "iteration": result.iterations,
-                            "query": block.input.get("query"),
-                            "k": block.input.get("k", 5),
+                            "query": payload.get("query"),
+                            "k": payload.get("k", 5),
                             "returned_chunk_ids": [h.chunk_id for h in hits],
                         }
                     )
@@ -280,7 +287,7 @@ class AgentLoop:
                     )
 
                 elif block.name == "answer":
-                    raw_claims = block.input.get("claims") or []
+                    raw_claims = payload.get("claims") or []
                     result.claims = [
                         Claim(
                             text=str(c.get("text", "")),
@@ -288,7 +295,7 @@ class AgentLoop:
                         )
                         for c in raw_claims
                     ]
-                    result.summary = str(block.input.get("summary", ""))
+                    result.summary = str(payload.get("summary", ""))
                     result.outcome = "answered"
                     result.trace.append(
                         {
@@ -300,7 +307,7 @@ class AgentLoop:
                     finished = True
 
                 elif block.name == "refuse":
-                    result.refusal_reason = str(block.input.get("reason", ""))
+                    result.refusal_reason = str(payload.get("reason", ""))
                     result.outcome = "refused"
                     result.trace.append(
                         {

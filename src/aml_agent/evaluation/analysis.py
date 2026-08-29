@@ -16,15 +16,12 @@ from typing import Any
 
 from ..config import settings
 
-METRIC = "reciprocal_rank"      # exact gold, on the authoring profile
+METRIC = "reciprocal_rank"  # exact gold, on the authoring profile
 PAGE_METRIC = "page_reciprocal_rank"
 
 
 def _rows(data: dict[str, Any], profile: str, retriever: str) -> dict[str, dict[str, Any]]:
-    return {
-        r["question_id"]: r
-        for r in data["profiles"][profile][retriever]["per_question"]
-    }
+    return {r["question_id"]: r for r in data["profiles"][profile][retriever]["per_question"]}
 
 
 def build(data: dict[str, Any]) -> str:
@@ -81,8 +78,7 @@ def build(data: dict[str, Any]) -> str:
         "",
         f"- Questions where lexical beat dense: **{len(lexical_wins)}**",
         f"- Questions where dense beat lexical: **{len(dense_wins)}**",
-        f"- Questions where fusion was worse than its better input: "
-        f"**{len(fusion_losses)}**",
+        f"- Questions where fusion was worse than its better input: **{len(fusion_losses)}**",
         "",
     ]
 

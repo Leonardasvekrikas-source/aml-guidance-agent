@@ -28,8 +28,8 @@ quietly biases the very comparison the experiment exists to make.
 
 from __future__ import annotations
 
+from collections.abc import Iterable
 from dataclasses import dataclass
-from typing import Iterable
 
 from ..db import connect
 
@@ -39,7 +39,7 @@ class GoldResolution:
     """Gold for one question, in both definitions."""
 
     chunk_ids: frozenset[int]
-    pages: frozenset[tuple[str, int]]      # (document_id, page)
+    pages: frozenset[tuple[str, int]]  # (document_id, page)
 
 
 def resolve_gold(

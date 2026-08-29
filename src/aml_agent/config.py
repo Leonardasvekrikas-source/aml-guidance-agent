@@ -7,7 +7,7 @@ settings a result was produced under can be recorded alongside it.
 from __future__ import annotations
 
 import os
-from dataclasses import dataclass, field, asdict
+from dataclasses import asdict, dataclass, field
 from pathlib import Path
 from typing import Any
 
@@ -63,7 +63,6 @@ CHUNK_PROFILES: tuple[ChunkProfile, ...] = (
 )
 
 DEFAULT_PROFILE = "t480"
-
 
 
 @dataclass(frozen=True)
@@ -167,9 +166,7 @@ class Settings:
     anthropic_model: str = field(default_factory=lambda: _env("ANTHROPIC_MODEL", "claude-opus-5"))
     # Required only for identity-linked API keys, which must name the
     # workspace a request acts in. Ordinary keys ignore this.
-    anthropic_workspace_id: str = field(
-        default_factory=lambda: _env("ANTHROPIC_WORKSPACE_ID", "")
-    )
+    anthropic_workspace_id: str = field(default_factory=lambda: _env("ANTHROPIC_WORKSPACE_ID", ""))
 
     # --- paths ---
     manifest_path: Path = REPO_ROOT / "corpus" / "manifest.yaml"

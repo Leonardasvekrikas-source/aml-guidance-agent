@@ -1,7 +1,7 @@
 """Ask one question from the command line.
 
-    make ask Q="What indicators suggest trade-based money laundering?"
-    .\\run.ps1 ask "What indicators suggest trade-based money laundering?"
+make ask Q="What indicators suggest trade-based money laundering?"
+.\\run.ps1 ask "What indicators suggest trade-based money laundering?"
 """
 
 from __future__ import annotations

@@ -103,6 +103,13 @@ switch ($Target) {
         Invoke-App (@('aml_agent.agent.cli') + $Rest)
     }
 
+    'lint' {
+        docker compose run --rm app sh -c 'ruff check src tests && ruff format --check src tests && mypy src'
+        if ($LASTEXITCODE -ne 0) { throw 'lint failed' }
+    }
+
+    'link-check'     { Invoke-App @('aml_agent.ingest.link_check') }
+
     'test' {
         docker compose run --rm app python -m pytest -q
         if ($LASTEXITCODE -ne 0) { throw 'tests failed' }

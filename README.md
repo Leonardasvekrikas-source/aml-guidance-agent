@@ -1,5 +1,7 @@
 # aml-guidance-agent
 
+[![CI](https://github.com/Leonardasvekrikas-source/aml-guidance-agent/actions/workflows/ci.yml/badge.svg)](https://github.com/Leonardasvekrikas-source/aml-guidance-agent/actions/workflows/ci.yml)
+
 A retrieval-augmented agent that answers questions about AML typologies and
 regulatory expectations, grounded in public guidance documents — and refuses when
 the corpus doesn't support an answer.

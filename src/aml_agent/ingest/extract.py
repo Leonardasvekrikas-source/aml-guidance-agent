@@ -25,8 +25,8 @@ MULTI_NEWLINE = re.compile(r"\n{3,}")
 # Headings in this corpus are overwhelmingly numbered sections or short
 # all-caps/title-case lines. Anything longer than this is prose, not a heading.
 MAX_HEADING_CHARS = 90
-NUMBERED_HEADING = re.compile(r"^\s*(\d+(?:\.\d+)*)[.)]?\s+(\S.{2,%d})$" % MAX_HEADING_CHARS)
-CAPS_HEADING = re.compile(r"^\s*([A-Z][A-Z0-9 ,&/\u2013\u2014'()-]{5,%d})\s*$" % MAX_HEADING_CHARS)
+NUMBERED_HEADING = re.compile(rf"^\s*(\d+(?:\.\d+)*)[.)]?\s+(\S.{{2,{MAX_HEADING_CHARS}}})$")
+CAPS_HEADING = re.compile(rf"^\s*([A-Z][A-Z0-9 ,&/\u2013\u2014'()-]{{5,{MAX_HEADING_CHARS}}})\s*$")
 
 # Page furniture that adds nothing and pollutes lexical retrieval.
 BOILERPLATE = re.compile(
@@ -37,7 +37,7 @@ BOILERPLATE = re.compile(
 
 @dataclass
 class Page:
-    number: int          # 1-based, as a reader would cite it
+    number: int  # 1-based, as a reader would cite it
     text: str
     heading: str | None  # most recent heading at or before this page
 
@@ -48,7 +48,7 @@ class ExtractionError(RuntimeError):
 
 def clean_text(raw: str) -> str:
     text = unicodedata.normalize("NFKC", raw)
-    text = text.replace("\u00ad", "")           # soft hyphens
+    text = text.replace("\u00ad", "")  # soft hyphens
     text = DEHYPHENATE.sub(r"\1\2", text)
     lines = [line.rstrip() for line in text.split("\n")]
     lines = [line for line in lines if not BOILERPLATE.match(line)]

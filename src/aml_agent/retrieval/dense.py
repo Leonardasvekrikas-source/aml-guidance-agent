@@ -9,8 +9,8 @@ of those three out of step degrades recall silently rather than erroring.
 from __future__ import annotations
 
 from ..config import settings
-from ..ingest.embed import embed_query
 from ..db import connect
+from ..ingest.embed import embed_query
 from .base import Hit, row_to_hit
 
 

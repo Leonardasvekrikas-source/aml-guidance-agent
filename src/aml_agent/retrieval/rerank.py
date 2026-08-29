@@ -40,8 +40,8 @@ def get_reranker(model_name: str | None = None, device: str | None = None):
     and failing outright would make the repository unrunnable for anyone
     without a GPU.
     """
-    from sentence_transformers import CrossEncoder
     import torch
+    from sentence_transformers import CrossEncoder
 
     name = model_name or settings.reranker_model
     requested = device or settings.embedding_device
@@ -87,7 +87,10 @@ class RerankedRetriever:
         )
 
         ordered = sorted(
-            zip(candidates, (float(s) for s in scores)),
+            # strict=True: the model must return exactly one score per
+            # candidate. A silent length mismatch would misalign every
+            # score with the wrong passage and still produce a ranking.
+            zip(candidates, (float(s) for s in scores), strict=True),
             # Ties broken by chunk id so the ranking is deterministic; a
             # benchmark whose order depends on sort stability is not
             # reproducible.

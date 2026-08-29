@@ -108,8 +108,8 @@ def write_audit() -> int:
                 else ""
             )
             + "</details>\n\n"
-            f"**Human:** \n\n"
-            f"**Note:** \n\n---\n"
+            "**Human:** \n\n"
+            "**Note:** \n\n---\n"
         )
 
     output = settings.results_dir / "judge_agreement.md"
