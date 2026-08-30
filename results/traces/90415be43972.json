@@ -1,0 +1,825 @@
+{
+  "trace_id": "90415be43972",
+  "question": "A vendor tool we use to flag senior public officials among our customer base returns an unmanageable number of irrelevant name hits. What is the underlying reason these tools generate so much noise, why can't the vendors simply resolve it, and what goes wrong if we tighten the match settings to bring the hit volume down?",
+  "outcome": "answered",
+  "summary": "The corpus does support the underlying points, but they need to be split and re-scoped. The FATF Methodology essential criterion requiring \"appropriate risk management systems\" to determine PEP status is confirmed by the StAR PEP study. The specific consequence of a mis-calibrated screening tool is not found there, but is squarely covered by the FCA's Financial Crime Guide, which lists as poor practice a firm that does not understand how its automated screening tool is calibrated, or where calibration is \"not adequately tailored and the system is either too sensitive or not sensitive enough,\" potentially causing name variations to go undetected. Separately, the EBA Opinion records two distinct supervisory concerns about RegTech: (i) one third of competent authorities flag risks from implementation without adequate testing, lack of transparency/explainability and inability to demonstrate effectiveness; and (ii) more than one third flag risks from the unthinking use of onboarding/CDD, transaction monitoring and screening RegTech solutions that are not fit for purpose. These are stated as separate findings and should be cited as such rather than merged.",
+  "citations": [
+    {
+      "chunk_id": 7950,
+      "title": "Politically Exposed Persons: Preventive Measures for the Banking Sector",
+      "publisher": "World Bank / UNODC Stolen Asset Recovery Initiative (StAR)",
+      "page": 53,
+      "source_url": "https://documents1.worldbank.org/curated/en/611261468155103854/pdf/542500PUB0Expo101Official0Use0Only1.pdf",
+      "section_heading": "6 Identifi cation of PEPs:"
+    },
+    {
+      "chunk_id": 6394,
+      "title": "Financial Crime Guide: A firm's guide to countering financial crime risks (FCG)",
+      "publisher": "Financial Conduct Authority (FCA)",
+      "page": 111,
+      "source_url": "https://api-handbook.fca.org.uk/files/sourcebook/FCG.pdf",
+      "section_heading": "1 \u2022 When are customers screened against lists, whether the Consolidated List, internal"
+    },
+    {
+      "chunk_id": 6395,
+      "title": "Financial Crime Guide: A firm's guide to countering financial crime risks (FCG)",
+      "publisher": "Financial Conduct Authority (FCA)",
+      "page": 112,
+      "source_url": "https://api-handbook.fca.org.uk/files/sourcebook/FCG.pdf",
+      "section_heading": "1 \u2022 When are customers screened against lists, whether the Consolidated List, internal"
+    },
+    {
+      "chunk_id": 3119,
+      "title": "Opinion of the European Banking Authority on money laundering and terrorist financing risks affecting the EU's financial sector \u2014 EBA/Op/2025/10",
+      "publisher": "European Banking Authority (EBA)",
+      "page": 17,
+      "source_url": "https://www.eba.europa.eu/sites/default/files/2025-07/13ae2f94-dc04-4a50-9f24-af2808e78944/Opinion%20and%20Report%20on%20ML%20TF%20risks.pdf",
+      "section_heading": "REPORT ON MONEY LAUNDERING AND TERRORIST FINANCING RISKS"
+    },
+    {
+      "chunk_id": 3118,
+      "title": "Opinion of the European Banking Authority on money laundering and terrorist financing risks affecting the EU's financial sector \u2014 EBA/Op/2025/10",
+      "publisher": "European Banking Authority (EBA)",
+      "page": 16,
+      "source_url": "https://www.eba.europa.eu/sites/default/files/2025-07/13ae2f94-dc04-4a50-9f24-af2808e78944/Opinion%20and%20Report%20on%20ML%20TF%20risks.pdf",
+      "section_heading": "REPORT ON MONEY LAUNDERING AND TERRORIST FINANCING RISKS"
+    },
+    {
+      "chunk_id": 7988,
+      "title": "Politically Exposed Persons: Preventive Measures for the Banking Sector",
+      "publisher": "World Bank / UNODC Stolen Asset Recovery Initiative (StAR)",
+      "page": 94,
+      "source_url": "https://documents1.worldbank.org/curated/en/611261468155103854/pdf/542500PUB0Expo101Official0Use0Only1.pdf",
+      "section_heading": "8 FATF and UNCAC should align the defi nition of PEPs. This defi nition should be"
+    },
+    {
+      "chunk_id": 7967,
+      "title": "Politically Exposed Persons: Preventive Measures for the Banking Sector",
+      "publisher": "World Bank / UNODC Stolen Asset Recovery Initiative (StAR)",
+      "page": 66,
+      "source_url": "https://documents1.worldbank.org/curated/en/611261468155103854/pdf/542500PUB0Expo101Official0Use0Only1.pdf",
+      "section_heading": "8 Identifi cation of PEPs:"
+    },
+    {
+      "chunk_id": 7990,
+      "title": "Politically Exposed Persons: Preventive Measures for the Banking Sector",
+      "publisher": "World Bank / UNODC Stolen Asset Recovery Initiative (StAR)",
+      "page": 97,
+      "source_url": "https://documents1.worldbank.org/curated/en/611261468155103854/pdf/542500PUB0Expo101Official0Use0Only1.pdf",
+      "section_heading": "1 The creation of a designated PEP committee that meets regularly to discuss"
+    },
+    {
+      "chunk_id": 7966,
+      "title": "Politically Exposed Persons: Preventive Measures for the Banking Sector",
+      "publisher": "World Bank / UNODC Stolen Asset Recovery Initiative (StAR)",
+      "page": 65,
+      "source_url": "https://documents1.worldbank.org/curated/en/611261468155103854/pdf/542500PUB0Expo101Official0Use0Only1.pdf",
+      "section_heading": "8 Identifi cation of PEPs:"
+    },
+    {
+      "chunk_id": 5024,
+      "title": "The Wolfsberg Group Frequently Asked Questions (FAQs) on Negative News Screening",
+      "publisher": "The Wolfsberg Group",
+      "page": 12,
+      "source_url": "https://db.wolfsberg-group.org/assets/b3a010d9-7b32-4580-92d7-db9a7e78cbaf/Negative%20News%20Screening%20FAQs%20(2022).pdf",
+      "section_heading": "12 \u00a9 The Wolfsberg Group 2022 Negative News Screening FAQs"
+    },
+    {
+      "chunk_id": 3127,
+      "title": "Opinion of the European Banking Authority on money laundering and terrorist financing risks affecting the EU's financial sector \u2014 EBA/Op/2025/10",
+      "publisher": "European Banking Authority (EBA)",
+      "page": 24,
+      "source_url": "https://www.eba.europa.eu/sites/default/files/2025-07/13ae2f94-dc04-4a50-9f24-af2808e78944/Opinion%20and%20Report%20on%20ML%20TF%20risks.pdf",
+      "section_heading": "REPORT ON MONEY LAUNDERING AND TERRORIST FINANCING RISKS"
+    }
+  ],
+  "refusal_reason": "",
+  "attempts": 2,
+  "searches": 14,
+  "input_tokens": 819,
+  "output_tokens": 7860,
+  "agent_usd": 0.5828,
+  "validation_usd": 0.19374,
+  "total_usd": 0.77654,
+  "latency_ms": 194897.0,
+  "validation": {
+    "passed": true,
+    "citation_validity": 1.0,
+    "groundedness": 1.0,
+    "checked_support": true,
+    "usd": 0.08382,
+    "verdicts": [
+      {
+        "claim": "The Methodology for FATF Recommendation 6 sets out as an essential criterion (6.1) that financial institutions should be required, in addition to CDD under R.5, to put in place appropriate risk management systems to determine whether a potential customer, a customer or the beneficial owner is a politically exposed person.",
+        "chunk_ids": [
+          7950
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage directly quotes footnote 47: \"Methodology for FATF Recommendation 6 states this 'essential criteria' at 6.1: 'Financial institutions should be required, in addition to performing the CDD measures required under R.5, to put in place appropriate risk management systems to determine whether a potential customer, a customer or the beneficial owner is a politically exposed person.'\""
+      },
+      {
+        "claim": "The StAR PEP study recommends that law or regulation include a requirement to determine whether a beneficial owner is a PEP, noting that mutual evaluation reports found a number of jurisdictions did not require this check even though the FATF Methodology treats it as essential criteria.",
+        "chunk_ids": [
+          7950
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states verbatim: \"Law or regulation should include a requirement to determine whether a beneficial owner is a PEP in accordance with the Methodology for FATF Recommendation 6,\" and notes evaluation reports found jurisdictions lacked this requirement despite it being \"essential criteria\" under the FATF Methodology."
+      },
+      {
+        "claim": "The FCA Financial Crime Guide identifies as poor practice a firm that uses automated screening systems but does not understand how to calibrate them and does not check whether the number of hits is unexpectedly high or low.",
+        "chunk_ids": [
+          6394
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage explicitly lists as poor practice: \"Where a firm uses automated systems, it does not understand how to calibrate them and does not check whether the number of hits is unexpectedly high or low.\""
+      },
+      {
+        "claim": "The FCA Financial Crime Guide identifies as poor practice screening calibration that is not adequately tailored, where the system is either too sensitive or not sensitive enough, which may result in name variations not being detected.",
+        "chunk_ids": [
+          6394
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states verbatim under examples of poor practice: \"Calibration is not adequately tailored and the system is either too sensitive or not sensitive enough. This may result in name variations not being detected, for example.\""
+      },
+      {
+        "claim": "The FCA Financial Crime Guide identifies as good practice that a firm understands its automated screening tool and how it is calibrated and is able to demonstrate that it is appropriate to the firm's risk exposure, and can show the controls in place to measure the effectiveness of its automated system, thresholds and parameters, for instance through sample testing and tuning.",
+        "chunk_ids": [
+          6394
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage lists as good practice: \"The firm understands its automated screening tool and how it is calibrated, and is able to demonstrate that it is appropriate to the firm's risk exposure\" and \"The firm is able to show the controls in place to measure the effectiveness of its automated system, thresholds and parameters \u2013 for instance, with sample testing and tuning,\" matching the claim verbatim."
+      },
+      {
+        "claim": "The FCA Financial Crime Guide also treats as poor practice a firm having limited or no understanding of how a third-party screening tool is calibrated, and being overly reliant on a third-party provider screening solution with no oversight; good practice is that the screening tool is calibrated and tailored to the firm's risk and appropriate for screening UK sanctions.",
+        "chunk_ids": [
+          6394,
+          6395
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage lists as poor practice \"There is limited or no understanding by the firm about how a third-party tool is calibrated\" and \"The firm is overly reliant on a third-party provider screening solution, with no oversight,\" and as good practice \"The screening tool is calibrated and tailored to the firm's risk and is appropriate for screening UK sanctions.\""
+      },
+      {
+        "claim": "The EBA Opinion on ML/TF risks reports that one third of competent authorities point to significant risks associated with institutions implementing RegTech solutions without adequate testing, failing to ensure the transparency and explainability of RegTech systems, and being unable to demonstrate the effectiveness of RegTech systems and tools.",
+        "chunk_ids": [
+          3119
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states \"one third of CAs point to significant risks associated with institutions implementing RegTech solutions without adequate testing, failing to ensure the transparency and explainability of RegTech systems, and being unable to demonstrate the effectiveness of RegTech systems and tools,\" matching the claim verbatim."
+      },
+      {
+        "claim": "As a separate finding, the EBA Opinion states that failure to ensure RegTech solutions are fit for purpose can be serious, with more than one third of competent authorities pointing to significant or very significant risks linked to the unthinking use of onboarding and CDD, transaction monitoring and screening RegTech solutions.",
+        "chunk_ids": [
+          3119
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states verbatim: \"Failure to ensure that RegTech solutions are fit for purpose can be serious: more than one third of CAs point to significant or very significant risks linked to the unthinking use of onboarding and CDD, transaction monitoring and screening RegTech solutions.\""
+      },
+      {
+        "claim": "The EBA Opinion reports that half of all competent authorities surveyed identified ML/TF risks associated with the use of RegTech solutions by obliged entities, and 15% consider that the risk has increased.",
+        "chunk_ids": [
+          3118
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage directly states \"half of all CAs surveyed for this Opinion identified ML/TF risks associated with the use of RegTech solutions by obliged entities, and 15% consider that the risk has increased,\" matching the claim exactly."
+      },
+      {
+        "claim": "The EBA Opinion notes concentration risk, with 32% of competent authorities viewing as significant the heavy reliance on a small number of RegTech solutions across many supervised entities, especially where those solutions are not customised to each entity's specific needs.",
+        "chunk_ids": [
+          3119
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states \"Thirty-two percent of CAs view concentration risks as significant, as relying heavily on a small number of RegTech solutions across many supervised entities can create systemic vulnerabilities \u2013 especially if those solutions are not customised to each entity's specific needs,\" which directly matches the claim."
+      },
+      {
+        "claim": "The StAR PEP study recommends that, where applicable, the regulatory authority should include as part of onsite inspection a review of the database used to identify PEPs, including examination of the commercial database parameters, sample transaction testing, and a review of the bank's overall database management practices.",
+        "chunk_ids": [
+          7988,
+          7967
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states verbatim: \"the regulatory authority should include, as part of the onsite inspection, a review of the database used to identify PEPs... include an examination of the commercial database parameters, sample transaction testing, and a review of the bank's overall database management practices.\""
+      },
+      {
+        "claim": "The StAR PEP study cites as good practice one regulatory authority that uses onsite examinations to assess the performance of PEP searches, including a review of the database search parameters, the algorithms being used for routine and ongoing monitoring purposes, and in-house search feeds.",
+        "chunk_ids": [
+          7967,
+          7990
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage explicitly states this as a \"Good Practice\": \"One regulatory authority uses onsite examinations to assess the performance of PEP searches, including a review of the database search parameters, the algorithms being used for routine and ongoing monitoring purposes, and in-house search feeds.\""
+      },
+      {
+        "claim": "The StAR PEP study notes that commercial PEP databases do not always carry identifiers such as date of birth or sex that would help reduce false positives, and concludes that banks should not rely on such databases as the only source for determining whether a customer is a PEP.",
+        "chunk_ids": [
+          7966
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states databases lack identifiers like \"date of birth or sex, that would help reduce the number of false positives\" and concludes \"banks should not rely upon them as the only source for determining if a customer is a PEP.\""
+      },
+      {
+        "claim": "The Wolfsberg Group's Negative News Screening FAQs state that quality assurance of screening should include assessment of the adequacy of system risk parameters and alert filtering mechanisms, and evaluation of the performance of the screening application by assessing the precision of screening and its hit rate.",
+        "chunk_ids": [
+          5024
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage explicitly lists under QA Systems: \"Assessment of adequacy of system risk parameters and alert filtering mechanisms\" and \"Evaluation of the performance of the screening application by assessing the precision of screening and its hit rate,\" matching the claim verbatim."
+      },
+      {
+        "claim": "The EBA Opinion records that between 2022 and 2024 there were 203 material weaknesses in EuReCA related to PEPs, mainly in the investment firms sector, followed by life insurance undertakings, bureaux de change and credit institutions.",
+        "chunk_ids": [
+          3127
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states verbatim: \"Between 2022 and 2024, 203 material weaknesses in EuReCA related to PEPs, mainly in the investment firms sector, followed by life insurance undertakings, bureaux de change and credit institutions.\""
+      }
+    ]
+  },
+  "drafts": [
+    {
+      "trace_id": "90415be43972",
+      "question": "A vendor tool we use to flag senior public officials among our customer base returns an unmanageable number of irrelevant name hits. What is the underlying reason these tools generate so much noise, why can't the vendors simply resolve it, and what goes wrong if we tighten the match settings to bring the hit volume down?",
+      "outcome": "answered",
+      "summary": "The noise is structural, not a defect of your particular vendor. Commercial PEP databases are compiled from open sources and frequently lack the secondary identifiers (date of birth, sex, etc.) that would let a match engine separate your customer from the listed official, so common or similar names generate partial and unconfirmed matches in bulk. Vendors cannot fully fix this: they are constrained by what open sources publish and by privacy limits on drawing from other public registries such as birth records, and the PEP population itself (officials plus family members and close associates, defined differently across political and cultural contexts) resists being reduced to a clean, identifier-rich list. Tightening match settings is the wrong lever to pull blindly: regulators treat calibration as something the firm must understand, tailor to its own risk exposure, and evidence through sample testing and tuning, and a system that is \"not sensitive enough\" fails to detect name variations \u2014 producing missed PEPs, no enhanced due diligence, and no defensible record. The better route is better secondary-identifier data and disciplined list/alert management to suppress repeat false positives, plus recognition that the database is only one input to a PEP determination.",
+      "claims": [
+        {
+          "text": "A principal reason PEP screening produces a large volume of hits is that the commercial databases do not always carry identifiers alongside the names \u2014 such as date of birth or sex \u2014 that would help reduce the number of false positives.",
+          "chunk_ids": [
+            7966
+          ]
+        },
+        {
+          "text": "False hits arise in two forms: a partial match, where target names share similar or common elements with non-targets, and an unconfirmed match or 'false positive', where the names match but investigation confirms the underlying identities are not the same.",
+          "chunk_ids": [
+            4568
+          ]
+        },
+        {
+          "text": "The effectiveness of automated screening depends on the availability, accuracy, quality and usability of the source lists containing the target names, and the volume of false hits is described as a very substantial practical issue already faced by financial institutions.",
+          "chunk_ids": [
+            4568
+          ]
+        },
+        {
+          "text": "Vendors are aware of the missing-identifier problem and are adding identifiers, but they are limited by the lack of available information and by the fact that some only collect open-source information such as internet or media content.",
+          "chunk_ids": [
+            7966
+          ]
+        },
+        {
+          "text": "For privacy reasons, database providers do not draw on other information that may also be publicly accessible, such as birth registries, which constrains how far they can enrich records with distinguishing identifiers.",
+          "chunk_ids": [
+            7966
+          ]
+        },
+        {
+          "text": "Commercial PEP databases and platforms compile and store information from a variety of open sources, including government websites, international organisations, media and sanctions lists, covering public office holders and in some cases their legal entities, family members and known associates.",
+          "chunk_ids": [
+            7965
+          ]
+        },
+        {
+          "text": "The PEP population is inherently hard to reduce to a clean list: classification of PEPs, and the extent of a person's close family and circle of associates, differs depending on the political, social and cultural contexts of different jurisdictions.",
+          "chunk_ids": [
+            7952
+          ]
+        },
+        {
+          "text": "Official PEP lists tend to contain only certain prominent public officials rather than family members or close associates, and become out of date quickly; an overly broad list, such as one covering all public servants, would be unmanageable in some jurisdictions and for the banks that have to review it.",
+          "chunk_ids": [
+            7952
+          ]
+        },
+        {
+          "text": "Because of these limitations, banks should not rely on commercial PEP databases as the only source for determining whether a customer is a PEP; the database is one tool among others for developing a complete picture of the customer.",
+          "chunk_ids": [
+            7966
+          ]
+        },
+        {
+          "text": "Regulators expect a firm to understand its automated screening tool and how it is calibrated, and to be able to demonstrate that the calibration is appropriate to the firm's risk exposure.",
+          "chunk_ids": [
+            6394
+          ]
+        },
+        {
+          "text": "It is poor practice for a firm to use automated systems without understanding how to calibrate them, or to fail to check whether the number of hits is unexpectedly high or low.",
+          "chunk_ids": [
+            6394
+          ]
+        },
+        {
+          "text": "Calibration that is not adequately tailored \u2014 leaving the system either too sensitive or not sensitive enough \u2014 is identified as poor practice, and an insufficiently sensitive system may result in name variations not being detected.",
+          "chunk_ids": [
+            6394
+          ]
+        },
+        {
+          "text": "Firms should be able to show the controls in place to measure the effectiveness of their automated system, thresholds and parameters, for instance through sample testing and tuning.",
+          "chunk_ids": [
+            6394
+          ]
+        },
+        {
+          "text": "Having limited or no understanding of how a third-party tool is calibrated, or being overly reliant on a third-party provider screening solution with no oversight, is treated as poor practice.",
+          "chunk_ids": [
+            6394,
+            6395
+          ]
+        },
+        {
+          "text": "Firms should have procedures for identifying whether a name match is real, for example by looking at a range of identifier information such as name, date of birth, address or other customer data, and should ensure sufficient resources are available to identify false positives.",
+          "chunk_ids": [
+            6398
+          ]
+        },
+        {
+          "text": "Institutions should have robust internal list management procedures to reduce repeat false positive hits, so that excessive false positives do not obscure true positive hits and cause reviewers to miss actual issues.",
+          "chunk_ids": [
+            4568
+          ]
+        },
+        {
+          "text": "Alert discounting can legitimately rest on a significant difference between the customer's name and the matched name, or on differences in key secondary identifiers such as date of birth, date of incorporation or gender, with weaker discounting criteria such as profession or residence used more cautiously.",
+          "chunk_ids": [
+            5022
+          ]
+        },
+        {
+          "text": "Screening rules can use source data attributes such as geographic location matches or date-of-birth tolerances (for example plus or minus one year), and auto-discounting rules can be designed to manage common false positive alerts and eliminate unnecessary manual review.",
+          "chunk_ids": [
+            5013
+          ]
+        },
+        {
+          "text": "Supervisors may review a bank's PEP database as part of onsite inspection, including examination of the commercial database parameters, sample transaction testing, and the bank's overall database management practices; one regulatory authority assesses the performance of PEP searches including the search parameters and the algorithms used for routine and ongoing monitoring.",
+          "chunk_ids": [
+            7967,
+            7988
+          ]
+        },
+        {
+          "text": "Financial institutions are required to have appropriate risk management systems to determine whether a potential customer, customer or beneficial owner is a politically exposed person, so a mis-tuned screening tool undermines a specific regulatory obligation.",
+          "chunk_ids": [
+            7950
+          ]
+        },
+        {
+          "text": "Supervisors have flagged significant risks from institutions implementing RegTech solutions without adequate testing, failing to ensure transparency and explainability of those systems, and being unable to demonstrate their effectiveness, including in relation to screening tools.",
+          "chunk_ids": [
+            3119
+          ]
+        }
+      ],
+      "refusal_reason": "",
+      "iterations": 5,
+      "searches": 8,
+      "retrieved_chunk_ids": [
+        729,
+        759,
+        3119,
+        4567,
+        4568,
+        4604,
+        4897,
+        4905,
+        4921,
+        4922,
+        5013,
+        5014,
+        5016,
+        5018,
+        5019,
+        5020,
+        5022,
+        5026,
+        6393,
+        6394,
+        6395,
+        6398,
+        6400,
+        6766,
+        6767,
+        7895,
+        7913,
+        7914,
+        7928,
+        7950,
+        7951,
+        7952,
+        7961,
+        7962,
+        7965,
+        7966,
+        7967,
+        7974,
+        7988,
+        7990,
+        7996,
+        8001
+      ],
+      "input_tokens": 180,
+      "output_tokens": 3835,
+      "cache_read_tokens": 54511,
+      "usd": 0.31303,
+      "latency_ms": 56726.1,
+      "error": "",
+      "trace": [
+        {
+          "step": "search",
+          "iteration": 1,
+          "query": "politically exposed persons screening false positives name matching",
+          "k": 8,
+          "returned_chunk_ids": [
+            7966,
+            6398,
+            4568,
+            8001,
+            7895,
+            7965,
+            4567,
+            5020
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 1,
+          "query": "fuzzy matching threshold tuning sanctions screening system",
+          "k": 8,
+          "returned_chunk_ids": [
+            6394,
+            4922,
+            4921,
+            6393,
+            6395,
+            4897,
+            6400,
+            729
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 2,
+          "query": "commercial PEP database limitations coverage not comprehensive definition varies no official list",
+          "k": 8,
+          "returned_chunk_ids": [
+            7966,
+            7952,
+            7988,
+            7951,
+            7962,
+            7974,
+            7965,
+            7990
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 2,
+          "query": "transliteration spelling variations common names screening challenges",
+          "k": 8,
+          "returned_chunk_ids": [
+            5013,
+            5026,
+            5016,
+            5014,
+            5019,
+            4567,
+            6393,
+            4604
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 3,
+          "query": "database search parameters algorithm settings banks reviewing hits volume PEP database challenges",
+          "k": 8,
+          "returned_chunk_ids": [
+            7966,
+            7965,
+            7967,
+            7988,
+            7990,
+            7974,
+            7950,
+            7961
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 3,
+          "query": "screening filter calibration risk of missing true match under-inclusive settings testing",
+          "k": 8,
+          "returned_chunk_ids": [
+            6394,
+            7966,
+            5022,
+            4568,
+            5018,
+            4905,
+            5019,
+            3119
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 4,
+          "query": "secondary identifiers date of birth nationality improve match accuracy reduce false positives customer data quality",
+          "k": 6,
+          "returned_chunk_ids": [
+            5022,
+            7966,
+            6766,
+            5013,
+            759,
+            6767
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 4,
+          "query": "failure to identify PEP status enhanced due diligence not applied regulatory finding",
+          "k": 6,
+          "returned_chunk_ids": [
+            7928,
+            7996,
+            7913,
+            7914,
+            7950,
+            7990
+          ]
+        },
+        {
+          "step": "answer",
+          "iteration": 5,
+          "claims": 21
+        }
+      ]
+    },
+    {
+      "trace_id": "7ead83def110",
+      "question": "Your draft was REJECTED by citation validation. The following claims did not survive:\n\n- Claim: Financial institutions are required to have appropriate risk management systems to determine whether a potential customer, customer or beneficial owner is a politically exposed person, so a mis-tuned screening tool undermines a specific regulatory obligation.\n  Cited: [7950]\n  Problem: The passage quotes the FATF Methodology stating financial institutions 'should be required...to put in place appropriate risk management systems to determine whether a potential customer, a customer or the beneficial owner is a politically exposed person,' supporting the first part of the claim; however, it says nothing about a 'mis-tuned screening tool undermining' this obligation, so that specific assertion is not supported.\n\n- Claim: Supervisors have flagged significant risks from institutions implementing RegTech solutions without adequate testing, failing to ensure transparency and explainability of those systems, and being unable to demonstrate their effectiveness, including in relation to screening tools.\n  Cited: [3119]\n  Problem: The passage confirms CAs flagged risks from inadequate testing, transparency/explainability, and demonstrating effectiveness of RegTech generally, but the 'screening tools' reference in the passage appears in a separate statement about onboarding/CDD, transaction monitoring and screening RegTech risks linked to fitness for purpose, not tied to the testing/transparency/effectiveness concern, so the specific link to screening tools in the claim is not directly supported.\n\nSearch for evidence that actually supports these claims and answer again, or drop the claims you cannot support. If the corpus does not support them at all, call refuse instead of weakening the wording until it passes.",
+      "outcome": "answered",
+      "summary": "The corpus does support the underlying points, but they need to be split and re-scoped. The FATF Methodology essential criterion requiring \"appropriate risk management systems\" to determine PEP status is confirmed by the StAR PEP study. The specific consequence of a mis-calibrated screening tool is not found there, but is squarely covered by the FCA's Financial Crime Guide, which lists as poor practice a firm that does not understand how its automated screening tool is calibrated, or where calibration is \"not adequately tailored and the system is either too sensitive or not sensitive enough,\" potentially causing name variations to go undetected. Separately, the EBA Opinion records two distinct supervisory concerns about RegTech: (i) one third of competent authorities flag risks from implementation without adequate testing, lack of transparency/explainability and inability to demonstrate effectiveness; and (ii) more than one third flag risks from the unthinking use of onboarding/CDD, transaction monitoring and screening RegTech solutions that are not fit for purpose. These are stated as separate findings and should be cited as such rather than merged.",
+      "claims": [
+        {
+          "text": "The Methodology for FATF Recommendation 6 sets out as an essential criterion (6.1) that financial institutions should be required, in addition to CDD under R.5, to put in place appropriate risk management systems to determine whether a potential customer, a customer or the beneficial owner is a politically exposed person.",
+          "chunk_ids": [
+            7950
+          ]
+        },
+        {
+          "text": "The StAR PEP study recommends that law or regulation include a requirement to determine whether a beneficial owner is a PEP, noting that mutual evaluation reports found a number of jurisdictions did not require this check even though the FATF Methodology treats it as essential criteria.",
+          "chunk_ids": [
+            7950
+          ]
+        },
+        {
+          "text": "The FCA Financial Crime Guide identifies as poor practice a firm that uses automated screening systems but does not understand how to calibrate them and does not check whether the number of hits is unexpectedly high or low.",
+          "chunk_ids": [
+            6394
+          ]
+        },
+        {
+          "text": "The FCA Financial Crime Guide identifies as poor practice screening calibration that is not adequately tailored, where the system is either too sensitive or not sensitive enough, which may result in name variations not being detected.",
+          "chunk_ids": [
+            6394
+          ]
+        },
+        {
+          "text": "The FCA Financial Crime Guide identifies as good practice that a firm understands its automated screening tool and how it is calibrated and is able to demonstrate that it is appropriate to the firm's risk exposure, and can show the controls in place to measure the effectiveness of its automated system, thresholds and parameters, for instance through sample testing and tuning.",
+          "chunk_ids": [
+            6394
+          ]
+        },
+        {
+          "text": "The FCA Financial Crime Guide also treats as poor practice a firm having limited or no understanding of how a third-party screening tool is calibrated, and being overly reliant on a third-party provider screening solution with no oversight; good practice is that the screening tool is calibrated and tailored to the firm's risk and appropriate for screening UK sanctions.",
+          "chunk_ids": [
+            6394,
+            6395
+          ]
+        },
+        {
+          "text": "The EBA Opinion on ML/TF risks reports that one third of competent authorities point to significant risks associated with institutions implementing RegTech solutions without adequate testing, failing to ensure the transparency and explainability of RegTech systems, and being unable to demonstrate the effectiveness of RegTech systems and tools.",
+          "chunk_ids": [
+            3119
+          ]
+        },
+        {
+          "text": "As a separate finding, the EBA Opinion states that failure to ensure RegTech solutions are fit for purpose can be serious, with more than one third of competent authorities pointing to significant or very significant risks linked to the unthinking use of onboarding and CDD, transaction monitoring and screening RegTech solutions.",
+          "chunk_ids": [
+            3119
+          ]
+        },
+        {
+          "text": "The EBA Opinion reports that half of all competent authorities surveyed identified ML/TF risks associated with the use of RegTech solutions by obliged entities, and 15% consider that the risk has increased.",
+          "chunk_ids": [
+            3118
+          ]
+        },
+        {
+          "text": "The EBA Opinion notes concentration risk, with 32% of competent authorities viewing as significant the heavy reliance on a small number of RegTech solutions across many supervised entities, especially where those solutions are not customised to each entity's specific needs.",
+          "chunk_ids": [
+            3119
+          ]
+        },
+        {
+          "text": "The StAR PEP study recommends that, where applicable, the regulatory authority should include as part of onsite inspection a review of the database used to identify PEPs, including examination of the commercial database parameters, sample transaction testing, and a review of the bank's overall database management practices.",
+          "chunk_ids": [
+            7988,
+            7967
+          ]
+        },
+        {
+          "text": "The StAR PEP study cites as good practice one regulatory authority that uses onsite examinations to assess the performance of PEP searches, including a review of the database search parameters, the algorithms being used for routine and ongoing monitoring purposes, and in-house search feeds.",
+          "chunk_ids": [
+            7967,
+            7990
+          ]
+        },
+        {
+          "text": "The StAR PEP study notes that commercial PEP databases do not always carry identifiers such as date of birth or sex that would help reduce false positives, and concludes that banks should not rely on such databases as the only source for determining whether a customer is a PEP.",
+          "chunk_ids": [
+            7966
+          ]
+        },
+        {
+          "text": "The Wolfsberg Group's Negative News Screening FAQs state that quality assurance of screening should include assessment of the adequacy of system risk parameters and alert filtering mechanisms, and evaluation of the performance of the screening application by assessing the precision of screening and its hit rate.",
+          "chunk_ids": [
+            5024
+          ]
+        },
+        {
+          "text": "The EBA Opinion records that between 2022 and 2024 there were 203 material weaknesses in EuReCA related to PEPs, mainly in the investment firms sector, followed by life insurance undertakings, bureaux de change and credit institutions.",
+          "chunk_ids": [
+            3127
+          ]
+        }
+      ],
+      "refusal_reason": "",
+      "iterations": 4,
+      "searches": 6,
+      "retrieved_chunk_ids": [
+        761,
+        2387,
+        2680,
+        2913,
+        2936,
+        3103,
+        3104,
+        3107,
+        3114,
+        3117,
+        3118,
+        3119,
+        3127,
+        3155,
+        3304,
+        4893,
+        4916,
+        5024,
+        5025,
+        6336,
+        6392,
+        6394,
+        6395,
+        7916,
+        7929,
+        7931,
+        7933,
+        7934,
+        7938,
+        7949,
+        7950,
+        7962,
+        7965,
+        7966,
+        7967,
+        7987,
+        7988,
+        7990,
+        7996
+      ],
+      "input_tokens": 639,
+      "output_tokens": 4025,
+      "cache_read_tokens": 31797,
+      "usd": 0.26977,
+      "latency_ms": 49880.1,
+      "error": "",
+      "trace": [
+        {
+          "step": "search",
+          "iteration": 1,
+          "query": "politically exposed persons risk management systems to determine whether customer is a PEP",
+          "k": 8,
+          "returned_chunk_ids": [
+            7950,
+            7949,
+            7938,
+            7987,
+            7996,
+            7916,
+            7990,
+            2680
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 1,
+          "query": "screening tool calibration fuzzy matching thresholds testing effectiveness",
+          "k": 8,
+          "returned_chunk_ids": [
+            6394,
+            3155,
+            4916,
+            5024,
+            4893,
+            6395,
+            6336,
+            5025
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 2,
+          "query": "RegTech risks competent authorities inadequate testing transparency explainability demonstrate effectiveness",
+          "k": 8,
+          "returned_chunk_ids": [
+            3119,
+            3103,
+            3118,
+            3107,
+            3117,
+            3104,
+            3155,
+            3114
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 2,
+          "query": "screening tools not fit for purpose RegTech solutions onboarding CDD transaction monitoring risks",
+          "k": 8,
+          "returned_chunk_ids": [
+            3119,
+            3118,
+            3103,
+            761,
+            6392,
+            2913,
+            2387,
+            2936
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 3,
+          "query": "material weaknesses PEP identification supervisors findings failure to identify PEPs",
+          "k": 6,
+          "returned_chunk_ids": [
+            7931,
+            3127,
+            7929,
+            7934,
+            7933,
+            7988
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 3,
+          "query": "commercial database PEP search parameters algorithms name variations spelling false negatives",
+          "k": 6,
+          "returned_chunk_ids": [
+            7966,
+            7965,
+            7988,
+            7967,
+            3304,
+            7962
+          ]
+        },
+        {
+          "step": "answer",
+          "iteration": 4,
+          "claims": 15
+        }
+      ]
+    }
+  ],
+  "written_at": "2026-08-30T12:07:23+00:00"
+}

@@ -1,0 +1,3696 @@
+{
+  "trace_id": "03390b7662c9",
+  "question": "A bank we clear payments for keeps sending us instructions where the payer field holds filler text instead of a real name. What are we as the intermediary supposed to do when we spot that, and who ultimately has to make sure the payer's details are accurate?",
+  "outcome": "error",
+  "summary": "",
+  "citations": [],
+  "refusal_reason": "model safety refusal",
+  "attempts": 2,
+  "searches": 11,
+  "input_tokens": 10244,
+  "output_tokens": 6429,
+  "agent_usd": 0.53576,
+  "validation_usd": 0.0,
+  "total_usd": 0.53576,
+  "latency_ms": 85892.5,
+  "validation": {
+    "passed": false,
+    "citation_validity": 0.0,
+    "groundedness": 0.0,
+    "checked_support": true,
+    "usd": 0.0,
+    "verdicts": [
+      {
+        "claim": "\n",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "<",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "p",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "a",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "r",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "a",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "m",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "e",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "t",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "e",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "r",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": " ",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "n",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "a",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "m",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "e",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "=",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "\"",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "t",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "e",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "x",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "t",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "\"",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": ">",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "R",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "e",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "s",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "p",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "o",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "n",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "s",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "i",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "b",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "i",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "l",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "i",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "t",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "y",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": " ",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "f",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "o",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "r",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": " ",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "u",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "s",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "i",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "n",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "g",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": " ",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "t",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "h",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "e",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": " ",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "r",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "i",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "g",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "h",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "t",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": " ",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "p",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "a",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "y",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "m",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "e",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "n",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "t",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": " ",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "m",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "e",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "s",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "s",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "a",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "g",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "e",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": " ",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "f",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "o",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "r",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "m",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "a",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "t",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": " ",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "a",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "n",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "d",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": " ",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "f",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "o",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "r",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": " ",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "e",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "n",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "s",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "u",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "r",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "i",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "n",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "g",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": " ",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "o",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "r",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "i",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "g",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "i",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "n",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "a",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "t",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "o",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "r",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": " ",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "a",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "n",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "d",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": " ",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "b",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "e",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "n",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "e",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "f",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "i",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "c",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "i",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "a",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "r",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "y",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": " ",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "i",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "n",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "f",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "o",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "r",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "m",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "a",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "t",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "i",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "o",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "n",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": " ",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "a",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "c",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "c",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "o",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "m",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "p",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "a",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "n",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "i",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "e",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "s",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": " ",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "a",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": " ",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "w",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "i",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "r",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "e",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": " ",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "t",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "r",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "a",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "n",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "s",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "f",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "e",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "r",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": " ",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "r",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "e",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "s",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "t",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "s",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": " ",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "w",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "i",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "t",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "h",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": " ",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "t",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "h",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "e",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": " ",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "o",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "r",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "i",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "g",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "i",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "n",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "a",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "t",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "i",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "n",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "g",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": " ",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "b",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "a",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "n",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "k",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": ";",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": " ",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "o",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "t",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "h",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "e",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "r",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "s",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": " ",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "i",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "n",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": " ",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "t",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "h",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "e",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": " ",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "p",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "a",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "y",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "m",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "e",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "n",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "t",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": " ",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "c",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "h",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "a",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "i",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "n",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": " ",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "a",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "r",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "e",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": " ",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "r",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "e",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "q",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "u",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "i",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "r",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "e",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "d",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": " ",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "t",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "o",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": " ",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "m",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "o",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "n",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "i",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "t",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "o",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "r",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": " ",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "t",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "h",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "e",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": " ",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "p",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "a",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "y",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "m",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "e",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "n",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "t",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "s",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": " ",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "t",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "h",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "e",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "y",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": " ",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "p",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "r",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "o",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "c",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "e",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "s",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "s",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": " ",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "o",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "n",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": " ",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "t",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "h",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "e",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": " ",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "b",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "a",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "s",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "i",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "s",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": " ",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "o",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "f",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": " ",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "t",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "h",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "a",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "t",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": " ",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "i",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "n",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "f",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "o",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "r",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "m",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "a",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "t",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "i",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "o",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": "n",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      },
+      {
+        "claim": ".",
+        "chunk_ids": [],
+        "citation_ok": false,
+        "support_ok": false,
+        "detail": "The claim cites no chunks at all."
+      }
+    ]
+  },
+  "drafts": [
+    {
+      "trace_id": "03390b7662c9",
+      "question": "A bank we clear payments for keeps sending us instructions where the payer field holds filler text instead of a real name. What are we as the intermediary supposed to do when we spot that, and who ultimately has to make sure the payer's details are accurate?",
+      "outcome": "answered",
+      "summary": "The corpus is clear on both halves of your question. Responsibility for accurate payer/originator details sits with the institution at the start of the chain \u2014 the originating/ordering bank, which must obtain, hold and transmit accurate originator information in the correct message format. As the intermediary/correspondent, you are not expected to re-do CDD on the respondent's customers, but you ARE expected to monitor the messages you process for missing or \"meaningless\" originator fields, to treat data quality as part of ongoing monitoring, to have risk-based procedures for how to handle such payments, to raise targeted requests for information with the respondent, to file an STR where suspicion arises, and to feed the respondent's track record on payer data into your periodic relationship review \u2014 escalating to restriction of services or, ultimately, exit where the risk cannot be managed. You must also never strip or truncate information when passing the payment on.",
+      "claims": [
+        {
+          "text": "\n",
+          "chunk_ids": []
+        },
+        {
+          "text": "<",
+          "chunk_ids": []
+        },
+        {
+          "text": "p",
+          "chunk_ids": []
+        },
+        {
+          "text": "a",
+          "chunk_ids": []
+        },
+        {
+          "text": "r",
+          "chunk_ids": []
+        },
+        {
+          "text": "a",
+          "chunk_ids": []
+        },
+        {
+          "text": "m",
+          "chunk_ids": []
+        },
+        {
+          "text": "e",
+          "chunk_ids": []
+        },
+        {
+          "text": "t",
+          "chunk_ids": []
+        },
+        {
+          "text": "e",
+          "chunk_ids": []
+        },
+        {
+          "text": "r",
+          "chunk_ids": []
+        },
+        {
+          "text": " ",
+          "chunk_ids": []
+        },
+        {
+          "text": "n",
+          "chunk_ids": []
+        },
+        {
+          "text": "a",
+          "chunk_ids": []
+        },
+        {
+          "text": "m",
+          "chunk_ids": []
+        },
+        {
+          "text": "e",
+          "chunk_ids": []
+        },
+        {
+          "text": "=",
+          "chunk_ids": []
+        },
+        {
+          "text": "\"",
+          "chunk_ids": []
+        },
+        {
+          "text": "t",
+          "chunk_ids": []
+        },
+        {
+          "text": "e",
+          "chunk_ids": []
+        },
+        {
+          "text": "x",
+          "chunk_ids": []
+        },
+        {
+          "text": "t",
+          "chunk_ids": []
+        },
+        {
+          "text": "\"",
+          "chunk_ids": []
+        },
+        {
+          "text": ">",
+          "chunk_ids": []
+        },
+        {
+          "text": "R",
+          "chunk_ids": []
+        },
+        {
+          "text": "e",
+          "chunk_ids": []
+        },
+        {
+          "text": "s",
+          "chunk_ids": []
+        },
+        {
+          "text": "p",
+          "chunk_ids": []
+        },
+        {
+          "text": "o",
+          "chunk_ids": []
+        },
+        {
+          "text": "n",
+          "chunk_ids": []
+        },
+        {
+          "text": "s",
+          "chunk_ids": []
+        },
+        {
+          "text": "i",
+          "chunk_ids": []
+        },
+        {
+          "text": "b",
+          "chunk_ids": []
+        },
+        {
+          "text": "i",
+          "chunk_ids": []
+        },
+        {
+          "text": "l",
+          "chunk_ids": []
+        },
+        {
+          "text": "i",
+          "chunk_ids": []
+        },
+        {
+          "text": "t",
+          "chunk_ids": []
+        },
+        {
+          "text": "y",
+          "chunk_ids": []
+        },
+        {
+          "text": " ",
+          "chunk_ids": []
+        },
+        {
+          "text": "f",
+          "chunk_ids": []
+        },
+        {
+          "text": "o",
+          "chunk_ids": []
+        },
+        {
+          "text": "r",
+          "chunk_ids": []
+        },
+        {
+          "text": " ",
+          "chunk_ids": []
+        },
+        {
+          "text": "u",
+          "chunk_ids": []
+        },
+        {
+          "text": "s",
+          "chunk_ids": []
+        },
+        {
+          "text": "i",
+          "chunk_ids": []
+        },
+        {
+          "text": "n",
+          "chunk_ids": []
+        },
+        {
+          "text": "g",
+          "chunk_ids": []
+        },
+        {
+          "text": " ",
+          "chunk_ids": []
+        },
+        {
+          "text": "t",
+          "chunk_ids": []
+        },
+        {
+          "text": "h",
+          "chunk_ids": []
+        },
+        {
+          "text": "e",
+          "chunk_ids": []
+        },
+        {
+          "text": " ",
+          "chunk_ids": []
+        },
+        {
+          "text": "r",
+          "chunk_ids": []
+        },
+        {
+          "text": "i",
+          "chunk_ids": []
+        },
+        {
+          "text": "g",
+          "chunk_ids": []
+        },
+        {
+          "text": "h",
+          "chunk_ids": []
+        },
+        {
+          "text": "t",
+          "chunk_ids": []
+        },
+        {
+          "text": " ",
+          "chunk_ids": []
+        },
+        {
+          "text": "p",
+          "chunk_ids": []
+        },
+        {
+          "text": "a",
+          "chunk_ids": []
+        },
+        {
+          "text": "y",
+          "chunk_ids": []
+        },
+        {
+          "text": "m",
+          "chunk_ids": []
+        },
+        {
+          "text": "e",
+          "chunk_ids": []
+        },
+        {
+          "text": "n",
+          "chunk_ids": []
+        },
+        {
+          "text": "t",
+          "chunk_ids": []
+        },
+        {
+          "text": " ",
+          "chunk_ids": []
+        },
+        {
+          "text": "m",
+          "chunk_ids": []
+        },
+        {
+          "text": "e",
+          "chunk_ids": []
+        },
+        {
+          "text": "s",
+          "chunk_ids": []
+        },
+        {
+          "text": "s",
+          "chunk_ids": []
+        },
+        {
+          "text": "a",
+          "chunk_ids": []
+        },
+        {
+          "text": "g",
+          "chunk_ids": []
+        },
+        {
+          "text": "e",
+          "chunk_ids": []
+        },
+        {
+          "text": " ",
+          "chunk_ids": []
+        },
+        {
+          "text": "f",
+          "chunk_ids": []
+        },
+        {
+          "text": "o",
+          "chunk_ids": []
+        },
+        {
+          "text": "r",
+          "chunk_ids": []
+        },
+        {
+          "text": "m",
+          "chunk_ids": []
+        },
+        {
+          "text": "a",
+          "chunk_ids": []
+        },
+        {
+          "text": "t",
+          "chunk_ids": []
+        },
+        {
+          "text": " ",
+          "chunk_ids": []
+        },
+        {
+          "text": "a",
+          "chunk_ids": []
+        },
+        {
+          "text": "n",
+          "chunk_ids": []
+        },
+        {
+          "text": "d",
+          "chunk_ids": []
+        },
+        {
+          "text": " ",
+          "chunk_ids": []
+        },
+        {
+          "text": "f",
+          "chunk_ids": []
+        },
+        {
+          "text": "o",
+          "chunk_ids": []
+        },
+        {
+          "text": "r",
+          "chunk_ids": []
+        },
+        {
+          "text": " ",
+          "chunk_ids": []
+        },
+        {
+          "text": "e",
+          "chunk_ids": []
+        },
+        {
+          "text": "n",
+          "chunk_ids": []
+        },
+        {
+          "text": "s",
+          "chunk_ids": []
+        },
+        {
+          "text": "u",
+          "chunk_ids": []
+        },
+        {
+          "text": "r",
+          "chunk_ids": []
+        },
+        {
+          "text": "i",
+          "chunk_ids": []
+        },
+        {
+          "text": "n",
+          "chunk_ids": []
+        },
+        {
+          "text": "g",
+          "chunk_ids": []
+        },
+        {
+          "text": " ",
+          "chunk_ids": []
+        },
+        {
+          "text": "o",
+          "chunk_ids": []
+        },
+        {
+          "text": "r",
+          "chunk_ids": []
+        },
+        {
+          "text": "i",
+          "chunk_ids": []
+        },
+        {
+          "text": "g",
+          "chunk_ids": []
+        },
+        {
+          "text": "i",
+          "chunk_ids": []
+        },
+        {
+          "text": "n",
+          "chunk_ids": []
+        },
+        {
+          "text": "a",
+          "chunk_ids": []
+        },
+        {
+          "text": "t",
+          "chunk_ids": []
+        },
+        {
+          "text": "o",
+          "chunk_ids": []
+        },
+        {
+          "text": "r",
+          "chunk_ids": []
+        },
+        {
+          "text": " ",
+          "chunk_ids": []
+        },
+        {
+          "text": "a",
+          "chunk_ids": []
+        },
+        {
+          "text": "n",
+          "chunk_ids": []
+        },
+        {
+          "text": "d",
+          "chunk_ids": []
+        },
+        {
+          "text": " ",
+          "chunk_ids": []
+        },
+        {
+          "text": "b",
+          "chunk_ids": []
+        },
+        {
+          "text": "e",
+          "chunk_ids": []
+        },
+        {
+          "text": "n",
+          "chunk_ids": []
+        },
+        {
+          "text": "e",
+          "chunk_ids": []
+        },
+        {
+          "text": "f",
+          "chunk_ids": []
+        },
+        {
+          "text": "i",
+          "chunk_ids": []
+        },
+        {
+          "text": "c",
+          "chunk_ids": []
+        },
+        {
+          "text": "i",
+          "chunk_ids": []
+        },
+        {
+          "text": "a",
+          "chunk_ids": []
+        },
+        {
+          "text": "r",
+          "chunk_ids": []
+        },
+        {
+          "text": "y",
+          "chunk_ids": []
+        },
+        {
+          "text": " ",
+          "chunk_ids": []
+        },
+        {
+          "text": "i",
+          "chunk_ids": []
+        },
+        {
+          "text": "n",
+          "chunk_ids": []
+        },
+        {
+          "text": "f",
+          "chunk_ids": []
+        },
+        {
+          "text": "o",
+          "chunk_ids": []
+        },
+        {
+          "text": "r",
+          "chunk_ids": []
+        },
+        {
+          "text": "m",
+          "chunk_ids": []
+        },
+        {
+          "text": "a",
+          "chunk_ids": []
+        },
+        {
+          "text": "t",
+          "chunk_ids": []
+        },
+        {
+          "text": "i",
+          "chunk_ids": []
+        },
+        {
+          "text": "o",
+          "chunk_ids": []
+        },
+        {
+          "text": "n",
+          "chunk_ids": []
+        },
+        {
+          "text": " ",
+          "chunk_ids": []
+        },
+        {
+          "text": "a",
+          "chunk_ids": []
+        },
+        {
+          "text": "c",
+          "chunk_ids": []
+        },
+        {
+          "text": "c",
+          "chunk_ids": []
+        },
+        {
+          "text": "o",
+          "chunk_ids": []
+        },
+        {
+          "text": "m",
+          "chunk_ids": []
+        },
+        {
+          "text": "p",
+          "chunk_ids": []
+        },
+        {
+          "text": "a",
+          "chunk_ids": []
+        },
+        {
+          "text": "n",
+          "chunk_ids": []
+        },
+        {
+          "text": "i",
+          "chunk_ids": []
+        },
+        {
+          "text": "e",
+          "chunk_ids": []
+        },
+        {
+          "text": "s",
+          "chunk_ids": []
+        },
+        {
+          "text": " ",
+          "chunk_ids": []
+        },
+        {
+          "text": "a",
+          "chunk_ids": []
+        },
+        {
+          "text": " ",
+          "chunk_ids": []
+        },
+        {
+          "text": "w",
+          "chunk_ids": []
+        },
+        {
+          "text": "i",
+          "chunk_ids": []
+        },
+        {
+          "text": "r",
+          "chunk_ids": []
+        },
+        {
+          "text": "e",
+          "chunk_ids": []
+        },
+        {
+          "text": " ",
+          "chunk_ids": []
+        },
+        {
+          "text": "t",
+          "chunk_ids": []
+        },
+        {
+          "text": "r",
+          "chunk_ids": []
+        },
+        {
+          "text": "a",
+          "chunk_ids": []
+        },
+        {
+          "text": "n",
+          "chunk_ids": []
+        },
+        {
+          "text": "s",
+          "chunk_ids": []
+        },
+        {
+          "text": "f",
+          "chunk_ids": []
+        },
+        {
+          "text": "e",
+          "chunk_ids": []
+        },
+        {
+          "text": "r",
+          "chunk_ids": []
+        },
+        {
+          "text": " ",
+          "chunk_ids": []
+        },
+        {
+          "text": "r",
+          "chunk_ids": []
+        },
+        {
+          "text": "e",
+          "chunk_ids": []
+        },
+        {
+          "text": "s",
+          "chunk_ids": []
+        },
+        {
+          "text": "t",
+          "chunk_ids": []
+        },
+        {
+          "text": "s",
+          "chunk_ids": []
+        },
+        {
+          "text": " ",
+          "chunk_ids": []
+        },
+        {
+          "text": "w",
+          "chunk_ids": []
+        },
+        {
+          "text": "i",
+          "chunk_ids": []
+        },
+        {
+          "text": "t",
+          "chunk_ids": []
+        },
+        {
+          "text": "h",
+          "chunk_ids": []
+        },
+        {
+          "text": " ",
+          "chunk_ids": []
+        },
+        {
+          "text": "t",
+          "chunk_ids": []
+        },
+        {
+          "text": "h",
+          "chunk_ids": []
+        },
+        {
+          "text": "e",
+          "chunk_ids": []
+        },
+        {
+          "text": " ",
+          "chunk_ids": []
+        },
+        {
+          "text": "o",
+          "chunk_ids": []
+        },
+        {
+          "text": "r",
+          "chunk_ids": []
+        },
+        {
+          "text": "i",
+          "chunk_ids": []
+        },
+        {
+          "text": "g",
+          "chunk_ids": []
+        },
+        {
+          "text": "i",
+          "chunk_ids": []
+        },
+        {
+          "text": "n",
+          "chunk_ids": []
+        },
+        {
+          "text": "a",
+          "chunk_ids": []
+        },
+        {
+          "text": "t",
+          "chunk_ids": []
+        },
+        {
+          "text": "i",
+          "chunk_ids": []
+        },
+        {
+          "text": "n",
+          "chunk_ids": []
+        },
+        {
+          "text": "g",
+          "chunk_ids": []
+        },
+        {
+          "text": " ",
+          "chunk_ids": []
+        },
+        {
+          "text": "b",
+          "chunk_ids": []
+        },
+        {
+          "text": "a",
+          "chunk_ids": []
+        },
+        {
+          "text": "n",
+          "chunk_ids": []
+        },
+        {
+          "text": "k",
+          "chunk_ids": []
+        },
+        {
+          "text": ";",
+          "chunk_ids": []
+        },
+        {
+          "text": " ",
+          "chunk_ids": []
+        },
+        {
+          "text": "o",
+          "chunk_ids": []
+        },
+        {
+          "text": "t",
+          "chunk_ids": []
+        },
+        {
+          "text": "h",
+          "chunk_ids": []
+        },
+        {
+          "text": "e",
+          "chunk_ids": []
+        },
+        {
+          "text": "r",
+          "chunk_ids": []
+        },
+        {
+          "text": "s",
+          "chunk_ids": []
+        },
+        {
+          "text": " ",
+          "chunk_ids": []
+        },
+        {
+          "text": "i",
+          "chunk_ids": []
+        },
+        {
+          "text": "n",
+          "chunk_ids": []
+        },
+        {
+          "text": " ",
+          "chunk_ids": []
+        },
+        {
+          "text": "t",
+          "chunk_ids": []
+        },
+        {
+          "text": "h",
+          "chunk_ids": []
+        },
+        {
+          "text": "e",
+          "chunk_ids": []
+        },
+        {
+          "text": " ",
+          "chunk_ids": []
+        },
+        {
+          "text": "p",
+          "chunk_ids": []
+        },
+        {
+          "text": "a",
+          "chunk_ids": []
+        },
+        {
+          "text": "y",
+          "chunk_ids": []
+        },
+        {
+          "text": "m",
+          "chunk_ids": []
+        },
+        {
+          "text": "e",
+          "chunk_ids": []
+        },
+        {
+          "text": "n",
+          "chunk_ids": []
+        },
+        {
+          "text": "t",
+          "chunk_ids": []
+        },
+        {
+          "text": " ",
+          "chunk_ids": []
+        },
+        {
+          "text": "c",
+          "chunk_ids": []
+        },
+        {
+          "text": "h",
+          "chunk_ids": []
+        },
+        {
+          "text": "a",
+          "chunk_ids": []
+        },
+        {
+          "text": "i",
+          "chunk_ids": []
+        },
+        {
+          "text": "n",
+          "chunk_ids": []
+        },
+        {
+          "text": " ",
+          "chunk_ids": []
+        },
+        {
+          "text": "a",
+          "chunk_ids": []
+        },
+        {
+          "text": "r",
+          "chunk_ids": []
+        },
+        {
+          "text": "e",
+          "chunk_ids": []
+        },
+        {
+          "text": " ",
+          "chunk_ids": []
+        },
+        {
+          "text": "r",
+          "chunk_ids": []
+        },
+        {
+          "text": "e",
+          "chunk_ids": []
+        },
+        {
+          "text": "q",
+          "chunk_ids": []
+        },
+        {
+          "text": "u",
+          "chunk_ids": []
+        },
+        {
+          "text": "i",
+          "chunk_ids": []
+        },
+        {
+          "text": "r",
+          "chunk_ids": []
+        },
+        {
+          "text": "e",
+          "chunk_ids": []
+        },
+        {
+          "text": "d",
+          "chunk_ids": []
+        },
+        {
+          "text": " ",
+          "chunk_ids": []
+        },
+        {
+          "text": "t",
+          "chunk_ids": []
+        },
+        {
+          "text": "o",
+          "chunk_ids": []
+        },
+        {
+          "text": " ",
+          "chunk_ids": []
+        },
+        {
+          "text": "m",
+          "chunk_ids": []
+        },
+        {
+          "text": "o",
+          "chunk_ids": []
+        },
+        {
+          "text": "n",
+          "chunk_ids": []
+        },
+        {
+          "text": "i",
+          "chunk_ids": []
+        },
+        {
+          "text": "t",
+          "chunk_ids": []
+        },
+        {
+          "text": "o",
+          "chunk_ids": []
+        },
+        {
+          "text": "r",
+          "chunk_ids": []
+        },
+        {
+          "text": " ",
+          "chunk_ids": []
+        },
+        {
+          "text": "t",
+          "chunk_ids": []
+        },
+        {
+          "text": "h",
+          "chunk_ids": []
+        },
+        {
+          "text": "e",
+          "chunk_ids": []
+        },
+        {
+          "text": " ",
+          "chunk_ids": []
+        },
+        {
+          "text": "p",
+          "chunk_ids": []
+        },
+        {
+          "text": "a",
+          "chunk_ids": []
+        },
+        {
+          "text": "y",
+          "chunk_ids": []
+        },
+        {
+          "text": "m",
+          "chunk_ids": []
+        },
+        {
+          "text": "e",
+          "chunk_ids": []
+        },
+        {
+          "text": "n",
+          "chunk_ids": []
+        },
+        {
+          "text": "t",
+          "chunk_ids": []
+        },
+        {
+          "text": "s",
+          "chunk_ids": []
+        },
+        {
+          "text": " ",
+          "chunk_ids": []
+        },
+        {
+          "text": "t",
+          "chunk_ids": []
+        },
+        {
+          "text": "h",
+          "chunk_ids": []
+        },
+        {
+          "text": "e",
+          "chunk_ids": []
+        },
+        {
+          "text": "y",
+          "chunk_ids": []
+        },
+        {
+          "text": " ",
+          "chunk_ids": []
+        },
+        {
+          "text": "p",
+          "chunk_ids": []
+        },
+        {
+          "text": "r",
+          "chunk_ids": []
+        },
+        {
+          "text": "o",
+          "chunk_ids": []
+        },
+        {
+          "text": "c",
+          "chunk_ids": []
+        },
+        {
+          "text": "e",
+          "chunk_ids": []
+        },
+        {
+          "text": "s",
+          "chunk_ids": []
+        },
+        {
+          "text": "s",
+          "chunk_ids": []
+        },
+        {
+          "text": " ",
+          "chunk_ids": []
+        },
+        {
+          "text": "o",
+          "chunk_ids": []
+        },
+        {
+          "text": "n",
+          "chunk_ids": []
+        },
+        {
+          "text": " ",
+          "chunk_ids": []
+        },
+        {
+          "text": "t",
+          "chunk_ids": []
+        },
+        {
+          "text": "h",
+          "chunk_ids": []
+        },
+        {
+          "text": "e",
+          "chunk_ids": []
+        },
+        {
+          "text": " ",
+          "chunk_ids": []
+        },
+        {
+          "text": "b",
+          "chunk_ids": []
+        },
+        {
+          "text": "a",
+          "chunk_ids": []
+        },
+        {
+          "text": "s",
+          "chunk_ids": []
+        },
+        {
+          "text": "i",
+          "chunk_ids": []
+        },
+        {
+          "text": "s",
+          "chunk_ids": []
+        },
+        {
+          "text": " ",
+          "chunk_ids": []
+        },
+        {
+          "text": "o",
+          "chunk_ids": []
+        },
+        {
+          "text": "f",
+          "chunk_ids": []
+        },
+        {
+          "text": " ",
+          "chunk_ids": []
+        },
+        {
+          "text": "t",
+          "chunk_ids": []
+        },
+        {
+          "text": "h",
+          "chunk_ids": []
+        },
+        {
+          "text": "a",
+          "chunk_ids": []
+        },
+        {
+          "text": "t",
+          "chunk_ids": []
+        },
+        {
+          "text": " ",
+          "chunk_ids": []
+        },
+        {
+          "text": "i",
+          "chunk_ids": []
+        },
+        {
+          "text": "n",
+          "chunk_ids": []
+        },
+        {
+          "text": "f",
+          "chunk_ids": []
+        },
+        {
+          "text": "o",
+          "chunk_ids": []
+        },
+        {
+          "text": "r",
+          "chunk_ids": []
+        },
+        {
+          "text": "m",
+          "chunk_ids": []
+        },
+        {
+          "text": "a",
+          "chunk_ids": []
+        },
+        {
+          "text": "t",
+          "chunk_ids": []
+        },
+        {
+          "text": "i",
+          "chunk_ids": []
+        },
+        {
+          "text": "o",
+          "chunk_ids": []
+        },
+        {
+          "text": "n",
+          "chunk_ids": []
+        },
+        {
+          "text": ".",
+          "chunk_ids": []
+        }
+      ],
+      "refusal_reason": "",
+      "iterations": 7,
+      "searches": 11,
+      "retrieved_chunk_ids": [
+        721,
+        723,
+        724,
+        725,
+        726,
+        729,
+        735,
+        736,
+        763,
+        769,
+        772,
+        2383,
+        2384,
+        2386,
+        2387,
+        2388,
+        2389,
+        2392,
+        2696,
+        2698,
+        2732,
+        2750,
+        2752,
+        2914,
+        4610,
+        4865,
+        4866,
+        4886,
+        4918,
+        4919,
+        6351,
+        6352,
+        6754,
+        6755,
+        6757,
+        6758,
+        6759,
+        8842,
+        8958,
+        9004
+      ],
+      "input_tokens": 162,
+      "output_tokens": 6429,
+      "cache_read_tokens": 128496,
+      "usd": 0.48471,
+      "latency_ms": 84532.3,
+      "error": "",
+      "trace": [
+        {
+          "step": "search",
+          "iteration": 1,
+          "query": "intermediary financial institution wire transfer missing originator information",
+          "k": 8,
+          "returned_chunk_ids": [
+            6759,
+            736,
+            724,
+            725,
+            723,
+            6351,
+            735,
+            4919
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 1,
+          "query": "meaningless originator name field wire transfer required information",
+          "k": 8,
+          "returned_chunk_ids": [
+            6759,
+            724,
+            723,
+            725,
+            726,
+            4919,
+            736,
+            769
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 2,
+          "query": "risk-based policies determining when to execute reject or suspend a wire transfer lacking required originator information",
+          "k": 8,
+          "returned_chunk_ids": [
+            721,
+            723,
+            6759,
+            735,
+            736,
+            772,
+            2387,
+            729
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 2,
+          "query": "payer information incomplete payment service provider of the payer responsible accuracy",
+          "k": 8,
+          "returned_chunk_ids": [
+            6352,
+            2752,
+            2750,
+            6351,
+            6759,
+            725,
+            724,
+            2732
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 3,
+          "query": "controls to detect payment messages with missing or meaningless originator information incoming cross-border payments",
+          "k": 8,
+          "returned_chunk_ids": [
+            4919,
+            6759,
+            729,
+            2698,
+            6351,
+            4865,
+            6352,
+            4918
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 3,
+          "query": "correspondent bank responsibility not responsible for CDD on respondent's customers Recommendation 16 payment transparency",
+          "k": 8,
+          "returned_chunk_ids": [
+            2389,
+            6757,
+            2384,
+            6758,
+            6755,
+            2383,
+            6754,
+            2388
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 4,
+          "query": "reasonable measures identify cross-border wire transfers that lack required originator information post-event monitoring",
+          "k": 8,
+          "returned_chunk_ids": [
+            6759,
+            735,
+            4919,
+            721,
+            6758,
+            4918,
+            2387,
+            736
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 4,
+          "query": "Wolfsberg payment transparency standards intermediary bank should not strip information return payment sender",
+          "k": 8,
+          "returned_chunk_ids": [
+            4918,
+            6759,
+            4919,
+            6352,
+            6351,
+            4610,
+            4886,
+            4866
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 5,
+          "query": "meaningless fields such as \"our client\" footnote payment message unambiguously identify originator",
+          "k": 6,
+          "returned_chunk_ids": [
+            4919,
+            6759,
+            2914,
+            9004,
+            8842,
+            8958
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 5,
+          "query": "respondent persistently fails to provide required information escalation restrict terminate correspondent relationship suspicious transaction report",
+          "k": 6,
+          "returned_chunk_ids": [
+            2392,
+            2387,
+            2389,
+            2386,
+            2696,
+            6757
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 6,
+          "query": "correspondent institution should consider respondent ability to comply with Recommendation 16 straight through processing handle such transactions",
+          "k": 6,
+          "returned_chunk_ids": [
+            2388,
+            2387,
+            2384,
+            2386,
+            2383,
+            763
+          ]
+        },
+        {
+          "step": "answer",
+          "iteration": 7,
+          "claims": 310
+        }
+      ]
+    },
+    {
+      "trace_id": "c00add74ea06",
+      "question": "Your draft was REJECTED by citation validation. The following claims did not survive:\n\n- Claim: \n\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: <\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: p\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: a\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: r\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: a\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: m\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: e\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: t\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: e\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: r\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim:  \n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: n\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: a\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: m\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: e\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: =\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: \"\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: t\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: e\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: x\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: t\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: \"\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: >\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: R\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: e\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: s\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: p\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: o\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: n\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: s\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: i\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: b\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: i\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: l\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: i\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: t\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: y\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim:  \n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: f\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: o\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: r\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim:  \n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: u\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: s\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: i\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: n\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: g\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim:  \n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: t\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: h\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: e\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim:  \n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: r\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: i\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: g\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: h\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: t\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim:  \n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: p\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: a\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: y\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: m\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: e\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: n\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: t\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim:  \n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: m\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: e\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: s\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: s\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: a\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: g\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: e\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim:  \n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: f\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: o\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: r\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: m\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: a\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: t\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim:  \n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: a\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: n\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: d\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim:  \n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: f\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: o\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: r\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim:  \n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: e\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: n\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: s\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: u\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: r\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: i\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: n\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: g\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim:  \n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: o\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: r\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: i\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: g\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: i\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: n\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: a\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: t\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: o\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: r\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim:  \n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: a\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: n\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: d\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim:  \n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: b\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: e\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: n\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: e\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: f\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: i\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: c\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: i\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: a\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: r\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: y\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim:  \n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: i\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: n\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: f\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: o\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: r\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: m\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: a\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: t\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: i\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: o\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: n\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim:  \n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: a\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: c\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: c\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: o\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: m\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: p\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: a\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: n\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: i\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: e\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: s\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim:  \n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: a\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim:  \n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: w\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: i\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: r\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: e\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim:  \n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: t\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: r\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: a\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: n\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: s\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: f\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: e\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: r\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim:  \n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: r\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: e\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: s\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: t\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: s\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim:  \n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: w\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: i\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: t\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: h\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim:  \n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: t\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: h\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: e\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim:  \n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: o\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: r\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: i\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: g\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: i\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: n\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: a\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: t\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: i\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: n\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: g\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim:  \n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: b\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: a\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: n\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: k\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: ;\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim:  \n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: o\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: t\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: h\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: e\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: r\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: s\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim:  \n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: i\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: n\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim:  \n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: t\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: h\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: e\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim:  \n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: p\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: a\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: y\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: m\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: e\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: n\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: t\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim:  \n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: c\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: h\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: a\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: i\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: n\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim:  \n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: a\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: r\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: e\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim:  \n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: r\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: e\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: q\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: u\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: i\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: r\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: e\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: d\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim:  \n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: t\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: o\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim:  \n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: m\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: o\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: n\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: i\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: t\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: o\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: r\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim:  \n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: t\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: h\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: e\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim:  \n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: p\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: a\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: y\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: m\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: e\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: n\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: t\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: s\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim:  \n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: t\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: h\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: e\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: y\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim:  \n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: p\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: r\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: o\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: c\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: e\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: s\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: s\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim:  \n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: o\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: n\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim:  \n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: t\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: h\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: e\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim:  \n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: b\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: a\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: s\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: i\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: s\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim:  \n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: o\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: f\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim:  \n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: t\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: h\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: a\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: t\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim:  \n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: i\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: n\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: f\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: o\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: r\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: m\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: a\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: t\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: i\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: o\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: n\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\n- Claim: .\n  Cited: []\n  Problem: The claim cites no chunks at all.\n\nSearch for evidence that actually supports these claims and answer again, or drop the claims you cannot support. If the corpus does not support them at all, call refuse instead of weakening the wording until it passes.",
+      "outcome": "error",
+      "summary": "",
+      "claims": [],
+      "refusal_reason": "",
+      "iterations": 1,
+      "searches": 0,
+      "retrieved_chunk_ids": [],
+      "input_tokens": 10082,
+      "output_tokens": 0,
+      "cache_read_tokens": 1275,
+      "usd": 0.05105,
+      "latency_ms": 1360.0,
+      "error": "model safety refusal",
+      "trace": [
+        {
+          "step": "safety_refusal"
+        }
+      ]
+    }
+  ],
+  "written_at": "2026-08-30T11:59:46+00:00"
+}

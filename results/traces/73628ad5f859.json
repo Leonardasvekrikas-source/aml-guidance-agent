@@ -1,0 +1,198 @@
+{
+  "trace_id": "73628ad5f859",
+  "question": "We're running a vendor selection for a new transaction monitoring and sanctions screening platform for our correspondent banking book. How do NICE Actimize, Oracle FCCM and Napier compare on false positive rates and detection coverage, and which of them do the Wolfsberg CBDDQ guidance or the FCA treat as meeting the expected standard?",
+  "outcome": "refused",
+  "summary": "",
+  "citations": [],
+  "refusal_reason": "The rejection notice arrived with an empty list of failed claims, and no copy of the original question or draft answer is present in this conversation. I therefore have no topic, claim text, or regulatory vocabulary to search the corpus against \u2014 any search I ran would be a guess at what was being asserted. Rather than fabricate a plausible-looking AML answer or re-derive claims I cannot see, I am declining. Please resend the original question along with the specific claims that failed citation validation, and I will search the corpus and either support them with precise citations or drop them.",
+  "attempts": 2,
+  "searches": 7,
+  "input_tokens": 357,
+  "output_tokens": 4452,
+  "agent_usd": 0.2496,
+  "validation_usd": 0.0,
+  "total_usd": 0.2496,
+  "latency_ms": 61992.5,
+  "validation": {
+    "passed": false,
+    "citation_validity": 0.0,
+    "groundedness": 0.0,
+    "checked_support": true,
+    "usd": 0.0,
+    "verdicts": []
+  },
+  "drafts": [
+    {
+      "trace_id": "73628ad5f859",
+      "question": "We're running a vendor selection for a new transaction monitoring and sanctions screening platform for our correspondent banking book. How do NICE Actimize, Oracle FCCM and Napier compare on false positive rates and detection coverage, and which of them do the Wolfsberg CBDDQ guidance or the FCA treat as meeting the expected standard?",
+      "outcome": "answered",
+      "summary": "I can't answer the comparison you asked for. The corpus I search is public AML regulatory and typology guidance (Wolfsberg, FCA, EBA, FATF, Basel, HMT/Home Office) \u2014 it contains no vendor benchmarking, no false-positive or detection-rate statistics for NICE Actimize, Oracle FCCM, Napier or any other product, and no list of approved vendors. Searches on the vendor names returned nothing relevant.\n\nMore importantly, the premise that Wolfsberg or the FCA \"treat a vendor as meeting the expected standard\" does not hold. Neither body assesses or endorses products. Both explicitly locate the compliance obligation in how the firm calibrates, tests, governs and feeds data into whatever tool it buys \u2014 the CBDDQ states outright that an off-the-shelf calibration cannot be used, and the FCA lists uncalibrated off-the-shelf systems as poor practice. A vendor cannot deliver the standard; only your implementation can.\n\nWhat the corpus does give you is a defensible set of RFP evaluation criteria, set out below. I'd suggest scoring vendors against these rather than against published false-positive claims.</summary>\n<claims>\n<claim>\n<text>The Wolfsberg CBDDQ asks (Question 84b) whether an entity's automated transaction monitoring uses internal or vendor-sourced tools, but frames this as disclosure about the entity's method rather than as an assessment or approval of particular vendors.</text>\n<chunk_ids>[4915]</chunk_ids>\n</claim>\n<claim>\n<text>The Wolfsberg CBDDQ guidance states that financial institutions need to review and customise the parameters and thresholds of a monitoring system to the level of activity of their customers, and cannot use an off-the-shelf calibration; a methodology and audit trail of tuning changes must be maintained and approved by the MLRO for potential presentation to competent authorities.</text>\n<chunk_ids>[4916]</chunk_ids>\n</claim>\n<claim>\n<text>The CBDDQ guidance expects transaction monitoring systems to be tuned regularly to adjust thresholds to evolving transactional activity, taking account of historical alerts and SARs, and asks when the automated application was last calibrated (within the last year, within the past two years, or other).</text>\n<chunk_ids>[4916]</chunk_ids>\n</claim>\n<claim>\n<text>The FCA's Financial Crime Guide cites as poor practice a firm using a transaction monitoring system with set rules \u2014 which could include off-the-shelf systems \u2014 without calibrating these to the firm's individual needs or reviewing them regularly for efficiency.</text>\n<chunk_ids>[6338]</chunk_ids>\n</claim>\n<claim>\n<text>The FCA treats as good practice a firm tailoring monitoring system rules to its business, risk and relevant typologies, with the system and rules tested and reviewed for right outcomes, and documented records of decision making and rationales for thresholds.</text>\n<chunk_ids>[6338]</chunk_ids>\n</claim>\n<claim>\n<text>The FCA expects firms using automated screening to understand their screening tool and how it is calibrated and to demonstrate it is appropriate to the firm's risk exposure; poor practice includes not understanding how to calibrate the tool, not checking whether the number of hits is unexpectedly high or low, and having limited or no understanding of how a third-party tool is calibrated.</text>\n<chunk_ids>[6394]</chunk_ids>\n</claim>\n<claim>\n<text>The FCA identifies inadequately tailored calibration \u2014 a system either too sensitive or not sensitive enough, which may result in name variations not being detected \u2014 as poor practice, and expects firms to show controls that measure the effectiveness of the automated system, thresholds and parameters, for instance through sample testing and tuning.</text>\n<chunk_ids>[6394]</chunk_ids>\n</claim>\n<claim>\n<text>Wolfsberg/ICC/BAFT guidance describes the volume of false hits from automated sanctions screening as a substantial practical issue, defines a \"false positive\" as an unconfirmed match where names match but investigation confirms the underlying identities are not the same, and expects robust internal list management procedures to reduce repeat false positive hits so that true positives are not obscured and missed by reviewers.</text>\n<chunk_ids>[4568]</chunk_ids>\n</claim>\n<claim>\n<text>Wolfsberg guidance states that the effectiveness of sanctions screening depends on the availability, accuracy, quality and usability of the source lists containing target names.</text>\n<chunk_ids>[4568]</chunk_ids>\n</claim>\n<claim>\n<text>The CBDDQ asks whether the entity has a data quality management programme ensuring complete data for all transactions is subject to sanctions screening, on the basis that effective screening depends on quality data management processes and all data sources must be accurate and complete.</text>\n<chunk_ids>[4922]</chunk_ids>\n</claim>\n<claim>\n<text>The CBDDQ treats data quality as a prerequisite for the sound functioning of transaction monitoring systems, expecting periodic review of the completeness and validity of data through data integrity checks confirming data is completely and accurately captured in source systems and transmitted to the monitoring system, plus controls to identify abnormally functioning rules or scenarios such as abnormal volume variation in transactions and alerts.</text>\n<chunk_ids>[4917]</chunk_ids>\n</claim>\n<claim>\n<text>The FCA's case study on HSBC found serious weaknesses across three key parts of its transaction monitoring systems over several years, including failure to consider whether scenarios covered relevant risks, failure to carry out timely risk assessments for new scenarios, failure to appropriately test and update parameters \u2014 with certain thresholds set making it almost impossible for relevant scenarios to identify potentially suspicious activity \u2014 and failure to check the accuracy and completeness of data fed into the systems.</text>\n<chunk_ids>[6339]</chunk_ids>\n</claim>\n<claim>\n<text>The FCA expects monitoring to be applied where appropriate at multiple levels of aggregation: transaction level, account level, customer level and linked-entity level.</text>\n<chunk_ids>[6337]</chunk_ids>\n</claim>\n<claim>\n<text>The FCA notes that more sophisticated approaches such as machine learning or AI tools can detect suspicious activity or triage existing alerts, but expects firms to consider the limitations of these approaches, noting that with more free-form machine learning it will not be clear to operators why the software made its recommendations, posing ethical and audit challenges.</text>\n<chunk_ids>[6336, 6338]</chunk_ids>\n</claim>\n<claim>\n<text>The FCA expects a firm to be able to justify a decision to decommission an existing automated system or particular rule sets, including by considering the relative merits of other approaches.</text>\n<chunk_ids>[6337]</chunk_ids>\n</claim>\n<claim>\n<text>EBA guidelines require firms to determine which transactions they will monitor in real time versus ex-post, including which high-risk factors or combinations always trigger real-time monitoring, and state that firms processing a high volume of transactions should consider putting in place an automated transaction monitoring system.</text>\n<chunk_ids>[2687]</chunk_ids>\n</claim>\n<claim>\n<text>EBA supervisory practice reported by competent authorities involves verifying that monitoring systems and rules, both real time and retrospective, are tailored to the institution's business model, customer base and products, and assessing the adequacy of scenarios including client ML/TF risk classification, appropriateness of thresholds and amounts, consideration of predicate tax offences and TF risks, and coverage of current and potential money laundering schemes.</text>\n<chunk_ids>[3155]</chunk_ids>\n</claim>\n<claim>\n<text>The CBDDQ guidance states that the monitoring method should be commensurate with the type and volume of transactions, that automated solutions are most suitable for high-volume activity while manual monitoring may suffice where data is hard to load into an automated system (such as documentary letter of credit activity), and that human vigilance remains fundamental regardless of whether an automated system is used.</text>\n<chunk_ids>[4915]</chunk_ids>\n</claim>\n</claims>\n</invoke>\n",
+      "claims": [],
+      "refusal_reason": "",
+      "iterations": 5,
+      "searches": 7,
+      "retrieved_chunk_ids": [
+        682,
+        761,
+        763,
+        768,
+        2211,
+        2665,
+        2666,
+        2687,
+        2920,
+        3155,
+        4554,
+        4568,
+        4591,
+        4892,
+        4893,
+        4915,
+        4916,
+        4917,
+        4922,
+        5016,
+        5952,
+        6336,
+        6337,
+        6338,
+        6339,
+        6381,
+        6393,
+        6394,
+        6398,
+        6744,
+        6746
+      ],
+      "input_tokens": 196,
+      "output_tokens": 3980,
+      "cache_read_tokens": 38133,
+      "usd": 0.23636,
+      "latency_ms": 53851.8,
+      "error": "",
+      "trace": [
+        {
+          "step": "search",
+          "iteration": 1,
+          "query": "transaction monitoring system vendor selection",
+          "k": 5,
+          "returned_chunk_ids": [
+            4915,
+            6338,
+            6339,
+            6337,
+            2687
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 1,
+          "query": "sanctions screening system false positives calibration",
+          "k": 5,
+          "returned_chunk_ids": [
+            4568,
+            6394,
+            6398,
+            6393,
+            4922
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 2,
+          "query": "NICE Actimize Oracle FCCM Napier vendor product",
+          "k": 5,
+          "returned_chunk_ids": [
+            2211,
+            6338,
+            4554,
+            5016,
+            5952
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 2,
+          "query": "vendor-sourced tool third party software due diligence approval regulator does not endorse",
+          "k": 5,
+          "returned_chunk_ids": [
+            682,
+            768,
+            6381,
+            4591,
+            763
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 3,
+          "query": "CBDDQ vendor-sourced tools transaction monitoring calibration tuning question 84",
+          "k": 5,
+          "returned_chunk_ids": [
+            4915,
+            4916,
+            4917,
+            4892,
+            4893
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 3,
+          "query": "outsourcing third party AML systems firm remains responsible accountability",
+          "k": 5,
+          "returned_chunk_ids": [
+            2666,
+            6746,
+            2665,
+            2920,
+            6744
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 4,
+          "query": "automated transaction monitoring application scenarios updated new typologies detection scenarios coverage",
+          "k": 5,
+          "returned_chunk_ids": [
+            6337,
+            4915,
+            761,
+            3155,
+            6336
+          ]
+        },
+        {
+          "step": "answer",
+          "iteration": 5,
+          "claims": 0
+        }
+      ]
+    },
+    {
+      "trace_id": "70b831b5c8dc",
+      "question": "Your draft was REJECTED by citation validation. The following claims did not survive:\n\nSearch for evidence that actually supports these claims and answer again, or drop the claims you cannot support. If the corpus does not support them at all, call refuse instead of weakening the wording until it passes.",
+      "outcome": "refused",
+      "summary": "",
+      "claims": [],
+      "refusal_reason": "The rejection notice arrived with an empty list of failed claims, and no copy of the original question or draft answer is present in this conversation. I therefore have no topic, claim text, or regulatory vocabulary to search the corpus against \u2014 any search I ran would be a guess at what was being asserted. Rather than fabricate a plausible-looking AML answer or re-derive claims I cannot see, I am declining. Please resend the original question along with the specific claims that failed citation validation, and I will search the corpus and either support them with precise citations or drop them.",
+      "iterations": 1,
+      "searches": 0,
+      "retrieved_chunk_ids": [],
+      "input_tokens": 161,
+      "output_tokens": 472,
+      "cache_read_tokens": 1275,
+      "usd": 0.01324,
+      "latency_ms": 8140.7,
+      "error": "",
+      "trace": [
+        {
+          "step": "refuse",
+          "iteration": 1,
+          "reason": "The rejection notice arrived with an empty list of failed claims, and no copy of the original question or draft answer is present in this conversation. I therefore have no topic, claim text, or regulatory vocabulary to search the corpus against \u2014 any search I ran would be a guess at what was being a"
+        }
+      ]
+    }
+  ],
+  "written_at": "2026-08-30T12:16:36+00:00"
+}

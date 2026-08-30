@@ -1,0 +1,599 @@
+{
+  "trace_id": "6244c55501f6",
+  "question": "What shell company red flags should a depository institution look for when the registration data on a business customer does not line up with its stated business - specifically around NAICS codes, addresses, name variations, and EINs?",
+  "outcome": "refused",
+  "summary": "",
+  "citations": [],
+  "refusal_reason": "The draft answer could not be supported by the retrieved passages after two attempts, so it was withheld. The passage itself shows a heading immediately preceding the discrepancy list would need to be checked, but the claim is about what the corpus does NOT show (absence of a heading) and asserts a separate 'Depository Institutions' section begins after, which the passage does confirm ('Depository Institutions and MSBs:' appears after the discrepancy bullets). However, the claim's core assertion is a negative claim about absence of labeling elsewhere in the corpus, which this single passage cannot establish since it only shows local context, not the full corpus.",
+  "attempts": 2,
+  "searches": 13,
+  "input_tokens": 522,
+  "output_tokens": 6051,
+  "agent_usd": 0.59307,
+  "validation_usd": 0.1202,
+  "total_usd": 0.71327,
+  "latency_ms": 136964.8,
+  "validation": {
+    "passed": false,
+    "citation_validity": 1.0,
+    "groundedness": 0.8889,
+    "checked_support": true,
+    "usd": 0.04783,
+    "verdicts": [
+      {
+        "claim": "FinCEN Advisory FIN-2019-A006, on illicit financial schemes related to the trafficking of fentanyl and other synthetic opioids, contains a set of company-level discrepancy indicators on page 14.",
+        "chunk_ids": [
+          3304
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "Page 14 lists indicators like 'Company address or location discrepancy', 'Company name discrepancy', and 'Employer Identification Number (EIN) discrepancy', which are company-level discrepancy indicators."
+      },
+      {
+        "claim": "The indicators on page 14 of FIN-2019-A006 are organised under the sub-headings 'Company address or location discrepancy', 'Company name discrepancy', and 'Employer Identification Number (EIN) discrepancy'.",
+        "chunk_ids": [
+          3304
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage lists exactly these three sub-headings with bullet points beneath each: 'Company address or location discrepancy:', 'Company name discrepancy:', and 'Employer Identification Number (EIN) discrepancy:'."
+      },
+      {
+        "claim": "The passage also includes industry-related discrepancy bullets: that the company operates in a different industry than the business name indicates, that commercial databases reveal the company is associated with multiple businesses in unrelated industries, and that open source information reveals the company lacks or has vague company websites.",
+        "chunk_ids": [
+          3304
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage lists these exact three bullets verbatim: operating in a different industry than the business name indicates, association with multiple businesses in unrelated industries via commercial databases, and lacking or having vague company websites per open source information."
+      },
+      {
+        "claim": "Under 'Company address or location discrepancy', the advisory lists that open source searches on the address provided reveal a business with a different name or an operating location inconsistent with the business model (such as a residence), and that commercial databases associate the company with multiple active addresses or operating locations without indications of franchises, branches, subsidiaries, or agents.",
+        "chunk_ids": [
+          3304
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states verbatim both bullet points under \"Company address or location discrepancy\": address searches revealing a different business name or operating location inconsistent with the business model such as a residence, and commercial databases associating multiple active addresses/locations with few indications of franchises, branches, subsidiaries, or agents."
+      },
+      {
+        "claim": "Under 'Company name discrepancy', the advisory lists that the company's name is vague, non-descriptive, or does not align with its business model, and that commercial databases reveal three or more name variations or multiple 'doing business as' (dba) names.",
+        "chunk_ids": [
+          3304
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states verbatim under 'Company name discrepancy' that \"The company\u2019s name is vague, non-descriptive, or does not align with its business model\" and \"Commercial databases reveal the company has three or more name variations or has multiple \u201cdoing business as\u201d (dba) names.\""
+      },
+      {
+        "claim": "Under 'Employer Identification Number (EIN) discrepancy', the advisory lists that commercial databases reveal the company is a small business with fewer than 500 employees but has multiple EINs or shares EINs with other businesses.",
+        "chunk_ids": [
+          3304
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states verbatim: 'Commercial databases reveal the company is a small business with fewer than 500 employees but has multiple EINs or shares EINs with other businesses' under the 'Employer Identification Number (EIN) discrepancy' heading."
+      },
+      {
+        "claim": "These indicators appear within the advisory's broader section 'Red Flag Indicators for Fentanyl-related Activity', which FinCEN states may help financial institutions identify suspected schemes related to illicit fentanyl trafficking and which may also apply more generally to drug trafficking or other money laundering activity.",
+        "chunk_ids": [
+          3302
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states \"The red flags noted below may help financial institutions in identifying suspected schemes related to illicit fentanyl trafficking\" and \"Some red flags listed may also be applicable more generally to drug trafficking, or apply to other trafficked drugs, or to other money laundering or illicit activity,\" matching the claim exactly."
+      },
+      {
+        "claim": "The retrieved passage does not show the heading that introduces these four discrepancy groups, so the corpus does not establish that they are labelled 'shell-company red flags' or that they are addressed specifically to depository institutions; a separate section headed 'Depository Institutions and ...' begins immediately after them on the following page.",
+        "chunk_ids": [
+          3304
+        ],
+        "citation_ok": true,
+        "support_ok": false,
+        "detail": "The passage itself shows a heading immediately preceding the discrepancy list would need to be checked, but the claim is about what the corpus does NOT show (absence of a heading) and asserts a separate 'Depository Institutions' section begins after, which the passage does confirm ('Depository Institutions and MSBs:' appears after the discrepancy bullets). However, the claim's core assertion is a negative claim about absence of labeling elsewhere in the corpus, which this single passage cannot establish since it only shows local context, not the full corpus."
+      },
+      {
+        "claim": "The advisory does separately use institution-specific red flag headings elsewhere, such as 'Depository Institutions: Structuring and Funnel Account Activity Red Flags'.",
+        "chunk_ids": [
+          3303
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage explicitly contains the heading 'Depository Institutions: Structuring and Funnel Account Activity Red Flags' as well as another institution-specific heading 'Depository Institutions: Shell Company Red Flags', directly supporting the claim."
+      }
+    ]
+  },
+  "drafts": [
+    {
+      "trace_id": "6244c55501f6",
+      "question": "What shell company red flags should a depository institution look for when the registration data on a business customer does not line up with its stated business - specifically around NAICS codes, addresses, name variations, and EINs?",
+      "outcome": "answered",
+      "summary": "The most directly on-point source is FinCEN's Advisory FIN-2019-A006 (fentanyl/synthetic opioids), which sets out a set of shell-company red flags for depository institutions organised exactly around the categories you ask about: industry/business-line discrepancy, company address or location discrepancy, company name discrepancy, and Employer Identification Number (EIN) discrepancy. One caveat: the retrieved text does not use the term \"NAICS code\" \u2014 the industry-discrepancy flag is framed as the company operating in a different industry than the business name indicates and being associated with multiple businesses in unrelated industries. FATF/Egmont TBML risk indicators supplement the address and name points.\n\nIndustry/business-line discrepancy: the company appears in a different industry than its name suggests; commercial databases link it to multiple businesses in unrelated industries; it has no website or only a vague one.\n\nAddress discrepancy: open-source searches on the provided address return a different business name, or an operating location inconsistent with the business model (e.g., a residence); commercial databases show multiple active addresses or operating locations without any indication of franchises, branches, subsidiaries or agents. FATF adds mass-registration addresses (PO boxes, high-density residential or commercial buildings with no unit number) and business activity that does not fit the stated address.\n\nName discrepancy: a vague, non-descriptive name that does not align with the business model; three or more name variations or multiple \"doing business as\" names in commercial databases. FATF also flags names that copy or closely resemble a well-known corporation.\n\nEIN discrepancy: commercial databases show the company is a small business (fewer than 500 employees) yet holds multiple EINs or shares EINs with other businesses.\n\nAs FATF notes, a single indicator does not by itself warrant suspicion; institutions should weigh the totality of the customer profile, and several co-occurring indicators warrant closer examination.",
+      "claims": [
+        {
+          "text": "FinCEN Advisory FIN-2019-A006 lists shell-company red flags for depository institutions grouped as industry discrepancy, company address or location discrepancy, company name discrepancy, and Employer Identification Number (EIN) discrepancy.",
+          "chunk_ids": [
+            3304
+          ]
+        },
+        {
+          "text": "An industry-discrepancy red flag is that the company appears to be in a different industry than the business name indicates, and that commercial databases associate the company with multiple businesses in unrelated industries.",
+          "chunk_ids": [
+            3304
+          ]
+        },
+        {
+          "text": "Open source information showing that the company lacks a website or has only a vague company website is a shell-company red flag.",
+          "chunk_ids": [
+            3304
+          ]
+        },
+        {
+          "text": "An address red flag is that online or other open-source searches on the address provided reveal a business with a different name, or an operating location inconsistent with the business model, such as a residence.",
+          "chunk_ids": [
+            3304
+          ]
+        },
+        {
+          "text": "Another address red flag is that commercial databases associate the company with multiple active addresses or operating locations while revealing few if any indications the company has franchises, multiple branches, subsidiaries or agents.",
+          "chunk_ids": [
+            3304
+          ]
+        },
+        {
+          "text": "A name red flag is that the company's name is vague, non-descriptive, or does not align with its business model.",
+          "chunk_ids": [
+            3304
+          ]
+        },
+        {
+          "text": "A further name red flag is that commercial databases reveal the company has three or more name variations or multiple 'doing business as' (dba) names.",
+          "chunk_ids": [
+            3304
+          ]
+        },
+        {
+          "text": "The EIN red flag is that commercial databases reveal the company is a small business with fewer than 500 employees but has multiple EINs or shares EINs with other businesses.",
+          "chunk_ids": [
+            3304
+          ]
+        },
+        {
+          "text": "FATF/Egmont TBML risk indicators include an entity being registered at a likely mass-registration address, such as high-density residential buildings, post-box addresses, commercial buildings or industrial complexes, especially with no reference to a specific unit.",
+          "chunk_ids": [
+            18
+          ]
+        },
+        {
+          "text": "FATF/Egmont also flag business activity that does not appear appropriate for the stated address, such as an entity using residential property without a commercial premises.",
+          "chunk_ids": [
+            18
+          ]
+        },
+        {
+          "text": "FATF/Egmont flag an entity name that copies or closely resembles the name of a well-known corporation, potentially to appear part of that corporation.",
+          "chunk_ids": [
+            19
+          ]
+        },
+        {
+          "text": "FATF/Egmont flag trade or business activity that is inconsistent with the stated line of business of the entities involved, for example a car dealer exporting clothing.",
+          "chunk_ids": [
+            19
+          ]
+        },
+        {
+          "text": "FATF guidance states that the existence of a single indicator may not alone warrant suspicion, but could prompt further monitoring, and that several co-occurring indicators warrant closer examination, taking into account the totality of the customer profile.",
+          "chunk_ids": [
+            17,
+            18
+          ]
+        },
+        {
+          "text": "The FATF Comprehensive Update on Terrorist Financing Risks similarly lists a company address inconsistent with the business in which it is engaged, a company lacking online presence or having an online presence inconsistent with its purported activities, and a company name that mimics more-established competitors.",
+          "chunk_ids": [
+            2211
+          ]
+        }
+      ],
+      "refusal_reason": "",
+      "iterations": 5,
+      "searches": 7,
+      "retrieved_chunk_ids": [
+        17,
+        18,
+        19,
+        198,
+        206,
+        225,
+        702,
+        940,
+        941,
+        943,
+        945,
+        946,
+        2211,
+        3288,
+        3301,
+        3302,
+        3303,
+        3304,
+        4069,
+        4100,
+        4283,
+        4284,
+        4292,
+        4302,
+        4909,
+        6398,
+        7316,
+        7965,
+        8819,
+        8871,
+        8872,
+        8910,
+        8934,
+        8941,
+        8942,
+        8943,
+        8951,
+        8973,
+        9023,
+        9166,
+        9167,
+        9168
+      ],
+      "input_tokens": 141,
+      "output_tokens": 3066,
+      "cache_read_tokens": 59844,
+      "usd": 0.31104,
+      "latency_ms": 44843.1,
+      "error": "",
+      "trace": [
+        {
+          "step": "search",
+          "iteration": 1,
+          "query": "shell company red flags NAICS code inconsistent stated business",
+          "k": 8,
+          "returned_chunk_ids": [
+            3304,
+            3303,
+            18,
+            19,
+            8871,
+            3302,
+            8872,
+            4069
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 1,
+          "query": "business customer registered address discrepancy virtual office mail drop red flag",
+          "k": 8,
+          "returned_chunk_ids": [
+            3304,
+            3302,
+            940,
+            943,
+            941,
+            3303,
+            946,
+            945
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 2,
+          "query": "NAICS code registration business classification code discrepancy company",
+          "k": 8,
+          "returned_chunk_ids": [
+            3304,
+            9166,
+            8934,
+            9167,
+            8973,
+            3303,
+            6398,
+            9168
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 2,
+          "query": "Depository Institutions shell company red flags fentanyl procurement Chinese suppliers",
+          "k": 8,
+          "returned_chunk_ids": [
+            3303,
+            3302,
+            3288,
+            4292,
+            4302,
+            3301,
+            4284,
+            4283
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 3,
+          "query": "North American Industry Classification System NAICS code assigned company operating in a different industry",
+          "k": 10,
+          "returned_chunk_ids": [
+            3304,
+            3303,
+            8951,
+            9023,
+            7316,
+            4909,
+            8871,
+            4100,
+            8872,
+            702
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 3,
+          "query": "shell or front company indicators commercial databases company registration information discrepancy financial institution due diligence",
+          "k": 10,
+          "returned_chunk_ids": [
+            3304,
+            198,
+            18,
+            8871,
+            8943,
+            225,
+            17,
+            7965,
+            206,
+            8819
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 4,
+          "query": "Company industry discrepancy registration information indicates company operating industry business name indicates",
+          "k": 10,
+          "returned_chunk_ids": [
+            3304,
+            18,
+            8934,
+            8871,
+            8910,
+            8941,
+            2211,
+            8942,
+            19,
+            3303
+          ]
+        },
+        {
+          "step": "answer",
+          "iteration": 5,
+          "claims": 14
+        }
+      ]
+    },
+    {
+      "trace_id": "ba8cf97f98f7",
+      "question": "Your draft was REJECTED by citation validation. The following claims did not survive:\n\n- Claim: FinCEN Advisory FIN-2019-A006 lists shell-company red flags for depository institutions grouped as industry discrepancy, company address or location discrepancy, company name discrepancy, and Employer Identification Number (EIN) discrepancy.\n  Cited: [3304]\n  Problem: The passage lists these four discrepancy categories (industry, address/location, name, EIN) but does not indicate they are specifically labeled 'shell-company red flags' or attributed to depository institutions as a group; the section header instead is generic and a separate 'Depository Institutions and MSBs' section follows with different (marketplace) red flags.\n\nSearch for evidence that actually supports these claims and answer again, or drop the claims you cannot support. If the corpus does not support them at all, call refuse instead of weakening the wording until it passes.",
+      "outcome": "answered",
+      "summary": "FIN-2019-A006 (FinCEN's fentanyl and synthetic opioids advisory) does list, on page 14, company-level indicators grouped under the sub-headings 'Company address or location discrepancy', 'Company name discrepancy' and 'Employer Identification Number (EIN) discrepancy', preceded by bullets covering industry discrepancies (operating in a different industry than the name indicates, association with multiple unrelated-industry businesses, and absent or vague websites). These sit within the advisory's general 'Red Flag Indicators for Fentanyl-related Activity' section. However, the corpus passage begins mid-list and does not include the heading that introduces this group, so it does not support describing them as 'shell-company red flags' or as directed specifically at depository institutions \u2014 a separate 'Depository Institutions and ...' section starts right after them. The advisory does elsewhere use institution-specific headings such as 'Depository Institutions: Structuring and Funnel Account Activity Red Flags'.",
+      "claims": [
+        {
+          "text": "FinCEN Advisory FIN-2019-A006, on illicit financial schemes related to the trafficking of fentanyl and other synthetic opioids, contains a set of company-level discrepancy indicators on page 14.",
+          "chunk_ids": [
+            3304
+          ]
+        },
+        {
+          "text": "The indicators on page 14 of FIN-2019-A006 are organised under the sub-headings 'Company address or location discrepancy', 'Company name discrepancy', and 'Employer Identification Number (EIN) discrepancy'.",
+          "chunk_ids": [
+            3304
+          ]
+        },
+        {
+          "text": "The passage also includes industry-related discrepancy bullets: that the company operates in a different industry than the business name indicates, that commercial databases reveal the company is associated with multiple businesses in unrelated industries, and that open source information reveals the company lacks or has vague company websites.",
+          "chunk_ids": [
+            3304
+          ]
+        },
+        {
+          "text": "Under 'Company address or location discrepancy', the advisory lists that open source searches on the address provided reveal a business with a different name or an operating location inconsistent with the business model (such as a residence), and that commercial databases associate the company with multiple active addresses or operating locations without indications of franchises, branches, subsidiaries, or agents.",
+          "chunk_ids": [
+            3304
+          ]
+        },
+        {
+          "text": "Under 'Company name discrepancy', the advisory lists that the company's name is vague, non-descriptive, or does not align with its business model, and that commercial databases reveal three or more name variations or multiple 'doing business as' (dba) names.",
+          "chunk_ids": [
+            3304
+          ]
+        },
+        {
+          "text": "Under 'Employer Identification Number (EIN) discrepancy', the advisory lists that commercial databases reveal the company is a small business with fewer than 500 employees but has multiple EINs or shares EINs with other businesses.",
+          "chunk_ids": [
+            3304
+          ]
+        },
+        {
+          "text": "These indicators appear within the advisory's broader section 'Red Flag Indicators for Fentanyl-related Activity', which FinCEN states may help financial institutions identify suspected schemes related to illicit fentanyl trafficking and which may also apply more generally to drug trafficking or other money laundering activity.",
+          "chunk_ids": [
+            3302
+          ]
+        },
+        {
+          "text": "The retrieved passage does not show the heading that introduces these four discrepancy groups, so the corpus does not establish that they are labelled 'shell-company red flags' or that they are addressed specifically to depository institutions; a separate section headed 'Depository Institutions and ...' begins immediately after them on the following page.",
+          "chunk_ids": [
+            3304
+          ]
+        },
+        {
+          "text": "The advisory does separately use institution-specific red flag headings elsewhere, such as 'Depository Institutions: Structuring and Funnel Account Activity Red Flags'.",
+          "chunk_ids": [
+            3303
+          ]
+        }
+      ],
+      "refusal_reason": "",
+      "iterations": 4,
+      "searches": 6,
+      "retrieved_chunk_ids": [
+        18,
+        19,
+        198,
+        934,
+        941,
+        946,
+        947,
+        2211,
+        3226,
+        3286,
+        3288,
+        3290,
+        3291,
+        3292,
+        3293,
+        3301,
+        3302,
+        3303,
+        3304,
+        3361,
+        3418,
+        3419,
+        4069,
+        4283,
+        4284,
+        4287,
+        4288,
+        4292,
+        4298,
+        4302,
+        7243,
+        8870,
+        8871,
+        8872,
+        8973
+      ],
+      "input_tokens": 381,
+      "output_tokens": 2985,
+      "cache_read_tokens": 33437,
+      "usd": 0.28203,
+      "latency_ms": 40251.4,
+      "error": "",
+      "trace": [
+        {
+          "step": "search",
+          "iteration": 1,
+          "query": "industry discrepancy address discrepancy name discrepancy EIN discrepancy red flags",
+          "k": 8,
+          "returned_chunk_ids": [
+            3304,
+            3303,
+            946,
+            3302,
+            3419,
+            3361,
+            934,
+            18
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 1,
+          "query": "shell company red flags depository institutions advisory",
+          "k": 8,
+          "returned_chunk_ids": [
+            3303,
+            3302,
+            3226,
+            934,
+            947,
+            3304,
+            4069,
+            3418
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 2,
+          "query": "fentanyl advisory shell company red flags commercial databases business registration industry discrepancy",
+          "k": 10,
+          "returned_chunk_ids": [
+            3304,
+            3302,
+            3303,
+            3288,
+            3286,
+            4287,
+            4302,
+            934,
+            3291,
+            18
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 2,
+          "query": "Depository Institutions and MSBs: Darknet Marketplace red flags fentanyl",
+          "k": 10,
+          "returned_chunk_ids": [
+            3302,
+            3304,
+            3301,
+            3292,
+            941,
+            4284,
+            3303,
+            4283,
+            4298,
+            3293
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 3,
+          "query": "front company or shell company involved in fentanyl transactions red flags business registration records inconsistent",
+          "k": 10,
+          "returned_chunk_ids": [
+            3304,
+            3302,
+            198,
+            4302,
+            4288,
+            4292,
+            3303,
+            3288,
+            3290,
+            3291
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 3,
+          "query": "\"Industry discrepancy\" company operates in a different industry than the business name indicates",
+          "k": 10,
+          "returned_chunk_ids": [
+            3304,
+            8871,
+            3303,
+            18,
+            8872,
+            8870,
+            8973,
+            7243,
+            19,
+            2211
+          ]
+        },
+        {
+          "step": "answer",
+          "iteration": 4,
+          "claims": 9
+        }
+      ]
+    }
+  ],
+  "written_at": "2026-08-30T11:47:33+00:00"
+}

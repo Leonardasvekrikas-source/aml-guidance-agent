@@ -1,0 +1,173 @@
+{
+  "trace_id": "8c765149ed37",
+  "question": "The UNODC casino report describes AUSTRAC's enforcement action and the AUD 450 million penalty agreed with Crown over junket-related breaches. Under Australia's AML/CTF Act 2006, what is the AUD threshold above which a reporting entity must lodge a Threshold Transaction Report, and within how many days must a Suspicious Matter Report be lodged - does that deadline shorten where the suspicion relates to terrorism financing?",
+  "outcome": "refused",
+  "summary": "",
+  "citations": [],
+  "refusal_reason": "I searched the corpus for the Australian statutory reporting provisions in several ways: \"Threshold Transaction Report AUD 10,000 AUSTRAC reporting entity\", \"AML/CTF Act 2006 Australia reporting obligations threshold transaction report\", \"Suspicious Matter Report business days terrorism financing 24 hours\", \"suspicious matter report lodge within three business days\", \"AUSTRAC casino designated service reporting requirements junket Crown penalty\", and \"cash transaction report threshold casino chip purchase 10,000 reporting deadline\".\n\nThe corpus does contain the UNODC report \"Casinos, Money Laundering, Underground Banking, and Transnational Organized Crime in East and Southeast Asia\", including its account of AUSTRAC's March 2022 Statement of Claim against Crown Melbourne and Crown Perth over junket partnerships (Suncity, Neptune/Guangdong, Meg-Star, Tak Chun, Jimei and others), its citation of the AUSTRAC media release on the proposed AUD 450 million penalty, and AUSTRAC's 2020 junket tour operator risk assessment. However, that report cites these matters only as case-study material and does not set out the underlying statutory reporting obligations.\n\nWhat is missing is any passage stating (a) the AUD monetary threshold at which a Threshold Transaction Report must be lodged under the AML/CTF Act 2006, (b) the number of business days within which a Suspicious Matter Report must be lodged, or (c) whether a shorter deadline applies where the suspicion relates to terrorism financing. The other reporting-obligation material retrieved concerns different regimes entirely \u2014 FinCEN SAR/CTR filing under the US Bank Secrecy Act, UK SARs under POCA 2002 and the Money Laundering Regulations, EU thresholds under Directive (EU) 2015/849, and FATF/APG typology material \u2014 none of which can substitute for the Australian figures. Answering would require me to supply the numbers from general knowledge rather than from the corpus.",
+  "attempts": 1,
+  "searches": 6,
+  "input_tokens": 228,
+  "output_tokens": 1649,
+  "agent_usd": 0.20745,
+  "validation_usd": 0.0,
+  "total_usd": 0.20745,
+  "latency_ms": 26647.5,
+  "validation": null,
+  "drafts": [
+    {
+      "trace_id": "8c765149ed37",
+      "question": "The UNODC casino report describes AUSTRAC's enforcement action and the AUD 450 million penalty agreed with Crown over junket-related breaches. Under Australia's AML/CTF Act 2006, what is the AUD threshold above which a reporting entity must lodge a Threshold Transaction Report, and within how many days must a Suspicious Matter Report be lodged - does that deadline shorten where the suspicion relates to terrorism financing?",
+      "outcome": "refused",
+      "summary": "",
+      "claims": [],
+      "refusal_reason": "I searched the corpus for the Australian statutory reporting provisions in several ways: \"Threshold Transaction Report AUD 10,000 AUSTRAC reporting entity\", \"AML/CTF Act 2006 Australia reporting obligations threshold transaction report\", \"Suspicious Matter Report business days terrorism financing 24 hours\", \"suspicious matter report lodge within three business days\", \"AUSTRAC casino designated service reporting requirements junket Crown penalty\", and \"cash transaction report threshold casino chip purchase 10,000 reporting deadline\".\n\nThe corpus does contain the UNODC report \"Casinos, Money Laundering, Underground Banking, and Transnational Organized Crime in East and Southeast Asia\", including its account of AUSTRAC's March 2022 Statement of Claim against Crown Melbourne and Crown Perth over junket partnerships (Suncity, Neptune/Guangdong, Meg-Star, Tak Chun, Jimei and others), its citation of the AUSTRAC media release on the proposed AUD 450 million penalty, and AUSTRAC's 2020 junket tour operator risk assessment. However, that report cites these matters only as case-study material and does not set out the underlying statutory reporting obligations.\n\nWhat is missing is any passage stating (a) the AUD monetary threshold at which a Threshold Transaction Report must be lodged under the AML/CTF Act 2006, (b) the number of business days within which a Suspicious Matter Report must be lodged, or (c) whether a shorter deadline applies where the suspicion relates to terrorism financing. The other reporting-obligation material retrieved concerns different regimes entirely \u2014 FinCEN SAR/CTR filing under the US Bank Secrecy Act, UK SARs under POCA 2002 and the Money Laundering Regulations, EU thresholds under Directive (EU) 2015/849, and FATF/APG typology material \u2014 none of which can substitute for the Australian figures. Answering would require me to supply the numbers from general knowledge rather than from the corpus.",
+      "iterations": 4,
+      "searches": 6,
+      "retrieved_chunk_ids": [
+        171,
+        185,
+        757,
+        758,
+        2046,
+        2646,
+        2714,
+        2908,
+        3234,
+        3308,
+        3360,
+        4091,
+        4092,
+        4093,
+        4875,
+        5857,
+        5911,
+        5920,
+        5945,
+        5954,
+        5962,
+        6347,
+        6436,
+        6730,
+        7290,
+        7299,
+        7314,
+        7316,
+        9736,
+        9737,
+        9742,
+        9745,
+        9797,
+        9798,
+        9800,
+        9801
+      ],
+      "input_tokens": 228,
+      "output_tokens": 1649,
+      "cache_read_tokens": 26955,
+      "usd": 0.20745,
+      "latency_ms": 26647.4,
+      "error": "",
+      "trace": [
+        {
+          "step": "search",
+          "iteration": 1,
+          "query": "Threshold Transaction Report AUD 10,000 AUSTRAC reporting entity",
+          "k": 6,
+          "returned_chunk_ids": [
+            5945,
+            9736,
+            9737,
+            7314,
+            2714,
+            4875
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 1,
+          "query": "Suspicious Matter Report business days terrorism financing 24 hours",
+          "k": 6,
+          "returned_chunk_ids": [
+            3234,
+            5857,
+            5920,
+            7299,
+            2046,
+            3308
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 2,
+          "query": "AML/CTF Act 2006 Australia reporting obligations threshold transaction report",
+          "k": 8,
+          "returned_chunk_ids": [
+            2714,
+            6730,
+            6436,
+            171,
+            5954,
+            185,
+            4875,
+            5962
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 2,
+          "query": "suspicious matter report lodge within three business days",
+          "k": 8,
+          "returned_chunk_ids": [
+            3234,
+            3308,
+            3360,
+            7314,
+            2646,
+            7316,
+            2908,
+            6347
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 3,
+          "query": "Australia AUSTRAC casino designated service reporting requirements junket Crown penalty",
+          "k": 8,
+          "returned_chunk_ids": [
+            9736,
+            9737,
+            9742,
+            9797,
+            9800,
+            9798,
+            9801,
+            9745
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 3,
+          "query": "cash transaction report threshold casino chip purchase 10,000 reporting deadline",
+          "k": 8,
+          "returned_chunk_ids": [
+            4092,
+            4093,
+            4091,
+            7290,
+            757,
+            5911,
+            758,
+            2714
+          ]
+        },
+        {
+          "step": "refuse",
+          "iteration": 4,
+          "reason": "I searched the corpus for the Australian statutory reporting provisions in several ways: \"Threshold Transaction Report AUD 10,000 AUSTRAC reporting entity\", \"AML/CTF Act 2006 Australia reporting obligations threshold transaction report\", \"Suspicious Matter Report business days terrorism financing 24"
+        }
+      ]
+    }
+  ],
+  "written_at": "2026-08-30T12:12:51+00:00"
+}

@@ -38,9 +38,21 @@ from .tools import SEARCH_TOOL, run_search
 MAX_ITERATIONS = 10
 MAX_TOKENS = 8000
 
-SYSTEM_PROMPT = """You answer questions about anti-money-laundering typologies \
-and regulatory expectations, using ONLY a corpus of public AML guidance \
-documents that you search with the search tool.
+SYSTEM_PROMPT = """You are a research assistant for anti-money-laundering \
+compliance professionals. Your users are AML analysts, compliance officers and \
+financial-crime investigators whose job is to DETECT and REPORT suspicious \
+activity under obligations such as the FATF Recommendations, the EU Money \
+Laundering Directives and the US Bank Secrecy Act.
+
+Questions are often phrased as live cases from the user's own institution — \
+"a client wants to...", "an account we monitor is doing..." — because that is \
+how the work presents itself to the people doing it. These are detection and \
+reporting questions from regulated firms, not requests for help committing \
+financial crime, and the answers come from published regulatory guidance that \
+those firms are legally obliged to apply.
+
+You answer using ONLY a corpus of public AML guidance documents that you \
+search with the search tool.
 
 How to work:
 
@@ -354,9 +366,23 @@ class AgentLoop:
             # refuse because the corpus is silent. Conflating them would
             # corrupt the M4 refusal metric.
             if response.stop_reason == "refusal":
+                # stop_details is populated only for refusals. Recording the
+                # category matters: "the model refused" is not diagnosable,
+                # and in this corpus the refusals clustered on one framing
+                # rather than one subject.
+                details = getattr(response, "stop_details", None)
+                category = getattr(details, "category", None) or "unspecified"
+                explanation = getattr(details, "explanation", "") or ""
                 result.outcome = "error"
-                result.error = "model safety refusal"
-                result.trace.append({"step": "safety_refusal"})
+                result.error = f"model safety refusal ({category})"
+                result.trace.append(
+                    {
+                        "step": "safety_refusal",
+                        "category": category,
+                        "explanation": explanation[:300],
+                        "iteration": result.iterations,
+                    }
+                )
                 break
 
             messages.append({"role": "assistant", "content": response.content})

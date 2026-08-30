@@ -1,0 +1,277 @@
+{
+  "trace_id": "79ef9dac7c62",
+  "question": "Our screening only compares customer names against the UK sanctions list and it never produces a hit. What does the FCA say that approach can miss, what detection technique does it point firms towards, and where can we get warning indicators for that behaviour?",
+  "outcome": "answered",
+  "summary": "The FCA's Financial Crime Guide (FCG 7.2.3A) says explicitly that simple screening of names against the Consolidated List may not always identify sanctions evasion involving third parties, and that alternative detection techniques may be needed. The technique it points to as good practice is data analytics to identify customers who may be close associates or dependents of designated persons, or who have transactional links with them, and so pose a higher risk of sanctions non-compliance. For warning indicators, the FCA directs firms to the red flags for sanctions evasion set out in alerts issued by the National Economic Crime Centre (NECC); it also signposts OFSI's website and FCTR 8/FCTR 15 for wider sanctions guidance.\\n\\nSeparately, your \\\"never produces a hit\\\" symptom maps onto an FCA poor-practice example: a firm that does not understand how its automated screening tool is calibrated and does not check whether the number of hits is unexpectedly high or low. Calibration that is not sensitive enough can mean name variations go undetected, so the FCA expects calibration tailored to the firm's risk plus effectiveness controls such as sample testing and tuning. Wider typology work also confirms that evasion commonly runs through intermediaries, obscured beneficial ownership, virtual assets and shipping \u2014 none of which a plain name match against a designated-persons list will catch.",
+  "citations": [
+    {
+      "chunk_id": 6396,
+      "title": "Financial Crime Guide: A firm's guide to countering financial crime risks (FCG)",
+      "publisher": "Financial Conduct Authority (FCA)",
+      "page": 114,
+      "source_url": "https://api-handbook.fca.org.uk/files/sourcebook/FCG.pdf",
+      "section_heading": "1 \u2022 Does your firm understand potential sanctions evasion typologies relevant to its"
+    },
+    {
+      "chunk_id": 6394,
+      "title": "Financial Crime Guide: A firm's guide to countering financial crime risks (FCG)",
+      "publisher": "Financial Conduct Authority (FCA)",
+      "page": 111,
+      "source_url": "https://api-handbook.fca.org.uk/files/sourcebook/FCG.pdf",
+      "section_heading": "1 \u2022 When are customers screened against lists, whether the Consolidated List, internal"
+    },
+    {
+      "chunk_id": 6395,
+      "title": "Financial Crime Guide: A firm's guide to countering financial crime risks (FCG)",
+      "publisher": "Financial Conduct Authority (FCA)",
+      "page": 112,
+      "source_url": "https://api-handbook.fca.org.uk/files/sourcebook/FCG.pdf",
+      "section_heading": "1 \u2022 When are customers screened against lists, whether the Consolidated List, internal"
+    },
+    {
+      "chunk_id": 6401,
+      "title": "Financial Crime Guide: A firm's guide to countering financial crime risks (FCG)",
+      "publisher": "Financial Conduct Authority (FCA)",
+      "page": 121,
+      "source_url": "https://api-handbook.fca.org.uk/files/sourcebook/FCG.pdf",
+      "section_heading": "1 \u2022 FCTR 8 summarises the findings of the FCA\u2019s thematic review of financial services"
+    },
+    {
+      "chunk_id": 7339,
+      "title": "APG Yearly Typologies Report 2025: Methods and Trends of Money Laundering, Terrorism Financing and Proliferation Financing",
+      "publisher": "Asia/Pacific Group on Money Laundering (APG)",
+      "page": 88,
+      "source_url": "https://www.apgml.org/sites/default/files/2026-06/2025%20APG%20Yearly%20Typologies%20Report%20-%20for%20adoption.pdf",
+      "section_heading": "5 - FATF, FSRBS AND OBSERVER ORGANISATIONS\u2019 PROJECTS"
+    }
+  ],
+  "refusal_reason": "",
+  "attempts": 1,
+  "searches": 2,
+  "input_tokens": 148,
+  "output_tokens": 1903,
+  "agent_usd": 0.10366,
+  "validation_usd": 0.04683,
+  "total_usd": 0.15049,
+  "latency_ms": 47919.6,
+  "validation": {
+    "passed": true,
+    "citation_validity": 1.0,
+    "groundedness": 1.0,
+    "checked_support": true,
+    "usd": 0.04683,
+    "verdicts": [
+      {
+        "claim": "The FCA's Financial Crime Guide states that simple screening of names against the Consolidated List may not always identify potential sanctions evasion involving third parties.",
+        "chunk_ids": [
+          6396
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage directly states \"simple screening of names against the Consolidated List may not always identify potential sanctions evasion involving third parties.\""
+      },
+      {
+        "claim": "The FCA says that where simple name screening is insufficient, alternative detection techniques may be needed, and asks firms whether they understand sanctions evasion typologies relevant to their business and whether additional procedures are needed to identify potential evasion.",
+        "chunk_ids": [
+          6396
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states \"simple screening of names against the Consolidated List may not always identify potential sanctions evasion involving third parties and alternative detection techniques may be needed\" and lists the self-assessment questions \"Does your firm understand potential sanctions evasion typologies relevant to its business and has it considered how to detect them?\" and \"Has your firm considered whether additional procedures are needed to identify potential sanctions evasion?\", matching the claim."
+      },
+      {
+        "claim": "As an example of good practice, the FCA points to firms using techniques such as data analytics to identify customers who may be close associates or dependents of designated persons, or who have transactional links with them, and who therefore represent a higher risk of sanctions non-compliance.",
+        "chunk_ids": [
+          6396
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage explicitly lists as good practice: \"The firm is using techniques, such as data analytics, to identify customers who may be close associates or dependents or have transactional links with designated persons, and so may represent a higher risk of sanctions non-compliance.\""
+      },
+      {
+        "claim": "The FCA states that potential red flags for sanctions evasion are set out in alerts issued by the National Economic Crime Centre (NECC).",
+        "chunk_ids": [
+          6396
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states verbatim \"Potential red flags for sanctions evasion are set out in alerts issued by the National Economic Crime Centre (NECC).\""
+      },
+      {
+        "claim": "The FCA treats it as poor practice where a firm using automated screening does not understand how to calibrate it and does not check whether the number of hits is unexpectedly high or low; inadequate calibration can make a system too sensitive or not sensitive enough, so that name variations are not detected.",
+        "chunk_ids": [
+          6394
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage lists as poor practice that a firm \"does not understand how to calibrate them and does not check whether the number of hits is unexpectedly high or low,\" and separately states \"Calibration is not adequately tailored and the system is either too sensitive or not sensitive enough. This may result in name variations not being detected.\""
+      },
+      {
+        "claim": "The FCA expects screening tools to be calibrated and tailored to the firm's risk and appropriate for screening UK sanctions, with customers and their transactions screened against relevant updated sanctions lists and effective re-screening in place to identify activity that may indicate sanctions breaches.",
+        "chunk_ids": [
+          6395
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage lists as good practice that \"The screening tool is calibrated and tailored to the firm's risk and is appropriate for screening UK sanctions\" and that \"Customers and their transactions are screened against relevant updated sanctions lists and effective re-screening is in place to identify activity that may indicate sanctions breaches,\" matching the claim."
+      },
+      {
+        "claim": "The FCA also expects firms to have controls to measure the effectiveness of their automated systems, thresholds and parameters, for instance through sample testing and tuning.",
+        "chunk_ids": [
+          6394
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage lists as good practice: \"The firm is able to show the controls in place to measure the effectiveness of its automated system, thresholds and parameters \u2013 for instance, with sample testing and tuning,\" directly matching the claim."
+      },
+      {
+        "claim": "For further information on financial sanctions the FCA directs firms to OFSI's website, and to FCTR 8 (thematic review of firms' approach to UK financial sanctions, covering screening at client take-on, ongoing screening and treatment of potential target matches) and FCTR 15 (trade finance, covering sanctions procedures and dual-use goods).",
+        "chunk_ids": [
+          6401
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage lists OFSI's website under FCG 7.4.1 \"sources of further information\" and separately describes FCTR 8 and FCTR 15 with the same topics (screening at client take-on, ongoing screening, treatment of potential target matches, sanctions procedures, dual-use goods) as \"additional material on sanctions and assets freezes.\""
+      },
+      {
+        "claim": "Broader sanctions-evasion typology material identifies four major typologies \u2014 use of intermediaries, obscuring beneficial ownership information, use of virtual assets and other technologies, and exploitation of the maritime and shipping sectors \u2014 and notes good practice including issuing detailed alerts and practical risk indicators to help detect and report sanctions evasion.",
+        "chunk_ids": [
+          7339
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage explicitly lists the same four typologies (\"Use of intermediaries...\", \"Obscuring beneficial ownership information...\", \"Using virtual assets and other technologies\", \"Exploiting the maritime and shipping sectors\") and states good practices include \"the issuing of detailed alerts and practical risk indicators to help competent authorities detect and report sanctions evasion.\""
+      }
+    ]
+  },
+  "drafts": [
+    {
+      "trace_id": "79ef9dac7c62",
+      "question": "Our screening only compares customer names against the UK sanctions list and it never produces a hit. What does the FCA say that approach can miss, what detection technique does it point firms towards, and where can we get warning indicators for that behaviour?",
+      "outcome": "answered",
+      "summary": "The FCA's Financial Crime Guide (FCG 7.2.3A) says explicitly that simple screening of names against the Consolidated List may not always identify sanctions evasion involving third parties, and that alternative detection techniques may be needed. The technique it points to as good practice is data analytics to identify customers who may be close associates or dependents of designated persons, or who have transactional links with them, and so pose a higher risk of sanctions non-compliance. For warning indicators, the FCA directs firms to the red flags for sanctions evasion set out in alerts issued by the National Economic Crime Centre (NECC); it also signposts OFSI's website and FCTR 8/FCTR 15 for wider sanctions guidance.\\n\\nSeparately, your \\\"never produces a hit\\\" symptom maps onto an FCA poor-practice example: a firm that does not understand how its automated screening tool is calibrated and does not check whether the number of hits is unexpectedly high or low. Calibration that is not sensitive enough can mean name variations go undetected, so the FCA expects calibration tailored to the firm's risk plus effectiveness controls such as sample testing and tuning. Wider typology work also confirms that evasion commonly runs through intermediaries, obscured beneficial ownership, virtual assets and shipping \u2014 none of which a plain name match against a designated-persons list will catch.",
+      "claims": [
+        {
+          "text": "The FCA's Financial Crime Guide states that simple screening of names against the Consolidated List may not always identify potential sanctions evasion involving third parties.",
+          "chunk_ids": [
+            6396
+          ]
+        },
+        {
+          "text": "The FCA says that where simple name screening is insufficient, alternative detection techniques may be needed, and asks firms whether they understand sanctions evasion typologies relevant to their business and whether additional procedures are needed to identify potential evasion.",
+          "chunk_ids": [
+            6396
+          ]
+        },
+        {
+          "text": "As an example of good practice, the FCA points to firms using techniques such as data analytics to identify customers who may be close associates or dependents of designated persons, or who have transactional links with them, and who therefore represent a higher risk of sanctions non-compliance.",
+          "chunk_ids": [
+            6396
+          ]
+        },
+        {
+          "text": "The FCA states that potential red flags for sanctions evasion are set out in alerts issued by the National Economic Crime Centre (NECC).",
+          "chunk_ids": [
+            6396
+          ]
+        },
+        {
+          "text": "The FCA treats it as poor practice where a firm using automated screening does not understand how to calibrate it and does not check whether the number of hits is unexpectedly high or low; inadequate calibration can make a system too sensitive or not sensitive enough, so that name variations are not detected.",
+          "chunk_ids": [
+            6394
+          ]
+        },
+        {
+          "text": "The FCA expects screening tools to be calibrated and tailored to the firm's risk and appropriate for screening UK sanctions, with customers and their transactions screened against relevant updated sanctions lists and effective re-screening in place to identify activity that may indicate sanctions breaches.",
+          "chunk_ids": [
+            6395
+          ]
+        },
+        {
+          "text": "The FCA also expects firms to have controls to measure the effectiveness of their automated systems, thresholds and parameters, for instance through sample testing and tuning.",
+          "chunk_ids": [
+            6394
+          ]
+        },
+        {
+          "text": "For further information on financial sanctions the FCA directs firms to OFSI's website, and to FCTR 8 (thematic review of firms' approach to UK financial sanctions, covering screening at client take-on, ongoing screening and treatment of potential target matches) and FCTR 15 (trade finance, covering sanctions procedures and dual-use goods).",
+          "chunk_ids": [
+            6401
+          ]
+        },
+        {
+          "text": "Broader sanctions-evasion typology material identifies four major typologies \u2014 use of intermediaries, obscuring beneficial ownership information, use of virtual assets and other technologies, and exploitation of the maritime and shipping sectors \u2014 and notes good practice including issuing detailed alerts and practical risk indicators to help detect and report sanctions evasion.",
+          "chunk_ids": [
+            7339
+          ]
+        }
+      ],
+      "refusal_reason": "",
+      "iterations": 2,
+      "searches": 2,
+      "retrieved_chunk_ids": [
+        773,
+        930,
+        932,
+        933,
+        934,
+        952,
+        4567,
+        6392,
+        6393,
+        6394,
+        6395,
+        6396,
+        6398,
+        6401,
+        7339
+      ],
+      "input_tokens": 148,
+      "output_tokens": 1903,
+      "cache_read_tokens": 2550,
+      "usd": 0.10366,
+      "latency_ms": 25261.2,
+      "error": "",
+      "trace": [
+        {
+          "step": "search",
+          "iteration": 1,
+          "query": "FCA sanctions screening name matching limitations ownership and control evasion",
+          "k": 8,
+          "returned_chunk_ids": [
+            6394,
+            6395,
+            6401,
+            6396,
+            6398,
+            4567,
+            6392,
+            6393
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 1,
+          "query": "sanctions evasion red flag indicators typologies",
+          "k": 8,
+          "returned_chunk_ids": [
+            933,
+            932,
+            934,
+            7339,
+            952,
+            6396,
+            773,
+            930
+          ]
+        },
+        {
+          "step": "answer",
+          "iteration": 2,
+          "claims": 9
+        }
+      ]
+    }
+  ],
+  "written_at": "2026-08-30T11:58:16+00:00"
+}

@@ -1,0 +1,470 @@
+{
+  "trace_id": "76cf5a50dd57",
+  "question": "A respondent bank sends us bundles of physical cheques to clear through the account it holds with us. What patterns on those cheque items should make an analyst suspicious, and why is this activity hard to monitor?",
+  "outcome": "answered",
+  "summary": "The 2025 UK National Risk Assessment distinguishes nostro from vostro correspondent accounts by the visibility they give the UK bank. Where the UK bank holds a foreign-currency account with the overseas correspondent (nostro), it has better visibility of transactions and financial movement, making money laundering risks easier to identify (though TBML risk remains high for nostro trade finance accounts). Where the overseas correspondent holds the account in the UK bank (vostro), the UK bank has less overall visibility over the source of funds. More broadly, correspondent banking is assessed as having high exposure to high-risk jurisdictions and a lack of oversight of all parties in the payment chain, and FATF guidance notes that the correspondent's due diligence is performed on the respondent rather than on the respondent's underlying customers.",
+  "citations": [
+    {
+      "chunk_id": 5872,
+      "title": "National Risk Assessment of Money Laundering and Terrorist Financing 2025",
+      "publisher": "HM Treasury and Home Office",
+      "page": 74,
+      "source_url": "https://assets.publishing.service.gov.uk/media/6877be59760bf6cedaf5bd4f/National_Risk_Assessment_of_Money_Laundering_and_Terrorist_Financing_2025_FINAL.pdf",
+      "section_heading": "5.36 In the 2025 follow up review the FCA identified good practice and progress"
+    },
+    {
+      "chunk_id": 4861,
+      "title": "The Wolfsberg Group Correspondent Banking Due Diligence Questionnaire (CBDDQ) Guidance, version 2.0",
+      "publisher": "The Wolfsberg Group",
+      "page": 10,
+      "source_url": "https://db.wolfsberg-group.org/assets/09bafec3-4b77-428b-9113-f4203d290a2f/EN_CBDDQ%20Guidance%20(2023).pdf",
+      "section_heading": "19 a1a"
+    },
+    {
+      "chunk_id": 2384,
+      "title": "Guidance on Correspondent Banking Services",
+      "publisher": "FATF",
+      "page": 14,
+      "source_url": "https://www.fatf-gafi.org/content/dam/fatf-gafi/guidance/Guidance-Correspondent-Banking-Services.pdf",
+      "section_heading": "GUIDANCE ON CORRESPONDENT BANKING SERVICES"
+    }
+  ],
+  "refusal_reason": "",
+  "attempts": 2,
+  "searches": 11,
+  "input_tokens": 516,
+  "output_tokens": 4820,
+  "agent_usd": 0.35039,
+  "validation_usd": 0.09944,
+  "total_usd": 0.44983,
+  "latency_ms": 118872.8,
+  "validation": {
+    "passed": true,
+    "citation_validity": 1.0,
+    "groundedness": 1.0,
+    "checked_support": true,
+    "usd": 0.03167,
+    "verdicts": [
+      {
+        "claim": "In the UK NRA's terminology, a nostro account is one where the UK bank holds an account in a foreign currency with the overseas correspondent bank, and a vostro account is one where the overseas correspondent bank holds an account in the UK bank.",
+        "chunk_ids": [
+          5872
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage explicitly defines nostro accounts as \"where the UK bank holds an account in a foreign currency with the overseas correspondent bank\" and vostro accounts as \"where the overseas correspondent bank holds an account in the UK bank.\""
+      },
+      {
+        "claim": "Vostro accounts, where the overseas correspondent bank holds an account in the UK bank, allow UK banks less overall visibility over the source of funds.",
+        "chunk_ids": [
+          5872
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states verbatim: \"Vostro accounts (where the overseas correspondent bank holds an account in the UK bank) allow UK banks less overall visibility over the source of funds.\""
+      },
+      {
+        "claim": "Where banks hold only nostro accounts, the UK bank's visibility of transactions and financial movement allows easier identification of money laundering risks, although trade-based money laundering risks remain high for nostro trade finance accounts.",
+        "chunk_ids": [
+          5872
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states \"the UK bank's visibility of transactions and financial movement allows easier identification of money laundering risks\" for nostro accounts, and \"For nostro trade finance accounts the TBML risks remain high,\" matching the claim exactly."
+      },
+      {
+        "claim": "Correspondent banking is the provision of banking services by one bank (the correspondent) to another bank (the respondent), and correspondent banks have a high level of exposure to high-risk jurisdictions and a lack of oversight of all parties in the chain.",
+        "chunk_ids": [
+          5872
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage explicitly states \"Correspondent banking is the provision of banking services by one bank (the correspondent bank) to another bank (the respondent bank)\" and that \"correspondent banks have a high level of exposure to high risk jurisdictions and lack of oversight of all parties in the chain.\""
+      },
+      {
+        "claim": "Because the correspondent bank's due diligence is performed on the respondent rather than on the respondent's underlying financial-institution customers (KYC rather than KYCC), the correspondent needs to understand whether activity flowing through the account originates from the respondent, its FI customers, or its customers' customers.",
+        "chunk_ids": [
+          4861
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states \"Since the Correspondent Bank's due diligence was performed on you, rather than on your underlying FI customer (Know Your Customer (KYC) rather than Know Your Customer's Customer (KYCC)), it is important for the Correspondent Bank to understand whether the activity that flows through the account is from you, your FI customer(s) or your customer's customer,\" which directly matches the claim."
+      },
+      {
+        "claim": "Where customers have direct access to the correspondent's account (e.g. payable-through arrangements), the correspondent should have policies, procedures and processes to identify the ultimate user of the account and be satisfied that the respondent has conducted sufficient CDD and can provide individual CDD information on request.",
+        "chunk_ids": [
+          2384
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states the correspondent \"should have policies, procedures and processes in place to enable it to identify the ultimate user of the account and needs to be satisfied that the respondent institution has conducted sufficient CDD on the customers having direct access to the account... and is able to provide relevant, individual CDD information upon request,\" matching the claim, with footnote 22 defining direct access via payable-through-accounts."
+      }
+    ]
+  },
+  "drafts": [
+    {
+      "trace_id": "76cf5a50dd57",
+      "question": "A respondent bank sends us bundles of physical cheques to clear through the account it holds with us. What patterns on those cheque items should make an analyst suspicious, and why is this activity hard to monitor?",
+      "outcome": "answered",
+      "summary": "Cheque (\"cash letter\") clearing for a respondent is one of the higher-risk correspondent products. The Wolfsberg CBDDQ Guidance identifies specific item-level red flags: blank payee lines, stamps or codes on the cheque suggesting it has passed through third parties, and multiple sequentially-numbered cheques made out to the same payee in repetitive amounts. These matter because they are consistent with cheque-fraud and mule typologies \u2014 altered/washed payee details, cheques generated from stolen account and routing data, and mules used simply to clear items and move the funds out fast. The activity is hard to monitor because the correspondent has no direct relationship with, and generally no CDD on, the depositors: they are the respondent's (or a nested bank's) customers. Vostro-side activity gives the correspondent less visibility over source of funds, nested/downstream chains put it a further step from the underlying customer and make it reliant on someone else's controls, and physical cheque items carry little of the structured payment data that screening and monitoring systems rely on \u2014 so the correspondent is often reduced to risk-based monitoring plus targeted requests for information back to the respondent.",
+      "claims": [
+        {
+          "text": "The Wolfsberg CBDDQ Guidance lists red flags seen on cash letter items as blank payee lines, cheques bearing stamps or codes indicating possible use by third parties, and multiple sequentially-numbered cheques to the same payee in repetitive amounts.",
+          "chunk_ids": [
+            4866
+          ]
+        },
+        {
+          "text": "Cheque clearing is one of the services respondent banks obtain through correspondent relationships, alongside cash management, international wire transfers, payable-through accounts and foreign exchange.",
+          "chunk_ids": [
+            5872
+          ]
+        },
+        {
+          "text": "Correspondent banking carries a high level of exposure to high-risk jurisdictions and a lack of oversight of all parties in the chain.",
+          "chunk_ids": [
+            5872
+          ]
+        },
+        {
+          "text": "Vostro accounts (where the overseas bank holds an account with the domestic bank) give the account-providing bank less overall visibility over the source of funds than nostro arrangements.",
+          "chunk_ids": [
+            5872
+          ]
+        },
+        {
+          "text": "Correspondent banks that process transactions for customers of respondent banks generally do not have direct business relationships with those customers; the correspondent's customer is the respondent bank, and the correspondent is not generally required to conduct CDD on the respondent's customers.",
+          "chunk_ids": [
+            6749
+          ]
+        },
+        {
+          "text": "In downstream (nested) activity the correspondent is further removed from the underlying customer relationship and is dependent on the controls of the downstream bank, and where the respondent's customer is in another jurisdiction the correspondent's risk exposure may change because of potentially lower regulatory requirements and different business practices.",
+          "chunk_ids": [
+            4863
+          ]
+        },
+        {
+          "text": "Nested relationships require that the correspondent be informed of their existence and of the operations and transactions of the nested institutions' customers, and that the respondent format payment instructions transparently so all involved parties are captured for monitoring and screening.",
+          "chunk_ids": [
+            2383
+          ]
+        },
+        {
+          "text": "FATF expects correspondent institutions to use risk-based monitoring procedures specifying applicable monitoring techniques, taking into account the respondent's past behaviour including any failure to satisfy previous requests for information, with real-time transaction monitoring possible in higher-risk scenarios.",
+          "chunk_ids": [
+            2387
+          ]
+        },
+        {
+          "text": "Where monitoring flags potentially unusual activity, the correspondent should review it further and may make a targeted request to the respondent for transaction information, including information about the respondent's customer, in order to assess reasonableness \u2014 this does not amount to conducting CDD on the respondent's customer.",
+          "chunk_ids": [
+            2388
+          ]
+        },
+        {
+          "text": "A respondent's failure to provide requested information in a timely fashion and to the level of detail requested may itself trigger concerns for the correspondent.",
+          "chunk_ids": [
+            2389
+          ]
+        },
+        {
+          "text": "Check fraud typologies involve replacing the payee information with the fraudster's own name, a fraudulent identity or a mule's identity, increasing the dollar amount of the cheque, and using stolen routing and account numbers to generate additional cheques.",
+          "chunk_ids": [
+            3944
+          ]
+        },
+        {
+          "text": "Criminals pay money mules a portion of a cheque's value to use their bank accounts to clear cheques, with funds transferred out quickly before the cheques are returned or flagged.",
+          "chunk_ids": [
+            3946
+          ]
+        },
+        {
+          "text": "Remote deposit capture is treated as a separate higher-risk product because, unlike physical cheque deposit, images are deposited via a customer-held scanner and controls over the location of use are needed.",
+          "chunk_ids": [
+            4867
+          ]
+        }
+      ],
+      "refusal_reason": "",
+      "iterations": 6,
+      "searches": 9,
+      "retrieved_chunk_ids": [
+        936,
+        1157,
+        2380,
+        2381,
+        2383,
+        2386,
+        2387,
+        2388,
+        2389,
+        3302,
+        3303,
+        3942,
+        3943,
+        3944,
+        3945,
+        3946,
+        4054,
+        4105,
+        4860,
+        4862,
+        4863,
+        4864,
+        4865,
+        4866,
+        4867,
+        5872,
+        6341,
+        6749,
+        6751,
+        6753,
+        6754,
+        6761,
+        7245,
+        7249,
+        7275,
+        9758
+      ],
+      "input_tokens": 148,
+      "output_tokens": 3482,
+      "cache_read_tokens": 59572,
+      "usd": 0.26129,
+      "latency_ms": 57545.0,
+      "error": "",
+      "trace": [
+        {
+          "step": "search",
+          "iteration": 1,
+          "query": "correspondent banking cheque clearing bulk cash letter suspicious",
+          "k": 5,
+          "returned_chunk_ids": [
+            4865,
+            4866,
+            7249,
+            1157,
+            7245
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 1,
+          "query": "remote deposit capture red flags cheques",
+          "k": 5,
+          "returned_chunk_ids": [
+            4867,
+            936,
+            3942,
+            3302,
+            3303
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 2,
+          "query": "cash letter cheque items presented for deposit correspondent visibility underlying customer",
+          "k": 5,
+          "returned_chunk_ids": [
+            4866,
+            4865,
+            6749,
+            5872,
+            2380
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 2,
+          "query": "nested relationships downstream correspondent limited transparency monitoring respondent customers",
+          "k": 5,
+          "returned_chunk_ids": [
+            2383,
+            6753,
+            4863,
+            4862,
+            6754
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 3,
+          "query": "Wolfsberg cash letter service question 19f cheque deposit correspondent",
+          "k": 5,
+          "returned_chunk_ids": [
+            4866,
+            4865,
+            4864,
+            4860,
+            4862
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 3,
+          "query": "correspondent bank limited information available about respondent's customers transaction monitoring challenge",
+          "k": 5,
+          "returned_chunk_ids": [
+            2387,
+            2388,
+            2383,
+            2389,
+            6749
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 4,
+          "query": "check fraud altered payee endorsement mail theft red flags",
+          "k": 5,
+          "returned_chunk_ids": [
+            3943,
+            3944,
+            3945,
+            3946,
+            3942
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 4,
+          "query": "third-party cheques deposited foreign account money laundering risk",
+          "k": 5,
+          "returned_chunk_ids": [
+            9758,
+            7275,
+            4054,
+            6341,
+            4105
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 5,
+          "query": "Basel correspondent banking structure limited information available risks inherent in the relationship",
+          "k": 4,
+          "returned_chunk_ids": [
+            6751,
+            6761,
+            2386,
+            2381
+          ]
+        },
+        {
+          "step": "answer",
+          "iteration": 6,
+          "claims": 13
+        }
+      ]
+    },
+    {
+      "trace_id": "facf54d88893",
+      "question": "Your draft was REJECTED by citation validation. The following claims did not survive:\n\n- Claim: Vostro accounts (where the overseas bank holds an account with the domestic bank) give the account-providing bank less overall visibility over the source of funds than nostro arrangements.\n  Cited: [5872]\n  Problem: The passage says vostro accounts allow UK banks less overall visibility over source of funds, which matches, but the claim's definition inserted 'domestic bank' framing is consistent; however checking closely: passage states 'Vostro accounts (where the overseas correspondent bank holds an account in the UK bank) allow UK banks less overall visibility' - this matches the claim, so it is actually supported.\n\nSearch for evidence that actually supports these claims and answer again, or drop the claims you cannot support. If the corpus does not support them at all, call refuse instead of weakening the wording until it passes.",
+      "outcome": "answered",
+      "summary": "The 2025 UK National Risk Assessment distinguishes nostro from vostro correspondent accounts by the visibility they give the UK bank. Where the UK bank holds a foreign-currency account with the overseas correspondent (nostro), it has better visibility of transactions and financial movement, making money laundering risks easier to identify (though TBML risk remains high for nostro trade finance accounts). Where the overseas correspondent holds the account in the UK bank (vostro), the UK bank has less overall visibility over the source of funds. More broadly, correspondent banking is assessed as having high exposure to high-risk jurisdictions and a lack of oversight of all parties in the payment chain, and FATF guidance notes that the correspondent's due diligence is performed on the respondent rather than on the respondent's underlying customers.",
+      "claims": [
+        {
+          "text": "In the UK NRA's terminology, a nostro account is one where the UK bank holds an account in a foreign currency with the overseas correspondent bank, and a vostro account is one where the overseas correspondent bank holds an account in the UK bank.",
+          "chunk_ids": [
+            5872
+          ]
+        },
+        {
+          "text": "Vostro accounts, where the overseas correspondent bank holds an account in the UK bank, allow UK banks less overall visibility over the source of funds.",
+          "chunk_ids": [
+            5872
+          ]
+        },
+        {
+          "text": "Where banks hold only nostro accounts, the UK bank's visibility of transactions and financial movement allows easier identification of money laundering risks, although trade-based money laundering risks remain high for nostro trade finance accounts.",
+          "chunk_ids": [
+            5872
+          ]
+        },
+        {
+          "text": "Correspondent banking is the provision of banking services by one bank (the correspondent) to another bank (the respondent), and correspondent banks have a high level of exposure to high-risk jurisdictions and a lack of oversight of all parties in the chain.",
+          "chunk_ids": [
+            5872
+          ]
+        },
+        {
+          "text": "Because the correspondent bank's due diligence is performed on the respondent rather than on the respondent's underlying financial-institution customers (KYC rather than KYCC), the correspondent needs to understand whether activity flowing through the account originates from the respondent, its FI customers, or its customers' customers.",
+          "chunk_ids": [
+            4861
+          ]
+        },
+        {
+          "text": "Where customers have direct access to the correspondent's account (e.g. payable-through arrangements), the correspondent should have policies, procedures and processes to identify the ultimate user of the account and be satisfied that the respondent has conducted sufficient CDD and can provide individual CDD information on request.",
+          "chunk_ids": [
+            2384
+          ]
+        }
+      ],
+      "refusal_reason": "",
+      "iterations": 2,
+      "searches": 2,
+      "retrieved_chunk_ids": [
+        2372,
+        2375,
+        2383,
+        2384,
+        2387,
+        4861,
+        4862,
+        4865,
+        5872,
+        5953,
+        6748,
+        6760,
+        9131
+      ],
+      "input_tokens": 368,
+      "output_tokens": 1338,
+      "cache_read_tokens": 2550,
+      "usd": 0.0891,
+      "latency_ms": 16991.3,
+      "error": "",
+      "trace": [
+        {
+          "step": "search",
+          "iteration": 1,
+          "query": "vostro account overseas correspondent bank visibility source of funds",
+          "k": 8,
+          "returned_chunk_ids": [
+            5872,
+            5953,
+            2383,
+            4862,
+            4865,
+            4861,
+            2384,
+            2375
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 1,
+          "query": "nostro vostro correspondent banking money laundering risk",
+          "k": 8,
+          "returned_chunk_ids": [
+            5872,
+            6760,
+            9131,
+            2372,
+            4861,
+            6748,
+            5953,
+            2387
+          ]
+        },
+        {
+          "step": "answer",
+          "iteration": 2,
+          "claims": 6
+        }
+      ]
+    }
+  ],
+  "written_at": "2026-08-30T11:53:32+00:00"
+}

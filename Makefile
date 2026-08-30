@@ -91,6 +91,10 @@ eval-sweep:  ## Sweep reranker candidate counts: ceiling vs achieved vs latency
 eval-analysis:  ## Per-question breakdown of where each retriever wins
 	$(RUN) aml_agent.evaluation.analysis
 
+.PHONY: eval-rebuild
+eval-rebuild:  ## Rebuild results/answers.json from the traces on disk
+	$(RUN) aml_agent.evaluation.rebuild
+
 .PHONY: judge-audit
 judge-audit:  ## Sample 20 judge decisions into results/judge_agreement.md for grading
 	$(RUN) aml_agent.evaluation.judge_audit

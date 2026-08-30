@@ -1,0 +1,324 @@
+{
+  "trace_id": "9ddd0155f27c",
+  "question": "Where a firm uses an unattended remote customer onboarding solution in which the customer does not interact with an employee, what must the verification process include, and what should happen if the evidence captured is of insufficient quality?",
+  "outcome": "answered",
+  "summary": "The EBA Guidelines on the use of Remote Customer Onboarding Solutions (EBA/GL/2022/15) set specific requirements for \"unattended\" solutions \u2014 i.e. where the customer does not interact with an employee to perform the verification. In those cases the firm must ensure any photograph or video is taken under adequate lighting and with sufficient clarity to allow proper verification of identity, that it is captured at the time the customer is actually performing the verification process, and that liveness detection is performed (the EBA deliberately made liveness detection mandatory for unattended/fully automated verification, though the firm may choose active or passive methods). More generally, images, video, sound and data must be captured in a readable format and with sufficient quality that the customer is unambiguously recognisable, and matching against the biometric data on the identity document must use strong and reliable algorithms, with additional controls where the required level of confidence is not reached. Where the evidence captured is of insufficient quality \u2014 creating ambiguity or uncertainty that affects the performance of the remote checks \u2014 the individual onboarding process should be interrupted and restarted, or redirected to face-to-face verification; the identification process should also not continue if technical shortcomings or unexpected connection interruptions are detected.",
+  "citations": [
+    {
+      "chunk_id": 2918,
+      "title": "Final Report \u2014 Guidelines on the use of Remote Customer Onboarding Solutions under Article 13(1) of Directive (EU) 2015/849 \u2014 EBA/GL/2022/15",
+      "publisher": "European Banking Authority (EBA)",
+      "page": 19,
+      "source_url": "https://www.eba.europa.eu/sites/default/files/document_library/Publications/Guidelines/2022/EBA-GL-2022-15%20GL%20on%20remote%20customer%20onboarding/1043884/Guidelines%20on%20the%20use%20of%20Remote%20Customer%20Onboarding%20Solutions.pdf",
+      "section_heading": "FINAL REPORT AND GUIDELINES ON THE USE OF REMOTE CUSTOMER ONBOARDING SOLUTIONS"
+    },
+    {
+      "chunk_id": 2927,
+      "title": "Final Report \u2014 Guidelines on the use of Remote Customer Onboarding Solutions under Article 13(1) of Directive (EU) 2015/849 \u2014 EBA/GL/2022/15",
+      "publisher": "European Banking Authority (EBA)",
+      "page": 28,
+      "source_url": "https://www.eba.europa.eu/sites/default/files/document_library/Publications/Guidelines/2022/EBA-GL-2022-15%20GL%20on%20remote%20customer%20onboarding/1043884/Guidelines%20on%20the%20use%20of%20Remote%20Customer%20Onboarding%20Solutions.pdf",
+      "section_heading": "FINAL REPORT AND GUIDELINES ON THE USE OF REMOTE CUSTOMER ONBOARDING SOLUTIONS"
+    },
+    {
+      "chunk_id": 2941,
+      "title": "Final Report \u2014 Guidelines on the use of Remote Customer Onboarding Solutions under Article 13(1) of Directive (EU) 2015/849 \u2014 EBA/GL/2022/15",
+      "publisher": "European Banking Authority (EBA)",
+      "page": 41,
+      "source_url": "https://www.eba.europa.eu/sites/default/files/document_library/Publications/Guidelines/2022/EBA-GL-2022-15%20GL%20on%20remote%20customer%20onboarding/1043884/Guidelines%20on%20the%20use%20of%20Remote%20Customer%20Onboarding%20Solutions.pdf",
+      "section_heading": "FINAL REPORT AND GUIDELINES ON THE USE OF REMOTE CUSTOMER ONBOARDING SOLUTIONS"
+    },
+    {
+      "chunk_id": 2914,
+      "title": "Final Report \u2014 Guidelines on the use of Remote Customer Onboarding Solutions under Article 13(1) of Directive (EU) 2015/849 \u2014 EBA/GL/2022/15",
+      "publisher": "European Banking Authority (EBA)",
+      "page": 15,
+      "source_url": "https://www.eba.europa.eu/sites/default/files/document_library/Publications/Guidelines/2022/EBA-GL-2022-15%20GL%20on%20remote%20customer%20onboarding/1043884/Guidelines%20on%20the%20use%20of%20Remote%20Customer%20Onboarding%20Solutions.pdf",
+      "section_heading": "FINAL REPORT AND GUIDELINES ON THE USE OF REMOTE CUSTOMER ONBOARDING SOLUTIONS"
+    },
+    {
+      "chunk_id": 2919,
+      "title": "Final Report \u2014 Guidelines on the use of Remote Customer Onboarding Solutions under Article 13(1) of Directive (EU) 2015/849 \u2014 EBA/GL/2022/15",
+      "publisher": "European Banking Authority (EBA)",
+      "page": 20,
+      "source_url": "https://www.eba.europa.eu/sites/default/files/document_library/Publications/Guidelines/2022/EBA-GL-2022-15%20GL%20on%20remote%20customer%20onboarding/1043884/Guidelines%20on%20the%20use%20of%20Remote%20Customer%20Onboarding%20Solutions.pdf",
+      "section_heading": "FINAL REPORT AND GUIDELINES ON THE USE OF REMOTE CUSTOMER ONBOARDING SOLUTIONS"
+    }
+  ],
+  "refusal_reason": "",
+  "attempts": 1,
+  "searches": 4,
+  "input_tokens": 144,
+  "output_tokens": 2357,
+  "agent_usd": 0.17884,
+  "validation_usd": 0.05296,
+  "total_usd": 0.2318,
+  "latency_ms": 69740.3,
+  "validation": {
+    "passed": true,
+    "citation_validity": 1.0,
+    "groundedness": 1.0,
+    "checked_support": true,
+    "usd": 0.05296,
+    "verdicts": [
+      {
+        "claim": "The EBA Guidelines on the use of Remote Customer Onboarding Solutions (EBA/GL/2022/15) address unattended remote onboarding solutions, defined as solutions in which the customer does not interact with an employee to perform the verification process.",
+        "chunk_ids": [
+          2918,
+          2927
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "Chunk 2918 states \"Where credit and financial institutions use unattended remote onboarding solutions, in which the customer does not interact with an employee to perform the verification process,\" and lists requirements, directly matching the claim's definition and coverage."
+      },
+      {
+        "claim": "In unattended remote onboarding, the firm should ensure that any photograph(s) or video is taken under adequate lighting conditions and that the required properties are captured with the clarity necessary to allow proper verification of the customer's identity.",
+        "chunk_ids": [
+          2918
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states point (a) under unattended remote onboarding solutions: 'ensure that any photograph(s) or video is taken under adequate lighting conditions and that the required properties are captured with necessary clarity to allow the proper verification of the customer's identity.'"
+      },
+      {
+        "claim": "In unattended remote onboarding, the firm should ensure that any photograph(s) or video is taken at the time the customer is performing the verification process.",
+        "chunk_ids": [
+          2918
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage explicitly states for unattended remote onboarding solutions institutions should 'ensure that any photograph(s) or video is taken at the time the customer is performing the verification process.'"
+      },
+      {
+        "claim": "In unattended remote onboarding, the firm should perform liveness detection verifications.",
+        "chunk_ids": [
+          2918
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states institutions should \"perform liveness detection verifications\" as part of unattended remote onboarding solutions requirements (item c under paragraph 41)."
+      },
+      {
+        "claim": "The EBA chose to make liveness detection mandatory for all unattended (fully automated remote verification) situations rather than for no cases or for all cases, on the basis that it increases the reliability of the verification process while requiring it in all cases would be disproportionate.",
+        "chunk_ids": [
+          2927
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states \"The preferred option is mandatory liveness detection in all unattended situations only (Option 2)\" and explains \"Option 3, imposing liveness detection in all cases is assessed to be disproportionate,\" while noting liveness detection \"aims to increase the reliability of the verification process.\""
+      },
+      {
+        "claim": "The Guidelines do not prescribe particular liveness detection methods; it is for the credit or financial institution to decide whether liveness detection is performed actively or passively, and ISO 30107 defines standards that may be consulted.",
+        "chunk_ids": [
+          2941
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states \"This guideline does not establish the liveness detection methods that might be used\" and \"it is up to the credit and financial institution to decide whether liveness detection should be performed actively or passively,\" and notes \"ISO 30.107 defines several standards for liveness detection techniques that might be consulted by the credit and financial institution.\""
+      },
+      {
+        "claim": "Firms should use strong and reliable algorithms to verify the match between the biometric data on the submitted identity document and the customer being onboarded, and where the solution does not provide the required level of confidence, additional controls should be applied.",
+        "chunk_ids": [
+          2918
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage explicitly states \"Credit and financial institutions should use strong and reliable algorithms to verify the match between the biometric data provided on the submitted identity document and the customer being onboarded\" and \"In situations where the solution does not provide the required level of confidence, additional controls should be applied,\" matching the claim verbatim."
+      },
+      {
+        "claim": "Where the evidence provided is of insufficient quality, resulting in ambiguity or uncertainty such that the performance of the remote checks is affected, the individual remote customer onboarding process should be interrupted and restarted, or redirected to face-to-face verification.",
+        "chunk_ids": [
+          2918
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "Passage states verbatim in point 40 that \"the individual remote customer onboarding process should be interrupted and restarted or redirected to a face-to-face verification\" when evidence quality is insufficient causing ambiguity affecting remote checks."
+      },
+      {
+        "claim": "Firms must ensure that any images, video, sound and data are captured in a readable format and with sufficient quality so that the customer is unambiguously recognisable, and that the identification process does not continue if technical shortcomings or unexpected connection interruptions are detected.",
+        "chunk_ids": [
+          2914
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage explicitly states institutions should ensure \"b) any images, video, sound and data are captured in a readable format and with sufficient quality so that the customer is unambiguously recognisable; c) the identification process does not continue if technical shortcomings or unexpected connection interruptions are detected.\""
+      },
+      {
+        "claim": "Where possible, firms should use remote onboarding solutions that include randomness in the sequence of actions the customer must perform for verification purposes, to guard against risks such as the use of synthetic identities or coercion.",
+        "chunk_ids": [
+          2919
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states \"credit and financial institutions should use remote customer onboarding solutions that include randomness in the sequence of actions to be performed by the customer for verification purposes to guard against risks such as the use of synthetic identities or coercion,\" which directly matches the claim."
+      }
+    ]
+  },
+  "drafts": [
+    {
+      "trace_id": "9ddd0155f27c",
+      "question": "Where a firm uses an unattended remote customer onboarding solution in which the customer does not interact with an employee, what must the verification process include, and what should happen if the evidence captured is of insufficient quality?",
+      "outcome": "answered",
+      "summary": "The EBA Guidelines on the use of Remote Customer Onboarding Solutions (EBA/GL/2022/15) set specific requirements for \"unattended\" solutions \u2014 i.e. where the customer does not interact with an employee to perform the verification. In those cases the firm must ensure any photograph or video is taken under adequate lighting and with sufficient clarity to allow proper verification of identity, that it is captured at the time the customer is actually performing the verification process, and that liveness detection is performed (the EBA deliberately made liveness detection mandatory for unattended/fully automated verification, though the firm may choose active or passive methods). More generally, images, video, sound and data must be captured in a readable format and with sufficient quality that the customer is unambiguously recognisable, and matching against the biometric data on the identity document must use strong and reliable algorithms, with additional controls where the required level of confidence is not reached. Where the evidence captured is of insufficient quality \u2014 creating ambiguity or uncertainty that affects the performance of the remote checks \u2014 the individual onboarding process should be interrupted and restarted, or redirected to face-to-face verification; the identification process should also not continue if technical shortcomings or unexpected connection interruptions are detected.",
+      "claims": [
+        {
+          "text": "The EBA Guidelines on the use of Remote Customer Onboarding Solutions (EBA/GL/2022/15) address unattended remote onboarding solutions, defined as solutions in which the customer does not interact with an employee to perform the verification process.",
+          "chunk_ids": [
+            2918,
+            2927
+          ]
+        },
+        {
+          "text": "In unattended remote onboarding, the firm should ensure that any photograph(s) or video is taken under adequate lighting conditions and that the required properties are captured with the clarity necessary to allow proper verification of the customer's identity.",
+          "chunk_ids": [
+            2918
+          ]
+        },
+        {
+          "text": "In unattended remote onboarding, the firm should ensure that any photograph(s) or video is taken at the time the customer is performing the verification process.",
+          "chunk_ids": [
+            2918
+          ]
+        },
+        {
+          "text": "In unattended remote onboarding, the firm should perform liveness detection verifications.",
+          "chunk_ids": [
+            2918
+          ]
+        },
+        {
+          "text": "The EBA chose to make liveness detection mandatory for all unattended (fully automated remote verification) situations rather than for no cases or for all cases, on the basis that it increases the reliability of the verification process while requiring it in all cases would be disproportionate.",
+          "chunk_ids": [
+            2927
+          ]
+        },
+        {
+          "text": "The Guidelines do not prescribe particular liveness detection methods; it is for the credit or financial institution to decide whether liveness detection is performed actively or passively, and ISO 30107 defines standards that may be consulted.",
+          "chunk_ids": [
+            2941
+          ]
+        },
+        {
+          "text": "Firms should use strong and reliable algorithms to verify the match between the biometric data on the submitted identity document and the customer being onboarded, and where the solution does not provide the required level of confidence, additional controls should be applied.",
+          "chunk_ids": [
+            2918
+          ]
+        },
+        {
+          "text": "Where the evidence provided is of insufficient quality, resulting in ambiguity or uncertainty such that the performance of the remote checks is affected, the individual remote customer onboarding process should be interrupted and restarted, or redirected to face-to-face verification.",
+          "chunk_ids": [
+            2918
+          ]
+        },
+        {
+          "text": "Firms must ensure that any images, video, sound and data are captured in a readable format and with sufficient quality so that the customer is unambiguously recognisable, and that the identification process does not continue if technical shortcomings or unexpected connection interruptions are detected.",
+          "chunk_ids": [
+            2914
+          ]
+        },
+        {
+          "text": "Where possible, firms should use remote onboarding solutions that include randomness in the sequence of actions the customer must perform for verification purposes, to guard against risks such as the use of synthetic identities or coercion.",
+          "chunk_ids": [
+            2919
+          ]
+        }
+      ],
+      "refusal_reason": "",
+      "iterations": 4,
+      "searches": 4,
+      "retrieved_chunk_ids": [
+        2914,
+        2916,
+        2917,
+        2918,
+        2919,
+        2926,
+        2927,
+        2929,
+        2939,
+        2940,
+        2941,
+        3360,
+        6722,
+        6767,
+        6768,
+        6774,
+        7954
+      ],
+      "input_tokens": 144,
+      "output_tokens": 2357,
+      "cache_read_tokens": 25855,
+      "usd": 0.17884,
+      "latency_ms": 44796.5,
+      "error": "",
+      "trace": [
+        {
+          "step": "search",
+          "iteration": 1,
+          "query": "remote customer onboarding solution unattended verification liveness",
+          "k": 8,
+          "returned_chunk_ids": [
+            2927,
+            2918,
+            2926,
+            2940,
+            2941,
+            2929,
+            2919,
+            2917
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 1,
+          "query": "insufficient quality photograph video identity document repeat process",
+          "k": 8,
+          "returned_chunk_ids": [
+            2918,
+            2939,
+            2941,
+            2916,
+            2914,
+            7954,
+            2926,
+            2917
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 2,
+          "query": "liveness detection verifications actively or passively random sequence photograph official document unattended",
+          "k": 6,
+          "returned_chunk_ids": [
+            2941,
+            2927,
+            2918,
+            2926,
+            2940,
+            2929
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 3,
+          "query": "verify that customer is physically present real person and not a photograph or mask spoofing attack",
+          "k": 6,
+          "returned_chunk_ids": [
+            2918,
+            6722,
+            6767,
+            3360,
+            6774,
+            6768
+          ]
+        },
+        {
+          "step": "answer",
+          "iteration": 4,
+          "claims": 10
+        }
+      ]
+    }
+  ],
+  "written_at": "2026-08-30T12:19:38+00:00"
+}

@@ -1,0 +1,886 @@
+{
+  "trace_id": "b5ab7b817e82",
+  "question": "Our relationship managers and compliance officers keep deadlocking over whether to take on high-risk corporate clients, and when the decision is escalated the revenue side usually prevails. How should that escalation body be structured so commercial interests cannot carry the decision?",
+  "outcome": "answered",
+  "summary": "The corpus supports a governance model in which escalation and higher-risk relationship decisions are structured around the three lines of defence, with the AML/compliance function positioned independently of the revenue-generating business, and with decisions taken (and documented) at senior management level. Basel sets out the three lines and requires the chief AML/CFT officer to have stature, authority and a direct reporting line to senior management or the board; Wolfsberg requires the escalation path to be independent and available to all staff; StAR/EBA place termination-or-continuation and PEP approval decisions with senior management (or a committee including at least one senior manager), with the group AML/CFT compliance officer involved in higher-risk cases; and the FCA/EBA warn that profitability and relationship-manager closeness must not drive risk decisions. I could NOT support the claim that the audit committee or board should be involved in oversight of decisions to terminate or continue higher-risk relationships \u2014 that recommendation in the StAR text is directed at a different (narrower) role, so I have dropped it and substituted what the corpus actually says about board/audit-committee involvement.",
+  "citations": [
+    {
+      "chunk_id": 6716,
+      "title": "Guidelines: Sound management of risks related to money laundering and financing of terrorism",
+      "publisher": "Basel Committee on Banking Supervision",
+      "page": 9,
+      "source_url": "https://www.bis.org/publications/202007-guidelines-sound-management-risks-related-money-laundering-and-financing-terrorism-revisions-supervisory.pdf",
+      "section_heading": "4 Sound management of risks related to money laundering and financing of terrorism"
+    },
+    {
+      "chunk_id": 6718,
+      "title": "Guidelines: Sound management of risks related to money laundering and financing of terrorism",
+      "publisher": "Basel Committee on Banking Supervision",
+      "page": 10,
+      "source_url": "https://www.bis.org/publications/202007-guidelines-sound-management-risks-related-money-laundering-and-financing-terrorism-revisions-supervisory.pdf",
+      "section_heading": "6 Sound management of risks related to money laundering and financing of terrorism"
+    },
+    {
+      "chunk_id": 4889,
+      "title": "The Wolfsberg Group Correspondent Banking Due Diligence Questionnaire (CBDDQ) Guidance, version 2.0",
+      "publisher": "The Wolfsberg Group",
+      "page": 32,
+      "source_url": "https://db.wolfsberg-group.org/assets/09bafec3-4b77-428b-9113-f4203d290a2f/EN_CBDDQ%20Guidance%20(2023).pdf",
+      "section_heading": "311 designated entities"
+    },
+    {
+      "chunk_id": 4573,
+      "title": "The Wolfsberg Group, ICC and BAFT Trade Finance Principles (2019 amendment)",
+      "publisher": "The Wolfsberg Group, International Chamber of Commerce (ICC) and BAFT",
+      "page": 22,
+      "source_url": "https://db.wolfsberg-group.org/assets/5c770f68-6277-4443-931b-7750478f08e7/Trade%20Finance%20Principles.pdf",
+      "section_heading": "PUBLIC"
+    },
+    {
+      "chunk_id": 7975,
+      "title": "Politically Exposed Persons: Preventive Measures for the Banking Sector",
+      "publisher": "World Bank / UNODC Stolen Asset Recovery Initiative (StAR)",
+      "page": 75,
+      "source_url": "https://documents1.worldbank.org/curated/en/611261468155103854/pdf/542500PUB0Expo101Official0Use0Only1.pdf",
+      "section_heading": "11 Enhanced Ongoing Monitoring"
+    },
+    {
+      "chunk_id": 7916,
+      "title": "Politically Exposed Persons: Preventive Measures for the Banking Sector",
+      "publisher": "World Bank / UNODC Stolen Asset Recovery Initiative (StAR)",
+      "page": 19,
+      "source_url": "https://documents1.worldbank.org/curated/en/611261468155103854/pdf/542500PUB0Expo101Official0Use0Only1.pdf",
+      "section_heading": "1 Strong and sustained political will and mobilization . Political will is needed to"
+    },
+    {
+      "chunk_id": 7972,
+      "title": "Politically Exposed Persons: Preventive Measures for the Banking Sector",
+      "publisher": "World Bank / UNODC Stolen Asset Recovery Initiative (StAR)",
+      "page": 72,
+      "source_url": "https://documents1.worldbank.org/curated/en/611261468155103854/pdf/542500PUB0Expo101Official0Use0Only1.pdf",
+      "section_heading": "10 PEP Approval by Senior"
+    },
+    {
+      "chunk_id": 7971,
+      "title": "Politically Exposed Persons: Preventive Measures for the Banking Sector",
+      "publisher": "World Bank / UNODC Stolen Asset Recovery Initiative (StAR)",
+      "page": 71,
+      "source_url": "https://documents1.worldbank.org/curated/en/611261468155103854/pdf/542500PUB0Expo101Official0Use0Only1.pdf",
+      "section_heading": "10 PEP Approval by Senior"
+    },
+    {
+      "chunk_id": 2681,
+      "title": "Guidelines under Articles 17 and 18(4) of Directive (EU) 2015/849 on customer due diligence and the factors credit and financial institutions should consider when assessing the money laundering and terrorist financing risk associated with individual business relationships and occasional transactions ('The ML/TF Risk Factors Guidelines'), repealing and replacing Guidelines JC/2017/37 \u2014 EBA/GL/2021/02 (consolidated version)",
+      "publisher": "European Banking Authority (EBA)",
+      "page": 36,
+      "source_url": "https://www.eba.europa.eu/sites/default/files/document_library/Publications/Guidelines/2023/EBA-GL-2023-03/1061654/Guidelines%20ML%20TF%20Risk%20Factors_conslidated.pdf.pdf",
+      "section_heading": "4.47 Directive (EU) 2015/849 sets out specific EDD measures that firms must apply:"
+    },
+    {
+      "chunk_id": 6330,
+      "title": "Financial Crime Guide: A firm's guide to countering financial crime risks (FCG)",
+      "publisher": "Financial Conduct Authority (FCA)",
+      "page": 33,
+      "source_url": "https://api-handbook.fca.org.uk/files/sourcebook/FCG.pdf",
+      "section_heading": "1 \u2022 Which parts of the business present greater risks of money laundering, terrorist"
+    },
+    {
+      "chunk_id": 2667,
+      "title": "Guidelines under Articles 17 and 18(4) of Directive (EU) 2015/849 on customer due diligence and the factors credit and financial institutions should consider when assessing the money laundering and terrorist financing risk associated with individual business relationships and occasional transactions ('The ML/TF Risk Factors Guidelines'), repealing and replacing Guidelines JC/2017/37 \u2014 EBA/GL/2021/02 (consolidated version)",
+      "publisher": "European Banking Authority (EBA)",
+      "page": 24,
+      "source_url": "https://www.eba.europa.eu/sites/default/files/document_library/Publications/Guidelines/2023/EBA-GL-2023-03/1061654/Guidelines%20ML%20TF%20Risk%20Factors_conslidated.pdf.pdf",
+      "section_heading": "3.3 Firms should note that, unless Directive (EU) 2015/849 or national legislation states"
+    },
+    {
+      "chunk_id": 6346,
+      "title": "Financial Crime Guide: A firm's guide to countering financial crime risks (FCG)",
+      "publisher": "Financial Conduct Authority (FCA)",
+      "page": 52,
+      "source_url": "https://api-handbook.fca.org.uk/files/sourcebook/FCG.pdf",
+      "section_heading": "2 \u2022 obtaining more robust verification of the beneficial owner\u2019s identity based on"
+    }
+  ],
+  "refusal_reason": "",
+  "attempts": 2,
+  "searches": 18,
+  "input_tokens": 649,
+  "output_tokens": 8946,
+  "agent_usd": 0.74848,
+  "validation_usd": 0.17736,
+  "total_usd": 0.92584,
+  "latency_ms": 208635.8,
+  "validation": {
+    "passed": true,
+    "citation_validity": 1.0,
+    "groundedness": 1.0,
+    "checked_support": true,
+    "usd": 0.07307,
+    "verdicts": [
+      {
+        "claim": "Under the Basel Committee AML/CFT guidelines, business units (e.g. front office, customer-facing activity) are the first line of defence, in charge of identifying, assessing and controlling the risks of their business, while the second line includes the chief officer in charge of AML/CFT and the compliance function (as well as human resources and technology).",
+        "chunk_ids": [
+          6716
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage explicitly states \"business units...are the first line of defence in charge of identifying, assessing and controlling the risks of their business\" and \"The second line of defence includes the chief officer in charge of AML/CFT, the compliance function but also human resources or technology.\""
+      },
+      {
+        "claim": "The Basel guidelines state that the board and senior management should appoint an appropriately qualified chief AML/CFT officer with the stature and necessary authority within the bank such that issues raised by that officer receive the necessary attention from the board, senior management and business lines.",
+        "chunk_ids": [
+          6716
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states almost verbatim: \"The board of directors and senior management should appoint an appropriately qualified chief AML/CFT officer to have overall responsibility for the AML/CFT function with the stature and the necessary authority within the bank such that issues raised by this senior officer receive the necessary attention from the board, senior management and business lines.\""
+      },
+      {
+        "claim": "The chief AML/CFT officer should have a direct reporting line to senior management or the board, and where duties are separated between the chief AML/CFT, risk and compliance officers, the relationship between those roles must be clearly defined and understood.",
+        "chunk_ids": [
+          6718
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "Passage states \"He/she should have a direct reporting line to senior management or the board. In case of a separation of duties the relationship between the aforementioned chief officers and their respective roles must be clearly defined and understood,\" matching the claim."
+      },
+      {
+        "claim": "Internal audit is the third line of defence and discharges its responsibility to the audit committee of the board of directors or a similar oversight body through periodic evaluations of the effectiveness of compliance with AML/CFT policies and procedures.",
+        "chunk_ids": [
+          6718
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage explicitly states \"Internal audit, the third line of defence, plays an important role in independently evaluating the risk management and controls, and discharges its responsibility to the audit committee of the board of directors or a similar oversight body through periodic evaluations of the effectiveness of compliance with AML/CFT policies and procedures,\" matching the claim verbatim."
+      },
+      {
+        "claim": "The Wolfsberg CBDDQ Guidance states that a clear escalation path for AML and CTF issues should be implemented, should be available to all staff, and should be independent; a lack of clear escalation processes may lead to failure to investigate and report potentially suspicious activity.",
+        "chunk_ids": [
+          4889
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states verbatim: \"A clear escalation path for AML and CTF issues should be implemented that is available to all staff. It should be independent...\" and \"Lack of clear escalation processes may lead to failure in investigating and reporting potential suspicious activity.\""
+      },
+      {
+        "claim": "In the trade finance three lines of defence model, at each stage of an intervention the decision to refer or continue and the rationale must be recorded and kept on file, with details retained for all stages of escalation up to the decision to file a SAR/STR, and the independent and objective third line periodically reviews the escalation process.",
+        "chunk_ids": [
+          4573
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states \"the decision to refer or continue and the rationale needs to be recorded and kept on file,\" details are kept \"for all stages of the escalation process up to and including the decision at Level 3 ... to file a Suspicious Activity Report,\" and \"The independent and objective Third Line of Defence will periodically review the escalation process,\" matching the claim exactly."
+      },
+      {
+        "claim": "For PEP customers, the StAR guidance states that decisions on termination or continuation of the business relationship are made by senior management or a committee including at least one senior manager, after reports are analysed by the account manager, compliance, head of business area, or through a sign-off process involving some or all of these (for example a PEP committee or customer monitoring team).",
+        "chunk_ids": [
+          7975
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states nearly verbatim: \"the information is considered by senior management or a committee including at least one senior manager. This individual or committee makes decisions on termination or continuation of the business relationship,\" after being \"analyzed by the account manager, compliance, head of business area, or through a sign-off process involving some or all the aforementioned (for example, members of a PEP committee, customer monitoring team).\""
+      },
+      {
+        "claim": "StAR's Principal Recommendation 4 is that PEP customers should be reviewed by senior management or a committee including at least one senior manager on a risk-based approach at least yearly, with the results of the review documented.",
+        "chunk_ids": [
+          7916
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states verbatim: \"PEP customers should be reviewed by senior management or a committee including at least one senior manager using a risk-based approach, at least yearly, and the results of the review should be documented,\" matching the claim exactly."
+      },
+      {
+        "claim": "StAR identifies as good practice that the senior-management decision to accept or continue a relationship with a PEP is documented with clear delineation of responsibility and accountability, that approval or refusal by the various senior managers involved is documented in writing, and that the escalation/approval policy is set out in writing.",
+        "chunk_ids": [
+          7972
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states \"Whatever the policy, it should be outlined in writing and decisions should be documented\" and under \"Good Practice\" states the decision to accept/continue a relationship with a PEP \"is documented, with clear delineation of responsibility and accountability\" and \"Approval or refusal by the various senior managers involved should be documented in writing,\" matching all elements of the claim."
+      },
+      {
+        "claim": "StAR recommends that, in higher-risk cases, the group AML/CFT compliance officer should be involved in the PEP approval process, partly because an AML/CFT officer is often in the best position to say that a person should not be accepted regardless of the size of the account.",
+        "chunk_ids": [
+          7971
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage explicitly states this recommendation and reason: \"an AML/CFT officer is often in the best position to say that a person should not be accepted regardless of the size of the account\" and the Recommendation section states the group AML/CFT compliance officer \"should be involved in the decision to accept or continue a relationship with a customer who has been identified as a PEP\" in higher risk cases."
+      },
+      {
+        "claim": "The EBA ML/TF Risk Factors Guidelines require senior management approval for entering into or continuing a PEP relationship, with the level of seniority determined by the level of increased risk, and the approving senior manager having sufficient seniority and oversight to take informed decisions on issues that directly impact the firm's risk profile.",
+        "chunk_ids": [
+          2681
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states \"Obtain senior management approval for entering into, or continuing, a business relationship with a PEP. The appropriate level of seniority for sign-off should be determined by the level of increased risk associated with the business relationship, and the senior manager approving a PEP business relationship should have sufficient seniority and oversight to take informed decisions on issues that directly impact the firm's risk profile,\" which matches the claim."
+      },
+      {
+        "claim": "The FCA Financial Crime Guide cites as poor practice that money laundering risk assessments are unduly influenced by the potential profitability of new or existing relationships, and as good practice that the firm identifies and effectively manages the risk that a relationship manager might become too close to customers to take an objective view of money laundering risk.",
+        "chunk_ids": [
+          6330
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "Passage lists as poor practice \"Risk assessments on money laundering are unduly influenced by the potential profitability of new or existing relationships\" and as good practice \"The firm identifies where there is a risk that a relationship manager might become too close to customers to identify and take an objective view of the money laundering risk. It manages that risk effectively.\""
+      },
+      {
+        "claim": "The EBA Guidelines state that when weighting risk factors firms should ensure that economic or profit considerations do not influence the risk rating.",
+        "chunk_ids": [
+          2667
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage explicitly lists as a requirement that \"economic or profit considerations do not influence the risk rating.\""
+      },
+      {
+        "claim": "The FCA Financial Crime Guide's self-assessment questions on enhanced ongoing monitoring of higher-risk relationships ask whether reviews are carried out independently of relationship managers.",
+        "chunk_ids": [
+          6346
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage lists as self-assessment question 2: \"Are reviews carried out independently of relationship managers?\""
+      }
+    ]
+  },
+  "drafts": [
+    {
+      "trace_id": "b5ab7b817e82",
+      "question": "Our relationship managers and compliance officers keep deadlocking over whether to take on high-risk corporate clients, and when the decision is escalated the revenue side usually prevails. How should that escalation body be structured so commercial interests cannot carry the decision?",
+      "outcome": "answered",
+      "summary": "The corpus directly addresses your situation. The World Bank/StAR \"Puppet Masters\" study describes exactly this deadlock \u2014 relationship manager vs. compliance officer disagreement on client risk \u2014 and the client acceptance committee (CAC) as the standard escalation mechanism. Its Recommendation 14 sets the governing principle: compliance must be able to make its voice heard at the highest managerial level, and once compliance has voiced a concern, relationship managers must not have the final say. To make that real, the design levers the corpus supports are: (1) put the chief AML/CFT officer (and, for group-wide cases, the group AML/CFT compliance officer) on the body, with the stature and authority for their concerns to command attention from the board, senior management and business lines; (2) set the seniority of the approving manager by reference to the level of risk, not the size of the account; (3) use decision rules that deny the revenue side a majority \u2014 the StAR PEP committee model uses unanimity, a fixed quorum that must always include the CEO, and minuted meetings; (4) document approvals and refusals in writing with clear delineation of responsibility and accountability; (5) define in the customer acceptance policy the circumstances in which the firm will not accept or will terminate a relationship, so the committee is applying a pre-agreed boundary rather than negotiating one; and (6) address the incentive problem directly \u2014 the FCA treats risk assessments \"unduly influenced by the potential profitability\" of a relationship as poor practice, expects firms to manage the risk that a relationship manager becomes too close to a customer to take an objective view, and treats reward structures that take account of AML failings as good practice. Finally, internal audit as third line should periodically review the escalation process itself.",
+      "claims": [
+        {
+          "text": "The deadlock you describe is a recognised pattern: when a relationship manager and a compliance officer cannot agree on the true risk level of a client and whether its business is acceptable, most banks pass the decision up to a higher level of responsibility, such as a client acceptance committee (CAC).",
+          "chunk_ids": [
+            8977
+          ]
+        },
+        {
+          "text": "The governing principle is that banks should ensure their organisational structure lets compliance departments make their voice heard at the highest managerial level, and that once compliance has voiced a concern, relationship managers should not have the final say in deciding whether to accept a client; this is framed as a recommendation that financial institutions have sufficiently independent client acceptance practices.",
+          "chunk_ids": [
+            8985
+          ]
+        },
+        {
+          "text": "The board and senior management should appoint an appropriately qualified chief AML/CFT officer with overall responsibility for the AML/CFT function, possessing the stature and necessary authority within the bank such that issues raised by this officer receive the necessary attention from the board, senior management and business lines.",
+          "chunk_ids": [
+            6716
+          ]
+        },
+        {
+          "text": "The chief AML/CFT officer should have a direct reporting line to senior management or the board, and where the role is separated from the chief risk officer or chief compliance officer, the relationship between those officers and their respective roles must be clearly defined and understood.",
+          "chunk_ids": [
+            6718
+          ]
+        },
+        {
+          "text": "Business units (front office, customer-facing activity) are the first line of defence, while the chief AML/CFT officer and the compliance function form the second line \u2014 so the escalation body should not be composed such that the first line can determine second-line risk decisions.",
+          "chunk_ids": [
+            6716
+          ]
+        },
+        {
+          "text": "In higher-risk cases the group AML/CFT compliance officer should be involved in the approval process, because that officer is often in the best position to say a person should not be accepted regardless of the size of the account, and because the group-level view captures customers refused or terminated elsewhere in the group, preventing branch- or country-shopping.",
+          "chunk_ids": [
+            7971
+          ]
+        },
+        {
+          "text": "A concrete committee design used by a bank in the StAR study gives the committee explicit authority to make decisions on measures to be taken and to provide opinions on whether to continue relationships; members include the CEO, the head of compliance of the business area, the records manager and the customer manager, with occasional participants such as the head of the business area depending on the issue.",
+          "chunk_ids": [
+            7976
+          ]
+        },
+        {
+          "text": "In that same committee model, decisions are unanimous, the quorum is at least four participants and must always include the CEO, the committee meets at least quarterly or whenever any permanent participant requests a meeting, and minutes of meetings are kept.",
+          "chunk_ids": [
+            7976
+          ]
+        },
+        {
+          "text": "A designated committee whose decisions are unanimous is cited as good practice for deciding whether particular customers continue to pose an increased money laundering risk.",
+          "chunk_ids": [
+            7949
+          ]
+        },
+        {
+          "text": "The appropriate level of seniority for sign-off should be determined by the level of increased risk associated with the business relationship, and the approving senior manager should have sufficient seniority and oversight to take informed decisions on issues that directly impact the firm's risk profile.",
+          "chunk_ids": [
+            2681
+          ]
+        },
+        {
+          "text": "When deciding whether to approve a higher-risk relationship, senior management should base the decision on the level of ML/TF risk the firm would be exposed to if it entered into the relationship and on how well equipped the firm is to manage that risk effectively.",
+          "chunk_ids": [
+            2681
+          ]
+        },
+        {
+          "text": "Whatever the approval policy is, it should be set out in writing and decisions should be documented; good practice is that the decision to accept or continue the relationship is documented with clear delineation of responsibility and accountability, and approval or refusal by each senior manager involved is documented in writing.",
+          "chunk_ids": [
+            7972
+          ]
+        },
+        {
+          "text": "Escalation arrangements vary in practice: in some banks a group compliance unit holds final approval over a new higher-risk account, while in others the final decision rests with a group business head, and some banks build in escalation to separate committees or units where the client is thought to pose immediately higher risk or reside in a sensitive jurisdiction.",
+          "chunk_ids": [
+            7972
+          ]
+        },
+        {
+          "text": "A bank's customer acceptance policy should define the circumstances under which the bank would not accept a new business relationship or would terminate an existing one.",
+          "chunk_ids": [
+            6722
+          ]
+        },
+        {
+          "text": "The FCA treats it as poor practice where money laundering risk assessments are unduly influenced by the potential profitability of new or existing relationships, and as good practice where the firm identifies and effectively manages the risk that a relationship manager might become too close to customers to take an objective view of the money laundering risk.",
+          "chunk_ids": [
+            6330
+          ]
+        },
+        {
+          "text": "The FCA cites as good practice that reward structures take account of any failings related to AML compliance, and asks firms how senior management are involved in approving relationships with high-risk customers including PEPs.",
+          "chunk_ids": [
+            6326
+          ]
+        },
+        {
+          "text": "A clear escalation path for AML and CTF issues should be implemented, available to all staff, and it should be independent; a lack of clear escalation processes may lead to failure to investigate and report potentially suspicious activity.",
+          "chunk_ids": [
+            4889
+          ]
+        },
+        {
+          "text": "At each stage of an escalation the decision to refer or continue, and its rationale, needs to be recorded and kept on file, and the independent and objective third line of defence should periodically review the escalation process.",
+          "chunk_ids": [
+            4573
+          ]
+        },
+        {
+          "text": "Internal audit, as the third line of defence, independently evaluates risk management and controls and reports to the audit committee of the board or a similar oversight body through periodic evaluations of the effectiveness of compliance with AML/CFT policies and procedures.",
+          "chunk_ids": [
+            6718
+          ]
+        },
+        {
+          "text": "Firms should also consider having the audit committee, board or equivalent corporate body involved in the oversight of decisions to terminate or continue higher-risk relationships.",
+          "chunk_ids": [
+            7975
+          ]
+        }
+      ],
+      "refusal_reason": "",
+      "iterations": 6,
+      "searches": 10,
+      "retrieved_chunk_ids": [
+        717,
+        1456,
+        1459,
+        2669,
+        2680,
+        2681,
+        2741,
+        2763,
+        3159,
+        4549,
+        4572,
+        4573,
+        4579,
+        4870,
+        4876,
+        4879,
+        4889,
+        4925,
+        4926,
+        5022,
+        6314,
+        6326,
+        6327,
+        6328,
+        6330,
+        6346,
+        6360,
+        6407,
+        6713,
+        6715,
+        6716,
+        6717,
+        6718,
+        6722,
+        6734,
+        7916,
+        7949,
+        7951,
+        7970,
+        7971,
+        7972,
+        7975,
+        7976,
+        7989,
+        8825,
+        8863,
+        8973,
+        8977,
+        8984,
+        8985,
+        8999
+      ],
+      "input_tokens": 165,
+      "output_tokens": 4358,
+      "cache_read_tokens": 88376,
+      "usd": 0.40124,
+      "latency_ms": 60336.7,
+      "error": "",
+      "trace": [
+        {
+          "step": "search",
+          "iteration": 1,
+          "query": "senior management approval high-risk customer relationship establish",
+          "k": 8,
+          "returned_chunk_ids": [
+            2681,
+            7971,
+            2741,
+            2680,
+            717,
+            7916,
+            7972,
+            7970
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 1,
+          "query": "compliance function independence business line conflict of interest AML governance",
+          "k": 8,
+          "returned_chunk_ids": [
+            6717,
+            6716,
+            6718,
+            4925,
+            4926,
+            6715,
+            4876,
+            1459
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 2,
+          "query": "customer acceptance committee escalation decision decline business relationship",
+          "k": 8,
+          "returned_chunk_ids": [
+            8977,
+            7971,
+            4573,
+            4889,
+            6722,
+            5022,
+            7975,
+            2669
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 2,
+          "query": "compliance officer authority veto sufficient stature independent of business lines remuneration",
+          "k": 8,
+          "returned_chunk_ids": [
+            6327,
+            6718,
+            4879,
+            1459,
+            6717,
+            8977,
+            4870,
+            6716
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 3,
+          "query": "client acceptance committee composition compliance outvoted business representatives",
+          "k": 8,
+          "returned_chunk_ids": [
+            8977,
+            8973,
+            8984,
+            8985,
+            7971,
+            8999,
+            1456,
+            8825
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 3,
+          "query": "FCA good practice poor practice new business take-on high risk customers senior management override MLRO",
+          "k": 8,
+          "returned_chunk_ids": [
+            6326,
+            6327,
+            6330,
+            6407,
+            6314,
+            6346,
+            6328,
+            6360
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 4,
+          "query": "CAC members bank compliance department voice heard highest managerial level final say",
+          "k": 8,
+          "returned_chunk_ids": [
+            8977,
+            7971,
+            6717,
+            8985,
+            6734,
+            8825,
+            4579,
+            6713
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 4,
+          "query": "good practice committee approves high risk customers PEP relationships decisions documented rationale",
+          "k": 8,
+          "returned_chunk_ids": [
+            7975,
+            7949,
+            7916,
+            7972,
+            7989,
+            2681,
+            7951,
+            6346
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 5,
+          "query": "Establishment of a PEP Committee good practice members meet unanimous decision",
+          "k": 6,
+          "returned_chunk_ids": [
+            7949,
+            7975,
+            7976,
+            7972,
+            7951,
+            7971
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 5,
+          "query": "escalation path independent of business line reporting compliance not influenced by revenue",
+          "k": 8,
+          "returned_chunk_ids": [
+            4572,
+            4889,
+            4573,
+            8863,
+            2763,
+            4549,
+            3159,
+            7972
+          ]
+        },
+        {
+          "step": "answer",
+          "iteration": 6,
+          "claims": 20
+        }
+      ]
+    },
+    {
+      "trace_id": "d6dbfb35dd6a",
+      "question": "Your draft was REJECTED by citation validation. The following claims did not survive:\n\n- Claim: Business units (front office, customer-facing activity) are the first line of defence, while the chief AML/CFT officer and the compliance function form the second line \u2014 so the escalation body should not be composed such that the first line can determine second-line risk decisions.\n  Cited: [6716]\n  Problem: The passage states business units are the first line of defence and the chief AML/CFT officer/compliance function are the second line, but it says nothing about escalation body composition or first line determining second-line risk decisions\u2014that part is unsupported.\n\n- Claim: Firms should also consider having the audit committee, board or equivalent corporate body involved in the oversight of decisions to terminate or continue higher-risk relationships.\n  Cited: [7975]\n  Problem: The passage recommends the audit committee/board sign off annually on the PEP list, not that it be involved in decisions to terminate or continue relationships (which is assigned to senior management/committee), so it supports a different, narrower role than the claim states.\n\nSearch for evidence that actually supports these claims and answer again, or drop the claims you cannot support. If the corpus does not support them at all, call refuse instead of weakening the wording until it passes.",
+      "outcome": "answered",
+      "summary": "The corpus supports a governance model in which escalation and higher-risk relationship decisions are structured around the three lines of defence, with the AML/compliance function positioned independently of the revenue-generating business, and with decisions taken (and documented) at senior management level. Basel sets out the three lines and requires the chief AML/CFT officer to have stature, authority and a direct reporting line to senior management or the board; Wolfsberg requires the escalation path to be independent and available to all staff; StAR/EBA place termination-or-continuation and PEP approval decisions with senior management (or a committee including at least one senior manager), with the group AML/CFT compliance officer involved in higher-risk cases; and the FCA/EBA warn that profitability and relationship-manager closeness must not drive risk decisions. I could NOT support the claim that the audit committee or board should be involved in oversight of decisions to terminate or continue higher-risk relationships \u2014 that recommendation in the StAR text is directed at a different (narrower) role, so I have dropped it and substituted what the corpus actually says about board/audit-committee involvement.",
+      "claims": [
+        {
+          "text": "Under the Basel Committee AML/CFT guidelines, business units (e.g. front office, customer-facing activity) are the first line of defence, in charge of identifying, assessing and controlling the risks of their business, while the second line includes the chief officer in charge of AML/CFT and the compliance function (as well as human resources and technology).",
+          "chunk_ids": [
+            6716
+          ]
+        },
+        {
+          "text": "The Basel guidelines state that the board and senior management should appoint an appropriately qualified chief AML/CFT officer with the stature and necessary authority within the bank such that issues raised by that officer receive the necessary attention from the board, senior management and business lines.",
+          "chunk_ids": [
+            6716
+          ]
+        },
+        {
+          "text": "The chief AML/CFT officer should have a direct reporting line to senior management or the board, and where duties are separated between the chief AML/CFT, risk and compliance officers, the relationship between those roles must be clearly defined and understood.",
+          "chunk_ids": [
+            6718
+          ]
+        },
+        {
+          "text": "Internal audit is the third line of defence and discharges its responsibility to the audit committee of the board of directors or a similar oversight body through periodic evaluations of the effectiveness of compliance with AML/CFT policies and procedures.",
+          "chunk_ids": [
+            6718
+          ]
+        },
+        {
+          "text": "The Wolfsberg CBDDQ Guidance states that a clear escalation path for AML and CTF issues should be implemented, should be available to all staff, and should be independent; a lack of clear escalation processes may lead to failure to investigate and report potentially suspicious activity.",
+          "chunk_ids": [
+            4889
+          ]
+        },
+        {
+          "text": "In the trade finance three lines of defence model, at each stage of an intervention the decision to refer or continue and the rationale must be recorded and kept on file, with details retained for all stages of escalation up to the decision to file a SAR/STR, and the independent and objective third line periodically reviews the escalation process.",
+          "chunk_ids": [
+            4573
+          ]
+        },
+        {
+          "text": "For PEP customers, the StAR guidance states that decisions on termination or continuation of the business relationship are made by senior management or a committee including at least one senior manager, after reports are analysed by the account manager, compliance, head of business area, or through a sign-off process involving some or all of these (for example a PEP committee or customer monitoring team).",
+          "chunk_ids": [
+            7975
+          ]
+        },
+        {
+          "text": "StAR's Principal Recommendation 4 is that PEP customers should be reviewed by senior management or a committee including at least one senior manager on a risk-based approach at least yearly, with the results of the review documented.",
+          "chunk_ids": [
+            7916
+          ]
+        },
+        {
+          "text": "StAR identifies as good practice that the senior-management decision to accept or continue a relationship with a PEP is documented with clear delineation of responsibility and accountability, that approval or refusal by the various senior managers involved is documented in writing, and that the escalation/approval policy is set out in writing.",
+          "chunk_ids": [
+            7972
+          ]
+        },
+        {
+          "text": "StAR recommends that, in higher-risk cases, the group AML/CFT compliance officer should be involved in the PEP approval process, partly because an AML/CFT officer is often in the best position to say that a person should not be accepted regardless of the size of the account.",
+          "chunk_ids": [
+            7971
+          ]
+        },
+        {
+          "text": "The EBA ML/TF Risk Factors Guidelines require senior management approval for entering into or continuing a PEP relationship, with the level of seniority determined by the level of increased risk, and the approving senior manager having sufficient seniority and oversight to take informed decisions on issues that directly impact the firm's risk profile.",
+          "chunk_ids": [
+            2681
+          ]
+        },
+        {
+          "text": "The FCA Financial Crime Guide cites as poor practice that money laundering risk assessments are unduly influenced by the potential profitability of new or existing relationships, and as good practice that the firm identifies and effectively manages the risk that a relationship manager might become too close to customers to take an objective view of money laundering risk.",
+          "chunk_ids": [
+            6330
+          ]
+        },
+        {
+          "text": "The EBA Guidelines state that when weighting risk factors firms should ensure that economic or profit considerations do not influence the risk rating.",
+          "chunk_ids": [
+            2667
+          ]
+        },
+        {
+          "text": "The FCA Financial Crime Guide's self-assessment questions on enhanced ongoing monitoring of higher-risk relationships ask whether reviews are carried out independently of relationship managers.",
+          "chunk_ids": [
+            6346
+          ]
+        }
+      ],
+      "refusal_reason": "",
+      "iterations": 5,
+      "searches": 8,
+      "retrieved_chunk_ids": [
+        1459,
+        2667,
+        2680,
+        2681,
+        2695,
+        2762,
+        2934,
+        3159,
+        3160,
+        3166,
+        4572,
+        4573,
+        4876,
+        4884,
+        4889,
+        6321,
+        6322,
+        6327,
+        6330,
+        6333,
+        6337,
+        6346,
+        6408,
+        6409,
+        6700,
+        6711,
+        6715,
+        6716,
+        6717,
+        6718,
+        6736,
+        6741,
+        6742,
+        6776,
+        6787,
+        7916,
+        7971,
+        7972,
+        7974,
+        7975,
+        7988,
+        7989,
+        8863,
+        9141
+      ],
+      "input_tokens": 484,
+      "output_tokens": 4588,
+      "cache_read_tokens": 55914,
+      "usd": 0.34724,
+      "latency_ms": 62186.0,
+      "error": "",
+      "trace": [
+        {
+          "step": "search",
+          "iteration": 1,
+          "query": "escalation committee composition senior management decision to exit high risk relationship",
+          "k": 8,
+          "returned_chunk_ids": [
+            4889,
+            7971,
+            2681,
+            6346,
+            7916,
+            7975,
+            7972,
+            2695
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 1,
+          "query": "three lines of defence business units first line compliance second line internal audit third line",
+          "k": 8,
+          "returned_chunk_ids": [
+            6716,
+            4573,
+            4572,
+            6718,
+            4884,
+            6717,
+            6700,
+            4876
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 2,
+          "query": "escalation path independent of business line reporting route free from conflict of interest",
+          "k": 8,
+          "returned_chunk_ids": [
+            4889,
+            4572,
+            4573,
+            8863,
+            2762,
+            4876,
+            9141,
+            3159
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 2,
+          "query": "audit committee board oversight of high risk customer decisions annual sign-off",
+          "k": 8,
+          "returned_chunk_ids": [
+            7975,
+            7916,
+            7972,
+            3160,
+            6346,
+            6711,
+            3166,
+            2934
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 3,
+          "query": "poor practice relationship managers decide risk classification commercial considerations override compliance objections",
+          "k": 8,
+          "returned_chunk_ids": [
+            6330,
+            6346,
+            2667,
+            6337,
+            6408,
+            6333,
+            6409,
+            6321
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 3,
+          "query": "chief AML officer independence not subject to conflicting business objectives adequate standing authority",
+          "k": 8,
+          "returned_chunk_ids": [
+            6717,
+            6716,
+            6718,
+            6741,
+            6736,
+            6776,
+            6742,
+            6327
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 4,
+          "query": "audit committee board equivalent corporate body sign off annually list of PEP customers",
+          "k": 6,
+          "returned_chunk_ids": [
+            7975,
+            7988,
+            2680,
+            7972,
+            7974,
+            7989
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 4,
+          "query": "management information reporting to board on high risk customers exit decisions oversight",
+          "k": 8,
+          "returned_chunk_ids": [
+            6346,
+            6787,
+            7975,
+            2681,
+            6322,
+            7916,
+            6715,
+            1459
+          ]
+        },
+        {
+          "step": "answer",
+          "iteration": 5,
+          "claims": 14
+        }
+      ]
+    }
+  ],
+  "written_at": "2026-08-30T12:10:56+00:00"
+}

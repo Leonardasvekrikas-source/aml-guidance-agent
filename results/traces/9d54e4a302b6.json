@@ -1,0 +1,207 @@
+{
+  "trace_id": "9d54e4a302b6",
+  "question": "Why is a money order seller usually unable to screen the payee's name, and at what currency amount is it actually required to obtain and verify the purchaser's identity?",
+  "outcome": "answered",
+  "summary": "Per Treasury's 2024 National Money Laundering Risk Assessment, there is no explicit BSA requirement for money order sellers to collect payee information, and the issuer does not learn the payee's name until the payee negotiates the instrument and it clears the banking system \u2014 so the seller typically cannot screen the payee at the point of sale. The BSA recordkeeping obligation for money orders requires the issuer/seller to obtain, verify and record customer identification only for currency purchases of money orders totaling $3,000 or more, which is a threshold criminals structure beneath.",
+  "citations": [
+    {
+      "chunk_id": 4013,
+      "title": "2024 National Money Laundering Risk Assessment",
+      "publisher": "U.S. Department of the Treasury",
+      "page": 52,
+      "source_url": "https://home.treasury.gov/system/files/136/2024-National-Money-Laundering-Risk-Assessment.pdf",
+      "section_heading": "2024 \u25c6 National Money Laundering Risk Assessment"
+    },
+    {
+      "chunk_id": 4012,
+      "title": "2024 National Money Laundering Risk Assessment",
+      "publisher": "U.S. Department of the Treasury",
+      "page": 51,
+      "source_url": "https://home.treasury.gov/system/files/136/2024-National-Money-Laundering-Risk-Assessment.pdf",
+      "section_heading": "2024 \u25c6 National Money Laundering Risk Assessment"
+    },
+    {
+      "chunk_id": 4014,
+      "title": "2024 National Money Laundering Risk Assessment",
+      "publisher": "U.S. Department of the Treasury",
+      "page": 52,
+      "source_url": "https://home.treasury.gov/system/files/136/2024-National-Money-Laundering-Risk-Assessment.pdf",
+      "section_heading": "2024 \u25c6 National Money Laundering Risk Assessment"
+    }
+  ],
+  "refusal_reason": "",
+  "attempts": 1,
+  "searches": 2,
+  "input_tokens": 125,
+  "output_tokens": 984,
+  "agent_usd": 0.05904,
+  "validation_usd": 0.03311,
+  "total_usd": 0.09215,
+  "latency_ms": 31532.3,
+  "validation": {
+    "passed": true,
+    "citation_validity": 1.0,
+    "groundedness": 1.0,
+    "checked_support": true,
+    "usd": 0.03311,
+    "verdicts": [
+      {
+        "claim": "There is no explicit BSA requirement for sellers of money orders to collect payee information, in contrast to recordkeeping requirements for bank funds transfer services.",
+        "chunk_ids": [
+          4013
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states \"In contrast to recordkeeping requirements involving funds transfer services provided by banks, there is no explicit requirement for sellers of money orders to collect payee information.\""
+      },
+      {
+        "claim": "The issuer does not know the payee's name until the payee negotiates the money order and the instrument clears the banking system, which is why money order sellers may be unable to screen the payee's name and, depending on the amount, may not be able to verify the payer's name either.",
+        "chunk_ids": [
+          4013
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states nearly verbatim: \"The issuer does not know the payee\u2019s name until that payee negotiates the money order and the instrument subsequently clears the banking system. This situation means money order sellers may be unable to screen the name of the payee and, depending on the amount, the sellers may not be able to verify the payer\u2019s name.\""
+      },
+      {
+        "claim": "The BSA recordkeeping obligation for money orders requires issuers and sellers to obtain, verify and record customer identification only for purchases of money orders of $3,000 or more in currency.",
+        "chunk_ids": [
+          4013,
+          4012
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states \"The BSA recordkeeping obligation applicable to money orders only requires issuers and sellers of money orders to obtain, verify and record customer identification with the purchase of money orders for $3,000, or more in currency,\" which directly matches the claim."
+      },
+      {
+        "claim": "Issuers or sellers of money orders are a type of MSB subject to BSA registration, recordkeeping, AML program and reporting (CTR and SAR) obligations, under 31 C.F.R. Part 1022, including \u00a7 1022.210.",
+        "chunk_ids": [
+          4012,
+          4013
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states \"Issuers or sellers of money orders are a type of MSB and thus subject to certain registration, recordkeeping, program, and reporting obligations under the BSA\" citing 31 C.F.R. Part 1022, and specifies the AML program requirement under \u00a71022.210 and CTR/SAR filing obligations."
+      },
+      {
+        "claim": "Sellers may nonetheless request payee information voluntarily to satisfy other BSA requirements such as AML program and SAR filing obligations.",
+        "chunk_ids": [
+          4013
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states \"sellers of money orders may request payee information to satisfy other BSA requirements, such as AML program and SAR filing obligations,\" directly matching the claim."
+      },
+      {
+        "claim": "Criminals circumvent the recordkeeping requirement by structuring money order purchases below the $3,000 threshold; in one case a defendant converted drug proceeds into money orders under the $3,000 recordkeeping threshold after processing cash through casinos and nail salons.",
+        "chunk_ids": [
+          4014
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "Passage states criminals \"structuring their money order transactions below this requirement\" and gives the case example of a defendant who \"process[ed] drug money through casinos and nail salons before converting the cash into money orders under the $3,000 record keeping threshold.\""
+      }
+    ]
+  },
+  "drafts": [
+    {
+      "trace_id": "9d54e4a302b6",
+      "question": "Why is a money order seller usually unable to screen the payee's name, and at what currency amount is it actually required to obtain and verify the purchaser's identity?",
+      "outcome": "answered",
+      "summary": "Per Treasury's 2024 National Money Laundering Risk Assessment, there is no explicit BSA requirement for money order sellers to collect payee information, and the issuer does not learn the payee's name until the payee negotiates the instrument and it clears the banking system \u2014 so the seller typically cannot screen the payee at the point of sale. The BSA recordkeeping obligation for money orders requires the issuer/seller to obtain, verify and record customer identification only for currency purchases of money orders totaling $3,000 or more, which is a threshold criminals structure beneath.",
+      "claims": [
+        {
+          "text": "There is no explicit BSA requirement for sellers of money orders to collect payee information, in contrast to recordkeeping requirements for bank funds transfer services.",
+          "chunk_ids": [
+            4013
+          ]
+        },
+        {
+          "text": "The issuer does not know the payee's name until the payee negotiates the money order and the instrument clears the banking system, which is why money order sellers may be unable to screen the payee's name and, depending on the amount, may not be able to verify the payer's name either.",
+          "chunk_ids": [
+            4013
+          ]
+        },
+        {
+          "text": "The BSA recordkeeping obligation for money orders requires issuers and sellers to obtain, verify and record customer identification only for purchases of money orders of $3,000 or more in currency.",
+          "chunk_ids": [
+            4013,
+            4012
+          ]
+        },
+        {
+          "text": "Issuers or sellers of money orders are a type of MSB subject to BSA registration, recordkeeping, AML program and reporting (CTR and SAR) obligations, under 31 C.F.R. Part 1022, including \u00a7 1022.210.",
+          "chunk_ids": [
+            4012,
+            4013
+          ]
+        },
+        {
+          "text": "Sellers may nonetheless request payee information voluntarily to satisfy other BSA requirements such as AML program and SAR filing obligations.",
+          "chunk_ids": [
+            4013
+          ]
+        },
+        {
+          "text": "Criminals circumvent the recordkeeping requirement by structuring money order purchases below the $3,000 threshold; in one case a defendant converted drug proceeds into money orders under the $3,000 recordkeeping threshold after processing cash through casinos and nail salons.",
+          "chunk_ids": [
+            4014
+          ]
+        }
+      ],
+      "refusal_reason": "",
+      "iterations": 2,
+      "searches": 2,
+      "retrieved_chunk_ids": [
+        1138,
+        1491,
+        4012,
+        4013,
+        4014,
+        4054,
+        4611,
+        4644
+      ],
+      "input_tokens": 125,
+      "output_tokens": 984,
+      "cache_read_tokens": 2956,
+      "usd": 0.05904,
+      "latency_ms": 14280.1,
+      "error": "",
+      "trace": [
+        {
+          "step": "search",
+          "iteration": 1,
+          "query": "money order purchaser identification $3,000 recordkeeping",
+          "k": 5,
+          "returned_chunk_ids": [
+            4013,
+            4012,
+            4014,
+            1138,
+            4054
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 1,
+          "query": "money order payee name blank at time of purchase screening",
+          "k": 5,
+          "returned_chunk_ids": [
+            4013,
+            4012,
+            1491,
+            4644,
+            4611
+          ]
+        },
+        {
+          "step": "answer",
+          "iteration": 2,
+          "claims": 6
+        }
+      ]
+    }
+  ],
+  "written_at": "2026-08-30T12:20:14+00:00"
+}

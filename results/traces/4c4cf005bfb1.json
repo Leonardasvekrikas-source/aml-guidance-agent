@@ -1,0 +1,149 @@
+{
+  "trace_id": "4c4cf005bfb1",
+  "question": "For our country risk model refresh, which jurisdictions are currently on the FATF list of Jurisdictions under Increased Monitoring, and which countries were removed from that list at the most recent plenary?",
+  "outcome": "refused",
+  "summary": "",
+  "citations": [],
+  "refusal_reason": "I searched the corpus for \"Jurisdictions under Increased Monitoring / FATF grey list\", \"high-risk jurisdictions subject to a call for action / countermeasures\", \"FATF plenary outcomes \u2014 countries removed / action plan completed\", and \"high-risk third countries list / Commission Delegated Regulation annex\". \n\nWhat the corpus DOES contain is only the framework-level references to these lists, not their contents:\n- The FCA Financial Crime Guide (chunk 6342) defines a \"high-risk third country\" as one named by FATF on its list of High-Risk Jurisdictions subject to a Call for Action or its list of Jurisdictions under Increased Monitoring, and sets out the EDD measures that follow.\n- The Basel Committee guidelines (chunks 6740, 6742) describe the FATF Public Statement and the \"Improving Global AML/CFT Compliance: On-going Process\" document as the mechanisms by which jurisdictions are publicly identified.\n- The EBA ML/TF Risk Factors Guidelines (chunks 2661, 2692, 2697) refer firms to countries identified by the European Commission under Article 9(2) of Directive (EU) 2015/849.\n\nWhat is MISSING is any named list of currently grey-listed jurisdictions and any FATF plenary outcome statement recording delistings. The corpus holds guidance, typology and methodology documents rather than the periodically updated FATF public statements, and no chunk enumerates listed or de-listed countries. (One passage, chunk 2032, does contain a long list of country names, but that is the roster of delegations that contributed to the FATF terrorist financing report \u2014 it is not a grey list and must not be read as one.)\n\nThese lists are also revised at each FATF plenary, so any answer would need to come from the current FATF public statement itself. For your country risk model refresh, please source the listings directly from the FATF's published \"High-Risk Jurisdictions subject to a Call for Action\" and \"Jurisdictions under Increased Monitoring\" statements for the relevant plenary date, and, if you are in scope of the UK MLRs or EU AMLD, cross-check against the corresponding UK Schedule 3ZA and EU Commission delegated regulation lists, which do not always mirror FATF exactly.",
+  "attempts": 1,
+  "searches": 4,
+  "input_tokens": 141,
+  "output_tokens": 1395,
+  "agent_usd": 0.17612,
+  "validation_usd": 0.0,
+  "total_usd": 0.17612,
+  "latency_ms": 21334.7,
+  "validation": null,
+  "drafts": [
+    {
+      "trace_id": "4c4cf005bfb1",
+      "question": "For our country risk model refresh, which jurisdictions are currently on the FATF list of Jurisdictions under Increased Monitoring, and which countries were removed from that list at the most recent plenary?",
+      "outcome": "refused",
+      "summary": "",
+      "claims": [],
+      "refusal_reason": "I searched the corpus for \"Jurisdictions under Increased Monitoring / FATF grey list\", \"high-risk jurisdictions subject to a call for action / countermeasures\", \"FATF plenary outcomes \u2014 countries removed / action plan completed\", and \"high-risk third countries list / Commission Delegated Regulation annex\". \n\nWhat the corpus DOES contain is only the framework-level references to these lists, not their contents:\n- The FCA Financial Crime Guide (chunk 6342) defines a \"high-risk third country\" as one named by FATF on its list of High-Risk Jurisdictions subject to a Call for Action or its list of Jurisdictions under Increased Monitoring, and sets out the EDD measures that follow.\n- The Basel Committee guidelines (chunks 6740, 6742) describe the FATF Public Statement and the \"Improving Global AML/CFT Compliance: On-going Process\" document as the mechanisms by which jurisdictions are publicly identified.\n- The EBA ML/TF Risk Factors Guidelines (chunks 2661, 2692, 2697) refer firms to countries identified by the European Commission under Article 9(2) of Directive (EU) 2015/849.\n\nWhat is MISSING is any named list of currently grey-listed jurisdictions and any FATF plenary outcome statement recording delistings. The corpus holds guidance, typology and methodology documents rather than the periodically updated FATF public statements, and no chunk enumerates listed or de-listed countries. (One passage, chunk 2032, does contain a long list of country names, but that is the roster of delegations that contributed to the FATF terrorist financing report \u2014 it is not a grey list and must not be read as one.)\n\nThese lists are also revised at each FATF plenary, so any answer would need to come from the current FATF public statement itself. For your country risk model refresh, please source the listings directly from the FATF's published \"High-Risk Jurisdictions subject to a Call for Action\" and \"Jurisdictions under Increased Monitoring\" statements for the relevant plenary date, and, if you are in scope of the UK MLRs or EU AMLD, cross-check against the corresponding UK Schedule 3ZA and EU Commission delegated regulation lists, which do not always mirror FATF exactly.",
+      "iterations": 3,
+      "searches": 4,
+      "retrieved_chunk_ids": [
+        642,
+        691,
+        695,
+        733,
+        1990,
+        2028,
+        2030,
+        2032,
+        2142,
+        2194,
+        2208,
+        2209,
+        2210,
+        2661,
+        2665,
+        2679,
+        2680,
+        2681,
+        2692,
+        2697,
+        5811,
+        6341,
+        6342,
+        6740,
+        6742,
+        7929,
+        7952,
+        7973,
+        8014,
+        8842,
+        8989,
+        8990
+      ],
+      "input_tokens": 141,
+      "output_tokens": 1395,
+      "cache_read_tokens": 14245,
+      "usd": 0.17612,
+      "latency_ms": 21334.7,
+      "error": "",
+      "trace": [
+        {
+          "step": "search",
+          "iteration": 1,
+          "query": "Jurisdictions under Increased Monitoring FATF grey list",
+          "k": 10,
+          "returned_chunk_ids": [
+            6342,
+            2030,
+            2028,
+            8014,
+            733,
+            2142,
+            6341,
+            7952,
+            2692,
+            7973
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 1,
+          "query": "high-risk jurisdictions call for action countermeasures",
+          "k": 10,
+          "returned_chunk_ids": [
+            6342,
+            2208,
+            6740,
+            6341,
+            7929,
+            2194,
+            2209,
+            691,
+            6742,
+            695
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 2,
+          "query": "FATF plenary outcomes statement countries removed from list strategic deficiencies action plan completed",
+          "k": 10,
+          "returned_chunk_ids": [
+            2032,
+            642,
+            5811,
+            8989,
+            8842,
+            2028,
+            1990,
+            6742,
+            2661,
+            8990
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 2,
+          "query": "high-risk third countries list Annex Commission Delegated Regulation named countries",
+          "k": 10,
+          "returned_chunk_ids": [
+            6342,
+            2680,
+            733,
+            2697,
+            6341,
+            2692,
+            2681,
+            2210,
+            2679,
+            2665
+          ]
+        },
+        {
+          "step": "refuse",
+          "iteration": 3,
+          "reason": "I searched the corpus for \"Jurisdictions under Increased Monitoring / FATF grey list\", \"high-risk jurisdictions subject to a call for action / countermeasures\", \"FATF plenary outcomes \u2014 countries removed / action plan completed\", and \"high-risk third countries list / Commission Delegated Regulation "
+        }
+      ]
+    }
+  ],
+  "written_at": "2026-08-30T12:14:01+00:00"
+}

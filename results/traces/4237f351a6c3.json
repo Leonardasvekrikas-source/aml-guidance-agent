@@ -1,0 +1,704 @@
+{
+  "trace_id": "4237f351a6c3",
+  "question": "We have a group buying several high-value cars with cash and putting the registrations in the names of people outside the group, while the same principals run a number of used-jewellery outlets. What scheme does that combination point to?",
+  "outcome": "answered",
+  "summary": "The combination you describe is the classic \"high-value goods / cash-conversion\" laundering model, with three interlocking components that the corpus treats as distinct but complementary typologies:\n\n1. **Converting bulk criminal cash into high-value goods.** Cash is pooled and then integrated by buying high-value goods \u2014 the UK NRA lists cars, gold, jewellery and watches expressly as assets bought with criminal funds to act as a long-term store of value that can later be liquidated or \"re-laundered\". High value dealer (HVD) status bites at \u20ac10,000 cash, and structuring across multiple lower-value goods is a recognised evasion of it.\n\n2. **Nominee / third-party registration to break the ownership trail.** Putting titles in the names of people outside the group is the \"front man / surrogate\" technique: a surrogate whose name attracts less attention is declared the owner, concealing the principal's connection to the asset and frustrating tracing and confiscation. There is a directly analogous US conviction for using a nominee to purchase automobiles to conceal the source of the funds.\n\n3. **Used-jewellery outlets as cash-intensive front businesses and as a precious-metals/stones channel.** Front companies combine illicit proceeds with legitimate business revenue; second-hand/used-goods and precious metals dealing lets an OCG convert illicit cash into a stable, anonymous, easily exchangeable asset, and undeclared cash income can be used to buy undeclared stock.\n\nTaken together, this reads as an organised-crime cash-placement and integration scheme running through unregulated or under-regulated high-value goods dealers, with nominee title-holding for asset protection \u2014 and, if the cars or gold are moved cross-border or resold through the outlets, it shades into trade-based money laundering, for which vehicle purchase with criminal cash plus resale chains and precious-metals dealers are documented FATF/Egmont patterns.",
+  "citations": [
+    {
+      "chunk_id": 5827,
+      "title": "National Risk Assessment of Money Laundering and Terrorist Financing 2025",
+      "publisher": "HM Treasury and Home Office",
+      "page": 29,
+      "source_url": "https://assets.publishing.service.gov.uk/media/6877be59760bf6cedaf5bd4f/National_Risk_Assessment_of_Money_Laundering_and_Terrorist_Financing_2025_FINAL.pdf",
+      "section_heading": "3.34 Money laundering networks use a combination of methods to move"
+    },
+    {
+      "chunk_id": 5961,
+      "title": "National Risk Assessment of Money Laundering and Terrorist Financing 2025",
+      "publisher": "HM Treasury and Home Office",
+      "page": 157,
+      "source_url": "https://assets.publishing.service.gov.uk/media/6877be59760bf6cedaf5bd4f/National_Risk_Assessment_of_Money_Laundering_and_Terrorist_Financing_2025_FINAL.pdf",
+      "section_heading": "2017 (MLRs)"
+    },
+    {
+      "chunk_id": 5831,
+      "title": "National Risk Assessment of Money Laundering and Terrorist Financing 2025",
+      "publisher": "HM Treasury and Home Office",
+      "page": 33,
+      "source_url": "https://assets.publishing.service.gov.uk/media/6877be59760bf6cedaf5bd4f/National_Risk_Assessment_of_Money_Laundering_and_Terrorist_Financing_2025_FINAL.pdf",
+      "section_heading": "3.47 Cash integrated in the UK is often laundered by international controller"
+    },
+    {
+      "chunk_id": 5900,
+      "title": "National Risk Assessment of Money Laundering and Terrorist Financing 2025",
+      "publisher": "HM Treasury and Home Office",
+      "page": 98,
+      "source_url": "https://assets.publishing.service.gov.uk/media/6877be59760bf6cedaf5bd4f/National_Risk_Assessment_of_Money_Laundering_and_Terrorist_Financing_2025_FINAL.pdf",
+      "section_heading": "5.124 As outlined above, overall compliance by the small and medium sized firms"
+    },
+    {
+      "chunk_id": 5901,
+      "title": "National Risk Assessment of Money Laundering and Terrorist Financing 2025",
+      "publisher": "HM Treasury and Home Office",
+      "page": 99,
+      "source_url": "https://assets.publishing.service.gov.uk/media/6877be59760bf6cedaf5bd4f/National_Risk_Assessment_of_Money_Laundering_and_Terrorist_Financing_2025_FINAL.pdf",
+      "section_heading": "5.126 High value dealers (HVDs) are firms or sole traders who make or receive"
+    },
+    {
+      "chunk_id": 4913,
+      "title": "The Wolfsberg Group Correspondent Banking Due Diligence Questionnaire (CBDDQ) Guidance, version 2.0",
+      "publisher": "The Wolfsberg Group",
+      "page": 53,
+      "source_url": "https://db.wolfsberg-group.org/assets/09bafec3-4b77-428b-9113-f4203d290a2f/EN_CBDDQ%20Guidance%20(2023).pdf",
+      "section_heading": "7 KYC, CDD and EDD"
+    },
+    {
+      "chunk_id": 8915,
+      "title": "The Puppet Masters: How the Corrupt Use Legal Structures to Hide Stolen Assets and What to Do About It",
+      "publisher": "World Bank / UNODC Stolen Asset Recovery Initiative (StAR)",
+      "page": 76,
+      "source_url": "https://documents1.worldbank.org/curated/en/784961468152973030/pdf/The-puppet-masters-how-the-corrupt-use-legal-structures-to-hide-stolen-assets-and-what-to-do-about-it.pdf",
+      "section_heading": "58 I The Puppet Masters"
+    },
+    {
+      "chunk_id": 8916,
+      "title": "The Puppet Masters: How the Corrupt Use Legal Structures to Hide Stolen Assets and What to Do About It",
+      "publisher": "World Bank / UNODC Stolen Asset Recovery Initiative (StAR)",
+      "page": 77,
+      "source_url": "https://documents1.worldbank.org/curated/en/784961468152973030/pdf/The-puppet-masters-how-the-corrupt-use-legal-structures-to-hide-stolen-assets-and-what-to-do-about-it.pdf",
+      "section_heading": "58 I The Puppet Masters"
+    },
+    {
+      "chunk_id": 8921,
+      "title": "The Puppet Masters: How the Corrupt Use Legal Structures to Hide Stolen Assets and What to Do About It",
+      "publisher": "World Bank / UNODC Stolen Asset Recovery Initiative (StAR)",
+      "page": 80,
+      "source_url": "https://documents1.worldbank.org/curated/en/784961468152973030/pdf/The-puppet-masters-how-the-corrupt-use-legal-structures-to-hide-stolen-assets-and-what-to-do-about-it.pdf",
+      "section_heading": "62 I The Puppet Masters"
+    },
+    {
+      "chunk_id": 8922,
+      "title": "The Puppet Masters: How the Corrupt Use Legal Structures to Hide Stolen Assets and What to Do About It",
+      "publisher": "World Bank / UNODC Stolen Asset Recovery Initiative (StAR)",
+      "page": 80,
+      "source_url": "https://documents1.worldbank.org/curated/en/784961468152973030/pdf/The-puppet-masters-how-the-corrupt-use-legal-structures-to-hide-stolen-assets-and-what-to-do-about-it.pdf",
+      "section_heading": "62 I The Puppet Masters"
+    },
+    {
+      "chunk_id": 7945,
+      "title": "Politically Exposed Persons: Preventive Measures for the Banking Sector",
+      "publisher": "World Bank / UNODC Stolen Asset Recovery Initiative (StAR)",
+      "page": 48,
+      "source_url": "https://documents1.worldbank.org/curated/en/611261468155103854/pdf/542500PUB0Expo101Official0Use0Only1.pdf",
+      "section_heading": "24 have requirements for both foreign and domestic PEPs.41"
+    },
+    {
+      "chunk_id": 4087,
+      "title": "2024 National Money Laundering Risk Assessment",
+      "publisher": "U.S. Department of the Treasury",
+      "page": 85,
+      "source_url": "https://home.treasury.gov/system/files/136/2024-National-Money-Laundering-Risk-Assessment.pdf",
+      "section_heading": "2024 \u25c6 National Money Laundering Risk Assessment"
+    },
+    {
+      "chunk_id": 3355,
+      "title": "Supplemental Advisory on Identifying and Reporting Human Trafficking and Related Activity (FIN-2020-A008)",
+      "publisher": "Financial Crimes Enforcement Network (FinCEN), U.S. Department of the Treasury",
+      "page": 3,
+      "source_url": "https://www.fincen.gov/system/files/advisory/2020-10-15/Advisory%20Human%20Trafficking%20508%20FINAL_0.pdf",
+      "section_heading": "FINCEN ADVISORY"
+    },
+    {
+      "chunk_id": 4008,
+      "title": "2024 National Money Laundering Risk Assessment",
+      "publisher": "U.S. Department of the Treasury",
+      "page": 50,
+      "source_url": "https://home.treasury.gov/system/files/136/2024-National-Money-Laundering-Risk-Assessment.pdf",
+      "section_heading": "2024 \u25c6 National Money Laundering Risk Assessment"
+    },
+    {
+      "chunk_id": 7576,
+      "title": "Illicit Dealings in Gold, Diamond, Rubies and Associated Money Laundering and Terrorist Financing in the ESAAMLG Region",
+      "publisher": "Eastern and Southern Africa Anti-Money Laundering Group (ESAAMLG)",
+      "page": 9,
+      "source_url": "https://www.esaamlg.org/reports/ILLICIT_DEALING_SEPT_2022.pdf",
+      "section_heading": "1.1 Problem Statement"
+    },
+    {
+      "chunk_id": 8988,
+      "title": "The Puppet Masters: How the Corrupt Use Legal Structures to Hide Stolen Assets and What to Do About It",
+      "publisher": "World Bank / UNODC Stolen Asset Recovery Initiative (StAR)",
+      "page": 130,
+      "source_url": "https://documents1.worldbank.org/curated/en/784961468152973030/pdf/The-puppet-masters-how-the-corrupt-use-legal-structures-to-hide-stolen-assets-and-what-to-do-about-it.pdf",
+      "section_heading": "112 I The Puppet Masters"
+    },
+    {
+      "chunk_id": 195,
+      "title": "Trade-Based Money Laundering: Trends and Developments",
+      "publisher": "FATF / Egmont Group of Financial Intelligence Units",
+      "page": 24,
+      "source_url": "https://www.fatf-gafi.org/content/dam/fatf-gafi/reports/Trade-Based-Money-Laundering-Trends-and-Developments.pdf",
+      "section_heading": "19.67 trillion, driven, in part, by a significant growth of"
+    },
+    {
+      "chunk_id": 192,
+      "title": "Trade-Based Money Laundering: Trends and Developments",
+      "publisher": "FATF / Egmont Group of Financial Intelligence Units",
+      "page": 21,
+      "source_url": "https://www.fatf-gafi.org/content/dam/fatf-gafi/reports/Trade-Based-Money-Laundering-Trends-and-Developments.pdf",
+      "section_heading": "19.67 trillion, driven, in part, by a significant growth of"
+    },
+    {
+      "chunk_id": 193,
+      "title": "Trade-Based Money Laundering: Trends and Developments",
+      "publisher": "FATF / Egmont Group of Financial Intelligence Units",
+      "page": 22,
+      "source_url": "https://www.fatf-gafi.org/content/dam/fatf-gafi/reports/Trade-Based-Money-Laundering-Trends-and-Developments.pdf",
+      "section_heading": "19.67 trillion, driven, in part, by a significant growth of"
+    },
+    {
+      "chunk_id": 209,
+      "title": "Trade-Based Money Laundering: Trends and Developments",
+      "publisher": "FATF / Egmont Group of Financial Intelligence Units",
+      "page": 36,
+      "source_url": "https://www.fatf-gafi.org/content/dam/fatf-gafi/reports/Trade-Based-Money-Laundering-Trends-and-Developments.pdf",
+      "section_heading": "19.67 trillion, driven, in part, by a significant growth of"
+    }
+  ],
+  "refusal_reason": "",
+  "attempts": 1,
+  "searches": 10,
+  "input_tokens": 146,
+  "output_tokens": 4529,
+  "agent_usd": 0.41585,
+  "validation_usd": 0.09775,
+  "total_usd": 0.5136,
+  "latency_ms": 124421.1,
+  "validation": {
+    "passed": true,
+    "citation_validity": 1.0,
+    "groundedness": 1.0,
+    "checked_support": true,
+    "usd": 0.09775,
+    "verdicts": [
+      {
+        "claim": "Criminal cash is commonly pooled into larger sums and then integrated into the financial system, including through the purchase of high value goods.",
+        "chunk_ids": [
+          5827
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "Passage states \"Cash is often pooled into larger sums before being integrated into the financial system. This can be done in several ways, including via deposits into retail banks, money service businesses, the Post Office, use in gambling and the purchase of high value goods.\""
+      },
+      {
+        "claim": "The UK NRA identifies gold, jewellery, watches, cars, yachts, art and property as high value goods bought with criminal funds either for a criminal luxury lifestyle or as a long-term store of value that can be liquidated to release funds or re-launder them.",
+        "chunk_ids": [
+          5961
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states \"Involves purchase of high value goods for purpose of enjoying criminal a luxury lifestyle. Where the value of the asset is maintained goods could be used as a long term store of value or liquidated in order to release funds or relaunder. Includes gold, jewellery, watches, property, art, furniture, cars, yachts,\" matching the claim's list and purposes."
+      },
+      {
+        "claim": "Gold, precious metals and stones, watches and other portable items are attractive to criminal groups as cash alternatives and stores of value, and can also be used in trade-based money laundering.",
+        "chunk_ids": [
+          5831
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states \"Cash alternatives also remain attractive to criminal groups and include gold, precious metals and stones, watches and other portable items... used as an alternative store of value\" and \"These goods can also be used in trade based money laundering,\" directly matching the claim."
+      },
+      {
+        "claim": "High value dealers are firms or sole traders who make or receive cash payments of over \u20ac10,000 for goods and must register with HMRC; payments split across multiple lower value goods can also be used to launder criminal funds, and using undeclared cash income to buy undeclared stock for sale in the business is a long-established technique.",
+        "chunk_ids": [
+          5900,
+          5901
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "Passage states HVDs \"make or receive payments of over \u20ac10,000 in cash for the purchase of goods\" and \"257 HVDs were registered with HMRC,\" plus \"High value payments for multiple lower value goods can also be used to launder criminal funds\" and \"the use of undeclared cash income to buy undeclared stock for sale in the business...is a longestablished technique,\" matching all parts of the claim."
+      },
+      {
+        "claim": "Bulk goods including gold, scrap metal and vehicles may be used to facilitate trade-based money laundering and may be purchased with cash, and high value goods such as watches, precious stones and jewellery can be moved across borders without attracting the attention that large cash movements would.",
+        "chunk_ids": [
+          5901
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states \"Bulk goods, including gold, scrap metal and vehicles may also be used to facilitate trade based money laundering and may be purchased with cash\" and \"High value goods, such as watches, precious stones and jewellery can also be moved across international borders via passenger routes without attracting the same attention as large cash movements,\" directly supporting both parts of the claim."
+      },
+      {
+        "claim": "It is a known typology that criminal enterprises purchase cars, often with cash, and then resell them for clean money; used-car dealerships are susceptible to this and in some jurisdictions are not subject to cash transaction reporting requirements.",
+        "chunk_ids": [
+          4913
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states nearly verbatim: \"criminal enterprises often purchase cars and then resell them for clean money... may therefore be susceptible to money laundering by criminals that buy used cars (often with cash)... In some jurisdictions, used car dealership may not be subject to any regulations or cash transaction reporting requirements.\""
+      },
+      {
+        "claim": "Placing assets in the names of other persons whose names attract less attention than the principal's is a recognised opacity technique: the principal can plant evidence leading to the surrogate and thereby conceal his own connection to the asset or entity.",
+        "chunk_ids": [
+          8915
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states parties arrange for others \"whose names will attract less attention than their own\" to be declared responsible for a corporate vehicle, calling this \"a particularly effective way of increasing the opacity of a scheme,\" and explicitly says \"The principal actor in a corruption scheme can plant evidence that leads to the surrogate and thereby conceals his or her own connection to the entity.\""
+      },
+      {
+        "claim": "A nominee holds a position or assets in name only on behalf of someone else, while a 'front man' is specifically selected, is usually connected to the principal by biographical rather than contractual links, and purports to be the beneficial owner.",
+        "chunk_ids": [
+          8916,
+          8921
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "Passage states \"A nominee is essentially a person who holds a position or assets in name only on behalf of someone else\" and \"a front man is specifically selected, is more likely to be connected to the principal by biographical data than by a contractual paper trail, and usually purports to be the beneficial owner of the corporate vehicle,\" directly matching the claim."
+      },
+      {
+        "claim": "Corrupt principals commonly use family members and close associates as the named owners of assets and accounts in order to disguise their own ownership of criminal proceeds.",
+        "chunk_ids": [
+          8922,
+          7945
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "Chunk 7945 states \"Corrupt public office holders appear to be increasingly employing strategies to disguise their ownership of the corrupt assets, including using family members and close associates to launder their illicit funds,\" and chunk 8922 illustrates this with the Pinochet case where \"Pinochet's family members and Aitken effectively served as front men for Pinochet, allowing him to disassociate his name from the scheme while maintaining control over the assets.\""
+      },
+      {
+        "claim": "In a US case, a car salesman was convicted of a financial crime involving the use of a nominee to purchase automobiles to conceal the source of criminal funds, including falsifying employment and bank account information.",
+        "chunk_ids": [
+          4087
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states Mudd, a car salesman, \"was convicted and sentenced for a financial crime involving the use of a nominee to purchase automobiles to conceal the source of the funds,\" and that he \"helped falsify employment and bank account information to facilitate the purchase of automobiles with criminal proceeds.\""
+      },
+      {
+        "claim": "Front companies are businesses that combine illicit proceeds with revenue gained from legitimate business operations, hiding the true nature of the business and its owners.",
+        "chunk_ids": [
+          3355
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states \"Front companies are businesses that combine illicit proceeds with those gained from legitimate business operations\" and that traffickers use them \"to hide the true nature of a business, and its illicit activities, owners, and associates,\" directly matching the claim."
+      },
+      {
+        "claim": "Cash-intensive businesses are used as front companies to introduce illicit funds by mixing legitimate business revenue with illicit proceeds via cash deposits and other placement techniques, and automotive dealers and repair shops have been exploited in this way.",
+        "chunk_ids": [
+          4008
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states \"individuals mix legitimate business revenue with illicit proceeds using cash deposits and other conventional placement techniques\" and separately notes \"laundering operations have continued to exploit automotive shops including dealers and repair shops as front companies for money laundering.\""
+      },
+      {
+        "claim": "Illicit dealing in precious metals and stones provides organised crime groups with a mechanism to convert illicit cash into a stable, anonymous and easily exchangeable asset, and to store wealth that is not easily traceable for seizure and confiscation.",
+        "chunk_ids": [
+          7576
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states nearly verbatim that illicit dealing in PMS \"provides a mechanism for organised crime groups to convert illicit cash into a stable, anonymous and easily exchangeable asset\" and describes PMS \"as a means to store wealth generated by illegal activity which is not easily traceable for criminal processes such as seizures and confiscations.\""
+      },
+      {
+        "claim": "Dealers in precious metals and dealers in precious stones are DNFBPs subject to customer due diligence when they engage in cash transactions above the designated threshold.",
+        "chunk_ids": [
+          8988
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage lists \"precious metals and dealers in precious stones\u2014when they engage in any cash transaction with a customer equal to or above the applicable designated threshold\" as subject to the requirements, consistent with the claim, though it doesn't explicitly use the term \"DNFBPs\" in this excerpt but the context (Recommendation 12 on DNFBPs) implies it."
+      },
+      {
+        "claim": "In a documented trade-based money laundering case, an organised crime group used criminal cash to buy luxury vehicles, registered and used legal entities and created a fake paper trail of sales and purchases, and also used controlled import/export companies to buy other luxury items such as watches.",
+        "chunk_ids": [
+          195
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states nearly verbatim: \"Having used criminal cash to purchase luxury vehicles in Germany, the OCG also registered and used legal entities and established a fake paper trail for sales and purchases... the OCG also used import/export companies they controlled to purchase other luxury items, such as watches,\" matching all elements of the claim."
+      },
+      {
+        "claim": "Criminals exploit both high-value, low-volume products such as precious metals and low-value, high-volume second-hand goods, targeting sectors prone to gaps in customer due diligence, and may infiltrate legitimate businesses as 'silent partners' to use their supply chains to launder proceeds.",
+        "chunk_ids": [
+          192,
+          193
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states that \"high-value, low-volume sectors or products (such as precious metals) and low-value, high-volume sectors or products (such as second-hand textiles) can be exploited,\" criminals exploit sectors \"prone to gaps in, or the inconsistent application of, customer due diligence,\" and that OCGs \"buy their way in as a 'silent partner' and use the business and its supply chain contacts to launder the proceeds of crime.\""
+      },
+      {
+        "claim": "Suspicion in a vehicle-trade laundering network was raised by significant cash deposits and withdrawals and personal bank accounts credited with monies originating from other commercial entities linked to wholesale and retail motor vehicle firms.",
+        "chunk_ids": [
+          209
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states 'what alerted suspicion' were 'significant cash deposits and withdrawals, plus personal bank accounts credited with monies originating from other commercial entities' in a network linked to brothers with firms in 'wholesale and retail motor vehicle trade.'"
+      }
+    ]
+  },
+  "drafts": [
+    {
+      "trace_id": "4237f351a6c3",
+      "question": "We have a group buying several high-value cars with cash and putting the registrations in the names of people outside the group, while the same principals run a number of used-jewellery outlets. What scheme does that combination point to?",
+      "outcome": "answered",
+      "summary": "The combination you describe is the classic \"high-value goods / cash-conversion\" laundering model, with three interlocking components that the corpus treats as distinct but complementary typologies:\n\n1. **Converting bulk criminal cash into high-value goods.** Cash is pooled and then integrated by buying high-value goods \u2014 the UK NRA lists cars, gold, jewellery and watches expressly as assets bought with criminal funds to act as a long-term store of value that can later be liquidated or \"re-laundered\". High value dealer (HVD) status bites at \u20ac10,000 cash, and structuring across multiple lower-value goods is a recognised evasion of it.\n\n2. **Nominee / third-party registration to break the ownership trail.** Putting titles in the names of people outside the group is the \"front man / surrogate\" technique: a surrogate whose name attracts less attention is declared the owner, concealing the principal's connection to the asset and frustrating tracing and confiscation. There is a directly analogous US conviction for using a nominee to purchase automobiles to conceal the source of the funds.\n\n3. **Used-jewellery outlets as cash-intensive front businesses and as a precious-metals/stones channel.** Front companies combine illicit proceeds with legitimate business revenue; second-hand/used-goods and precious metals dealing lets an OCG convert illicit cash into a stable, anonymous, easily exchangeable asset, and undeclared cash income can be used to buy undeclared stock.\n\nTaken together, this reads as an organised-crime cash-placement and integration scheme running through unregulated or under-regulated high-value goods dealers, with nominee title-holding for asset protection \u2014 and, if the cars or gold are moved cross-border or resold through the outlets, it shades into trade-based money laundering, for which vehicle purchase with criminal cash plus resale chains and precious-metals dealers are documented FATF/Egmont patterns.",
+      "claims": [
+        {
+          "text": "Criminal cash is commonly pooled into larger sums and then integrated into the financial system, including through the purchase of high value goods.",
+          "chunk_ids": [
+            5827
+          ]
+        },
+        {
+          "text": "The UK NRA identifies gold, jewellery, watches, cars, yachts, art and property as high value goods bought with criminal funds either for a criminal luxury lifestyle or as a long-term store of value that can be liquidated to release funds or re-launder them.",
+          "chunk_ids": [
+            5961
+          ]
+        },
+        {
+          "text": "Gold, precious metals and stones, watches and other portable items are attractive to criminal groups as cash alternatives and stores of value, and can also be used in trade-based money laundering.",
+          "chunk_ids": [
+            5831
+          ]
+        },
+        {
+          "text": "High value dealers are firms or sole traders who make or receive cash payments of over \u20ac10,000 for goods and must register with HMRC; payments split across multiple lower value goods can also be used to launder criminal funds, and using undeclared cash income to buy undeclared stock for sale in the business is a long-established technique.",
+          "chunk_ids": [
+            5900,
+            5901
+          ]
+        },
+        {
+          "text": "Bulk goods including gold, scrap metal and vehicles may be used to facilitate trade-based money laundering and may be purchased with cash, and high value goods such as watches, precious stones and jewellery can be moved across borders without attracting the attention that large cash movements would.",
+          "chunk_ids": [
+            5901
+          ]
+        },
+        {
+          "text": "It is a known typology that criminal enterprises purchase cars, often with cash, and then resell them for clean money; used-car dealerships are susceptible to this and in some jurisdictions are not subject to cash transaction reporting requirements.",
+          "chunk_ids": [
+            4913
+          ]
+        },
+        {
+          "text": "Placing assets in the names of other persons whose names attract less attention than the principal's is a recognised opacity technique: the principal can plant evidence leading to the surrogate and thereby conceal his own connection to the asset or entity.",
+          "chunk_ids": [
+            8915
+          ]
+        },
+        {
+          "text": "A nominee holds a position or assets in name only on behalf of someone else, while a 'front man' is specifically selected, is usually connected to the principal by biographical rather than contractual links, and purports to be the beneficial owner.",
+          "chunk_ids": [
+            8916,
+            8921
+          ]
+        },
+        {
+          "text": "Corrupt principals commonly use family members and close associates as the named owners of assets and accounts in order to disguise their own ownership of criminal proceeds.",
+          "chunk_ids": [
+            8922,
+            7945
+          ]
+        },
+        {
+          "text": "In a US case, a car salesman was convicted of a financial crime involving the use of a nominee to purchase automobiles to conceal the source of criminal funds, including falsifying employment and bank account information.",
+          "chunk_ids": [
+            4087
+          ]
+        },
+        {
+          "text": "Front companies are businesses that combine illicit proceeds with revenue gained from legitimate business operations, hiding the true nature of the business and its owners.",
+          "chunk_ids": [
+            3355
+          ]
+        },
+        {
+          "text": "Cash-intensive businesses are used as front companies to introduce illicit funds by mixing legitimate business revenue with illicit proceeds via cash deposits and other placement techniques, and automotive dealers and repair shops have been exploited in this way.",
+          "chunk_ids": [
+            4008
+          ]
+        },
+        {
+          "text": "Illicit dealing in precious metals and stones provides organised crime groups with a mechanism to convert illicit cash into a stable, anonymous and easily exchangeable asset, and to store wealth that is not easily traceable for seizure and confiscation.",
+          "chunk_ids": [
+            7576
+          ]
+        },
+        {
+          "text": "Dealers in precious metals and dealers in precious stones are DNFBPs subject to customer due diligence when they engage in cash transactions above the designated threshold.",
+          "chunk_ids": [
+            8988
+          ]
+        },
+        {
+          "text": "In a documented trade-based money laundering case, an organised crime group used criminal cash to buy luxury vehicles, registered and used legal entities and created a fake paper trail of sales and purchases, and also used controlled import/export companies to buy other luxury items such as watches.",
+          "chunk_ids": [
+            195
+          ]
+        },
+        {
+          "text": "Criminals exploit both high-value, low-volume products such as precious metals and low-value, high-volume second-hand goods, targeting sectors prone to gaps in customer due diligence, and may infiltrate legitimate businesses as 'silent partners' to use their supply chains to launder proceeds.",
+          "chunk_ids": [
+            192,
+            193
+          ]
+        },
+        {
+          "text": "Suspicion in a vehicle-trade laundering network was raised by significant cash deposits and withdrawals and personal bank accounts credited with monies originating from other commercial entities linked to wholesale and retail motor vehicle firms.",
+          "chunk_ids": [
+            209
+          ]
+        }
+      ],
+      "refusal_reason": "",
+      "iterations": 6,
+      "searches": 10,
+      "retrieved_chunk_ids": [
+        191,
+        192,
+        193,
+        194,
+        195,
+        205,
+        209,
+        933,
+        934,
+        935,
+        946,
+        951,
+        952,
+        1165,
+        1167,
+        1424,
+        1425,
+        1449,
+        2069,
+        2171,
+        2179,
+        3302,
+        3355,
+        3358,
+        3361,
+        4007,
+        4008,
+        4009,
+        4080,
+        4081,
+        4083,
+        4087,
+        4913,
+        5327,
+        5827,
+        5831,
+        5845,
+        5847,
+        5900,
+        5901,
+        5961,
+        6432,
+        7194,
+        7214,
+        7215,
+        7221,
+        7263,
+        7270,
+        7279,
+        7319,
+        7576,
+        7583,
+        7591,
+        7609,
+        7945,
+        8899,
+        8915,
+        8916,
+        8921,
+        8922,
+        8983,
+        8988,
+        8995,
+        8997,
+        9043,
+        9149
+      ],
+      "input_tokens": 146,
+      "output_tokens": 4529,
+      "cache_read_tokens": 90782,
+      "usd": 0.41585,
+      "latency_ms": 75069.3,
+      "error": "",
+      "trace": [
+        {
+          "step": "search",
+          "iteration": 1,
+          "query": "high-value vehicles purchased with cash registered in third party names money laundering typology",
+          "k": 8,
+          "returned_chunk_ids": [
+            195,
+            5845,
+            5901,
+            1449,
+            7194,
+            5900,
+            7263,
+            5847
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 1,
+          "query": "dealers in precious metals and stones second-hand jewellery money laundering risk",
+          "k": 8,
+          "returned_chunk_ids": [
+            4083,
+            7583,
+            191,
+            7609,
+            4081,
+            7576,
+            8988,
+            192
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 2,
+          "query": "nominee ownership vehicle registered in name of relative to frustrate asset confiscation",
+          "k": 8,
+          "returned_chunk_ids": [
+            8916,
+            8915,
+            8995,
+            8983,
+            9043,
+            8997,
+            4080,
+            8921
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 2,
+          "query": "cash-intensive front business commingling illicit proceeds legitimate takings second-hand goods",
+          "k": 8,
+          "returned_chunk_ids": [
+            5827,
+            4007,
+            193,
+            4008,
+            2069,
+            3355,
+            2171,
+            205
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 3,
+          "query": "motor vehicle dealership money laundering vulnerabilities luxury cars cash purchase red flags",
+          "k": 8,
+          "returned_chunk_ids": [
+            4913,
+            933,
+            209,
+            946,
+            3302,
+            4009,
+            4087,
+            1425
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 3,
+          "query": "gold jewellery shop used to launder criminal cash purchase scrap gold resale",
+          "k": 8,
+          "returned_chunk_ids": [
+            7214,
+            5831,
+            194,
+            7591,
+            7215,
+            7221,
+            7319,
+            193
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 4,
+          "query": "assets registered in names of family members associates to disguise true ownership proceeds of crime",
+          "k": 8,
+          "returned_chunk_ids": [
+            8922,
+            1424,
+            1165,
+            1167,
+            7279,
+            9149,
+            7945,
+            8899
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 4,
+          "query": "pawnbrokers second-hand dealers jewellery retail placement of cash red flag indicators",
+          "k": 8,
+          "returned_chunk_ids": [
+            933,
+            934,
+            952,
+            3302,
+            3361,
+            3358,
+            951,
+            935
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 5,
+          "query": "high value goods purchased to store value and later sold to appear legitimate integration stage laundering",
+          "k": 8,
+          "returned_chunk_ids": [
+            5961,
+            5901,
+            5900,
+            6432,
+            5327,
+            5831,
+            195,
+            2179
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 5,
+          "query": "organised crime group used cash-in-hand retail business to legitimise drug proceeds jewellery vehicles case study",
+          "k": 8,
+          "returned_chunk_ids": [
+            195,
+            193,
+            7591,
+            7319,
+            7270,
+            2069,
+            5827,
+            5847
+          ]
+        },
+        {
+          "step": "answer",
+          "iteration": 6,
+          "claims": 17
+        }
+      ]
+    }
+  ],
+  "written_at": "2026-08-30T12:01:50+00:00"
+}

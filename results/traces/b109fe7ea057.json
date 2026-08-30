@@ -1,0 +1,149 @@
+{
+  "trace_id": "b109fe7ea057",
+  "question": "How much was Westpac ordered to pay in the AUSTRAC civil penalty proceedings over its failure to report international funds transfer instructions, and how many contraventions did it admit to?",
+  "outcome": "refused",
+  "summary": "",
+  "citations": [],
+  "refusal_reason": "I searched the corpus for the Westpac/AUSTRAC civil penalty proceedings using several formulations \u2014 \"Westpac AUSTRAC civil penalty international funds transfer instructions\", \"Westpac AUD 1.3 billion penalty\", \"AUSTRAC enforcement Federal Court AML/CTF contraventions\", \"IFTI reporting failure civil penalty\", and \"Westpac correspondent banking child exploitation remittances\". The corpus returned material on AUSTRAC's Crown Casino statement of claim and proposed AUD 450 million penalty, on FinCEN/SEC/FCA enforcement actions against other institutions (Shinhan Bank America, Kingdom Trust, Binance, HSBC, Alpari), and on general IFTI/wire-transfer and enforcement-action guidance, but nothing on the Westpac proceedings, the penalty amount ordered, or the number of contraventions admitted. I cannot answer without a supporting passage.",
+  "attempts": 1,
+  "searches": 6,
+  "input_tokens": 140,
+  "output_tokens": 945,
+  "agent_usd": 0.1415,
+  "validation_usd": 0.0,
+  "total_usd": 0.1415,
+  "latency_ms": 18084.6,
+  "validation": null,
+  "drafts": [
+    {
+      "trace_id": "b109fe7ea057",
+      "question": "How much was Westpac ordered to pay in the AUSTRAC civil penalty proceedings over its failure to report international funds transfer instructions, and how many contraventions did it admit to?",
+      "outcome": "refused",
+      "summary": "",
+      "claims": [],
+      "refusal_reason": "I searched the corpus for the Westpac/AUSTRAC civil penalty proceedings using several formulations \u2014 \"Westpac AUSTRAC civil penalty international funds transfer instructions\", \"Westpac AUD 1.3 billion penalty\", \"AUSTRAC enforcement Federal Court AML/CTF contraventions\", \"IFTI reporting failure civil penalty\", and \"Westpac correspondent banking child exploitation remittances\". The corpus returned material on AUSTRAC's Crown Casino statement of claim and proposed AUD 450 million penalty, on FinCEN/SEC/FCA enforcement actions against other institutions (Shinhan Bank America, Kingdom Trust, Binance, HSBC, Alpari), and on general IFTI/wire-transfer and enforcement-action guidance, but nothing on the Westpac proceedings, the penalty amount ordered, or the number of contraventions admitted. I cannot answer without a supporting passage.",
+      "iterations": 4,
+      "searches": 6,
+      "retrieved_chunk_ids": [
+        197,
+        635,
+        4041,
+        4055,
+        4056,
+        4058,
+        4063,
+        4070,
+        4111,
+        4123,
+        6339,
+        6351,
+        6352,
+        6783,
+        6789,
+        6790,
+        7203,
+        7225,
+        7227,
+        7255,
+        7322,
+        7340,
+        9736,
+        9737,
+        9765,
+        9799
+      ],
+      "input_tokens": 140,
+      "output_tokens": 945,
+      "cache_read_tokens": 22081,
+      "usd": 0.1415,
+      "latency_ms": 18084.6,
+      "error": "",
+      "trace": [
+        {
+          "step": "search",
+          "iteration": 1,
+          "query": "Westpac AUSTRAC civil penalty international funds transfer instructions",
+          "k": 5,
+          "returned_chunk_ids": [
+            6351,
+            9737,
+            7322,
+            635,
+            6352
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 1,
+          "query": "civil penalty order failure to report IFTI contraventions bank",
+          "k": 5,
+          "returned_chunk_ids": [
+            4056,
+            4055,
+            4058,
+            6339,
+            4070
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 2,
+          "query": "Westpac penalty AUD 1.3 billion AUSTRAC",
+          "k": 5,
+          "returned_chunk_ids": [
+            9737,
+            9736,
+            9765,
+            197,
+            7225
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 2,
+          "query": "AUSTRAC enforcement action Australian bank AML/CTF Act contraventions penalty Federal Court",
+          "k": 5,
+          "returned_chunk_ids": [
+            6789,
+            6783,
+            4123,
+            197,
+            6790
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 3,
+          "query": "Westpac correspondent banking child exploitation Philippines remittance failures",
+          "k": 5,
+          "returned_chunk_ids": [
+            7255,
+            7203,
+            7227,
+            7340,
+            4063
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 3,
+          "query": "largest civil penalty in Australian corporate history money laundering reporting failures 19 million transactions",
+          "k": 5,
+          "returned_chunk_ids": [
+            9765,
+            4041,
+            9736,
+            4111,
+            9799
+          ]
+        },
+        {
+          "step": "refuse",
+          "iteration": 4,
+          "reason": "I searched the corpus for the Westpac/AUSTRAC civil penalty proceedings using several formulations \u2014 \"Westpac AUSTRAC civil penalty international funds transfer instructions\", \"Westpac AUD 1.3 billion penalty\", \"AUSTRAC enforcement Federal Court AML/CTF contraventions\", \"IFTI reporting failure civil"
+        }
+      ]
+    }
+  ],
+  "written_at": "2026-08-30T12:12:01+00:00"
+}

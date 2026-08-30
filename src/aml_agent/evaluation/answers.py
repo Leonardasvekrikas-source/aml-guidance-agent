@@ -34,12 +34,21 @@ from .metrics import mean
 from .questions import load_questions, resolve_gold_ids
 
 
-def evaluate(profile: str = DEFAULT_PROFILE, limit: int | None = None) -> dict[str, Any]:
+def evaluate(
+    profile: str = DEFAULT_PROFILE,
+    limit: int | None = None,
+    only: set[str] | None = None,
+) -> dict[str, Any]:
     from ..agent.pipeline import Pipeline, write_trace
 
     questions = load_questions()
     resolve_gold_ids([q for q in questions if q.answerable], profile)
-    if limit:
+    if only:
+        # Re-running a subset and merging is not a convenience: a full run
+        # costs real money, and re-running forty questions to retest eight
+        # is how an evaluation budget disappears.
+        questions = [q for q in questions if q.id in only]
+    elif limit:
         answerable = [q for q in questions if q.answerable][:limit]
         unanswerable = [q for q in questions if not q.answerable][: max(1, limit // 3)]
         questions = answerable + unanswerable
@@ -157,11 +166,30 @@ def main() -> int:
     if "--limit" in sys.argv:
         limit = int(sys.argv[sys.argv.index("--limit") + 1])
 
+    only: set[str] | None = None
+    if "--only" in sys.argv:
+        only = {q.strip() for q in sys.argv[sys.argv.index("--only") + 1].split(",") if q.strip()}
+
+    merge = "--merge" in sys.argv
+
     print("running the full pipeline over the evaluation set\n")
-    report = evaluate(limit=limit)
+    report = evaluate(limit=limit, only=only)
 
     settings.results_dir.mkdir(parents=True, exist_ok=True)
     output = settings.results_dir / "answers.json"
+
+    if merge and output.exists():
+        # Replace only the questions just re-run, keep the rest, and recompute
+        # the summary over the merged set so the metrics stay consistent with
+        # the per-question rows they came from.
+        previous = json.loads(output.read_text(encoding="utf-8"))
+        rerun = {r["question_id"] for r in report["per_question"]}
+        merged = [r for r in previous["per_question"] if r["question_id"] not in rerun]
+        merged.extend(report["per_question"])
+        merged.sort(key=lambda r: r["question_id"])
+        report = summarise(merged)
+        print(f"merged {len(rerun)} re-run question(s) into {len(merged)} total")
+
     output.write_text(json.dumps(report, indent=2, default=str), encoding="utf-8")
 
     metrics = report["metrics"]
