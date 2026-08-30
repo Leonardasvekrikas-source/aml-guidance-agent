@@ -424,3 +424,70 @@ which covers the whole difference.
 The default is 640. Choosing 512 would mean shipping a configuration that
 scores better *because* it throws data away, on evidence too thin to support
 it. Worth recording as a decision that was made against the number.
+
+---
+
+## M4 — the model safety-refused a quarter of its own domain
+
+The first full 40-question run errored on **8 of 30** answerable questions. Not
+API failures: `stop_reason: "refusal"` — the model declining to answer.
+
+The eight shared a shape, not a subject:
+
+> "A buyer asks **our agency** to hold a large deposit..."
+> "A day-spa business account **we monitor** takes in nearly all of its money as cash..."
+> "A new wealth management client **wants to open an account** funded by a very large cash deposit..."
+
+Every refused question was phrased in the first person as a live case at the
+user's own firm. The questions that passed were third person. Financial-crime
+subject matter plus operational first-person framing was reading as a request
+for help committing the crime rather than detecting it.
+
+**Why it is a false positive, and not a rule to route around.** AML compliance
+is defensive work. The users are the analysts and compliance officers legally
+obliged to detect and report this activity, and the answers come from published
+FATF, EBA and FinCEN guidance those firms must apply. The system prompt never
+said any of that — it opened with "You answer questions about
+anti-money-laundering typologies", which establishes a topic and nothing about
+who is asking or why.
+
+**Fix.** The prompt now states the professional context plainly, including that
+questions arrive as live cases because that is how the work presents itself.
+All eight questions answer after the change, with no other modification.
+`stop_details.category` is now recorded, because "the model refused" is not a
+diagnosable statement.
+
+**The number this moved.** Answer rate 0.633 -> 0.867. Groundedness moved the
+other way, 0.842 -> 0.731, because the system now attempts harder questions
+instead of erroring on them. That is the trade the README describes and the
+reason the two are always reported together: a system that answers less looks
+better on groundedness while being worse.
+
+**Worth keeping in mind generally.** A safety refusal in an agent loop does not
+look like a safety refusal from the outside. It looked like eight scattered
+errors in a batch job, and the shared cause was only visible after reading the
+question text of all eight together.
+
+---
+
+## M4 — a targeted re-run destroyed a completed evaluation
+
+Testing the prompt fix on two questions, `--only a18,a12` was run without
+`--merge`. It wrote `results/answers.json` from scratch: a completed
+40-question run, costing $16.41 and about seventy minutes, replaced by two rows.
+
+**What survived.** Every per-question trace, because each question writes one
+as it completes. Those carry the outcome, the validation verdicts, the
+citations, the token counts and the cost — everything except the judge
+verdicts, which had only ever been written to the aggregate file.
+
+**Recovery.** `make eval-rebuild` reconstructs the aggregate from the traces
+and recomputes only the judge decisions, at one cheap model call per answered
+question. Total recovery cost was under a dollar against a $16 re-run.
+
+**The design point, which matters more than the mistake.** Anything expensive
+to produce should be reconstructible from a durable artifact. Traces were that
+artifact for almost everything, and the one gap — judge verdicts having no
+home outside the file that got overwritten — is precisely the part that had to
+be paid for twice. `--only` and `--merge` now exist so that retesting eight
+questions does not mean paying for forty.

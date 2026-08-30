@@ -11,13 +11,15 @@ cloned into a fresh directory and driven from this README alone. That test found
 three real defects, all logged in
 [`findings/what-broke.md`](findings/what-broke.md).
 
-> **Status.** The corpus, retrieval benchmark and per-question analysis have
-> been run and their numbers appear below. The agent loop, citation validation
-> and the LLM judge are implemented and unit-tested, but have **not been
-> executed end to end**, because that needs an `ANTHROPIC_API_KEY` and none was
-> available on the machine this was built on. The answer-quality table is
-> therefore empty rather than estimated, and the groundedness and refusal
-> figures should be treated as unmeasured until `make eval-answers` has run.
+> **Status.** Every number below has been measured. The retrieval benchmark and
+> the full 40-question answer evaluation have both been run end to end.
+>
+> One thing is still outstanding: the groundedness figure comes from an LLM
+> judge whose agreement with a human has **not yet been measured**.
+> `results/judge_agreement.md` holds 20 sampled decisions awaiting grading, and
+> until that is done groundedness should be read as a judge's opinion rather
+> than a validated metric. The rest — citation validity, refusal accuracy,
+> answer rate, cost and latency — are computed in code and need no judge.
 >
 > Nothing in this README is claimed that a committed script cannot reproduce.
 
@@ -210,7 +212,21 @@ matching to catch.
 ### Answer quality (M4)
 
 <!-- BEGIN answer-table -->
-_Not yet run._ Requires an `ANTHROPIC_API_KEY`. Regenerate with `make eval-answers`.
+| Metric | Value |
+|---|---|
+| Groundedness — claims supported by retrieved text | 0.731 |
+| Citation validity — cited passage was actually retrieved | 1.000 |
+| Refusal accuracy on unanswerable questions | 0.900 |
+| Answer rate on answerable questions | 0.867 |
+| Median latency | 101.3 s |
+| Median retrieval calls per question | 9 |
+| Median cost per question | $0.446 |
+
+Over 30 answerable and 10 unanswerable questions; 26 answers were judged for groundedness.
+
+Answer rate is reported next to groundedness deliberately. A system that refuses every question scores perfect groundedness and is useless; the two numbers only mean something together — and this project has the receipt: an earlier run scored groundedness 0.842 at an answer rate of 0.633, and fixing the cause of the missing answers moved groundedness *down* to 0.731 while making the system strictly more useful.
+
+Drafting runs on Claude Opus 5; the citation-support check and the groundedness judge run on Sonnet, since both are narrow one-claim classifiers rather than open-ended reasoning. Prompt caching in the agent loop cut uncached input per question from 85,286 tokens to 103.
 <!-- END answer-table -->
 
 ### What broke

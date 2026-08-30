@@ -1,0 +1,583 @@
+{
+  "trace_id": "4640ad751571",
+  "question": "A day-spa business account we monitor takes in nearly all of its money as cash, with most deposits posting late at night and far exceeding what a single storefront should earn, and it never sends any payroll or ACH payments. The listed phone number also appears on escort advertising sites. Which specific indicators does this combination match?",
+  "outcome": "answered",
+  "summary": "This fact pattern maps most directly onto FinCEN's human trafficking \"front company\" typology (FIN-2020-A008), which names massage businesses and escort services as classic sex-trafficking fronts that commingle illicit proceeds with apparently legitimate revenue, plus the advisory's financial red flag that transactions are inconsistent with the customer's expected activity/line of business. The escort-ad linkage ties to the advisory's discussion of traffickers advertising commercial sex online and its red flag on transactions with services that host advertising content for illicit services. Treasury's 2024 NMLRA independently identifies illicit massage and escort services as high-risk human-trafficking sectors and describes cash-intensive front companies used to commingle illicit and legitimate proceeds. The corpus does not contain an indicator worded specifically as \"no payroll or ACH,\" though the absence of disbursements to employees or payroll companies appears in the corpus as bank-record evidence that a business was a shell. Remember the advisory's own caution that no single red flag is determinative, and its SAR filing instructions.",
+  "citations": [
+    {
+      "chunk_id": 3355,
+      "title": "Supplemental Advisory on Identifying and Reporting Human Trafficking and Related Activity (FIN-2020-A008)",
+      "publisher": "Financial Crimes Enforcement Network (FinCEN), U.S. Department of the Treasury",
+      "page": 3,
+      "source_url": "https://www.fincen.gov/system/files/advisory/2020-10-15/Advisory%20Human%20Trafficking%20508%20FINAL_0.pdf",
+      "section_heading": "FINCEN ADVISORY"
+    },
+    {
+      "chunk_id": 3361,
+      "title": "Supplemental Advisory on Identifying and Reporting Human Trafficking and Related Activity (FIN-2020-A008)",
+      "publisher": "Financial Crimes Enforcement Network (FinCEN), U.S. Department of the Treasury",
+      "page": 6,
+      "source_url": "https://www.fincen.gov/system/files/advisory/2020-10-15/Advisory%20Human%20Trafficking%20508%20FINAL_0.pdf",
+      "section_heading": "FINCEN ADVISORY"
+    },
+    {
+      "chunk_id": 3362,
+      "title": "Supplemental Advisory on Identifying and Reporting Human Trafficking and Related Activity (FIN-2020-A008)",
+      "publisher": "Financial Crimes Enforcement Network (FinCEN), U.S. Department of the Treasury",
+      "page": 7,
+      "source_url": "https://www.fincen.gov/system/files/advisory/2020-10-15/Advisory%20Human%20Trafficking%20508%20FINAL_0.pdf",
+      "section_heading": "FINCEN ADVISORY"
+    },
+    {
+      "chunk_id": 3358,
+      "title": "Supplemental Advisory on Identifying and Reporting Human Trafficking and Related Activity (FIN-2020-A008)",
+      "publisher": "Financial Crimes Enforcement Network (FinCEN), U.S. Department of the Treasury",
+      "page": 5,
+      "source_url": "https://www.fincen.gov/system/files/advisory/2020-10-15/Advisory%20Human%20Trafficking%20508%20FINAL_0.pdf",
+      "section_heading": "FINCEN ADVISORY"
+    },
+    {
+      "chunk_id": 3992,
+      "title": "2024 National Money Laundering Risk Assessment",
+      "publisher": "U.S. Department of the Treasury",
+      "page": 42,
+      "source_url": "https://home.treasury.gov/system/files/136/2024-National-Money-Laundering-Risk-Assessment.pdf",
+      "section_heading": "2024 \u25c6 National Money Laundering Risk Assessment"
+    },
+    {
+      "chunk_id": 4008,
+      "title": "2024 National Money Laundering Risk Assessment",
+      "publisher": "U.S. Department of the Treasury",
+      "page": 50,
+      "source_url": "https://home.treasury.gov/system/files/136/2024-National-Money-Laundering-Risk-Assessment.pdf",
+      "section_heading": "2024 \u25c6 National Money Laundering Risk Assessment"
+    },
+    {
+      "chunk_id": 4024,
+      "title": "2024 National Money Laundering Risk Assessment",
+      "publisher": "U.S. Department of the Treasury",
+      "page": 57,
+      "source_url": "https://home.treasury.gov/system/files/136/2024-National-Money-Laundering-Risk-Assessment.pdf",
+      "section_heading": "2024 \u25c6 National Money Laundering Risk Assessment"
+    },
+    {
+      "chunk_id": 8875,
+      "title": "The Puppet Masters: How the Corrupt Use Legal Structures to Hide Stolen Assets and What to Do About It",
+      "publisher": "World Bank / UNODC Stolen Asset Recovery Initiative (StAR)",
+      "page": 54,
+      "source_url": "https://documents1.worldbank.org/curated/en/784961468152973030/pdf/The-puppet-masters-how-the-corrupt-use-legal-structures-to-hide-stolen-assets-and-what-to-do-about-it.pdf",
+      "section_heading": "36 I The Puppet Masters"
+    },
+    {
+      "chunk_id": 21,
+      "title": "Trade-Based Money Laundering: Risk Indicators",
+      "publisher": "FATF / Egmont Group of Financial Intelligence Units",
+      "page": 8,
+      "source_url": "https://www.fatf-gafi.org/content/dam/fatf-gafi/reports/Trade-Based-Money-Laundering-Risk-Indicators.pdf",
+      "section_heading": null
+    },
+    {
+      "chunk_id": 3352,
+      "title": "Supplemental Advisory on Identifying and Reporting Human Trafficking and Related Activity (FIN-2020-A008)",
+      "publisher": "Financial Crimes Enforcement Network (FinCEN), U.S. Department of the Treasury",
+      "page": 1,
+      "source_url": "https://www.fincen.gov/system/files/advisory/2020-10-15/Advisory%20Human%20Trafficking%20508%20FINAL_0.pdf",
+      "section_heading": "2 See U.S. Department of Homeland Security, Blue Campaign, \u201cWhat is Human Trafficking?\u201d"
+    },
+    {
+      "chunk_id": 3356,
+      "title": "Supplemental Advisory on Identifying and Reporting Human Trafficking and Related Activity (FIN-2020-A008)",
+      "publisher": "Financial Crimes Enforcement Network (FinCEN), U.S. Department of the Treasury",
+      "page": 4,
+      "source_url": "https://www.fincen.gov/system/files/advisory/2020-10-15/Advisory%20Human%20Trafficking%20508%20FINAL_0.pdf",
+      "section_heading": "FINCEN ADVISORY"
+    }
+  ],
+  "refusal_reason": "",
+  "attempts": 1,
+  "searches": 13,
+  "input_tokens": 186,
+  "output_tokens": 4690,
+  "agent_usd": 0.5306,
+  "validation_usd": 0.06624,
+  "total_usd": 0.59683,
+  "latency_ms": 101919.3,
+  "validation": {
+    "passed": true,
+    "citation_validity": 1.0,
+    "groundedness": 1.0,
+    "checked_support": true,
+    "usd": 0.06624,
+    "verdicts": [
+      {
+        "claim": "FinCEN's Supplemental Advisory FIN-2020-A008 identifies \"front companies\" as a human trafficking money laundering typology, and expressly names massage businesses, escort services, bars, restaurants and cantinas as examples of front companies used for labor or sex trafficking.",
+        "chunk_ids": [
+          3355
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage lists \"Front Companies\" as a typology and states \"Examples of front companies used by human traffickers for labor or sex trafficking include massage businesses, escort services, bars, restaurants, and cantinas.\""
+      },
+      {
+        "claim": "Under that typology, the front company typically appears legitimate with registrations and licenses, and combines illicit proceeds with revenue gained from legitimate business operations.",
+        "chunk_ids": [
+          3355
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "Passage states front companies \"combine illicit proceeds with those gained from legitimate business operations\" and \"typically the establishment appears legitimate with registrations and licenses.\""
+      },
+      {
+        "claim": "One of FinCEN's ten financial red flag indicators in FIN-2020-A008 is that transactions are inconsistent with a customer's expected activity and/or line of business.",
+        "chunk_ids": [
+          3361
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage explicitly lists as one of the 10 new indicators: \"Transactions are inconsistent with a customer's expected activity and/or line of business in an apparent effort to cover trafficking victims' living costs...\""
+      },
+      {
+        "claim": "FIN-2020-A008 lists as a red flag transactions with darknet markets or services known to be associated with illicit activity, including services that host advertising content for illicit services.",
+        "chunk_ids": [
+          3362
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage lists \"darknet markets or services known to be associated with illicit activity\" and specifies \"This may include services that host advertising content for illicit services,\" matching the claim."
+      },
+      {
+        "claim": "The advisory documents that human traffickers buy online advertisements featuring commercial sex acts to obtain customers, and that they use third-party payment processors to facilitate payments for the operation of online escort services while concealing the true originator or beneficiary.",
+        "chunk_ids": [
+          3358
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states traffickers \"use the virtual currency to buy online advertisements that feature commercial sex acts to obtain customers\" and that they \"use TPPPs to wire funds, which gives the appearance that the TPPP is the originator or beneficiary...and conceals the true originator or beneficiary\" while facilitating \"payments via TPPPs for the operation of online escort services,\" matching the claim."
+      },
+      {
+        "claim": "Treasury's 2024 National Money Laundering Risk Assessment identifies illicit massage, escort services, beauty salon services and health and beauty services among the industries in which human trafficking occurs.",
+        "chunk_ids": [
+          3992
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage lists \"illicit massage, and health and beauty services\" and \"escort services\" and \"beauty salon services\" among the industries where human trafficking-related activity occurs, matching the claim."
+      },
+      {
+        "claim": "The 2024 NMLRA describes cash-intensive businesses being used as front companies, where individuals mix legitimate business revenue with illicit proceeds using cash deposits and other conventional placement techniques.",
+        "chunk_ids": [
+          4008
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states \"To introduce illicit funds, individuals mix legitimate business revenue with illicit proceeds using cash deposits and other conventional placement techniques\" and lists CIBs used as front companies, matching the claim."
+      },
+      {
+        "claim": "The 2024 NMLRA distinguishes front companies \u2014 which generate real economic activity and are used to commingle illicit proceeds with legitimate earnings \u2014 from shell and shelf companies, which typically have no employees, operations or physical location.",
+        "chunk_ids": [
+          4024
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states shell and shelf companies \"typically have no employees, operations, or even a physical location other than a registered agent\" while \"front companies generate real economic activity and are used to commingle illicit proceeds with earnings from legitimate business operations,\" directly matching the claim's distinction."
+      },
+      {
+        "claim": "The corpus does not contain a human-trafficking indicator phrased as \"no payroll or ACH payments\"; the closest supported point is a case in which bank records showing that no disbursements were made to any employees or to any payroll companies were cited as evidence that the account holder was a shell company rather than a genuine operating business.",
+        "chunk_ids": [
+          8875
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states that \"no disbursements from the Marc Consultants bank account were made to any employees or to any payroll companies,\" which was cited alongside other facts to show \"Marc Consultants was a shell company,\" matching the claim's description of this being evidence of a shell company rather than a human-trafficking indicator."
+      },
+      {
+        "claim": "The FATF/Egmont trade-based money laundering risk indicators include an unexpectedly high number or value of transactions that are inconsistent with the stated business activity of the client, and frequent cash deposits in accounts without a clear business rationale.",
+        "chunk_ids": [
+          21
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "Passage states \"an unexpectedly high number or value of transactions that are inconsistent with the stated business activity of the client\" and describes \"An account displays frequent deposits in cash which are subsequently transferred to persons or entities... without a business relationship to the account holder,\" matching both parts of the claim."
+      },
+      {
+        "claim": "FinCEN advises that in applying these red flags no single red flag is determinative, and that institutions should consider the totality of the customer relationship.",
+        "chunk_ids": [
+          3358
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "Passage states \"no single red flag is a clear indicator of human trafficking activity\" and advises considering \"additional factors, such as a customer's previous financial activity and the existence of typologies or other red flags,\" which aligns with the claim about no single red flag being determinative and considering broader context, though it doesn't use the exact phrase \"totality of the customer relationship.\""
+      },
+      {
+        "claim": "If a SAR is filed on this activity, FinCEN requests that institutions reference the advisory in SAR field 2 with the key term \"HUMAN TRAFFICKING FIN-2020-A008\" and select SAR field 38(h) (human trafficking).",
+        "chunk_ids": [
+          3352
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage explicitly states \"FinCEN requests financial institutions reference this advisory in SAR field 2 (Filing Institution Note to FinCEN) and the narrative by including the following key term: 'HUMAN TRAFFICKING FIN-2020-A008' and selecting SAR Field 38(h) (human trafficking).\""
+      },
+      {
+        "claim": "If the account also shows cash deposits made in geographic areas distant from where the funds are withdrawn, it may additionally match the funnel account typology, in which an individual or business account in one geographic area receives multiple cash deposits often below the cash reporting threshold.",
+        "chunk_ids": [
+          3356
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states \"Funnel accounts generally involve an individual or business account in one geographic area that receives multiple cash deposits, often in amounts below the cash reporting threshold, from which the funds are withdrawn in a different geographic area with little time elapsing,\" matching the claim's description."
+      }
+    ]
+  },
+  "drafts": [
+    {
+      "trace_id": "4640ad751571",
+      "question": "A day-spa business account we monitor takes in nearly all of its money as cash, with most deposits posting late at night and far exceeding what a single storefront should earn, and it never sends any payroll or ACH payments. The listed phone number also appears on escort advertising sites. Which specific indicators does this combination match?",
+      "outcome": "answered",
+      "summary": "This fact pattern maps most directly onto FinCEN's human trafficking \"front company\" typology (FIN-2020-A008), which names massage businesses and escort services as classic sex-trafficking fronts that commingle illicit proceeds with apparently legitimate revenue, plus the advisory's financial red flag that transactions are inconsistent with the customer's expected activity/line of business. The escort-ad linkage ties to the advisory's discussion of traffickers advertising commercial sex online and its red flag on transactions with services that host advertising content for illicit services. Treasury's 2024 NMLRA independently identifies illicit massage and escort services as high-risk human-trafficking sectors and describes cash-intensive front companies used to commingle illicit and legitimate proceeds. The corpus does not contain an indicator worded specifically as \"no payroll or ACH,\" though the absence of disbursements to employees or payroll companies appears in the corpus as bank-record evidence that a business was a shell. Remember the advisory's own caution that no single red flag is determinative, and its SAR filing instructions.",
+      "claims": [
+        {
+          "text": "FinCEN's Supplemental Advisory FIN-2020-A008 identifies \"front companies\" as a human trafficking money laundering typology, and expressly names massage businesses, escort services, bars, restaurants and cantinas as examples of front companies used for labor or sex trafficking.",
+          "chunk_ids": [
+            3355
+          ]
+        },
+        {
+          "text": "Under that typology, the front company typically appears legitimate with registrations and licenses, and combines illicit proceeds with revenue gained from legitimate business operations.",
+          "chunk_ids": [
+            3355
+          ]
+        },
+        {
+          "text": "One of FinCEN's ten financial red flag indicators in FIN-2020-A008 is that transactions are inconsistent with a customer's expected activity and/or line of business.",
+          "chunk_ids": [
+            3361
+          ]
+        },
+        {
+          "text": "FIN-2020-A008 lists as a red flag transactions with darknet markets or services known to be associated with illicit activity, including services that host advertising content for illicit services.",
+          "chunk_ids": [
+            3362
+          ]
+        },
+        {
+          "text": "The advisory documents that human traffickers buy online advertisements featuring commercial sex acts to obtain customers, and that they use third-party payment processors to facilitate payments for the operation of online escort services while concealing the true originator or beneficiary.",
+          "chunk_ids": [
+            3358
+          ]
+        },
+        {
+          "text": "Treasury's 2024 National Money Laundering Risk Assessment identifies illicit massage, escort services, beauty salon services and health and beauty services among the industries in which human trafficking occurs.",
+          "chunk_ids": [
+            3992
+          ]
+        },
+        {
+          "text": "The 2024 NMLRA describes cash-intensive businesses being used as front companies, where individuals mix legitimate business revenue with illicit proceeds using cash deposits and other conventional placement techniques.",
+          "chunk_ids": [
+            4008
+          ]
+        },
+        {
+          "text": "The 2024 NMLRA distinguishes front companies \u2014 which generate real economic activity and are used to commingle illicit proceeds with legitimate earnings \u2014 from shell and shelf companies, which typically have no employees, operations or physical location.",
+          "chunk_ids": [
+            4024
+          ]
+        },
+        {
+          "text": "The corpus does not contain a human-trafficking indicator phrased as \"no payroll or ACH payments\"; the closest supported point is a case in which bank records showing that no disbursements were made to any employees or to any payroll companies were cited as evidence that the account holder was a shell company rather than a genuine operating business.",
+          "chunk_ids": [
+            8875
+          ]
+        },
+        {
+          "text": "The FATF/Egmont trade-based money laundering risk indicators include an unexpectedly high number or value of transactions that are inconsistent with the stated business activity of the client, and frequent cash deposits in accounts without a clear business rationale.",
+          "chunk_ids": [
+            21
+          ]
+        },
+        {
+          "text": "FinCEN advises that in applying these red flags no single red flag is determinative, and that institutions should consider the totality of the customer relationship.",
+          "chunk_ids": [
+            3358
+          ]
+        },
+        {
+          "text": "If a SAR is filed on this activity, FinCEN requests that institutions reference the advisory in SAR field 2 with the key term \"HUMAN TRAFFICKING FIN-2020-A008\" and select SAR field 38(h) (human trafficking).",
+          "chunk_ids": [
+            3352
+          ]
+        },
+        {
+          "text": "If the account also shows cash deposits made in geographic areas distant from where the funds are withdrawn, it may additionally match the funnel account typology, in which an individual or business account in one geographic area receives multiple cash deposits often below the cash reporting threshold.",
+          "chunk_ids": [
+            3356
+          ]
+        }
+      ],
+      "refusal_reason": "",
+      "iterations": 8,
+      "searches": 13,
+      "retrieved_chunk_ids": [
+        18,
+        21,
+        761,
+        933,
+        934,
+        937,
+        939,
+        946,
+        2039,
+        2047,
+        2152,
+        2204,
+        2714,
+        2756,
+        3294,
+        3298,
+        3302,
+        3303,
+        3304,
+        3351,
+        3352,
+        3355,
+        3356,
+        3357,
+        3358,
+        3359,
+        3360,
+        3361,
+        3362,
+        3418,
+        3419,
+        3988,
+        3989,
+        3991,
+        3992,
+        3993,
+        4008,
+        4009,
+        4010,
+        4011,
+        4024,
+        4900,
+        7244,
+        7246,
+        7256,
+        7260,
+        8875
+      ],
+      "input_tokens": 186,
+      "output_tokens": 4690,
+      "cache_read_tokens": 182268,
+      "usd": 0.5306,
+      "latency_ms": 75025.3,
+      "error": "",
+      "trace": [
+        {
+          "step": "search",
+          "iteration": 1,
+          "query": "massage business cash deposits human trafficking indicators",
+          "k": 8,
+          "returned_chunk_ids": [
+            3361,
+            3355,
+            3352,
+            3992,
+            3993,
+            3357,
+            3991,
+            3358
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 1,
+          "query": "escort advertising website phone number account red flag sex trafficking",
+          "k": 8,
+          "returned_chunk_ids": [
+            3358,
+            3361,
+            3362,
+            3352,
+            3357,
+            3351,
+            3302,
+            3993
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 2,
+          "query": "front company no payroll expenses business account lacks normal operating expenses trafficking",
+          "k": 8,
+          "returned_chunk_ids": [
+            3355,
+            7244,
+            3361,
+            2047,
+            8875,
+            4008,
+            18,
+            4024
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 2,
+          "query": "cash deposits late at night inconsistent with business hours storefront revenue exceeds",
+          "k": 8,
+          "returned_chunk_ids": [
+            4008,
+            937,
+            21,
+            7246,
+            4009,
+            7256,
+            4010,
+            7260
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 3,
+          "query": "business appears to lack expenses consistent with operations no rent payroll supplies red flag human trafficking indicator",
+          "k": 8,
+          "returned_chunk_ids": [
+            3361,
+            3358,
+            934,
+            18,
+            3352,
+            3355,
+            3362,
+            3351
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 3,
+          "query": "FATF financial flows from human trafficking indicators sexual exploitation cash intensive business",
+          "k": 8,
+          "returned_chunk_ids": [
+            3361,
+            2152,
+            2039,
+            3357,
+            3989,
+            3359,
+            3988,
+            2204
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 4,
+          "query": "nail salon massage parlor front company revenue inconsistent with size location no employee payments advisory",
+          "k": 6,
+          "returned_chunk_ids": [
+            4008,
+            3304,
+            937,
+            3355,
+            3303,
+            2714
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 4,
+          "query": "behavioral indicators victim accompanied by third party opening account human trafficking branch",
+          "k": 6,
+          "returned_chunk_ids": [
+            3359,
+            3360,
+            3358,
+            3361,
+            3357,
+            3362
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 5,
+          "query": "front company generates revenue from sales of commercial sex acts deposits at ATM after business hours traffickers",
+          "k": 6,
+          "returned_chunk_ids": [
+            3355,
+            4008,
+            3357,
+            7256,
+            3358,
+            3992
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 5,
+          "query": "2014 advisory financial red flags human smuggling trafficking business account deposits structuring commercial sex advertisement payments",
+          "k": 6,
+          "returned_chunk_ids": [
+            3361,
+            3358,
+            3351,
+            3362,
+            3357,
+            3991
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 6,
+          "query": "funnel account typology traffickers deposit cash multiple states withdraw another location advisory 2020",
+          "k": 6,
+          "returned_chunk_ids": [
+            4010,
+            3356,
+            3298,
+            3294,
+            4009,
+            4011
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 6,
+          "query": "cash-intensive business risk FFIEC monitoring deposits exceed expected volume for type and location of business",
+          "k": 6,
+          "returned_chunk_ids": [
+            4900,
+            21,
+            4008,
+            2756,
+            4009,
+            761
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 7,
+          "query": "customer makes payments to online classified advertising escort websites red flag indicator",
+          "k": 10,
+          "returned_chunk_ids": [
+            3358,
+            3361,
+            946,
+            2204,
+            934,
+            939,
+            3418,
+            933,
+            3302,
+            3419
+          ]
+        },
+        {
+          "step": "answer",
+          "iteration": 8,
+          "claims": 13
+        }
+      ]
+    }
+  ],
+  "written_at": "2026-08-30T14:06:00+00:00"
+}

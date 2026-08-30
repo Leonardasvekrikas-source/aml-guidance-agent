@@ -1,0 +1,718 @@
+{
+  "trace_id": "4936f4d5e286",
+  "question": "A bank we clear payments for keeps sending us instructions where the payer field holds filler text instead of a real name. What are we as the intermediary supposed to do when we spot that, and who ultimately has to make sure the payer's details are accurate?",
+  "outcome": "answered",
+  "summary": "The corpus treats \"filler\"/meaningless payer fields as a payment-transparency failure that you, as the intermediary in the chain, are expected to detect, investigate and act on \u2014 but the primary duty to obtain and verify accurate payer details sits with the originating (ordering) institution that holds the payer as its customer.\n\nWhat you must do as intermediary: monitor the respondent's payment messages specifically to detect ones lacking required originator/beneficiary information, including meaningless fields, consistent with FATF R.16 (Basel Committee). Treat message quality as part of ongoing monitoring and verify the reliability of the respondent's controls. Have documented risk-based policies and procedures for how such payments are handled (including in straight-through processing), send targeted requests for information (RFIs) to the respondent on the specific flagged payments, and track responses within a defined time limit. Never strip or truncate payer/payee data before passing the payment on \u2014 that is explicitly poor practice, and truncation undermines your own and every downstream bank's screening and monitoring. Feed the respondent's track record on payer data into the ongoing review of the correspondent relationship; persistent failure to respond or to provide complete payer information is itself a red flag. Escalation options run from refusing the transaction and filing a suspicious transaction report, through limiting or restricting services to give the respondent a chance to remediate, up to termination where the risk cannot be managed. An incoming transaction not accompanied by the required payer/payee information is a recognised risk-increasing factor under the EBA Risk Factors Guidelines.\n\nWho owns accuracy: the ordering/originating institution. It is responsible for correct message format and for ensuring originator and beneficiary information accompanies the transfer, and it must obtain, hold and submit *accurate* (i.e. verified) originator information consistent with its own CDD. Institutions further down the chain are not required to verify the originator's name for accuracy, but must review it for STR monitoring and sanctions screening. Note two caveats: correspondents are not required to do CDD on the respondent's customers (that is the respondent's job), yet ultimate responsibility for implementing AML/CFT measures in your own institution remains with you.",
+  "citations": [
+    {
+      "chunk_id": 6759,
+      "title": "Guidelines: Sound management of risks related to money laundering and financing of terrorism",
+      "publisher": "Basel Committee on Banking Supervision",
+      "page": 34,
+      "source_url": "https://www.bis.org/publications/202007-guidelines-sound-management-risks-related-money-laundering-and-financing-terrorism-revisions-supervisory.pdf",
+      "section_heading": "30 Sound management of risks related to money laundering and financing of terrorism"
+    },
+    {
+      "chunk_id": 723,
+      "title": "Updated Guidance for a Risk-Based Approach to Virtual Assets and Virtual Asset Service Providers",
+      "publisher": "FATF",
+      "page": 58,
+      "source_url": "https://www.fatf-gafi.org/content/dam/fatf-gafi/guidance/Updated-Guidance-VA-VASP.pdf",
+      "section_heading": "176 Recommendation 16 defines \u201cwire transfers\u201d as any transaction car ried out on"
+    },
+    {
+      "chunk_id": 724,
+      "title": "Updated Guidance for a Risk-Based Approach to Virtual Assets and Virtual Asset Service Providers",
+      "publisher": "FATF",
+      "page": 59,
+      "source_url": "https://www.fatf-gafi.org/content/dam/fatf-gafi/guidance/Updated-Guidance-VA-VASP.pdf",
+      "section_heading": "181 Countries should ensure that ordering institutions (whether a VASP or other"
+    },
+    {
+      "chunk_id": 725,
+      "title": "Updated Guidance for a Risk-Based Approach to Virtual Assets and Virtual Asset Service Providers",
+      "publisher": "FATF",
+      "page": 60,
+      "source_url": "https://www.fatf-gafi.org/content/dam/fatf-gafi/guidance/Updated-Guidance-VA-VASP.pdf",
+      "section_heading": "183 For the required information which the beneficiary institution must obtain from the"
+    },
+    {
+      "chunk_id": 726,
+      "title": "Updated Guidance for a Risk-Based Approach to Virtual Assets and Virtual Asset Service Providers",
+      "publisher": "FATF",
+      "page": 61,
+      "source_url": "https://www.fatf-gafi.org/content/dam/fatf-gafi/guidance/Updated-Guidance-VA-VASP.pdf",
+      "section_heading": "183 For the required information which the beneficiary institution must obtain from the"
+    },
+    {
+      "chunk_id": 736,
+      "title": "Updated Guidance for a Risk-Based Approach to Virtual Assets and Virtual Asset Service Providers",
+      "publisher": "FATF",
+      "page": 67,
+      "source_url": "https://www.fatf-gafi.org/content/dam/fatf-gafi/guidance/Updated-Guidance-VA-VASP.pdf",
+      "section_heading": "202 Similar to wire transfers between FIs, there may be VA transfer scenarios that"
+    },
+    {
+      "chunk_id": 2388,
+      "title": "Guidance on Correspondent Banking Services",
+      "publisher": "FATF",
+      "page": 17,
+      "source_url": "https://www.fatf-gafi.org/content/dam/fatf-gafi/guidance/Guidance-Correspondent-Banking-Services.pdf",
+      "section_heading": "GUIDANCE ON CORRESPONDENT BANKING SERVICES"
+    },
+    {
+      "chunk_id": 2389,
+      "title": "Guidance on Correspondent Banking Services",
+      "publisher": "FATF",
+      "page": 17,
+      "source_url": "https://www.fatf-gafi.org/content/dam/fatf-gafi/guidance/Guidance-Correspondent-Banking-Services.pdf",
+      "section_heading": "GUIDANCE ON CORRESPONDENT BANKING SERVICES"
+    },
+    {
+      "chunk_id": 2387,
+      "title": "Guidance on Correspondent Banking Services",
+      "publisher": "FATF",
+      "page": 16,
+      "source_url": "https://www.fatf-gafi.org/content/dam/fatf-gafi/guidance/Guidance-Correspondent-Banking-Services.pdf",
+      "section_heading": "GUIDANCE ON CORRESPONDENT BANKING SERVICES"
+    },
+    {
+      "chunk_id": 4918,
+      "title": "The Wolfsberg Group Correspondent Banking Due Diligence Questionnaire (CBDDQ) Guidance, version 2.0",
+      "publisher": "The Wolfsberg Group",
+      "page": 57,
+      "source_url": "https://db.wolfsberg-group.org/assets/09bafec3-4b77-428b-9113-f4203d290a2f/EN_CBDDQ%20Guidance%20(2023).pdf",
+      "section_heading": "8 Monitoring & Reporting"
+    },
+    {
+      "chunk_id": 4919,
+      "title": "The Wolfsberg Group Correspondent Banking Due Diligence Questionnaire (CBDDQ) Guidance, version 2.0",
+      "publisher": "The Wolfsberg Group",
+      "page": 58,
+      "source_url": "https://db.wolfsberg-group.org/assets/09bafec3-4b77-428b-9113-f4203d290a2f/EN_CBDDQ%20Guidance%20(2023).pdf",
+      "section_heading": "9 Payment Transparency"
+    },
+    {
+      "chunk_id": 6352,
+      "title": "Financial Crime Guide: A firm's guide to countering financial crime risks (FCG)",
+      "publisher": "Financial Conduct Authority (FCA)",
+      "page": 59,
+      "source_url": "https://api-handbook.fca.org.uk/files/sourcebook/FCG.pdf",
+      "section_heading": "1 \u2022 How have risks associated with terrorist finance been assessed? Did assessments"
+    },
+    {
+      "chunk_id": 6351,
+      "title": "Financial Crime Guide: A firm's guide to countering financial crime risks (FCG)",
+      "publisher": "Financial Conduct Authority (FCA)",
+      "page": 58,
+      "source_url": "https://api-handbook.fca.org.uk/files/sourcebook/FCG.pdf",
+      "section_heading": "1 \u2022 How have risks associated with terrorist finance been assessed? Did assessments"
+    },
+    {
+      "chunk_id": 2714,
+      "title": "Guidelines under Articles 17 and 18(4) of Directive (EU) 2015/849 on customer due diligence and the factors credit and financial institutions should consider when assessing the money laundering and terrorist financing risk associated with individual business relationships and occasional transactions ('The ML/TF Risk Factors Guidelines'), repealing and replacing Guidelines JC/2017/37 \u2014 EBA/GL/2021/02 (consolidated version)",
+      "publisher": "European Banking Authority (EBA)",
+      "page": 72,
+      "source_url": "https://www.eba.europa.eu/sites/default/files/document_library/Publications/Guidelines/2023/EBA-GL-2023-03/1061654/Guidelines%20ML%20TF%20Risk%20Factors_conslidated.pdf.pdf",
+      "section_heading": "11.7 The following factors may contribute to increasing risk:"
+    },
+    {
+      "chunk_id": 2392,
+      "title": "Guidance on Correspondent Banking Services",
+      "publisher": "FATF",
+      "page": 20,
+      "source_url": "https://www.fatf-gafi.org/content/dam/fatf-gafi/guidance/Guidance-Correspondent-Banking-Services.pdf",
+      "section_heading": "GUIDANCE ON CORRESPONDENT BANKING SERVICES"
+    },
+    {
+      "chunk_id": 6750,
+      "title": "Guidelines: Sound management of risks related to money laundering and financing of terrorism",
+      "publisher": "Basel Committee on Banking Supervision",
+      "page": 28,
+      "source_url": "https://www.bis.org/publications/202007-guidelines-sound-management-risks-related-money-laundering-and-financing-terrorism-revisions-supervisory.pdf",
+      "section_heading": "24 Sound management of risks related to money laundering and financing of terrorism"
+    },
+    {
+      "chunk_id": 6749,
+      "title": "Guidelines: Sound management of risks related to money laundering and financing of terrorism",
+      "publisher": "Basel Committee on Banking Supervision",
+      "page": 28,
+      "source_url": "https://www.bis.org/publications/202007-guidelines-sound-management-risks-related-money-laundering-and-financing-terrorism-revisions-supervisory.pdf",
+      "section_heading": "24 Sound management of risks related to money laundering and financing of terrorism"
+    },
+    {
+      "chunk_id": 2386,
+      "title": "Guidance on Correspondent Banking Services",
+      "publisher": "FATF",
+      "page": 15,
+      "source_url": "https://www.fatf-gafi.org/content/dam/fatf-gafi/guidance/Guidance-Correspondent-Banking-Services.pdf",
+      "section_heading": "GUIDANCE ON CORRESPONDENT BANKING SERVICES"
+    }
+  ],
+  "refusal_reason": "",
+  "attempts": 1,
+  "searches": 11,
+  "input_tokens": 162,
+  "output_tokens": 5374,
+  "agent_usd": 0.465,
+  "validation_usd": 0.10929,
+  "total_usd": 0.57429,
+  "latency_ms": 122300.1,
+  "validation": {
+    "passed": true,
+    "citation_validity": 1.0,
+    "groundedness": 1.0,
+    "checked_support": true,
+    "usd": 0.10929,
+    "verdicts": [
+      {
+        "claim": "The correspondent bank acting as an intermediary should monitor the payment messages transmitted by the respondent bank in order to detect those which lack required originator and/or beneficiary information, including meaningless fields, consistent with FATF Recommendation 16 and straight-through processing, and should verify the reliability of the respondent's controls.",
+        "chunk_ids": [
+          6759
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states almost verbatim that \"the correspondent bank as an intermediary should monitor the payment messages transmitted by the respondent bank for the purpose of detecting those which lack required originator and/or beneficiary information, including meaningless fields, consistent with FATF Recommendation 16 and straight through processing... and verify the reliability of the respondent's controls.\""
+      },
+      {
+        "claim": "The quality of information provided in payment messages should form part of ongoing monitoring, and all banks are encouraged to apply high transparency standards in full compliance with FATF Recommendation 16 and applicable national law.",
+        "chunk_ids": [
+          6759
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states \"the quality of information provided in payment messages should be part of ongoing monitoring\" and separately \"The Committee encourages all banks to apply high transparency standards, in full compliance with FATF Recommendation 16, and applicable national laws and regulations,\" matching both parts of the claim."
+      },
+      {
+        "claim": "Originating banks are responsible for using the right format for payment messages and should require that information on the originator and beneficiary accompanies wire transfers, while others in the payment chain are required to monitor the payments they process based on that information.",
+        "chunk_ids": [
+          6759
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states almost verbatim: \"Originating banks are responsible for using the right format for payment messages. They should require that information on the originator and beneficiary accompanies wire transfers, while others in the payment chain are required to monitor the payments they process based on this information.\""
+      },
+      {
+        "claim": "Ordering institutions must obtain and hold required and accurate originator information and submit it onward; the originator's name means the sending person's accurate (i.e. verified) full name.",
+        "chunk_ids": [
+          723,
+          724
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states ordering institutions must \"obtain and hold required and accurate originator information ... and submit the information to beneficiary institutions\" and defines originator's name as \"the sending person's accurate (i.e. verified) full name\", directly matching both parts of the claim."
+      },
+      {
+        "claim": "A receiving/beneficiary institution does not need to verify the originator's name for accuracy \u2014 it may assume the ordering institution verified it \u2014 but it must review the originator information for suspicious transaction report monitoring and sanctions screening purposes.",
+        "chunk_ids": [
+          725,
+          726
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "Passage states beneficiary institution 'does not need to verify the originator's name for accuracy, but should review it for the purpose of STR monitoring and sanction screening', and Table 1 confirms 'Data accuracy is not required. The beneficiary VASP may assume that the data has been verified by the ordering VASP.'"
+      },
+      {
+        "claim": "Intermediary institutions in a transfer chain retain general obligations to identify suspicious transactions, take freezing actions, prohibit transactions with designated persons, and keep records of all information received from the ordering institution or another intermediary for at least five years where technical limitations prevent required information travelling with the transfer.",
+        "chunk_ids": [
+          736
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states both elements: a record should be kept for at least five years by the receiving intermediary VASP of all information received where technical limitations prevent required info from remaining with the submission, and separately that intermediary institutions have general obligations to identify suspicious transactions, take freezing actions, and prohibit transactions with designated persons and entities."
+      },
+      {
+        "claim": "A correspondent institution should have documented risk-based policies and procedures for determining how to handle transactions lacking required information, including in straight-through processing, along with sanctions screening systems and false-positive clearing procedures.",
+        "chunk_ids": [
+          2388
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage lists \"its risk-based policies and procedures for determining how to handle such transactions, its systems for sanctions screening, and its procedures and systems for clearing false positives,\" including reference to straight-through processing, matching the claim's elements; however, it does not explicitly say these policies must be \"documented,\" though the substantive content aligns closely with the claim."
+      },
+      {
+        "claim": "Where monitoring flags a transaction, the correspondent should have internal processes to review it further, which may involve a targeted request for information to the respondent about that specific transaction; this does not amount to a requirement to conduct CDD on the respondent's customer.",
+        "chunk_ids": [
+          2388
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states nearly verbatim: \"the correspondent institution should have internal processes to further review the activity, which may involve requesting transaction information...This request for additional information should be targeted on the specific transaction which created an alert...This does not amount to a requirement to conduct CDD on the customer of the respondent.\""
+      },
+      {
+        "claim": "The correspondent expects the respondent to answer requests for information in a timely fashion and to the level of detail requested; failure to do so may trigger concerns about the relationship.",
+        "chunk_ids": [
+          2389
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "Passage states \"it expects the respondent to respond in a timely fashion and provide documents/information to the level of detail requested. Where that does not happen, it may trigger concerns,\" directly supporting the claim."
+      },
+      {
+        "claim": "Correspondent institutions should take a respondent's past behaviour, in particular any failures to satisfy previous requests for information, into account when deciding the type and extent of monitoring applied, and should periodically review those risk-based monitoring procedures.",
+        "chunk_ids": [
+          2387
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states institutions \"should put in place and periodically review risk-based procedures specifying the applicable monitoring techniques\" and \"should take into consideration the respondent\u2019s past behaviour... in particular any failures to satisfy previous requests for information\" when deciding the type and extent of monitoring."
+      },
+      {
+        "claim": "An entity should have a documented request-for-information process with tracked response times, because delay or lack of control over RFI responses can lengthen the time to report suspicious activity and breach regulatory reporting deadlines.",
+        "chunk_ids": [
+          4918
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states an RFI process ensures investigations reach the right recipient and track response receipt within a time limit, and warns that \"Delay in sending RFIs or lack of control on the RFI response time could lengthen the time required to report suspicious activities and potentially breach regulatory deadline for reporting,\" directly supporting the claim."
+      },
+      {
+        "claim": "Use of incorrect message formats or failure to include full and accurate payment information compromises the entity's own sanctions screening and transaction monitoring as well as those of all other banks in the payment chain.",
+        "chunk_ids": [
+          4918
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage directly states: \"Use of incorrect message formats and/or not including full/accurate payment information will compromise an Entity's own sanctions screening and transaction monitoring processes as well as those of all the other banks in the payment chain.\""
+      },
+      {
+        "claim": "Controls should ensure the complete set of originator information is included in cross-border payment messages and that it is consistent with the customer information verified during CDD; information should not be truncated, since complete and accurate originator information is needed for effective transaction monitoring and sanctions screening.",
+        "chunk_ids": [
+          4919
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "Passage states processes should \"require the complete set of originator information\" consistent with CDD verification, that \"Information should not be truncated,\" and that \"complete and accurate originator information in payment messages is required to support the effective execution of transaction monitoring and sanctions screening control processes,\" matching the claim."
+      },
+      {
+        "claim": "It is poor practice for an intermediary bank to strip payee or payer information from payment instructions before passing the payment on, and poor practice for a payee bank not to check incoming payments for complete and meaningful data.",
+        "chunk_ids": [
+          6352
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage lists under \"Examples of poor practice\" both \"An intermediary bank strips payee or payer information from payment instructions before passing the payment on\" and \"The payee bank does not check any incoming payments to see if they include complete and meaningful data,\" directly matching the claim."
+      },
+      {
+        "claim": "Good practice includes taking the quality of payer and payee information from respondent banks into account in the ongoing review of correspondent banking relationships, and actively engaging in peer discussions about taking appropriate action against banks that persistently fail to provide complete payer information.",
+        "chunk_ids": [
+          6352
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage lists as examples of good practice: \"The quality of payer and payee information in payment instructions from respondent banks is taken into account in the bank's ongoing review of correspondent banking relationships\" and \"The firm actively engages in peer discussions about taking appropriate action against banks which persistently fail to provide complete payer information,\" matching the claim."
+      },
+      {
+        "claim": "Firms should have appropriate procedures for checking that payment instructions contain complete payer and payee information, including checking payments they receive, and should review respondent banks' track record on providing payer data and on using appropriate SWIFT messages for cover payments.",
+        "chunk_ids": [
+          6351
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage's self-assessment questions directly ask \"How does your firm ensure that customer payment instructions contain complete payer and payee information? ... does it have appropriate procedures in place for checking payments it has received?\" and \"Does the firm review its respondent banks' track record on providing payer data and using appropriate SWIFT messages for cover payments?\", matching the claim."
+      },
+      {
+        "claim": "An incoming transaction that is not accompanied by the required information on the payer or payee is listed by the EBA as a factor that may contribute to increasing ML/TF risk.",
+        "chunk_ids": [
+          2714
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage explicitly lists 'An incoming transaction is not accompanied by the required information on the payer or payee' among the factors under a section context of risk factors, matching the claim directly."
+      },
+      {
+        "claim": "Before terminating a relationship, options such as refusing to conduct the transaction, filing a suspicious transaction report, or limiting or restricting services to allow clarification or remediation by the respondent should be explored; termination is required where identified risks cannot be managed in line with the risk-based approach.",
+        "chunk_ids": [
+          2392
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states termination is required \"where identified risks cannot be managed in line with the risk-based approach\" and that \"other options offered by Recommendation 10 should be explored prior to termination (such as refusing to conduct the transaction, and/or filing a suspicious transaction report)\" plus \"a limitation of services or restriction of individual products/transactions can be considered ... before the decision to terminate activity is taken,\" matching the claim."
+      },
+      {
+        "claim": "Respondent banks are the ones responsible for conducting due diligence on their own customers who use correspondent banking services, and correspondent banks are not generally required to conduct CDD on the respondent's customers.",
+        "chunk_ids": [
+          6750,
+          6749
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "Passage states \"Respondent banks are the ones responsible for conducting due diligence on their customers using correspondent banking services\" and separately that \"Correspondent banks are therefore required to conduct appropriate due diligence on the respondent banks and are not generally required to do so on the respondent banks' customers.\""
+      },
+      {
+        "claim": "Ultimate responsibility for implementing AML/CFT measures remains with the correspondent institution, even where it relies on another institution.",
+        "chunk_ids": [
+          2386
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states \"The ultimate responsibility for implementing AML/CFT measures remains with the correspondent institution,\" in the context of relying on another bank's CDD information, directly supporting the claim."
+      }
+    ]
+  },
+  "drafts": [
+    {
+      "trace_id": "4936f4d5e286",
+      "question": "A bank we clear payments for keeps sending us instructions where the payer field holds filler text instead of a real name. What are we as the intermediary supposed to do when we spot that, and who ultimately has to make sure the payer's details are accurate?",
+      "outcome": "answered",
+      "summary": "The corpus treats \"filler\"/meaningless payer fields as a payment-transparency failure that you, as the intermediary in the chain, are expected to detect, investigate and act on \u2014 but the primary duty to obtain and verify accurate payer details sits with the originating (ordering) institution that holds the payer as its customer.\n\nWhat you must do as intermediary: monitor the respondent's payment messages specifically to detect ones lacking required originator/beneficiary information, including meaningless fields, consistent with FATF R.16 (Basel Committee). Treat message quality as part of ongoing monitoring and verify the reliability of the respondent's controls. Have documented risk-based policies and procedures for how such payments are handled (including in straight-through processing), send targeted requests for information (RFIs) to the respondent on the specific flagged payments, and track responses within a defined time limit. Never strip or truncate payer/payee data before passing the payment on \u2014 that is explicitly poor practice, and truncation undermines your own and every downstream bank's screening and monitoring. Feed the respondent's track record on payer data into the ongoing review of the correspondent relationship; persistent failure to respond or to provide complete payer information is itself a red flag. Escalation options run from refusing the transaction and filing a suspicious transaction report, through limiting or restricting services to give the respondent a chance to remediate, up to termination where the risk cannot be managed. An incoming transaction not accompanied by the required payer/payee information is a recognised risk-increasing factor under the EBA Risk Factors Guidelines.\n\nWho owns accuracy: the ordering/originating institution. It is responsible for correct message format and for ensuring originator and beneficiary information accompanies the transfer, and it must obtain, hold and submit *accurate* (i.e. verified) originator information consistent with its own CDD. Institutions further down the chain are not required to verify the originator's name for accuracy, but must review it for STR monitoring and sanctions screening. Note two caveats: correspondents are not required to do CDD on the respondent's customers (that is the respondent's job), yet ultimate responsibility for implementing AML/CFT measures in your own institution remains with you.",
+      "claims": [
+        {
+          "text": "The correspondent bank acting as an intermediary should monitor the payment messages transmitted by the respondent bank in order to detect those which lack required originator and/or beneficiary information, including meaningless fields, consistent with FATF Recommendation 16 and straight-through processing, and should verify the reliability of the respondent's controls.",
+          "chunk_ids": [
+            6759
+          ]
+        },
+        {
+          "text": "The quality of information provided in payment messages should form part of ongoing monitoring, and all banks are encouraged to apply high transparency standards in full compliance with FATF Recommendation 16 and applicable national law.",
+          "chunk_ids": [
+            6759
+          ]
+        },
+        {
+          "text": "Originating banks are responsible for using the right format for payment messages and should require that information on the originator and beneficiary accompanies wire transfers, while others in the payment chain are required to monitor the payments they process based on that information.",
+          "chunk_ids": [
+            6759
+          ]
+        },
+        {
+          "text": "Ordering institutions must obtain and hold required and accurate originator information and submit it onward; the originator's name means the sending person's accurate (i.e. verified) full name.",
+          "chunk_ids": [
+            723,
+            724
+          ]
+        },
+        {
+          "text": "A receiving/beneficiary institution does not need to verify the originator's name for accuracy \u2014 it may assume the ordering institution verified it \u2014 but it must review the originator information for suspicious transaction report monitoring and sanctions screening purposes.",
+          "chunk_ids": [
+            725,
+            726
+          ]
+        },
+        {
+          "text": "Intermediary institutions in a transfer chain retain general obligations to identify suspicious transactions, take freezing actions, prohibit transactions with designated persons, and keep records of all information received from the ordering institution or another intermediary for at least five years where technical limitations prevent required information travelling with the transfer.",
+          "chunk_ids": [
+            736
+          ]
+        },
+        {
+          "text": "A correspondent institution should have documented risk-based policies and procedures for determining how to handle transactions lacking required information, including in straight-through processing, along with sanctions screening systems and false-positive clearing procedures.",
+          "chunk_ids": [
+            2388
+          ]
+        },
+        {
+          "text": "Where monitoring flags a transaction, the correspondent should have internal processes to review it further, which may involve a targeted request for information to the respondent about that specific transaction; this does not amount to a requirement to conduct CDD on the respondent's customer.",
+          "chunk_ids": [
+            2388
+          ]
+        },
+        {
+          "text": "The correspondent expects the respondent to answer requests for information in a timely fashion and to the level of detail requested; failure to do so may trigger concerns about the relationship.",
+          "chunk_ids": [
+            2389
+          ]
+        },
+        {
+          "text": "Correspondent institutions should take a respondent's past behaviour, in particular any failures to satisfy previous requests for information, into account when deciding the type and extent of monitoring applied, and should periodically review those risk-based monitoring procedures.",
+          "chunk_ids": [
+            2387
+          ]
+        },
+        {
+          "text": "An entity should have a documented request-for-information process with tracked response times, because delay or lack of control over RFI responses can lengthen the time to report suspicious activity and breach regulatory reporting deadlines.",
+          "chunk_ids": [
+            4918
+          ]
+        },
+        {
+          "text": "Use of incorrect message formats or failure to include full and accurate payment information compromises the entity's own sanctions screening and transaction monitoring as well as those of all other banks in the payment chain.",
+          "chunk_ids": [
+            4918
+          ]
+        },
+        {
+          "text": "Controls should ensure the complete set of originator information is included in cross-border payment messages and that it is consistent with the customer information verified during CDD; information should not be truncated, since complete and accurate originator information is needed for effective transaction monitoring and sanctions screening.",
+          "chunk_ids": [
+            4919
+          ]
+        },
+        {
+          "text": "It is poor practice for an intermediary bank to strip payee or payer information from payment instructions before passing the payment on, and poor practice for a payee bank not to check incoming payments for complete and meaningful data.",
+          "chunk_ids": [
+            6352
+          ]
+        },
+        {
+          "text": "Good practice includes taking the quality of payer and payee information from respondent banks into account in the ongoing review of correspondent banking relationships, and actively engaging in peer discussions about taking appropriate action against banks that persistently fail to provide complete payer information.",
+          "chunk_ids": [
+            6352
+          ]
+        },
+        {
+          "text": "Firms should have appropriate procedures for checking that payment instructions contain complete payer and payee information, including checking payments they receive, and should review respondent banks' track record on providing payer data and on using appropriate SWIFT messages for cover payments.",
+          "chunk_ids": [
+            6351
+          ]
+        },
+        {
+          "text": "An incoming transaction that is not accompanied by the required information on the payer or payee is listed by the EBA as a factor that may contribute to increasing ML/TF risk.",
+          "chunk_ids": [
+            2714
+          ]
+        },
+        {
+          "text": "Before terminating a relationship, options such as refusing to conduct the transaction, filing a suspicious transaction report, or limiting or restricting services to allow clarification or remediation by the respondent should be explored; termination is required where identified risks cannot be managed in line with the risk-based approach.",
+          "chunk_ids": [
+            2392
+          ]
+        },
+        {
+          "text": "Respondent banks are the ones responsible for conducting due diligence on their own customers who use correspondent banking services, and correspondent banks are not generally required to conduct CDD on the respondent's customers.",
+          "chunk_ids": [
+            6750,
+            6749
+          ]
+        },
+        {
+          "text": "Ultimate responsibility for implementing AML/CFT measures remains with the correspondent institution, even where it relies on another institution.",
+          "chunk_ids": [
+            2386
+          ]
+        }
+      ],
+      "refusal_reason": "",
+      "iterations": 7,
+      "searches": 11,
+      "retrieved_chunk_ids": [
+        655,
+        721,
+        723,
+        724,
+        725,
+        726,
+        728,
+        729,
+        735,
+        736,
+        769,
+        772,
+        2373,
+        2377,
+        2378,
+        2383,
+        2384,
+        2386,
+        2387,
+        2388,
+        2389,
+        2392,
+        2690,
+        2698,
+        2714,
+        2716,
+        2750,
+        4013,
+        4598,
+        4612,
+        4644,
+        4886,
+        4918,
+        4919,
+        6347,
+        6350,
+        6351,
+        6352,
+        6425,
+        6749,
+        6750,
+        6758,
+        6759
+      ],
+      "input_tokens": 162,
+      "output_tokens": 5374,
+      "cache_read_tokens": 130453,
+      "usd": 0.465,
+      "latency_ms": 80047.0,
+      "error": "",
+      "trace": [
+        {
+          "step": "search",
+          "iteration": 1,
+          "query": "intermediary institution missing payer information wire transfer",
+          "k": 8,
+          "returned_chunk_ids": [
+            6759,
+            736,
+            735,
+            6351,
+            6352,
+            2714,
+            723,
+            726
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 1,
+          "query": "meaningless value payer name accuracy verification funds transfer",
+          "k": 8,
+          "returned_chunk_ids": [
+            724,
+            723,
+            725,
+            6425,
+            726,
+            769,
+            655,
+            4013
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 2,
+          "query": "risk-based policies for determining when to execute, reject or suspend a wire transfer lacking required originator information",
+          "k": 8,
+          "returned_chunk_ids": [
+            721,
+            723,
+            6759,
+            735,
+            736,
+            772,
+            729,
+            2387
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 2,
+          "query": "Recommendation 16 ordering institution accurate originator information verified",
+          "k": 8,
+          "returned_chunk_ids": [
+            725,
+            726,
+            724,
+            723,
+            728,
+            6759,
+            4919,
+            736
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 3,
+          "query": "payment transparency incomplete originator information escalation reject return payment respondent bank",
+          "k": 8,
+          "returned_chunk_ids": [
+            6759,
+            2389,
+            4919,
+            4918,
+            2690,
+            6351,
+            6352,
+            2383
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 3,
+          "query": "detect missing or incomplete information on the payer transfers of funds payment service provider procedures",
+          "k": 8,
+          "returned_chunk_ids": [
+            6351,
+            6352,
+            2698,
+            2750,
+            2714,
+            6425,
+            2716,
+            2388
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 4,
+          "query": "correspondent banking guidance straight-through processing transfers lacking required originator or beneficiary information intermediary financial institution obligations",
+          "k": 8,
+          "returned_chunk_ids": [
+            6758,
+            6759,
+            2378,
+            2389,
+            2387,
+            2388,
+            2377,
+            736
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 4,
+          "query": "respondent institution responsible for CDD on its own customers correspondent not required to conduct due diligence on respondent's customers",
+          "k": 6,
+          "returned_chunk_ids": [
+            2384,
+            2373,
+            6749,
+            6750,
+            2389,
+            2386
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 5,
+          "query": "Basel Committee quality of payment message information remediation respondent controls unable to provide required information terminate relationship",
+          "k": 6,
+          "returned_chunk_ids": [
+            6759,
+            6352,
+            2389,
+            2392,
+            2386,
+            4918
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 5,
+          "query": "Wolfsberg payment transparency standards omitting deleting altering payment message information",
+          "k": 6,
+          "returned_chunk_ids": [
+            4918,
+            4919,
+            4886,
+            6759,
+            4644,
+            6351
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 6,
+          "query": "wire transfers chapter good practice bank makes enquiries payment lacking payer information suspicious activity report",
+          "k": 8,
+          "returned_chunk_ids": [
+            6352,
+            6350,
+            6351,
+            6759,
+            2387,
+            4598,
+            4612,
+            6347
+          ]
+        },
+        {
+          "step": "answer",
+          "iteration": 7,
+          "claims": 20
+        }
+      ]
+    }
+  ],
+  "written_at": "2026-08-30T14:12:59+00:00"
+}

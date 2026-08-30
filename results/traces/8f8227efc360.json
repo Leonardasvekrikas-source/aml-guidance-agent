@@ -1,0 +1,728 @@
+{
+  "trace_id": "8f8227efc360",
+  "question": "A new wealth management client wants to open an account funded by a very large cash deposit plus a payment arriving from a casino. At what point do we need independent evidence about where that money came from instead of accepting the client's own explanation?",
+  "outcome": "answered",
+  "summary": "The corpus supports the point that customer-provided source of wealth information should, in higher-risk cases, be supplemented by corroboration from sources independent of the customer \u2014 but the guidance frames a sworn declaration and additional corroboration as complementary steps, not as alternatives. StAR's PEP guidance notes that some jurisdictions require a sworn statement of source of wealth at account opening, and that for particularly higher-risk PEP relationships banks should take *additional* steps to corroborate that information, such as commissioning an external investigation firm or conducting a site visit to the place of business. Wolfsberg defines corroboration as additional supporting information from a source independent of the customer, applied on a risk-based basis and triggered by factors such as an already-high customer risk rating, PEP status, or inconsistencies with the customer's background. The claim as originally drafted \u2014 that corroboration should be done \"rather than\" relying on a sworn declaration \u2014 is not supported and has been dropped.",
+  "citations": [
+    {
+      "chunk_id": 7968,
+      "title": "Politically Exposed Persons: Preventive Measures for the Banking Sector",
+      "publisher": "World Bank / UNODC Stolen Asset Recovery Initiative (StAR)",
+      "page": 67,
+      "source_url": "https://documents1.worldbank.org/curated/en/611261468155103854/pdf/542500PUB0Expo101Official0Use0Only1.pdf",
+      "section_heading": "9 Identifying and Verifying Source"
+    },
+    {
+      "chunk_id": 7967,
+      "title": "Politically Exposed Persons: Preventive Measures for the Banking Sector",
+      "publisher": "World Bank / UNODC Stolen Asset Recovery Initiative (StAR)",
+      "page": 66,
+      "source_url": "https://documents1.worldbank.org/curated/en/611261468155103854/pdf/542500PUB0Expo101Official0Use0Only1.pdf",
+      "section_heading": "8 Identifi cation of PEPs:"
+    },
+    {
+      "chunk_id": 5063,
+      "title": "The Wolfsberg Group Frequently Asked Questions (FAQs) on Source of Wealth and Source of Funds (Private Banking/Wealth Management)",
+      "publisher": "The Wolfsberg Group",
+      "page": 3,
+      "source_url": "https://db.wolfsberg-group.org/assets/a27f9bf6-b4a8-41d2-a390-6f1aaf797241/Wolfsberg%20SoW%20and%20SoF%20FAQs%20August%202020%20(FFP).pdf",
+      "section_heading": null
+    },
+    {
+      "chunk_id": 5062,
+      "title": "The Wolfsberg Group Frequently Asked Questions (FAQs) on Source of Wealth and Source of Funds (Private Banking/Wealth Management)",
+      "publisher": "The Wolfsberg Group",
+      "page": 2,
+      "source_url": "https://db.wolfsberg-group.org/assets/a27f9bf6-b4a8-41d2-a390-6f1aaf797241/Wolfsberg%20SoW%20and%20SoF%20FAQs%20August%202020%20(FFP).pdf",
+      "section_heading": null
+    },
+    {
+      "chunk_id": 5066,
+      "title": "The Wolfsberg Group Frequently Asked Questions (FAQs) on Source of Wealth and Source of Funds (Private Banking/Wealth Management)",
+      "publisher": "The Wolfsberg Group",
+      "page": 4,
+      "source_url": "https://db.wolfsberg-group.org/assets/a27f9bf6-b4a8-41d2-a390-6f1aaf797241/Wolfsberg%20SoW%20and%20SoF%20FAQs%20August%202020%20(FFP).pdf",
+      "section_heading": null
+    },
+    {
+      "chunk_id": 5068,
+      "title": "The Wolfsberg Group Frequently Asked Questions (FAQs) on Source of Wealth and Source of Funds (Private Banking/Wealth Management)",
+      "publisher": "The Wolfsberg Group",
+      "page": 5,
+      "source_url": "https://db.wolfsberg-group.org/assets/a27f9bf6-b4a8-41d2-a390-6f1aaf797241/Wolfsberg%20SoW%20and%20SoF%20FAQs%20August%202020%20(FFP).pdf",
+      "section_heading": null
+    },
+    {
+      "chunk_id": 7970,
+      "title": "Politically Exposed Persons: Preventive Measures for the Banking Sector",
+      "publisher": "World Bank / UNODC Stolen Asset Recovery Initiative (StAR)",
+      "page": 69,
+      "source_url": "https://documents1.worldbank.org/curated/en/611261468155103854/pdf/542500PUB0Expo101Official0Use0Only1.pdf",
+      "section_heading": "9 Identifying and Verifying Source"
+    },
+    {
+      "chunk_id": 6344,
+      "title": "Financial Crime Guide: A firm's guide to countering financial crime risks (FCG)",
+      "publisher": "Financial Conduct Authority (FCA)",
+      "page": 50,
+      "source_url": "https://api-handbook.fca.org.uk/files/sourcebook/FCG.pdf",
+      "section_heading": "2 \u2022 obtaining more robust verification of the beneficial owner\u2019s identity based on"
+    }
+  ],
+  "refusal_reason": "",
+  "attempts": 2,
+  "searches": 13,
+  "input_tokens": 529,
+  "output_tokens": 6703,
+  "agent_usd": 0.54219,
+  "validation_usd": 0.1678,
+  "total_usd": 0.70999,
+  "latency_ms": 161894.5,
+  "validation": {
+    "passed": true,
+    "citation_validity": 1.0,
+    "groundedness": 1.0,
+    "checked_support": true,
+    "usd": 0.05995,
+    "verdicts": [
+      {
+        "claim": "Some jurisdictions require customers to complete a sworn statement in which they declare the source of their wealth at account opening.",
+        "chunk_ids": [
+          7968
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage directly states, \"Some jurisdictions require customers to complete a sworn statement in which they declare the source of their wealth at account opening,\" matching the claim verbatim."
+      },
+      {
+        "claim": "For particularly higher-risk PEP relationships, banks should take additional steps to corroborate source of wealth information, for example by contracting with an external company to conduct investigations or by a site visit to the place of business.",
+        "chunk_ids": [
+          7968
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states verbatim: \"For particularly higher-risk PEP relationships, banks should take additional steps to corroborate the information, for example, by contracting with an external company to conduct investigations or a site visit to the place of business.\""
+      },
+      {
+        "claim": "Understanding source of wealth and source of funds is a component of the enhanced due diligence obligations banks must apply to PEP customers, and it contributes to the customer profile used as the baseline for enhanced ongoing monitoring of the relationship.",
+        "chunk_ids": [
+          7967
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states verbatim: \"Understanding a customer's source of wealth and source of funds is an important component of the EDD obligations that banks must apply to PEP customers\" and that \"it contributes significantly to the customer profile that the bank will use as the 'baseline' when conducting enhanced ongoing monitoring of the business relationship with a PEP.\""
+      },
+      {
+        "claim": "Corroboration of source of wealth means obtaining additional supporting information from a source independent from the customer, and is required in specific cases based on local regulatory requirements and the firm's policies and procedures.",
+        "chunk_ids": [
+          5063
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage directly states corroboration is \"additional supporting information from a source independent from the customer\" and \"may, in specific cases, require corroboration... based on local regulatory requirements and the FI's policies and procedures.\""
+      },
+      {
+        "claim": "Source of wealth information can come from the customer and/or other sources, including readily available reputable public information, and the assessment should consider whether the customer's explanations are plausible.",
+        "chunk_ids": [
+          5063
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states \"The information can come from the customer and/or other sources, including readily available, reputable public information\" and later notes the objective includes assessing \"whether the explanations are indeed plausible.\""
+      },
+      {
+        "claim": "Source of wealth due diligence should not be treated as a purely documentary exercise; the firm should consider whether the customer's source of wealth appears legitimate and whether the collected information is plausible against the customer's overall wealth and other information collected.",
+        "chunk_ids": [
+          5062
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states almost verbatim: \"This should not be seen as a documentary exercise and consideration should be given as to whether the customer's SoW appears legitimate and the collected information is plausible... with regards to the customer's overall wealth and other information that has been collected about the customer.\""
+      },
+      {
+        "claim": "Source of funds information may need to be further investigated where the customer is already rated higher risk, where the source itself presents increased risk (such as material amounts of physical cash or funds remitted from a gambling institution), or where there are inconsistencies with the customer's background.",
+        "chunk_ids": [
+          5066
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage lists exactly these three scenarios verbatim: 'where the customer already represents a high risk... is otherwise rated as higher risk', 'where SoF represents increased risks (e.g. when material amounts of physical cash are presented, or material amounts of funds are remitted from a gambling institution)', and 'where there are inconsistencies with the customer's background'."
+      },
+      {
+        "claim": "Factors relevant to the customer risk assessment include whether the ongoing source of wealth and/or source of funds have been sufficiently corroborated, whether there is unexplained or incoherent source of wealth or funds information, whether material wealth derives from a high-risk industry or country, and whether the customer is a PEP.",
+        "chunk_ids": [
+          5068
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage lists these exact factors: \"whether the on-going SoW and/or SoF of the customer have been sufficiently corroborated\", \"Whether there is any unexplained or incoherent SoW or SoF information\", \"Whether material SoW and/or SoF is from a high risk industry or country\", and \"Whether the customer is a Politically Exposed Person (PEP)\"."
+      },
+      {
+        "claim": "Where there is doubt about the veracity of the information provided for source of funds or source of wealth, banks indicated they would not open the account, and banks should analyse established source of wealth and source of funds information for red flags of corrupt PEP activity.",
+        "chunk_ids": [
+          7970
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "Passage states \"In the event of doubt about the veracity of the information provided for either source of funds or source of wealth, the banks visited indicated they would not open the account\" and \"banks will need to analyze the information for 'red flags' for corrupt PEP activity.\""
+      },
+      {
+        "claim": "If third-party funding is involved, banks should make further inquiries about the relationship between the person providing the funds and the customer.",
+        "chunk_ids": [
+          7970
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states verbatim: \"If third-party funding is involved, banks should make further inquiries about the relationship between the person providing the funds and the customer.\""
+      },
+      {
+        "claim": "A public official should be asked to provide a copy of any asset and income declaration forms filed with their authorities, along with subsequent updates; if the customer refuses, the bank should assess the reasons and determine on a risk-based approach whether to proceed with the relationship.",
+        "chunk_ids": [
+          7970
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states nearly verbatim: \"A public official should be asked to provide a copy of any asset and income declaration forms filed with their authorities, as well as subsequent updates. If a customer refuses, the bank should assess the reasons and determine, using a risk-based approach, whether to proceed with the business relationship.\""
+      },
+      {
+        "claim": "Enhanced due diligence measures include establishing how the customer or beneficial owner acquired their wealth to be satisfied that it is legitimate, and establishing the source of the customer's or beneficial owner's funds to be satisfied that they do not constitute the proceeds of crime.",
+        "chunk_ids": [
+          6344
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage lists exactly these as EDD measures: \"establishing how the customer or beneficial owner acquired their wealth to be satisfied that it is legitimate\" and \"establishing the source of the customer's or beneficial owner's funds to be satisfied that they do not constitute the proceeds from crime.\""
+      }
+    ]
+  },
+  "drafts": [
+    {
+      "trace_id": "8f8227efc360",
+      "question": "A new wealth management client wants to open an account funded by a very large cash deposit plus a payment arriving from a casino. At what point do we need independent evidence about where that money came from instead of accepting the client's own explanation?",
+      "outcome": "answered",
+      "summary": "The corpus (principally the Wolfsberg Group FAQs on Source of Wealth and Source of Funds for Private Banking/Wealth Management) treats your exact fact pattern as a named trigger. \"Corroboration\" is defined as additional supporting information from a source **independent of the customer**, and it is required on a risk-based basis \u2014 but Wolfsberg specifically lists \"material amounts of physical cash\" and \"material amounts of funds remitted from a gambling institution\" as circumstances where SoF represents increased risk and the customer's information \"may need to be further investigated.\" Your case has both features simultaneously, in a PB/WM context, so the client's own narrative is not a sufficient basis to onboard. The threshold for moving from self-declaration to independent evidence is therefore reached at (a) materiality of the cash and gambling-derived amounts, (b) a higher risk rating from other CDD factors, or (c) any inconsistency between the explanation and what you already know about the client. The type of evidence should be matched to the specific origin and means of transfer, and where any funds come from a third party you must establish and record the relationship. If you cannot corroborate to your own policy standard, the documented options run from raising the risk rating and restricting the account through to declining onboarding or exiting.",
+      "claims": [
+        {
+          "text": "Wolfsberg defines corroboration as obtaining additional supporting information from a source independent from the customer, which SoW information collected from the customer may in specific cases require, based on local regulatory requirements and the FI's own policies and procedures.",
+          "chunk_ids": [
+            5063
+          ]
+        },
+        {
+          "text": "The amount of information collected and the degree of corroboration required for SoW/SoF should follow a risk-based approach, depending on the type of customer, their specific circumstances and their risk rating.",
+          "chunk_ids": [
+            5060
+          ]
+        },
+        {
+          "text": "Wolfsberg identifies material amounts of physical cash being presented, and material amounts of funds remitted from a gambling institution, as specific examples of source-of-funds situations representing increased risk where the customer's SoF information may need to be further investigated.",
+          "chunk_ids": [
+            5066
+          ]
+        },
+        {
+          "text": "The other two triggers for SoF corroboration listed by Wolfsberg are where the customer is already rated higher risk by virtue of risk factors identified during due diligence, and where there are inconsistencies with the customer's background and the information collected during due diligence.",
+          "chunk_ids": [
+            5066
+          ]
+        },
+        {
+          "text": "The type of evidence required for SoF corroboration depends on the specific source, meaning both the origin of the funds and the means of transfer.",
+          "chunk_ids": [
+            5066
+          ]
+        },
+        {
+          "text": "Where an account is funded by a third party, particularly one with no apparent link to the customer, additional due diligence should include establishing and recording the relationship between the customer and the funding parties.",
+          "chunk_ids": [
+            5066
+          ]
+        },
+        {
+          "text": "Source of funds is defined as the origin and means of transfer of currency, financial instruments or other assets deposited with the firm, and the firm should understand the origin of initial deposits and, where other risk factors are present, inquire about subsequent funding.",
+          "chunk_ids": [
+            5065
+          ]
+        },
+        {
+          "text": "SoW due diligence should be conducted at account opening and should not be treated as a purely documentary exercise; the firm must consider whether the SoW appears legitimate and whether the information provided by the customer is plausible against the customer's overall wealth and other collected information.",
+          "chunk_ids": [
+            5062
+          ]
+        },
+        {
+          "text": "Significant gaps in the chronology of wealth accumulation or material inconsistencies challenge plausibility, and in such cases the firm may seek further clarification from the customer.",
+          "chunk_ids": [
+            5062
+          ]
+        },
+        {
+          "text": "SoW information can come from the customer and/or other sources including readily available reputable public information, and the assessment should include an estimate of the customer's net worth in order to test whether the customer's explanations are plausible.",
+          "chunk_ids": [
+            5063
+          ]
+        },
+        {
+          "text": "Where SoW/SoF standards cannot be met, the firm may deny on-boarding, increase the customer's risk rating, place restrictions on product or account usage, subject transactional activity to heightened monitoring, or terminate the relationship.",
+          "chunk_ids": [
+            5065
+          ]
+        },
+        {
+          "text": "Relevant customer risk assessment factors include whether SoW/SoF has been sufficiently corroborated where required, whether there is any unexplained or incoherent SoW or SoF information, and whether material SoW or SoF derives from a high-risk industry or country.",
+          "chunk_ids": [
+            5068
+          ]
+        },
+        {
+          "text": "FCA guidance states that enhanced due diligence includes establishing how the customer or beneficial owner acquired their wealth in order to be satisfied it is legitimate, and establishing the source of the customer's funds in order to be satisfied they do not constitute the proceeds of crime.",
+          "chunk_ids": [
+            6344
+          ]
+        },
+        {
+          "text": "The FCA cites as poor practice a firm relying entirely on a single source of information for its enhanced due diligence, and as good practice corroborating staff knowledge of the customer or beneficial owner with more objective information and documenting and challenging that information during the CDD process.",
+          "chunk_ids": [
+            6345
+          ]
+        },
+        {
+          "text": "EBA ML/TF Risk Factors Guidelines list customers with income and/or wealth from high-risk sectors such as gambling, and customers whose spending or transactional behaviour is unusual, as factors that may increase risk in wealth management.",
+          "chunk_ids": [
+            2719
+          ]
+        },
+        {
+          "text": "Because a wealth management relationship manager's closeness to the client can create conflicts of interest to the detriment of financial crime risk management, independent oversight of the risk assessment by, for example, the compliance department and senior management is appropriate.",
+          "chunk_ids": [
+            2720
+          ]
+        },
+        {
+          "text": "Firms should verify customer information using reliable, independently sourced documents, data or information, with the verification measures proportionate to the risk posed.",
+          "chunk_ids": [
+            6767
+          ]
+        },
+        {
+          "text": "Where there is doubt about the veracity of the information provided for either source of funds or source of wealth, banks interviewed by the StAR initiative indicated they would not open the account; and where third-party funding is involved, banks should make further inquiries about the relationship between the person providing the funds and the customer.",
+          "chunk_ids": [
+            7970
+          ]
+        },
+        {
+          "text": "For higher-risk relationships, banks should take additional steps to corroborate declared source of wealth, for example by contracting an external company to conduct investigations or by a site visit to the place of business, rather than relying on a customer's sworn declaration at account opening.",
+          "chunk_ids": [
+            7968
+          ]
+        },
+        {
+          "text": "Cashing in and cashing out through gambling platforms is a documented laundering method used specifically to justify the source of funds as casino winnings, often mixed with transaction miscoding and third- and fourth-party payment providers to obscure the nature of the transactions.",
+          "chunk_ids": [
+            9768
+          ]
+        },
+        {
+          "text": "Firms should implement mechanisms to identify when a review of SoF is necessary, including comparing actual against expected source of funds, and should update SoW and its corroboration when transactional activity or other indicators show the customer's SoW has materially changed from what was recorded.",
+          "chunk_ids": [
+            5069
+          ]
+        }
+      ],
+      "refusal_reason": "",
+      "iterations": 6,
+      "searches": 9,
+      "retrieved_chunk_ids": [
+        21,
+        934,
+        937,
+        1454,
+        2205,
+        2206,
+        2207,
+        2675,
+        2719,
+        2720,
+        2741,
+        4092,
+        4121,
+        4595,
+        5059,
+        5060,
+        5062,
+        5063,
+        5065,
+        5066,
+        5068,
+        5069,
+        5846,
+        6340,
+        6344,
+        6345,
+        6362,
+        6395,
+        6722,
+        6767,
+        6768,
+        6771,
+        6774,
+        7245,
+        7246,
+        7274,
+        7275,
+        7967,
+        7968,
+        7970,
+        7996,
+        8947,
+        8957,
+        9688,
+        9741,
+        9744,
+        9757,
+        9761,
+        9768
+      ],
+      "input_tokens": 152,
+      "output_tokens": 4591,
+      "cache_read_tokens": 89220,
+      "usd": 0.3772,
+      "latency_ms": 64316.6,
+      "error": "",
+      "trace": [
+        {
+          "step": "search",
+          "iteration": 1,
+          "query": "source of wealth source of funds independent corroboration private banking",
+          "k": 8,
+          "returned_chunk_ids": [
+            5063,
+            7968,
+            5060,
+            7967,
+            5059,
+            5066,
+            2720,
+            6344
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 1,
+          "query": "casino winnings used to explain source of funds verification",
+          "k": 8,
+          "returned_chunk_ids": [
+            4092,
+            9744,
+            9768,
+            7275,
+            9761,
+            9741,
+            9688,
+            9757
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 2,
+          "query": "SoF corroboration documentary evidence type of evidence origin means of transfer",
+          "k": 8,
+          "returned_chunk_ids": [
+            5066,
+            5069,
+            5063,
+            5065,
+            6340,
+            5068,
+            2675,
+            5062
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 2,
+          "query": "corroboration effective plausible explanation red flags escalation SoW",
+          "k": 8,
+          "returned_chunk_ids": [
+            5063,
+            5069,
+            5062,
+            5066,
+            934,
+            5068,
+            5060,
+            6395
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 3,
+          "query": "Wolfsberg Q6 SoF due diligence expected funding initial deposit third party",
+          "k": 6,
+          "returned_chunk_ids": [
+            5066,
+            5065,
+            5059,
+            5060,
+            5068,
+            4595
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 3,
+          "query": "EBA wealth management enhanced due diligence establish source of wealth funds high risk customer",
+          "k": 8,
+          "returned_chunk_ids": [
+            2720,
+            6344,
+            1454,
+            2741,
+            2719,
+            7996,
+            6345,
+            7967
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 4,
+          "query": "bank should not rely solely on customer self-declaration source of wealth independent verification documents",
+          "k": 8,
+          "returned_chunk_ids": [
+            6768,
+            6774,
+            6722,
+            7968,
+            6771,
+            6767,
+            7970,
+            8957
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 4,
+          "query": "large cash deposit inconsistent with customer profile suspicious activity report unable to explain origin",
+          "k": 8,
+          "returned_chunk_ids": [
+            937,
+            2207,
+            7246,
+            7274,
+            2206,
+            21,
+            2205,
+            7245
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 5,
+          "query": "examples of corroborating documents sale of property inheritance tax returns audited financial statements salary",
+          "k": 6,
+          "returned_chunk_ids": [
+            4121,
+            6362,
+            6767,
+            8947,
+            8957,
+            5846
+          ]
+        },
+        {
+          "step": "answer",
+          "iteration": 6,
+          "claims": 21
+        }
+      ]
+    },
+    {
+      "trace_id": "334c43d17c09",
+      "question": "Your draft was REJECTED by citation validation. The following claims did not survive:\n\n- Claim: For higher-risk relationships, banks should take additional steps to corroborate declared source of wealth, for example by contracting an external company to conduct investigations or by a site visit to the place of business, rather than relying on a customer's sworn declaration at account opening.\n  Cited: [7968]\n  Problem: The passage states banks should take additional corroboration steps (external investigation or site visit) for 'particularly higher-risk PEP relationships,' but it does not say this should be done 'rather than relying on a sworn declaration'\u2014the sworn statement and additional corroboration are presented as complementary tools, not as an either/or contrast the claim asserts.\n\nSearch for evidence that actually supports these claims and answer again, or drop the claims you cannot support. If the corpus does not support them at all, call refuse instead of weakening the wording until it passes.",
+      "outcome": "answered",
+      "summary": "The corpus supports the point that customer-provided source of wealth information should, in higher-risk cases, be supplemented by corroboration from sources independent of the customer \u2014 but the guidance frames a sworn declaration and additional corroboration as complementary steps, not as alternatives. StAR's PEP guidance notes that some jurisdictions require a sworn statement of source of wealth at account opening, and that for particularly higher-risk PEP relationships banks should take *additional* steps to corroborate that information, such as commissioning an external investigation firm or conducting a site visit to the place of business. Wolfsberg defines corroboration as additional supporting information from a source independent of the customer, applied on a risk-based basis and triggered by factors such as an already-high customer risk rating, PEP status, or inconsistencies with the customer's background. The claim as originally drafted \u2014 that corroboration should be done \"rather than\" relying on a sworn declaration \u2014 is not supported and has been dropped.",
+      "claims": [
+        {
+          "text": "Some jurisdictions require customers to complete a sworn statement in which they declare the source of their wealth at account opening.",
+          "chunk_ids": [
+            7968
+          ]
+        },
+        {
+          "text": "For particularly higher-risk PEP relationships, banks should take additional steps to corroborate source of wealth information, for example by contracting with an external company to conduct investigations or by a site visit to the place of business.",
+          "chunk_ids": [
+            7968
+          ]
+        },
+        {
+          "text": "Understanding source of wealth and source of funds is a component of the enhanced due diligence obligations banks must apply to PEP customers, and it contributes to the customer profile used as the baseline for enhanced ongoing monitoring of the relationship.",
+          "chunk_ids": [
+            7967
+          ]
+        },
+        {
+          "text": "Corroboration of source of wealth means obtaining additional supporting information from a source independent from the customer, and is required in specific cases based on local regulatory requirements and the firm's policies and procedures.",
+          "chunk_ids": [
+            5063
+          ]
+        },
+        {
+          "text": "Source of wealth information can come from the customer and/or other sources, including readily available reputable public information, and the assessment should consider whether the customer's explanations are plausible.",
+          "chunk_ids": [
+            5063
+          ]
+        },
+        {
+          "text": "Source of wealth due diligence should not be treated as a purely documentary exercise; the firm should consider whether the customer's source of wealth appears legitimate and whether the collected information is plausible against the customer's overall wealth and other information collected.",
+          "chunk_ids": [
+            5062
+          ]
+        },
+        {
+          "text": "Source of funds information may need to be further investigated where the customer is already rated higher risk, where the source itself presents increased risk (such as material amounts of physical cash or funds remitted from a gambling institution), or where there are inconsistencies with the customer's background.",
+          "chunk_ids": [
+            5066
+          ]
+        },
+        {
+          "text": "Factors relevant to the customer risk assessment include whether the ongoing source of wealth and/or source of funds have been sufficiently corroborated, whether there is unexplained or incoherent source of wealth or funds information, whether material wealth derives from a high-risk industry or country, and whether the customer is a PEP.",
+          "chunk_ids": [
+            5068
+          ]
+        },
+        {
+          "text": "Where there is doubt about the veracity of the information provided for source of funds or source of wealth, banks indicated they would not open the account, and banks should analyse established source of wealth and source of funds information for red flags of corrupt PEP activity.",
+          "chunk_ids": [
+            7970
+          ]
+        },
+        {
+          "text": "If third-party funding is involved, banks should make further inquiries about the relationship between the person providing the funds and the customer.",
+          "chunk_ids": [
+            7970
+          ]
+        },
+        {
+          "text": "A public official should be asked to provide a copy of any asset and income declaration forms filed with their authorities, along with subsequent updates; if the customer refuses, the bank should assess the reasons and determine on a risk-based approach whether to proceed with the relationship.",
+          "chunk_ids": [
+            7970
+          ]
+        },
+        {
+          "text": "Enhanced due diligence measures include establishing how the customer or beneficial owner acquired their wealth to be satisfied that it is legitimate, and establishing the source of the customer's or beneficial owner's funds to be satisfied that they do not constitute the proceeds of crime.",
+          "chunk_ids": [
+            6344
+          ]
+        }
+      ],
+      "refusal_reason": "",
+      "iterations": 3,
+      "searches": 4,
+      "retrieved_chunk_ids": [
+        1454,
+        2675,
+        2680,
+        2719,
+        2720,
+        5059,
+        5060,
+        5061,
+        5062,
+        5063,
+        5064,
+        5066,
+        5068,
+        6344,
+        6768,
+        6774,
+        7967,
+        7968,
+        7969,
+        7970,
+        7988,
+        7990,
+        7996,
+        8956
+      ],
+      "input_tokens": 377,
+      "output_tokens": 2112,
+      "cache_read_tokens": 12762,
+      "usd": 0.16499,
+      "latency_ms": 27863.3,
+      "error": "",
+      "trace": [
+        {
+          "step": "search",
+          "iteration": 1,
+          "query": "corroborate source of wealth PEP higher risk site visit external investigation",
+          "k": 8,
+          "returned_chunk_ids": [
+            7968,
+            7970,
+            7988,
+            2680,
+            7990,
+            2719,
+            7967,
+            5066
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 1,
+          "query": "self-declaration source of wealth insufficient independent verification documentary evidence",
+          "k": 8,
+          "returned_chunk_ids": [
+            6768,
+            7968,
+            2675,
+            8956,
+            7969,
+            7970,
+            6774,
+            5063
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 2,
+          "query": "Wolfsberg corroboration independent from the customer source of wealth evidence examples",
+          "k": 8,
+          "returned_chunk_ids": [
+            5063,
+            5066,
+            5060,
+            5062,
+            5059,
+            5068,
+            5064,
+            5061
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 2,
+          "query": "enhanced due diligence establish source of wealth PEP reasonable measures reliable independent sources",
+          "k": 8,
+          "returned_chunk_ids": [
+            7968,
+            7996,
+            2680,
+            6344,
+            7967,
+            2720,
+            1454,
+            7990
+          ]
+        },
+        {
+          "step": "answer",
+          "iteration": 3,
+          "claims": 12
+        }
+      ]
+    }
+  ],
+  "written_at": "2026-08-30T14:10:53+00:00"
+}
