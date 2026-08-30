@@ -92,6 +92,8 @@ def evaluate(
             ]
             judgement = judge.judge(result.summary, passages)
             row["judge"] = judgement.to_dict()
+            row["judge_usd"] = round(judgement.usd, 5)
+            row["total_usd"] = round(row["total_usd"] + judgement.usd, 5)
 
         rows.append(row)
         marker = {"answered": "+", "refused": "-", "error": "!"}.get(result.outcome, "?")

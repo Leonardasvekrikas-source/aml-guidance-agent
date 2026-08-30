@@ -20,6 +20,7 @@ from typing import Any, cast
 import anthropic
 
 from ..config import settings
+from ..cost import usd
 from ..llm import make_client
 
 JUDGE_TOOL: dict[str, Any] = {
@@ -78,6 +79,10 @@ class Judgement:
     unsupported: list[str]
     reason: str
     error: str = ""
+    # The judge is a model call and therefore costs money. Leaving it out
+    # of the accounting is how a run's reported cost drifts below what was
+    # actually charged.
+    usd: float = 0.0
 
     def to_dict(self) -> dict[str, Any]:
         return {
@@ -85,6 +90,7 @@ class Judgement:
             "unsupported_assertions": self.unsupported,
             "reason": self.reason,
             "error": self.error,
+            "usd": round(self.usd, 5),
         }
 
 
@@ -133,6 +139,12 @@ class GroundednessJudge:
             # system being measured.
             return Judgement(False, [], "", error=f"{type(exc).__name__}: {exc}")
 
+        spend = usd(
+            self.model,
+            input_tokens=response.usage.input_tokens,
+            output_tokens=response.usage.output_tokens,
+        )
+
         for block in response.content:
             if block.type == "tool_use" and block.name == "record_judgement":
                 data = cast(dict[str, Any], block.input)
@@ -140,6 +152,7 @@ class GroundednessJudge:
                     grounded=bool(data.get("grounded")),
                     unsupported=[str(x) for x in (data.get("unsupported_assertions") or [])],
                     reason=str(data.get("reason", "")),
+                    usd=spend,
                 )
 
         return Judgement(False, [], "", error="judge returned no verdict")

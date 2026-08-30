@@ -491,3 +491,54 @@ artifact for almost everything, and the one gap — judge verdicts having no
 home outside the file that got overwritten — is precisely the part that had to
 be paid for twice. `--only` and `--merge` now exist so that retesting eight
 questions does not mean paying for forty.
+
+---
+
+## Budget — the run cost more than the code said it did
+
+A $30 API budget was spent before contextual retrieval could be built. The
+in-repo accounting reported roughly $23 at that point. The gap is not mysterious
+and is worth writing down, because a cost figure that undercounts is worse than
+no cost figure at all.
+
+**What was counted.** The agent loop and the citation-support check, per
+question, including cache reads and cache writes at their correct multipliers.
+
+**What was not.**
+
+- **The groundedness judge.** One model call per answered question, never added
+  to any total. Fixed: `Judgement` now carries its own cost and it is folded
+  into the per-question total.
+- **Work outside the evaluation harness.** Individual `make ask` runs, the run
+  that crashed at question three, and the two- and six-question retests. Each
+  was cheap; together they were not.
+- **Re-runs after a fix.** Every metric in this repository was produced at least
+  twice, because the first attempt found something wrong. That is the process
+  working, and it doubles the bill.
+
+**The estimate that was wrong, and by how much.** A full 40-question run was
+predicted at ~$12 from a metered single question. It came to $16.41. The single
+question used to extrapolate finished in three searches; the median across the
+set was nine, and the questions that needed a validation retry cost roughly
+double. Extrapolating from one easy sample understated the tail.
+
+**What would be done differently.** Meter three questions of varying difficulty
+rather than one, count every model call in the same ledger, and treat the
+resulting number as a floor rather than an estimate.
+
+---
+
+## Contextual retrieval — implemented, measured, not run
+
+`src/aml_agent/ingest/contextualize.py` is complete and its cost estimator
+works: $8.68 on Sonnet at batch 12, $3.38 on Haiku at batch 24, printed before
+anything is charged. A calibration run over three documents produced 255
+contextualised chunks for $0.31 — tracking the estimate closely — and then hit
+the exhausted credit balance mid-document.
+
+The resulting `t480ctx` profile was **deleted rather than kept**. It covered 3
+of 30 documents and 80 of its 255 chunks had no context at all, having fallen
+back to their original text when the API refused. Leaving it in the database
+would have left something benchmarkable that was not the thing it claimed to
+be, and a number from it would have been meaningless in a way nothing in the
+output would have shown.

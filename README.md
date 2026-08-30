@@ -364,12 +364,16 @@ that cannot show you a rejection has not demonstrated anything.
 
 Written honestly, and kept current.
 
-**Not yet measured.** The agent loop, citation validation and the LLM judge
-have never been run end to end — no API key was available during development.
-They are unit-tested with the model stubbed out, which tests the wiring and not
-the behaviour. Until `make eval-answers` and `make judge-audit` have run, this
-project has a *measured* retrieval benchmark and an *unmeasured* answer layer,
-and the README should be read that way.
+**The judge is unaudited.** Groundedness comes from an LLM judge whose
+agreement with a human has not been measured. `results/judge_agreement.md`
+holds 20 sampled decisions awaiting grading; until `make judge-audit-score` has
+run, that 0.731 is a second model's opinion with a decimal point on it. Every
+other figure in the answer table is computed in code.
+
+**Contextual retrieval is implemented but not run.** The code and its cost
+estimator are committed; the API budget ran out first. First-stage recall is
+the measured bottleneck, so this is the most likely next improvement — and it
+is currently a claim about what should help, not a result.
 
 **The evaluation set has a single author.** It reflects one view of what a
 correct answer looks like. Inter-annotator agreement is unmeasured, and with 30
