@@ -1,0 +1,311 @@
+{
+  "trace_id": "9d89d82d781b",
+  "question": "When a crypto exchange sends a customer's coins to another regulated exchange, which details about the sending customer must the exchange itself have verified, and which details about the receiving party can it pass on without verifying?",
+  "outcome": "answered",
+  "summary": "Under the FATF \"travel rule\" (R.16 as applied to virtual assets via INR.15 para 7(b)), the sending (ordering) VASP must obtain, hold and transmit both originator and beneficiary information \u2014 but only the originator data has to be accurate/verified. So the exchange must have verified its own customer's full name, and hold that customer's wallet/account number and one of address / national ID number / customer ID number / date and place of birth. The beneficiary details it passes on \u2014 the receiving party's name and beneficiary account (wallet) number \u2014 are required to be submitted but need not be verified for accuracy by the sender, though the sender must still sanction-screen the beneficiary name and monitor for suspicion. Correspondingly, the receiving exchange may assume the originator data was verified upstream and does not have to verify it, but must have verified its own customer (the beneficiary) and check the incoming data matches.",
+  "citations": [
+    {
+      "chunk_id": 722,
+      "title": "Updated Guidance for a Risk-Based Approach to Virtual Assets and Virtual Asset Service Providers",
+      "publisher": "FATF",
+      "page": 58,
+      "source_url": "https://www.fatf-gafi.org/content/dam/fatf-gafi/guidance/Updated-Guidance-VA-VASP.pdf",
+      "section_heading": "176 Recommendation 16 defines \u201cwire transfers\u201d as any transaction car ried out on"
+    },
+    {
+      "chunk_id": 721,
+      "title": "Updated Guidance for a Risk-Based Approach to Virtual Assets and Virtual Asset Service Providers",
+      "publisher": "FATF",
+      "page": 57,
+      "source_url": "https://www.fatf-gafi.org/content/dam/fatf-gafi/guidance/Updated-Guidance-VA-VASP.pdf",
+      "section_heading": "171 Recommendation 14 also applies to agents of MVTS providers. That is, any natural"
+    },
+    {
+      "chunk_id": 723,
+      "title": "Updated Guidance for a Risk-Based Approach to Virtual Assets and Virtual Asset Service Providers",
+      "publisher": "FATF",
+      "page": 58,
+      "source_url": "https://www.fatf-gafi.org/content/dam/fatf-gafi/guidance/Updated-Guidance-VA-VASP.pdf",
+      "section_heading": "176 Recommendation 16 defines \u201cwire transfers\u201d as any transaction car ried out on"
+    },
+    {
+      "chunk_id": 724,
+      "title": "Updated Guidance for a Risk-Based Approach to Virtual Assets and Virtual Asset Service Providers",
+      "publisher": "FATF",
+      "page": 59,
+      "source_url": "https://www.fatf-gafi.org/content/dam/fatf-gafi/guidance/Updated-Guidance-VA-VASP.pdf",
+      "section_heading": "181 Countries should ensure that ordering institutions (whether a VASP or other"
+    },
+    {
+      "chunk_id": 726,
+      "title": "Updated Guidance for a Risk-Based Approach to Virtual Assets and Virtual Asset Service Providers",
+      "publisher": "FATF",
+      "page": 61,
+      "source_url": "https://www.fatf-gafi.org/content/dam/fatf-gafi/guidance/Updated-Guidance-VA-VASP.pdf",
+      "section_heading": "183 For the required information which the beneficiary institution must obtain from the"
+    },
+    {
+      "chunk_id": 729,
+      "title": "Updated Guidance for a Risk-Based Approach to Virtual Assets and Virtual Asset Service Providers",
+      "publisher": "FATF",
+      "page": 62,
+      "source_url": "https://www.fatf-gafi.org/content/dam/fatf-gafi/guidance/Updated-Guidance-VA-VASP.pdf",
+      "section_heading": "188 It is not necessary for the information to be attached directly to the VA transfer"
+    },
+    {
+      "chunk_id": 725,
+      "title": "Updated Guidance for a Risk-Based Approach to Virtual Assets and Virtual Asset Service Providers",
+      "publisher": "FATF",
+      "page": 60,
+      "source_url": "https://www.fatf-gafi.org/content/dam/fatf-gafi/guidance/Updated-Guidance-VA-VASP.pdf",
+      "section_heading": "183 For the required information which the beneficiary institution must obtain from the"
+    }
+  ],
+  "refusal_reason": "",
+  "attempts": 1,
+  "searches": 3,
+  "input_tokens": 141,
+  "output_tokens": 2001,
+  "agent_usd": 0.128,
+  "validation_usd": 0.05089,
+  "total_usd": 0.17889,
+  "latency_ms": 45927.0,
+  "validation": {
+    "passed": true,
+    "citation_validity": 1.0,
+    "groundedness": 1.0,
+    "checked_support": true,
+    "usd": 0.05089,
+    "verdicts": [
+      {
+        "claim": "FATF Recommendation 16 applies to VASPs' virtual asset transfers, and this application of the wire transfer requirements in the VA context is called the travel rule; the full requirements apply to VA transfers between a VASP and another obliged entity such as another VASP.",
+        "chunk_ids": [
+          722,
+          721
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage explicitly states \"The application of the FATF's wire transfer requirements in the VA context is called the travel rule\" and that \"The full requirements of Recommendation 16 apply to (a) and (b)\" where (b) is \"a VA transfer between a VASP and another obliged entity (e.g., between two VASPs...)\"."
+      },
+      {
+        "claim": "Ordering institutions in a VA transfer must obtain and hold required and accurate originator information plus required beneficiary information, and submit that information to the beneficiary institution.",
+        "chunk_ids": [
+          723
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states \"ordering institutions ... obtain and hold required and accurate originator information and required beneficiary information and submit the information to beneficiary institutions,\" which directly matches the claim."
+      },
+      {
+        "claim": "The information the ordering institution must obtain and hold about the sending customer is: the originator's accurate (i.e. verified) full name; the originator's account number where an account is used, which in the VA context can mean the wallet address; and the originator's physical address, or national identity number, or customer identification number (not a transaction number) that uniquely identifies the originator, or date and place of birth.",
+        "chunk_ids": [
+          724
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage lists items a, b, c under \"required information which the ordering institution must obtain and hold\" matching exactly the claim: verified full name, account number/wallet address, and physical address/national ID/customer ID or date and place of birth."
+      },
+      {
+        "claim": "The required information also includes the name of the beneficiary and the beneficiary account number where such an account is used to process the transaction.",
+        "chunk_ids": [
+          724
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage explicitly lists 'd. beneficiary\u2019s name' and 'e. beneficiary account number where such an account is used to process the transaction' as part of the required information the ordering institution must obtain and hold."
+      },
+      {
+        "claim": "For beneficiary information, submitting the data to the beneficiary VASP is mandatory but data accuracy is not required of the ordering VASP; the ordering VASP must instead monitor to confirm no suspicions arise.",
+        "chunk_ids": [
+          726
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage under \"Beneficiary Information\" states \"Required, i.e. submitting the necessary data to the beneficiary VASP is mandatory. Data accuracy is not required, but the ordering VASP must monitor to confirm no suspicions arise,\" which directly matches the claim."
+      },
+      {
+        "claim": "The ordering VASP's required actions include obtaining the necessary information from the originator and retaining a record, screening to confirm the beneficiary is not a sanctioned name, and monitoring and reporting transactions that raise suspicion.",
+        "chunk_ids": [
+          726
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage's 'Actions required' list (under the ordering/originator side) states exactly: 'Obtain the necessary information from the originator and retain a record. Screen to confirm that the beneficiary is not a sanctioned name. Monitor transactions and report when they raise a suspicion.'"
+      },
+      {
+        "claim": "Countries may adopt a de minimis threshold of USD/EUR 1 000 for VA transfers, below which fewer requirements apply and VASPs need collect only the names of the originator and beneficiary and the VA wallet information.",
+        "chunk_ids": [
+          729
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states countries may adopt a de minimis threshold of USD/EUR 1,000, with fewer requirements below it, requiring VASPs to collect \"the name of the originator and the beneficiary\" and \"the VA wallet address for each or a unique transaction reference number.\""
+      },
+      {
+        "claim": "On the receiving side, the beneficiary institution must obtain and hold required but not necessarily accurate originator information, and required and accurate beneficiary information.",
+        "chunk_ids": [
+          723
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage explicitly states beneficiary institutions 'obtain and hold required (but not necessarily accurate) originator information and required and accurate beneficiary information,' matching the claim exactly."
+      },
+      {
+        "claim": "The beneficiary institution does not need to verify the originator's name for accuracy \u2014 it may assume the data has been verified by the ordering VASP \u2014 but should review it for suspicious transaction report monitoring and sanctions screening; it must verify the beneficiary's name for accuracy if its customer's name was not previously verified, and can confirm the received beneficiary name and account number match its verified customer records.",
+        "chunk_ids": [
+          725,
+          724,
+          726
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "Chunk 725 explicitly states the beneficiary institution 'does not need to be verify the originator's name for accuracy, but should review it for the purpose of STR monitoring and sanction screening' and separately explains data accuracy 'is not required' as 'the beneficiary VASP may assume that the data has been verified by the ordering VASP' (general principle applying to originator info); it also states the beneficiary institution 'must verify the beneficiary's name for accuracy, if the name of their customer has not previously verified' and 'can confirm if the beneficiary's name and account number they obtain from the ordering institution match with the beneficiary institution's verified customer data' \u2014 all elements of the claim are supported."
+      }
+    ]
+  },
+  "drafts": [
+    {
+      "trace_id": "9d89d82d781b",
+      "question": "When a crypto exchange sends a customer's coins to another regulated exchange, which details about the sending customer must the exchange itself have verified, and which details about the receiving party can it pass on without verifying?",
+      "outcome": "answered",
+      "summary": "Under the FATF \"travel rule\" (R.16 as applied to virtual assets via INR.15 para 7(b)), the sending (ordering) VASP must obtain, hold and transmit both originator and beneficiary information \u2014 but only the originator data has to be accurate/verified. So the exchange must have verified its own customer's full name, and hold that customer's wallet/account number and one of address / national ID number / customer ID number / date and place of birth. The beneficiary details it passes on \u2014 the receiving party's name and beneficiary account (wallet) number \u2014 are required to be submitted but need not be verified for accuracy by the sender, though the sender must still sanction-screen the beneficiary name and monitor for suspicion. Correspondingly, the receiving exchange may assume the originator data was verified upstream and does not have to verify it, but must have verified its own customer (the beneficiary) and check the incoming data matches.",
+      "claims": [
+        {
+          "text": "FATF Recommendation 16 applies to VASPs' virtual asset transfers, and this application of the wire transfer requirements in the VA context is called the travel rule; the full requirements apply to VA transfers between a VASP and another obliged entity such as another VASP.",
+          "chunk_ids": [
+            722,
+            721
+          ]
+        },
+        {
+          "text": "Ordering institutions in a VA transfer must obtain and hold required and accurate originator information plus required beneficiary information, and submit that information to the beneficiary institution.",
+          "chunk_ids": [
+            723
+          ]
+        },
+        {
+          "text": "The information the ordering institution must obtain and hold about the sending customer is: the originator's accurate (i.e. verified) full name; the originator's account number where an account is used, which in the VA context can mean the wallet address; and the originator's physical address, or national identity number, or customer identification number (not a transaction number) that uniquely identifies the originator, or date and place of birth.",
+          "chunk_ids": [
+            724
+          ]
+        },
+        {
+          "text": "The required information also includes the name of the beneficiary and the beneficiary account number where such an account is used to process the transaction.",
+          "chunk_ids": [
+            724
+          ]
+        },
+        {
+          "text": "For beneficiary information, submitting the data to the beneficiary VASP is mandatory but data accuracy is not required of the ordering VASP; the ordering VASP must instead monitor to confirm no suspicions arise.",
+          "chunk_ids": [
+            726
+          ]
+        },
+        {
+          "text": "The ordering VASP's required actions include obtaining the necessary information from the originator and retaining a record, screening to confirm the beneficiary is not a sanctioned name, and monitoring and reporting transactions that raise suspicion.",
+          "chunk_ids": [
+            726
+          ]
+        },
+        {
+          "text": "Countries may adopt a de minimis threshold of USD/EUR 1 000 for VA transfers, below which fewer requirements apply and VASPs need collect only the names of the originator and beneficiary and the VA wallet information.",
+          "chunk_ids": [
+            729
+          ]
+        },
+        {
+          "text": "On the receiving side, the beneficiary institution must obtain and hold required but not necessarily accurate originator information, and required and accurate beneficiary information.",
+          "chunk_ids": [
+            723
+          ]
+        },
+        {
+          "text": "The beneficiary institution does not need to verify the originator's name for accuracy \u2014 it may assume the data has been verified by the ordering VASP \u2014 but should review it for suspicious transaction report monitoring and sanctions screening; it must verify the beneficiary's name for accuracy if its customer's name was not previously verified, and can confirm the received beneficiary name and account number match its verified customer records.",
+          "chunk_ids": [
+            725,
+            724,
+            726
+          ]
+        }
+      ],
+      "refusal_reason": "",
+      "iterations": 3,
+      "searches": 3,
+      "retrieved_chunk_ids": [
+        721,
+        722,
+        723,
+        724,
+        725,
+        726,
+        727,
+        729,
+        735,
+        736,
+        769,
+        4919,
+        6759
+      ],
+      "input_tokens": 141,
+      "output_tokens": 2001,
+      "cache_read_tokens": 12088,
+      "usd": 0.128,
+      "latency_ms": 27285.2,
+      "error": "",
+      "trace": [
+        {
+          "step": "search",
+          "iteration": 1,
+          "query": "travel rule originator beneficiary information virtual asset transfer VASP",
+          "k": 8,
+          "returned_chunk_ids": [
+            723,
+            725,
+            721,
+            735,
+            724,
+            769,
+            727,
+            722
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 1,
+          "query": "accuracy of originator information verified beneficiary information not verified wire transfer",
+          "k": 8,
+          "returned_chunk_ids": [
+            724,
+            725,
+            723,
+            726,
+            6759,
+            729,
+            4919,
+            769
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 2,
+          "query": "ordering institution does not need to verify the beneficiary's name for accuracy wallet address",
+          "k": 6,
+          "returned_chunk_ids": [
+            724,
+            725,
+            726,
+            723,
+            736,
+            729
+          ]
+        },
+        {
+          "step": "answer",
+          "iteration": 3,
+          "claims": 9
+        }
+      ]
+    }
+  ],
+  "written_at": "2026-08-30T11:29:55+00:00"
+}

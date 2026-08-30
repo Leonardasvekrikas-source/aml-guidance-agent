@@ -1,0 +1,620 @@
+{
+  "trace_id": "3a6a90d6b216",
+  "question": "A money-remittance business banks with us and runs everything through a single account - its own operating costs and the payments it pushes through for the people who use its service. Should we make it split those flows into separate accounts, and are we obliged to identify its end users ourselves?",
+  "outcome": "answered",
+  "summary": "On the account structure: nothing in the corpus makes segregation mandatory, but FATF explicitly suggests it as a risk-management option \u2014 a bank \"could consider encouraging or requiring\" its MVTS customers to run one account for their own corporate/settlement activity and a separate account for the payments they process on behalf of their own customers, precisely because the two activities carry different risks and separation makes monitoring more effective. Separate accounts are also suggested for higher-risk activity and for nested/downstream relationships. So requiring the split is a defensible, guidance-supported control, framed as good practice rather than an obligation.\n\nOn identifying the end users: no. FATF, the Basel Committee and the EBA all state that you are not required to conduct CDD on your customer's customers (\"KYCC\"). Your customer is the remitter; the remitter is responsible for CDD on its own users. Your obligations are to do proper (and, where risk warrants, enhanced) due diligence on the remitter itself, to understand its business, target markets and customer segments, to monitor the account, and to document in writing how the account may be used and what third-party usage is permitted. Two qualifications: (a) if the arrangement is effectively a payable-through account, where the remitter's customers transact directly on the account, you must be able to identify the ultimate user and satisfy yourself the remitter has done sufficient CDD and can hand over individual CDD records on request; and (b) when monitoring flags a specific transaction, you can make a targeted request for information about the underlying customer without that amounting to a CDD obligation. Finally, guidance warns against blanket de-risking \u2014 restrict or limit services before terminating.",
+  "citations": [
+    {
+      "chunk_id": 2393,
+      "title": "Guidance on Correspondent Banking Services",
+      "publisher": "FATF",
+      "page": 20,
+      "source_url": "https://www.fatf-gafi.org/content/dam/fatf-gafi/guidance/Guidance-Correspondent-Banking-Services.pdf",
+      "section_heading": "GUIDANCE ON CORRESPONDENT BANKING SERVICES"
+    },
+    {
+      "chunk_id": 2372,
+      "title": "Guidance on Correspondent Banking Services",
+      "publisher": "FATF",
+      "page": 6,
+      "source_url": "https://www.fatf-gafi.org/content/dam/fatf-gafi/guidance/Guidance-Correspondent-Banking-Services.pdf",
+      "section_heading": "GUIDANCE ON CORRESPONDENT BANKING SERVICES"
+    },
+    {
+      "chunk_id": 6750,
+      "title": "Guidelines: Sound management of risks related to money laundering and financing of terrorism",
+      "publisher": "Basel Committee on Banking Supervision",
+      "page": 28,
+      "source_url": "https://www.bis.org/publications/202007-guidelines-sound-management-risks-related-money-laundering-and-financing-terrorism-revisions-supervisory.pdf",
+      "section_heading": "24 Sound management of risks related to money laundering and financing of terrorism"
+    },
+    {
+      "chunk_id": 2694,
+      "title": "Guidelines under Articles 17 and 18(4) of Directive (EU) 2015/849 on customer due diligence and the factors credit and financial institutions should consider when assessing the money laundering and terrorist financing risk associated with individual business relationships and occasional transactions ('The ML/TF Risk Factors Guidelines'), repealing and replacing Guidelines JC/2017/37 \u2014 EBA/GL/2021/02 (consolidated version)",
+      "publisher": "European Banking Authority (EBA)",
+      "page": 51,
+      "source_url": "https://www.eba.europa.eu/sites/default/files/document_library/Publications/Guidelines/2023/EBA-GL-2023-03/1061654/Guidelines%20ML%20TF%20Risk%20Factors_conslidated.pdf.pdf",
+      "section_heading": "8.12 There is no requirement in Directive (EU) 2015/849 for correspondents to apply CDD"
+    },
+    {
+      "chunk_id": 6755,
+      "title": "Guidelines: Sound management of risks related to money laundering and financing of terrorism",
+      "publisher": "Basel Committee on Banking Supervision",
+      "page": 32,
+      "source_url": "https://www.bis.org/publications/202007-guidelines-sound-management-risks-related-money-laundering-and-financing-terrorism-revisions-supervisory.pdf",
+      "section_heading": "28 Sound management of risks related to money laundering and financing of terrorism"
+    },
+    {
+      "chunk_id": 6749,
+      "title": "Guidelines: Sound management of risks related to money laundering and financing of terrorism",
+      "publisher": "Basel Committee on Banking Supervision",
+      "page": 28,
+      "source_url": "https://www.bis.org/publications/202007-guidelines-sound-management-risks-related-money-laundering-and-financing-terrorism-revisions-supervisory.pdf",
+      "section_heading": "24 Sound management of risks related to money laundering and financing of terrorism"
+    },
+    {
+      "chunk_id": 2716,
+      "title": "Guidelines under Articles 17 and 18(4) of Directive (EU) 2015/849 on customer due diligence and the factors credit and financial institutions should consider when assessing the money laundering and terrorist financing risk associated with individual business relationships and occasional transactions ('The ML/TF Risk Factors Guidelines'), repealing and replacing Guidelines JC/2017/37 \u2014 EBA/GL/2021/02 (consolidated version)",
+      "publisher": "European Banking Authority (EBA)",
+      "page": 74,
+      "source_url": "https://www.eba.europa.eu/sites/default/files/document_library/Publications/Guidelines/2023/EBA-GL-2023-03/1061654/Guidelines%20ML%20TF%20Risk%20Factors_conslidated.pdf.pdf",
+      "section_heading": "11.10 The following factors may contribute to reducing risk:"
+    },
+    {
+      "chunk_id": 2384,
+      "title": "Guidance on Correspondent Banking Services",
+      "publisher": "FATF",
+      "page": 14,
+      "source_url": "https://www.fatf-gafi.org/content/dam/fatf-gafi/guidance/Guidance-Correspondent-Banking-Services.pdf",
+      "section_heading": "GUIDANCE ON CORRESPONDENT BANKING SERVICES"
+    },
+    {
+      "chunk_id": 2690,
+      "title": "Guidelines under Articles 17 and 18(4) of Directive (EU) 2015/849 on customer due diligence and the factors credit and financial institutions should consider when assessing the money laundering and terrorist financing risk associated with individual business relationships and occasional transactions ('The ML/TF Risk Factors Guidelines'), repealing and replacing Guidelines JC/2017/37 \u2014 EBA/GL/2021/02 (consolidated version)",
+      "publisher": "European Banking Authority (EBA)",
+      "page": 47,
+      "source_url": "https://www.eba.europa.eu/sites/default/files/document_library/Publications/Guidelines/2023/EBA-GL-2023-03/1061654/Guidelines%20ML%20TF%20Risk%20Factors_conslidated.pdf.pdf",
+      "section_heading": "8.2 Firms should take into account that, in a correspondent banking relationship, the"
+    },
+    {
+      "chunk_id": 2388,
+      "title": "Guidance on Correspondent Banking Services",
+      "publisher": "FATF",
+      "page": 17,
+      "source_url": "https://www.fatf-gafi.org/content/dam/fatf-gafi/guidance/Guidance-Correspondent-Banking-Services.pdf",
+      "section_heading": "GUIDANCE ON CORRESPONDENT BANKING SERVICES"
+    },
+    {
+      "chunk_id": 2390,
+      "title": "Guidance on Correspondent Banking Services",
+      "publisher": "FATF",
+      "page": 18,
+      "source_url": "https://www.fatf-gafi.org/content/dam/fatf-gafi/guidance/Guidance-Correspondent-Banking-Services.pdf",
+      "section_heading": "GUIDANCE ON CORRESPONDENT BANKING SERVICES"
+    },
+    {
+      "chunk_id": 2696,
+      "title": "Guidelines under Articles 17 and 18(4) of Directive (EU) 2015/849 on customer due diligence and the factors credit and financial institutions should consider when assessing the money laundering and terrorist financing risk associated with individual business relationships and occasional transactions ('The ML/TF Risk Factors Guidelines'), repealing and replacing Guidelines JC/2017/37 \u2014 EBA/GL/2021/02 (consolidated version)",
+      "publisher": "European Banking Authority (EBA)",
+      "page": 52,
+      "source_url": "https://www.eba.europa.eu/sites/default/files/document_library/Publications/Guidelines/2023/EBA-GL-2023-03/1061654/Guidelines%20ML%20TF%20Risk%20Factors_conslidated.pdf.pdf",
+      "section_heading": "8.12 There is no requirement in Directive (EU) 2015/849 for correspondents to apply CDD"
+    },
+    {
+      "chunk_id": 2392,
+      "title": "Guidance on Correspondent Banking Services",
+      "publisher": "FATF",
+      "page": 20,
+      "source_url": "https://www.fatf-gafi.org/content/dam/fatf-gafi/guidance/Guidance-Correspondent-Banking-Services.pdf",
+      "section_heading": "GUIDANCE ON CORRESPONDENT BANKING SERVICES"
+    },
+    {
+      "chunk_id": 2391,
+      "title": "Guidance on Correspondent Banking Services",
+      "publisher": "FATF",
+      "page": 19,
+      "source_url": "https://www.fatf-gafi.org/content/dam/fatf-gafi/guidance/Guidance-Correspondent-Banking-Services.pdf",
+      "section_heading": "GUIDANCE ON CORRESPONDENT BANKING SERVICES"
+    }
+  ],
+  "refusal_reason": "",
+  "attempts": 1,
+  "searches": 9,
+  "input_tokens": 161,
+  "output_tokens": 4426,
+  "agent_usd": 0.36949,
+  "validation_usd": 0.09075,
+  "total_usd": 0.46025,
+  "latency_ms": 102972.1,
+  "validation": {
+    "passed": true,
+    "citation_validity": 1.0,
+    "groundedness": 1.0,
+    "checked_support": true,
+    "usd": 0.09075,
+    "verdicts": [
+      {
+        "claim": "FATF guidance says a correspondent institution could consider encouraging or requiring its MVTS customers to open one account for conducting their own corporate or settlement activities, and a separate account for the services provided on behalf of their customers.",
+        "chunk_ids": [
+          2393
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states nearly verbatim: \"a correspondent institution could consider encouraging or requiring MVTS customers to open one account for conducting their own corporate or settlement activities, and another separate account for providing correspondent banking services... on behalf of their customers.\""
+      },
+      {
+        "claim": "The rationale FATF gives for splitting the accounts is that it facilitates effective monitoring of the two activities commensurate with the different types of risk they present.",
+        "chunk_ids": [
+          2393
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states \"This procedure may facilitate effective monitoring of these two activities commensurate with the different types of risk that they present,\" directly matching the claimed rationale for separate accounts."
+      },
+      {
+        "claim": "FATF also suggests separate accounts may be considered for higher-risk activities or higher-risk customers, and for nested or downstream relationships, to ensure appropriate transparency and effective monitoring.",
+        "chunk_ids": [
+          2393
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states \"Separate accounts may also be considered for higher risk activities or higher risk customers and nested or downstream relationships to ensure an appropriate level of transparency and effective monitoring,\" directly matching the claim."
+      },
+      {
+        "claim": "FATF states that there is no obligation triggered by the FATF Recommendations for a financial institution to apply CDD measures to the customers of the MVTS.",
+        "chunk_ids": [
+          2393
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage explicitly states \"there is no obligation triggered by the FATF Recommendations to a financial institution to apply CDD measures to the customers of the MVTS.\""
+      },
+      {
+        "claim": "FATF clarifies that the term KYCC has caused confusion and that the FATF Recommendations do not require financial institutions to conduct customer due diligence on the customers of their customer.",
+        "chunk_ids": [
+          2372,
+          6750
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "Passage states verbatim: \"The term KYCC has created a lot of confusion. To clarify, the FATF Recommendations do not require financial institutions to conduct customer due diligence on the customers of their customer.\""
+      },
+      {
+        "claim": "The EBA ML/TF Risk Factors Guidelines state there is no requirement in Directive (EU) 2015/849 for correspondents to apply CDD measures to the respondent's individual customers.",
+        "chunk_ids": [
+          2694
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage explicitly states \"There is no requirement in Directive (EU) 2015/849 for correspondents to apply CDD measures to the respondent\u2019s individual customers,\" matching the claim verbatim."
+      },
+      {
+        "claim": "The Basel Committee states there is no requirement or expectation for a correspondent bank to apply CDD measures to customers of the respondent bank, or to duplicate data the respondent already holds on its customers.",
+        "chunk_ids": [
+          6755
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "Passage states verbatim: \"There is no requirement or expectation for a correspondent bank to apply CDD measures to customers of the respondent bank or to duplicate the data on its customers obtained and stored by the respondent bank.\""
+      },
+      {
+        "claim": "Responsibility for conducting due diligence on the underlying customers sits with the respondent institution, not the correspondent.",
+        "chunk_ids": [
+          6750,
+          6749
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states \"Respondent banks are the ones responsible for conducting due diligence on their customers using correspondent banking services\" and that \"correspondent banks... are not generally required to do so on the respondent banks' customers,\" directly supporting the claim."
+      },
+      {
+        "claim": "Money remitters are expected to have their own monitoring systems and controls, including systems to identify linked transactions, to identify whether transactions from different customers are destined for the same payee, and to establish the source of funds.",
+        "chunk_ids": [
+          2716
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states \"Firms should in any case put in place: systems to identify linked transactions... systems to identify whether transactions from different customers are destined for the same payee; systems to permit as far as possible the establishment of the source of funds and the destination of funds,\" directly matching the claim."
+      },
+      {
+        "claim": "The correspondent is required to gather sufficient information to understand the nature of the respondent's business, including the target markets and customer segments it serves, as part of assessing risk.",
+        "chunk_ids": [
+          2384
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states \"The correspondent institution should also gather sufficient information to understand the nature of the respondent institution's business in line with the risks identified\" and \"correspondent institutions are required to understand the target markets and customer segments that are served by their respondent...as part of their assessment of risks,\" directly matching the claim."
+      },
+      {
+        "claim": "Where the arrangement is a payable-through account, allowing the respondent's customers to transact directly on the account, the correspondent should have policies, procedures and processes to identify the ultimate user of the account, and must be satisfied that the respondent has conducted sufficient CDD on those customers, has controls to identify and monitor their transactions, and can provide individual CDD information on request.",
+        "chunk_ids": [
+          2384
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states the correspondent should have policies/processes to identify the ultimate user, be satisfied the respondent conducted sufficient CDD, has controls to identify and monitor transactions, and can provide individual CDD information on request, and footnote 22 ties this context to payable-through-accounts."
+      },
+      {
+        "claim": "The EBA treats the opening of a payable-through account, which allows the respondent's customers to carry out transactions directly on the respondent's account, as a factor that increases risk.",
+        "chunk_ids": [
+          2690
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage lists under 'factors may contribute to increasing risk': 'The service includes the opening of a payable-through account, which allows the respondent's customers to carry out transactions directly on the account of the respondent.'"
+      },
+      {
+        "claim": "Where monitoring flags a transaction as potentially unusual, the correspondent may make a targeted request for information about the customer of the respondent to understand the transaction, and this does not amount to a requirement to conduct CDD on that customer.",
+        "chunk_ids": [
+          2388
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states this nearly verbatim: the correspondent \"could include, depending on the risk level of the transaction, a request to access information about the customer of the respondent institution as a means to get a proper understanding of the reasonableness of the transaction. This does not amount to a requirement to conduct CDD on the customer of the respondent.\""
+      },
+      {
+        "claim": "FATF recommends a written agreement documenting matters such as permitted third-party usage of the correspondent account, applicable internal controls, any restrictions the correspondent wishes to place on use of the account such as limiting transaction types or volumes, and the conditions for requesting information on particular transactions, especially in payable-through account relationships.",
+        "chunk_ids": [
+          2390
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage lists these exact elements as content to be provided in written agreements: \"permitted third-party usage of the correspondent account and applicable internal controls,\" \"restrictions that the correspondent institution may want to place on the use of the correspondent account (e.g. limiting transaction types, volumes, etc.),\" and \"conditions regarding the requests for information on particular transactions, especially in the case of 'payable through accounts' relationships.\""
+      },
+      {
+        "claim": "The EBA similarly expects a written agreement covering the products and services provided, how and by whom the facility can be used, the respondent's AML/CFT responsibilities, and how the correspondent will monitor compliance.",
+        "chunk_ids": [
+          2696
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage lists exactly these elements as required in the written agreement: \"the products and services provided to the respondent\", \"how and by whom the correspondent banking facility can be used\", \"what the respondent's AML/CFT responsibilities are\", and \"how the correspondent will monitor the relationship to ascertain the respondent complies with its responsibilities\"."
+      },
+      {
+        "claim": "FATF advises that relationships should be terminated only where identified risks cannot be managed, and that options such as refusing to conduct the transaction, filing a suspicious transaction report, or limiting or restricting individual products or transactions should be explored before termination.",
+        "chunk_ids": [
+          2392
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states termination is required \"where identified risks cannot be managed in line with the risk-based approach\" and that \"other options offered by Recommendation 10 should be explored prior to termination (such as refusing to conduct the transaction, and/or filing a suspicious transaction report)\" and \"a limitation of services or restriction of individual products/transactions can be considered.\""
+      },
+      {
+        "claim": "FATF warns that risk should be managed at the level of the individual relationship rather than by class of customer, to avoid de-risking and a cascade effect in which respondents close their own higher-risk client accounts.",
+        "chunk_ids": [
+          2391
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states risk should be assessed at the individual relationship level \"than the class of customers\" \"in line with the RBA (i.e. avoiding derisking)\" and explains it \"can also prevent a 'cascade' effect, where respondent institutions close their (highest risk) client accounts,\" directly supporting the claim."
+      }
+    ]
+  },
+  "drafts": [
+    {
+      "trace_id": "3a6a90d6b216",
+      "question": "A money-remittance business banks with us and runs everything through a single account - its own operating costs and the payments it pushes through for the people who use its service. Should we make it split those flows into separate accounts, and are we obliged to identify its end users ourselves?",
+      "outcome": "answered",
+      "summary": "On the account structure: nothing in the corpus makes segregation mandatory, but FATF explicitly suggests it as a risk-management option \u2014 a bank \"could consider encouraging or requiring\" its MVTS customers to run one account for their own corporate/settlement activity and a separate account for the payments they process on behalf of their own customers, precisely because the two activities carry different risks and separation makes monitoring more effective. Separate accounts are also suggested for higher-risk activity and for nested/downstream relationships. So requiring the split is a defensible, guidance-supported control, framed as good practice rather than an obligation.\n\nOn identifying the end users: no. FATF, the Basel Committee and the EBA all state that you are not required to conduct CDD on your customer's customers (\"KYCC\"). Your customer is the remitter; the remitter is responsible for CDD on its own users. Your obligations are to do proper (and, where risk warrants, enhanced) due diligence on the remitter itself, to understand its business, target markets and customer segments, to monitor the account, and to document in writing how the account may be used and what third-party usage is permitted. Two qualifications: (a) if the arrangement is effectively a payable-through account, where the remitter's customers transact directly on the account, you must be able to identify the ultimate user and satisfy yourself the remitter has done sufficient CDD and can hand over individual CDD records on request; and (b) when monitoring flags a specific transaction, you can make a targeted request for information about the underlying customer without that amounting to a CDD obligation. Finally, guidance warns against blanket de-risking \u2014 restrict or limit services before terminating.",
+      "claims": [
+        {
+          "text": "FATF guidance says a correspondent institution could consider encouraging or requiring its MVTS customers to open one account for conducting their own corporate or settlement activities, and a separate account for the services provided on behalf of their customers.",
+          "chunk_ids": [
+            2393
+          ]
+        },
+        {
+          "text": "The rationale FATF gives for splitting the accounts is that it facilitates effective monitoring of the two activities commensurate with the different types of risk they present.",
+          "chunk_ids": [
+            2393
+          ]
+        },
+        {
+          "text": "FATF also suggests separate accounts may be considered for higher-risk activities or higher-risk customers, and for nested or downstream relationships, to ensure appropriate transparency and effective monitoring.",
+          "chunk_ids": [
+            2393
+          ]
+        },
+        {
+          "text": "FATF states that there is no obligation triggered by the FATF Recommendations for a financial institution to apply CDD measures to the customers of the MVTS.",
+          "chunk_ids": [
+            2393
+          ]
+        },
+        {
+          "text": "FATF clarifies that the term KYCC has caused confusion and that the FATF Recommendations do not require financial institutions to conduct customer due diligence on the customers of their customer.",
+          "chunk_ids": [
+            2372,
+            6750
+          ]
+        },
+        {
+          "text": "The EBA ML/TF Risk Factors Guidelines state there is no requirement in Directive (EU) 2015/849 for correspondents to apply CDD measures to the respondent's individual customers.",
+          "chunk_ids": [
+            2694
+          ]
+        },
+        {
+          "text": "The Basel Committee states there is no requirement or expectation for a correspondent bank to apply CDD measures to customers of the respondent bank, or to duplicate data the respondent already holds on its customers.",
+          "chunk_ids": [
+            6755
+          ]
+        },
+        {
+          "text": "Responsibility for conducting due diligence on the underlying customers sits with the respondent institution, not the correspondent.",
+          "chunk_ids": [
+            6750,
+            6749
+          ]
+        },
+        {
+          "text": "Money remitters are expected to have their own monitoring systems and controls, including systems to identify linked transactions, to identify whether transactions from different customers are destined for the same payee, and to establish the source of funds.",
+          "chunk_ids": [
+            2716
+          ]
+        },
+        {
+          "text": "The correspondent is required to gather sufficient information to understand the nature of the respondent's business, including the target markets and customer segments it serves, as part of assessing risk.",
+          "chunk_ids": [
+            2384
+          ]
+        },
+        {
+          "text": "Where the arrangement is a payable-through account, allowing the respondent's customers to transact directly on the account, the correspondent should have policies, procedures and processes to identify the ultimate user of the account, and must be satisfied that the respondent has conducted sufficient CDD on those customers, has controls to identify and monitor their transactions, and can provide individual CDD information on request.",
+          "chunk_ids": [
+            2384
+          ]
+        },
+        {
+          "text": "The EBA treats the opening of a payable-through account, which allows the respondent's customers to carry out transactions directly on the respondent's account, as a factor that increases risk.",
+          "chunk_ids": [
+            2690
+          ]
+        },
+        {
+          "text": "Where monitoring flags a transaction as potentially unusual, the correspondent may make a targeted request for information about the customer of the respondent to understand the transaction, and this does not amount to a requirement to conduct CDD on that customer.",
+          "chunk_ids": [
+            2388
+          ]
+        },
+        {
+          "text": "FATF recommends a written agreement documenting matters such as permitted third-party usage of the correspondent account, applicable internal controls, any restrictions the correspondent wishes to place on use of the account such as limiting transaction types or volumes, and the conditions for requesting information on particular transactions, especially in payable-through account relationships.",
+          "chunk_ids": [
+            2390
+          ]
+        },
+        {
+          "text": "The EBA similarly expects a written agreement covering the products and services provided, how and by whom the facility can be used, the respondent's AML/CFT responsibilities, and how the correspondent will monitor compliance.",
+          "chunk_ids": [
+            2696
+          ]
+        },
+        {
+          "text": "FATF advises that relationships should be terminated only where identified risks cannot be managed, and that options such as refusing to conduct the transaction, filing a suspicious transaction report, or limiting or restricting individual products or transactions should be explored before termination.",
+          "chunk_ids": [
+            2392
+          ]
+        },
+        {
+          "text": "FATF warns that risk should be managed at the level of the individual relationship rather than by class of customer, to avoid de-risking and a cascade effect in which respondents close their own higher-risk client accounts.",
+          "chunk_ids": [
+            2391
+          ]
+        }
+      ],
+      "refusal_reason": "",
+      "iterations": 6,
+      "searches": 9,
+      "retrieved_chunk_ids": [
+        206,
+        1138,
+        1155,
+        2372,
+        2375,
+        2377,
+        2378,
+        2381,
+        2383,
+        2384,
+        2388,
+        2389,
+        2390,
+        2391,
+        2392,
+        2393,
+        2394,
+        2690,
+        2694,
+        2696,
+        2697,
+        2698,
+        2710,
+        2715,
+        2716,
+        2717,
+        2740,
+        3303,
+        3307,
+        4010,
+        4011,
+        4103,
+        4104,
+        4105,
+        4108,
+        4554,
+        4584,
+        4591,
+        4607,
+        4622,
+        4632,
+        4863,
+        4866,
+        5866,
+        6341,
+        6382,
+        6410,
+        6726,
+        6749,
+        6750,
+        6755,
+        8833,
+        8984,
+        8987,
+        9129,
+        9744
+      ],
+      "input_tokens": 161,
+      "output_tokens": 4426,
+      "cache_read_tokens": 87628,
+      "usd": 0.36949,
+      "latency_ms": 64035.9,
+      "error": "",
+      "trace": [
+        {
+          "step": "search",
+          "iteration": 1,
+          "query": "money service business commingling customer funds operating account separate accounts",
+          "k": 8,
+          "returned_chunk_ids": [
+            4010,
+            4011,
+            1155,
+            9744,
+            1138,
+            5866,
+            2715,
+            4584
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 1,
+          "query": "bank obligation identify customers of money remitter underlying clients",
+          "k": 8,
+          "returned_chunk_ids": [
+            2717,
+            2716,
+            4863,
+            2710,
+            2383,
+            3307,
+            4108,
+            3303
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 2,
+          "query": "banks are not required to conduct due diligence on customers of money services business account",
+          "k": 8,
+          "returned_chunk_ids": [
+            6749,
+            8987,
+            8833,
+            4607,
+            4622,
+            6750,
+            6726,
+            4591
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 2,
+          "query": "payable through account foreign bank customers direct access sub-account",
+          "k": 8,
+          "returned_chunk_ids": [
+            2384,
+            2383,
+            6749,
+            4632,
+            2375,
+            9129,
+            2377,
+            4866
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 3,
+          "query": "MVTS provider account with bank customers of customers KYCC not required",
+          "k": 8,
+          "returned_chunk_ids": [
+            2378,
+            2393,
+            6749,
+            2377,
+            2375,
+            2394,
+            6750,
+            2372
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 3,
+          "query": "payment institution safeguarding client funds segregated account own funds",
+          "k": 8,
+          "returned_chunk_ids": [
+            2740,
+            8984,
+            2389,
+            4103,
+            6410,
+            2390,
+            2384,
+            2388
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 4,
+          "query": "third-party payment processor bank commingled account risk unable to identify originators",
+          "k": 6,
+          "returned_chunk_ids": [
+            4105,
+            4104,
+            4554,
+            4103,
+            6382,
+            206
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 4,
+          "query": "correspondent relationship respondent payment institution enhanced due diligence risk factors EBA",
+          "k": 6,
+          "returned_chunk_ids": [
+            2690,
+            2696,
+            2391,
+            6341,
+            2392,
+            2381
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 5,
+          "query": "no requirement for correspondents to apply CDD on the respondent's customers",
+          "k": 6,
+          "returned_chunk_ids": [
+            2694,
+            2696,
+            2697,
+            2698,
+            6755,
+            2384
+          ]
+        },
+        {
+          "step": "answer",
+          "iteration": 6,
+          "claims": 17
+        }
+      ]
+    }
+  ],
+  "written_at": "2026-08-30T11:31:42+00:00"
+}

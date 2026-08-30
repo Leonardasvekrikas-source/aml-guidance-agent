@@ -1,0 +1,594 @@
+{
+  "trace_id": "382224188030",
+  "question": "Apart from checking price and quantity discrepancies, what practical checks on the paperwork a bank receives to pay a trade transaction have actually helped identify TBML?",
+  "outcome": "answered",
+  "summary": "The Wolfsberg/ICC/BAFT Trade Finance Principles summary-of-controls table for SBLCs and guarantees separates the claim-presentation stage from the payment stage. At presentation of claim documents (whether by Party Y directly or via Bank B to Bank A), the review is for new principal parties or countries not mentioned in the SBLC/Guarantee, plus sanctions list screening and AML checks. At the payment stage, it is the names on the payment instruction that are reviewed against sanctions lists and AML checks. Related pre/post-event risk indicators for claims and payment instructions include last-minute changes to payment instructions, claims made shortly after issuance, continuous claims and claim pressure tactics.",
+  "citations": [
+    {
+      "chunk_id": 4628,
+      "title": "The Wolfsberg Group, ICC and BAFT Trade Finance Principles (2019 amendment)",
+      "publisher": "The Wolfsberg Group, International Chamber of Commerce (ICC) and BAFT",
+      "page": 68,
+      "source_url": "https://db.wolfsberg-group.org/assets/5c770f68-6277-4443-931b-7750478f08e7/Trade%20Finance%20Principles.pdf",
+      "section_heading": "PUBLIC"
+    },
+    {
+      "chunk_id": 4627,
+      "title": "The Wolfsberg Group, ICC and BAFT Trade Finance Principles (2019 amendment)",
+      "publisher": "The Wolfsberg Group, International Chamber of Commerce (ICC) and BAFT",
+      "page": 67,
+      "source_url": "https://db.wolfsberg-group.org/assets/5c770f68-6277-4443-931b-7750478f08e7/Trade%20Finance%20Principles.pdf",
+      "section_heading": "PUBLIC"
+    },
+    {
+      "chunk_id": 4626,
+      "title": "The Wolfsberg Group, ICC and BAFT Trade Finance Principles (2019 amendment)",
+      "publisher": "The Wolfsberg Group, International Chamber of Commerce (ICC) and BAFT",
+      "page": 66,
+      "source_url": "https://db.wolfsberg-group.org/assets/5c770f68-6277-4443-931b-7750478f08e7/Trade%20Finance%20Principles.pdf",
+      "section_heading": "PUBLIC"
+    }
+  ],
+  "refusal_reason": "",
+  "attempts": 2,
+  "searches": 12,
+  "input_tokens": 495,
+  "output_tokens": 6597,
+  "agent_usd": 0.53408,
+  "validation_usd": 0.15161,
+  "total_usd": 0.68569,
+  "latency_ms": 159185.2,
+  "validation": {
+    "passed": true,
+    "citation_validity": 1.0,
+    "groundedness": 1.0,
+    "checked_support": true,
+    "usd": 0.02736,
+    "verdicts": [
+      {
+        "claim": "In the Wolfsberg/ICC/BAFT Trade Finance Principles summary of controls for SBLCs and guarantees, the reviewing stage \"Presentation of claim documents by Party Y to Bank B or Bank A\" involves reviewing for new principal parties or countries not mentioned in the SBLC/Guarantee, against sanctions lists and AML checks, carried out by Bank B (or Bank A if presentation is direct).",
+        "chunk_ids": [
+          4628
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage lists exactly this row: \"Presentation of claim documents by Party Y to Bank B or Bank A\" with checks \"New principal parties or countries not mentioned in SBLC/Guarantee\", \"Sanctions lists\", \"AML checks\", performed by \"Bank B or Bank A if presentation is direct\"."
+      },
+      {
+        "claim": "The same review \u2014 new principal parties or countries not mentioned in the SBLC/Guarantee, sanctions lists and AML checks \u2014 applies at the stage of presentation of claim documents by Bank B to Bank A, and is performed by Bank A.",
+        "chunk_ids": [
+          4628
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage explicitly lists 'Presentation of claim documents by Bank B to Bank A' with checks for 'New principal parties or countries not mentioned in SBLC/Guarantee', 'Sanctions lists', and 'AML checks', performed by 'Bank A'."
+      },
+      {
+        "claim": "The payment stages are treated as separate reviewing stages in that table: for payment by Bank A to Bank B or to Party Y's bank, and for payment by Bank B to Party Y, what is reviewed is the names on the payment instruction, against sanctions lists and AML checks.",
+        "chunk_ids": [
+          4628
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage lists both payment stages (\"Payment by Bank A to Bank B or to Party Y's bank\" and \"Payment by Bank B to Party Y\") as separate rows each with \"Names on the payment instruction,\" \"Sanctions lists,\" and \"AML checks\" as the items reviewed."
+      },
+      {
+        "claim": "Listed risk indicators connected with an SBLC/Guarantee under the heading \"Claims and Payment instructions\" (applicable pre or post transaction) are last minute changes to payment instructions, claims made within a short time after issuance, continuous claims under various guarantee instruments, and claim pressure tactics.",
+        "chunk_ids": [
+          4627
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage lists exactly these four items under \"Claims and Payment instructions\" (PRE or POST): \"Last minute changes to payment instructions\", \"Claims made within a short time after issuance\", \"Continuous claims under various guarantee instruments\", and \"Claim pressure tactics\"."
+      },
+      {
+        "claim": "Reviewing SBLC or guarantee claims is described as a mostly manual process in which the claim and any supporting documents presented for payment are compared against the terms and conditions of the SBLC or guarantee and, where applicable, ICC rules and international standard banking practice.",
+        "chunk_ids": [
+          4626
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states nearly verbatim: \"Reviewing SBLC or Guarantee claims is a mostly manual process, requiring that the claim and any supporting documents that may be presented for payment are compared against the terms and conditions of the SBLC or Guarantee and, where applicable, any ICC rules and international standard banking practice.\""
+      }
+    ]
+  },
+  "drafts": [
+    {
+      "trace_id": "382224188030",
+      "question": "Apart from checking price and quantity discrepancies, what practical checks on the paperwork a bank receives to pay a trade transaction have actually helped identify TBML?",
+      "outcome": "answered",
+      "summary": "Beyond price/quantity comparisons, the corpus points to a cluster of practical documentary checks: (a) cross-document consistency \u2014 comparing invoice, contract, transport and insurance documents against each other and against the terms of the credit/collection instruction, looking for contradictions such as the exporter's name differing from the payee; (b) qualitative document \"hygiene\" checks \u2014 vague or generic goods descriptions, missing/counterfeit documents, resubmission of previously rejected documents, copies where originals would be expected, recycled documentation reused with few or no edits (even stale dates), and personal rather than business email addresses; (c) independent verification of the shipping story \u2014 International Maritime Bureau warning notices and bill-of-lading checks, shipping lines' container tracking, checking weights and volumes are consistent with the shipping method, and confirming ports, vessel name and shipment dates against required data fields; (d) verifying the counterparties behind the paperwork \u2014 whether the exporter has any real trading presence, residential vs commercial addresses, and screening every name and country appearing on the documents, including new parties not named in the original instrument; and (e) behavioural signals around the paperwork \u2014 a buyer keen to waive discrepancies, or a customer unable to explain the meaning of its own LC/BC documents. Real cases show these working: a New Zealand FIU case where invoices supplied to banks described \"ceramic tiles\" when the actual export was fruit and were signed by a non-existent manager, and a Samoan case where customs confirmed no vehicles were ever imported despite transfers ostensibly paying for them. The corpus is also explicit about the limits: banks deal in documents, cannot usually detect mis-invoicing from documents alone, and in \"phantom shipping\" all documentation is falsified.",
+      "claims": [
+        {
+          "text": "A core documentary check is looking for inconsistencies across contracts, invoices and other trade documents \u2014 for example a contradiction between the name of the exporting entity and the name of the recipient of the payment, or differing prices on the invoice versus the underlying contract.",
+          "chunk_ids": [
+            20
+          ]
+        },
+        {
+          "text": "Vague or generic descriptions of the traded commodities in contracts, invoices or other trade documents is a recognised TBML risk indicator.",
+          "chunk_ids": [
+            20
+          ]
+        },
+        {
+          "text": "Trade or customs documents that are missing, appear to be counterfeits, contain false or misleading information, or are a resubmission of previously rejected documents are TBML risk indicators.",
+          "chunk_ids": [
+            20
+          ]
+        },
+        {
+          "text": "The use of copy documents in situations where original documentation would be expected, without reasonable explanation, is a risk-increasing factor in trade finance.",
+          "chunk_ids": [
+            2723
+          ]
+        },
+        {
+          "text": "Where trade documents can be checked, specific data points that have helped spot TBML include the use of a personal email address instead of a legitimate business email, and the obvious recycling of previous documentation with few or no edits, including something as basic as the date.",
+          "chunk_ids": [
+            185
+          ]
+        },
+        {
+          "text": "Another data point that has helped identify TBML is research showing the exporter has no trading presence at all, including the use of residential rather than business premises.",
+          "chunk_ids": [
+            185
+          ]
+        },
+        {
+          "text": "Checks on transactions can include using third-party or open-source data sources such as the International Maritime Bureau (for warning notices, bills of lading, shipping and pricing checks) or shipping lines' free container tracking services to verify the information provided and check the transaction's purpose is legitimate.",
+          "chunk_ids": [
+            2726
+          ]
+        },
+        {
+          "text": "Banks are advised to check that the weights and volumes of goods being shipped are consistent with the shipping method.",
+          "chunk_ids": [
+            2726
+          ]
+        },
+        {
+          "text": "Because letters of credit and bills for collection are largely paper-based, automated transaction monitoring may not be feasible, so the processing bank should assess the documents for consistency with the terms of the trade transaction using staff professional expertise and judgement.",
+          "chunk_ids": [
+            2726
+          ]
+        },
+        {
+          "text": "In bills for collection, commercial documents presented for payment should be compared against each other for material differences, and checked that they relate to the transaction described in the covering schedule and the terms and conditions of the collection instructions, in accordance with applicable ICC rules and standard international banking practice.",
+          "chunk_ids": [
+            4614
+          ]
+        },
+        {
+          "text": "Documentation presented under a documentary credit is examined for compliance with the credit and in accordance with UCP and international banking standards, though this review does not need to involve detailed examination of all information in all documents.",
+          "chunk_ids": [
+            4593
+          ]
+        },
+        {
+          "text": "Review of the documentary credit application includes screening not just the named beneficiary but the country in which it is located, the goods involved, the country of shipment, disclosed transhipment points and destination points, and all other names appearing in the credit.",
+          "chunk_ids": [
+            4593
+          ]
+        },
+        {
+          "text": "When claim documents are presented under a standby letter of credit or guarantee, a specific check is for new principal parties or countries not mentioned in the original SBLC or guarantee, alongside sanctions and AML checks on names on the payment instruction.",
+          "chunk_ids": [
+            4628
+          ]
+        },
+        {
+          "text": "Banks should require minimum information on the underlying trade transaction before financing, including port of loading, port of discharge, shipment date, description of goods, vessel name and purchase order/LC number, providing concrete fields against which the paperwork can be tested.",
+          "chunk_ids": [
+            4644
+          ]
+        },
+        {
+          "text": "Documentary risk indicators for a documentary credit include deal structures beyond the capacity or substance of the customer, improbable goods, origins, quantities or destinations, and unusual complexity or unconventional use of financial products.",
+          "chunk_ids": [
+            4601
+          ]
+        },
+        {
+          "text": "Behavioural signals connected to the paperwork are treated as risk-increasing: the buyer being willing or keen to accept or waive discrepancies in the documentation, the customer being unable or reluctant to provide supporting documentation, and the customer being unable to explain the content and meaning of the underlying LC or BC documents.",
+          "chunk_ids": [
+            2724
+          ]
+        },
+        {
+          "text": "Other document-related risk factors include the goods requiring export licences such as dual-use authorisations, and the shipment being over- or under-insured or covered by multiple insurances.",
+          "chunk_ids": [
+            2723
+          ]
+        },
+        {
+          "text": "Issuing more than one invoice for the same goods (multiple invoicing) allows a seller to justify receipt of multiple payments, and is harder to detect where colluding parties use more than one financial institution.",
+          "chunk_ids": [
+            4557
+          ]
+        },
+        {
+          "text": "In a New Zealand case, banks supplied the FIU with the invoices they had been given as justification for payments; these invoices were clearly fraudulent, describing the transactions as payments for export of 'ceramic tiles' when the actual exports were fruit, and were signed by a purported manager who enquiries showed was not employed at the company.",
+          "chunk_ids": [
+            207
+          ]
+        },
+        {
+          "text": "In a Samoan case, the national customs authority confirmed that no vehicles had been imported despite telegraphic transfers purportedly paying an overseas car dealership for vehicle imports, indicating a TBML scheme.",
+          "chunk_ids": [
+            7263
+          ]
+        },
+        {
+          "text": "Freight forwarders and customs brokers can review commercial invoices (which include the parties, the goods and the harmonised commodity description and coding system) and bills of lading, and are positioned to spot indications of TBML in that documentation.",
+          "chunk_ids": [
+            199
+          ]
+        },
+        {
+          "text": "There are acknowledged limits: over- or under-invoicing and other misrepresentations of value cannot easily be identified from trade documents alone, and in 'phantom shipping' no goods are shipped and all documentation is completely falsified.",
+          "chunk_ids": [
+            4558
+          ]
+        },
+        {
+          "text": "Because banks deal only in documents and each bank sees only part of a fragmented process, it is extremely rare for any one bank to review an overall trade financing process in complete detail, and banks are not generally equipped to assess over- or under-invoicing.",
+          "chunk_ids": [
+            4600
+          ]
+        },
+        {
+          "text": "For bills for collection specifically, a detailed examination of the attached documents is unlikely to be productive because there are no specified terms and conditions against which to check them, unlike under a documentary credit.",
+          "chunk_ids": [
+            4613
+          ]
+        }
+      ],
+      "refusal_reason": "",
+      "iterations": 6,
+      "searches": 10,
+      "retrieved_chunk_ids": [
+        16,
+        17,
+        18,
+        19,
+        20,
+        176,
+        181,
+        184,
+        185,
+        188,
+        194,
+        196,
+        197,
+        198,
+        199,
+        200,
+        207,
+        233,
+        930,
+        933,
+        934,
+        2047,
+        2204,
+        2210,
+        2211,
+        2723,
+        2724,
+        2726,
+        2917,
+        2938,
+        2939,
+        3302,
+        3361,
+        4557,
+        4558,
+        4564,
+        4570,
+        4574,
+        4576,
+        4577,
+        4580,
+        4593,
+        4600,
+        4601,
+        4613,
+        4614,
+        4628,
+        4640,
+        4644,
+        4899,
+        5842,
+        6320,
+        6338,
+        6350,
+        6361,
+        6395,
+        6396,
+        6409,
+        6411,
+        6437,
+        6768,
+        7263
+      ],
+      "input_tokens": 137,
+      "output_tokens": 5311,
+      "cache_read_tokens": 93634,
+      "usd": 0.44518,
+      "latency_ms": 72463.9,
+      "error": "",
+      "trace": [
+        {
+          "step": "search",
+          "iteration": 1,
+          "query": "trade-based money laundering document examination red flags",
+          "k": 8,
+          "returned_chunk_ids": [
+            933,
+            934,
+            3302,
+            2204,
+            17,
+            3361,
+            181,
+            930
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 1,
+          "query": "bill of lading inconsistencies letter of credit documentary checks",
+          "k": 8,
+          "returned_chunk_ids": [
+            4577,
+            2726,
+            199,
+            6768,
+            4574,
+            4593,
+            4628,
+            4576
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 2,
+          "query": "TBML risk indicators relating to trade documents invoice description of goods shipping route",
+          "k": 10,
+          "returned_chunk_ids": [
+            199,
+            16,
+            200,
+            17,
+            198,
+            185,
+            176,
+            184,
+            2047,
+            5842
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 2,
+          "query": "container number vessel tracking verification shipping documents legitimacy",
+          "k": 8,
+          "returned_chunk_ids": [
+            2726,
+            4558,
+            6437,
+            4899,
+            6768,
+            2938,
+            4557,
+            2917
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 3,
+          "query": "risk indicators structure of the transaction trade documents inconsistent shipment vague description of goods",
+          "k": 10,
+          "returned_chunk_ids": [
+            20,
+            2723,
+            2211,
+            19,
+            18,
+            4614,
+            4601,
+            200,
+            2724,
+            4640
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 3,
+          "query": "trade finance good practice document checkers training financial crime risk red flags FCA",
+          "k": 8,
+          "returned_chunk_ids": [
+            6361,
+            6320,
+            6411,
+            6409,
+            6350,
+            6395,
+            6396,
+            6338
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 4,
+          "query": "counterfeit trade documents resubmission previously rejected documents landlocked country port",
+          "k": 8,
+          "returned_chunk_ids": [
+            2723,
+            20,
+            2047,
+            185,
+            2724,
+            2211,
+            4628,
+            4644
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 4,
+          "query": "case study bank detected TBML falsified bill of lading vessel did not exist investigation",
+          "k": 8,
+          "returned_chunk_ids": [
+            199,
+            197,
+            5842,
+            207,
+            7263,
+            194,
+            188,
+            196
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 5,
+          "query": "documents presented under documentary credit risk indicators amendments to letter of credit unusual",
+          "k": 8,
+          "returned_chunk_ids": [
+            4577,
+            4593,
+            4614,
+            4600,
+            4580,
+            2939,
+            4601,
+            4613
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 5,
+          "query": "customs data comparison import export declaration cross-check bank trade data mismatch",
+          "k": 8,
+          "returned_chunk_ids": [
+            20,
+            233,
+            185,
+            4564,
+            4570,
+            4640,
+            2210,
+            4601
+          ]
+        },
+        {
+          "step": "answer",
+          "iteration": 6,
+          "claims": 24
+        }
+      ]
+    },
+    {
+      "trace_id": "2918cc372358",
+      "question": "Your draft was REJECTED by citation validation. The following claims did not survive:\n\n- Claim: When claim documents are presented under a standby letter of credit or guarantee, a specific check is for new principal parties or countries not mentioned in the original SBLC or guarantee, alongside sanctions and AML checks on names on the payment instruction.\n  Cited: [4628]\n  Problem: The passage lists \"New principal parties or countries not mentioned in SBLC/Guarantee\" as a check for presentation of claim documents, but \"names on the payment instruction\" checks are listed separately for the Payment steps, not for the claim documents presentation step; the claim conflates these two distinct steps.\n\nSearch for evidence that actually supports these claims and answer again, or drop the claims you cannot support. If the corpus does not support them at all, call refuse instead of weakening the wording until it passes.",
+      "outcome": "answered",
+      "summary": "The Wolfsberg/ICC/BAFT Trade Finance Principles summary-of-controls table for SBLCs and guarantees separates the claim-presentation stage from the payment stage. At presentation of claim documents (whether by Party Y directly or via Bank B to Bank A), the review is for new principal parties or countries not mentioned in the SBLC/Guarantee, plus sanctions list screening and AML checks. At the payment stage, it is the names on the payment instruction that are reviewed against sanctions lists and AML checks. Related pre/post-event risk indicators for claims and payment instructions include last-minute changes to payment instructions, claims made shortly after issuance, continuous claims and claim pressure tactics.",
+      "claims": [
+        {
+          "text": "In the Wolfsberg/ICC/BAFT Trade Finance Principles summary of controls for SBLCs and guarantees, the reviewing stage \"Presentation of claim documents by Party Y to Bank B or Bank A\" involves reviewing for new principal parties or countries not mentioned in the SBLC/Guarantee, against sanctions lists and AML checks, carried out by Bank B (or Bank A if presentation is direct).",
+          "chunk_ids": [
+            4628
+          ]
+        },
+        {
+          "text": "The same review \u2014 new principal parties or countries not mentioned in the SBLC/Guarantee, sanctions lists and AML checks \u2014 applies at the stage of presentation of claim documents by Bank B to Bank A, and is performed by Bank A.",
+          "chunk_ids": [
+            4628
+          ]
+        },
+        {
+          "text": "The payment stages are treated as separate reviewing stages in that table: for payment by Bank A to Bank B or to Party Y's bank, and for payment by Bank B to Party Y, what is reviewed is the names on the payment instruction, against sanctions lists and AML checks.",
+          "chunk_ids": [
+            4628
+          ]
+        },
+        {
+          "text": "Listed risk indicators connected with an SBLC/Guarantee under the heading \"Claims and Payment instructions\" (applicable pre or post transaction) are last minute changes to payment instructions, claims made within a short time after issuance, continuous claims under various guarantee instruments, and claim pressure tactics.",
+          "chunk_ids": [
+            4627
+          ]
+        },
+        {
+          "text": "Reviewing SBLC or guarantee claims is described as a mostly manual process in which the claim and any supporting documents presented for payment are compared against the terms and conditions of the SBLC or guarantee and, where applicable, ICC rules and international standard banking practice.",
+          "chunk_ids": [
+            4626
+          ]
+        }
+      ],
+      "refusal_reason": "",
+      "iterations": 2,
+      "searches": 2,
+      "retrieved_chunk_ids": [
+        2935,
+        4545,
+        4581,
+        4616,
+        4617,
+        4620,
+        4622,
+        4624,
+        4625,
+        4626,
+        4627,
+        4628
+      ],
+      "input_tokens": 358,
+      "output_tokens": 1286,
+      "cache_read_tokens": 2550,
+      "usd": 0.0889,
+      "latency_ms": 16475.7,
+      "error": "",
+      "trace": [
+        {
+          "step": "search",
+          "iteration": 1,
+          "query": "standby letter of credit guarantee claim documents presentation red flags checks",
+          "k": 8,
+          "returned_chunk_ids": [
+            4628,
+            4545,
+            4627,
+            4624,
+            4616,
+            4581,
+            4626,
+            2935
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 1,
+          "query": "New principal parties or countries not mentioned in SBLC/Guarantee",
+          "k": 8,
+          "returned_chunk_ids": [
+            4627,
+            4628,
+            4625,
+            4626,
+            4620,
+            4624,
+            4622,
+            4617
+          ]
+        },
+        {
+          "step": "answer",
+          "iteration": 2,
+          "claims": 5
+        }
+      ]
+    }
+  ],
+  "written_at": "2026-08-30T11:27:22+00:00"
+}

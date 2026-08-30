@@ -176,6 +176,35 @@ class Claim:
     chunk_ids: list[int]
 
 
+def _parse_claims(raw: Any) -> list[Claim]:
+    """Turn the model's `claims` argument into Claim objects, defensively.
+
+    The tool schema says each claim is an object with `text` and `chunk_ids`,
+    and the model mostly complies — but not always. Observed in a live run: a
+    bare string in place of the object, which crashed the loop mid-evaluation
+    and cost a partial run.
+
+    A malformed claim is kept rather than dropped, with no citations. That is
+    deliberate: an uncitable claim then fails the provenance check and rejects
+    the draft, which is the correct outcome. Discarding it would silently
+    shrink the answer and let the rest pass validation as though the model had
+    never made the assertion.
+    """
+    claims: list[Claim] = []
+    for item in raw or []:
+        if isinstance(item, dict):
+            chunk_ids: list[int] = []
+            for value in item.get("chunk_ids") or []:
+                try:
+                    chunk_ids.append(int(value))
+                except (TypeError, ValueError):
+                    continue
+            claims.append(Claim(text=str(item.get("text", "")), chunk_ids=chunk_ids))
+        else:
+            claims.append(Claim(text=str(item), chunk_ids=[]))
+    return claims
+
+
 @dataclass
 class AgentResult:
     question: str
@@ -384,14 +413,7 @@ class AgentLoop:
                     )
 
                 elif block.name == "answer":
-                    raw_claims = payload.get("claims") or []
-                    result.claims = [
-                        Claim(
-                            text=str(c.get("text", "")),
-                            chunk_ids=[int(i) for i in (c.get("chunk_ids") or [])],
-                        )
-                        for c in raw_claims
-                    ]
+                    result.claims = _parse_claims(payload.get("claims"))
                     result.summary = str(payload.get("summary", ""))
                     result.outcome = "answered"
                     result.trace.append(

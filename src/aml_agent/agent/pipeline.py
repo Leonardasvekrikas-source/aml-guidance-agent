@@ -105,8 +105,15 @@ class Pipeline:
         for attempt in range(1, self.max_drafts + 1):
             outcome.attempts = attempt
 
-            prompt = question if feedback is None else f"{question}\n\n{feedback}"
-            draft = self.loop.run(prompt)
+            # On a retry, continue the rejected draft's conversation and send
+            # only the validation feedback. Restarting would discard every
+            # passage already retrieved and make the agent search for them
+            # again — which in practice consumed the whole iteration budget
+            # rediscovering evidence it had held a moment earlier.
+            if feedback is None:
+                draft = self.loop.run(question)
+            else:
+                draft = self.loop.run(feedback, resume=outcome.agent_results[-1])
             outcome.agent_results.append(draft)
             if not outcome.trace_id:
                 outcome.trace_id = draft.trace_id
