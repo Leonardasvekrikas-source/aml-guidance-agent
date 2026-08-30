@@ -1,0 +1,343 @@
+{
+  "trace_id": "f3bad3aeae03",
+  "question": "How can an online shopping platform be used to shift value from one member of a terrorist cell to another abroad, when no bank transfer ever passes between the two of them?",
+  "outcome": "answered",
+  "summary": "The corpus (principally FATF's Comprehensive Update on Terrorist Financing Risks) describes exactly this typology under \\\"E-commerce platforms and online marketplaces\\\" (EPOMs).\\n\\nThe core mechanism is that value moves as goods rather than as money. In the scheme FATF sets out, the first cell member buys items and ships them to his accomplice via an online marketplace; the accomplice resells them in the other jurisdiction and uses the sale proceeds to finance terrorism. No payment ever needs to pass between the two of them \u2014 the goods themselves are the carrier of value, and the disguise is the apparently ordinary consumer transaction. The money the second member ends up holding comes from an unconnected retail buyer.\\n\\nA second variant is that the two members act as counterparties to each other, posing as buyers and sellers through fraudulent or complicit shop fronts, and apply classic trade-based techniques \u2014 over- and under-invoicing, or multiple invoicing for the same goods \u2014 so that the imbalance between the true value of the goods and the price paid moves value in the desired direction. The Wolfsberg/ICC/BAFT trade finance principles explain why this works: it depends on collusion between buyer and seller, often because the same persons control both sides. FATF/Egmont's TBML report documents the same underlying \\\"commodity as currency\\\" principle in a terrorist financing case where goods were shipped and settled in cash by operatives of the same organisation at the far end.\\n\\nDetection therefore has to come from trade-style rather than payment-style red flags: inconsistent pricing, vague goods descriptions, multiple invoices for one shipment, third-party payment for goods, and an online presence inconsistent with the purported business.",
+  "citations": [
+    {
+      "chunk_id": 2124,
+      "title": "Comprehensive Update on Terrorist Financing Risks",
+      "publisher": "FATF",
+      "page": 74,
+      "source_url": "https://www.fatf-gafi.org/content/dam/fatf-gafi/publications/Comprehensive-Update-on-Terrorist-Financing-Risks-2025.pdf.coredownload.inline.pdf",
+      "section_heading": "227 Finally, EPOMs can be used for fund -moving purpose inspired by trade -based"
+    },
+    {
+      "chunk_id": 2123,
+      "title": "Comprehensive Update on Terrorist Financing Risks",
+      "publisher": "FATF",
+      "page": 73,
+      "source_url": "https://www.fatf-gafi.org/content/dam/fatf-gafi/publications/Comprehensive-Update-on-Terrorist-Financing-Risks-2025.pdf.coredownload.inline.pdf",
+      "section_heading": "6.1 E-commerce platforms and online marketplaces (EPOMs)"
+    },
+    {
+      "chunk_id": 4557,
+      "title": "The Wolfsberg Group, ICC and BAFT Trade Finance Principles (2019 amendment)",
+      "publisher": "The Wolfsberg Group, International Chamber of Commerce (ICC) and BAFT",
+      "page": 12,
+      "source_url": "https://db.wolfsberg-group.org/assets/5c770f68-6277-4443-931b-7750478f08e7/Trade%20Finance%20Principles.pdf",
+      "section_heading": "PUBLIC"
+    },
+    {
+      "chunk_id": 208,
+      "title": "Trade-Based Money Laundering: Trends and Developments",
+      "publisher": "FATF / Egmont Group of Financial Intelligence Units",
+      "page": 35,
+      "source_url": "https://www.fatf-gafi.org/content/dam/fatf-gafi/reports/Trade-Based-Money-Laundering-Trends-and-Developments.pdf",
+      "section_heading": "19.67 trillion, driven, in part, by a significant growth of"
+    },
+    {
+      "chunk_id": 2109,
+      "title": "Comprehensive Update on Terrorist Financing Risks",
+      "publisher": "FATF",
+      "page": 65,
+      "source_url": "https://www.fatf-gafi.org/content/dam/fatf-gafi/publications/Comprehensive-Update-on-Terrorist-Financing-Risks-2025.pdf.coredownload.inline.pdf",
+      "section_heading": "197 As these become more popular, accessible and profitable, terrorist organisations"
+    },
+    {
+      "chunk_id": 2211,
+      "title": "Comprehensive Update on Terrorist Financing Risks",
+      "publisher": "FATF",
+      "page": 131,
+      "source_url": "https://www.fatf-gafi.org/content/dam/fatf-gafi/publications/Comprehensive-Update-on-Terrorist-Financing-Risks-2025.pdf.coredownload.inline.pdf",
+      "section_heading": "416 Due to the gamut of products and services available, these indicators cannot easily"
+    }
+  ],
+  "refusal_reason": "",
+  "attempts": 1,
+  "searches": 4,
+  "input_tokens": 127,
+  "output_tokens": 2358,
+  "agent_usd": 0.16504,
+  "validation_usd": 0.05286,
+  "total_usd": 0.2179,
+  "latency_ms": 55787.5,
+  "validation": {
+    "passed": true,
+    "citation_validity": 1.0,
+    "groundedness": 1.0,
+    "checked_support": true,
+    "usd": 0.05286,
+    "verdicts": [
+      {
+        "claim": "FATF describes e-commerce platforms and online marketplaces (EPOMs) being used for a fund-moving purpose inspired by trade-based money laundering schemes, in which traded goods provide a disguise for value being transferred from one accomplice to another member of the network.",
+        "chunk_ids": [
+          2124
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states EPOMs \"can be used for fund-moving purpose inspired by trade-based money laundering schemes\" and that \"traded goods can indeed offer disguise to value being transferred from an accomplice to another member of the network,\" matching the claim directly."
+      },
+      {
+        "claim": "In the specific EPOM scheme FATF sets out, the first actor purchases items and sends them to his accomplice through an e-commerce platform, and the accomplice then sells the items in another jurisdiction and uses the profit to finance terrorism.",
+        "chunk_ids": [
+          2124
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states exactly this: \"the first actor would purchase items, send them to his accomplice through an EPOM, for the latter to sell items in another jurisdiction and use profit to finance terrorism.\""
+      },
+      {
+        "claim": "Criminals and terrorists can pose as multiple buyers and sellers on EPOMs \u2014 for example through fraudulent or complicit online shop fronts \u2014 and apply trade-based ML/TF techniques such as over- and under-invoicing to transfer value (goods and funds) between each other.",
+        "chunk_ids": [
+          2123
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage directly states \"Criminals and terrorists can pose as multiple buyers and sellers (e.g., fraudulent/complicit online shop fronts) on the EPOMs, and use trade-based ML/TF techniques, such as over/under invoicing, to transfer value (goods and funds) between each other,\" matching the claim verbatim."
+      },
+      {
+        "claim": "The over/under-invoicing mechanism works by misrepresenting the price of goods: over-invoicing lets the seller gain excess value from the payment, while under-invoicing lets the buyer gain excess value; these techniques rely on collusion between buyer and seller, sometimes because both parties are controlled by the same persons.",
+        "chunk_ids": [
+          4557
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states over-invoicing means \"the seller gains excess value as a result of the payment,\" under-invoicing means \"the buyer gains excess value when the payment is made,\" and that these techniques \"rely upon collusion between the seller and buyer... because both parties are controlled by the same persons.\""
+      },
+      {
+        "claim": "Multiple invoicing, in which more than one invoice is issued for the same goods, allows a seller to justify receipt of multiple payments, and is harder to detect if the colluding parties use more than one financial institution.",
+        "chunk_ids": [
+          4557
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states verbatim: \"By issuing more than one invoice for the same goods a seller can justify the receipt of multiple payments. This will be harder to detect if the colluding parties use more than one FI to facilitate the payments.\""
+      },
+      {
+        "claim": "The underlying principle \u2014 using a commodity as currency to move value across borders through the legitimate trade system rather than by transferring funds between the parties \u2014 is documented in a terrorist financing case where goods were shipped to an importer who then paid the value in cash to operatives of the same terrorist organisation in the destination country.",
+        "chunk_ids": [
+          208
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states this exact scenario: \"the terrorist organisation was able to transfer cash from country C to country A through the legitimate trade system by using commodity as currency,\" and describes the importer paying \"the value of the goods in cash to operatives of the same terrorist organisation located in Country A\" after receiving the shipment."
+      },
+      {
+        "claim": "Beyond value transfer, terrorists have used EPOMs for operational procurement of equipment, weapons, chemicals and 3D-printing material, partly because of the discretion these platforms offer compared with buying such items in a physical shop, and to sell items (including low-value items) to finance projects and operations.",
+        "chunk_ids": [
+          2123
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states \"Terrorists have used EPOMs platform for their operational procurement (equipment, weapons, chemicals, 3D-printing material), including because of the discretion they can offer over purchasing such items in a physical shop\" and \"EPOMs can also be used by terrorists to sell items to finance their projects and operations, including lower value items that were previously not in demand,\" directly matching the claim."
+      },
+      {
+        "claim": "Social media platforms are increasingly integrating e-commerce functionality allowing direct transactions within the platform (for example Instagram Shopping Tags and Facebook Marketplace), which FATF discusses under trade-enabled fraud.",
+        "chunk_ids": [
+          2109
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "Passage states \"Social media platforms are increasingly integrating e-commerce functionalities, enabling direct transactions within the platform\" and cites \"Instagram's Shopping Tags and Facebook's Marketplace\" as examples, under section header \"5.2. Trade enabled fraud through social media\"."
+      },
+      {
+        "claim": "A documented case involved an individual arrested in August 2023 for terrorist financing in support of ISIL who operated multiple e-commerce accounts under various aliases alongside several bank accounts, and received funds through platforms known to facilitate the sale of weapons and from individuals linked to ISIL networks in Syria.",
+        "chunk_ids": [
+          2124
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states D.E. \"was arrested on August 2023 for involvement in terrorist activities and financing, particularly in support of ISIL,\" and \"operated multiple e-commerce accounts under various aliases and maintained several bank accounts. He received funds through platforms known to facilitate the sale of weapons, as well as from individuals linked to ISIL networks in Syria,\" matching the claim."
+      },
+      {
+        "claim": "Relevant detection indicators include vague goods descriptions, inconsistent pricing, missing or counterfeit trade documents, issuing multiple invoices for the same shipment with differing descriptions or values, indications that traded items are stolen or looted, payment for goods made by a third party, and a company whose online presence is inconsistent with its purported business activities.",
+        "chunk_ids": [
+          2211
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage lists all these exact indicators: 'Vague descriptions, inconsistent pricing, and missing or counterfeit trade documents' (h), 'Issuing multiple invoices for same shipment with different descriptions of goods, their value, or number of items shipped' (m), 'Indications that traded items are stolen or looted' (f), 'Import of goods where the payment for the goods is made by a third party' (d), and 'Company lacks online presence or has an online presence inconsistent with its purported business activities' (j)."
+      }
+    ]
+  },
+  "drafts": [
+    {
+      "trace_id": "f3bad3aeae03",
+      "question": "How can an online shopping platform be used to shift value from one member of a terrorist cell to another abroad, when no bank transfer ever passes between the two of them?",
+      "outcome": "answered",
+      "summary": "The corpus (principally FATF's Comprehensive Update on Terrorist Financing Risks) describes exactly this typology under \\\"E-commerce platforms and online marketplaces\\\" (EPOMs).\\n\\nThe core mechanism is that value moves as goods rather than as money. In the scheme FATF sets out, the first cell member buys items and ships them to his accomplice via an online marketplace; the accomplice resells them in the other jurisdiction and uses the sale proceeds to finance terrorism. No payment ever needs to pass between the two of them \u2014 the goods themselves are the carrier of value, and the disguise is the apparently ordinary consumer transaction. The money the second member ends up holding comes from an unconnected retail buyer.\\n\\nA second variant is that the two members act as counterparties to each other, posing as buyers and sellers through fraudulent or complicit shop fronts, and apply classic trade-based techniques \u2014 over- and under-invoicing, or multiple invoicing for the same goods \u2014 so that the imbalance between the true value of the goods and the price paid moves value in the desired direction. The Wolfsberg/ICC/BAFT trade finance principles explain why this works: it depends on collusion between buyer and seller, often because the same persons control both sides. FATF/Egmont's TBML report documents the same underlying \\\"commodity as currency\\\" principle in a terrorist financing case where goods were shipped and settled in cash by operatives of the same organisation at the far end.\\n\\nDetection therefore has to come from trade-style rather than payment-style red flags: inconsistent pricing, vague goods descriptions, multiple invoices for one shipment, third-party payment for goods, and an online presence inconsistent with the purported business.",
+      "claims": [
+        {
+          "text": "FATF describes e-commerce platforms and online marketplaces (EPOMs) being used for a fund-moving purpose inspired by trade-based money laundering schemes, in which traded goods provide a disguise for value being transferred from one accomplice to another member of the network.",
+          "chunk_ids": [
+            2124
+          ]
+        },
+        {
+          "text": "In the specific EPOM scheme FATF sets out, the first actor purchases items and sends them to his accomplice through an e-commerce platform, and the accomplice then sells the items in another jurisdiction and uses the profit to finance terrorism.",
+          "chunk_ids": [
+            2124
+          ]
+        },
+        {
+          "text": "Criminals and terrorists can pose as multiple buyers and sellers on EPOMs \u2014 for example through fraudulent or complicit online shop fronts \u2014 and apply trade-based ML/TF techniques such as over- and under-invoicing to transfer value (goods and funds) between each other.",
+          "chunk_ids": [
+            2123
+          ]
+        },
+        {
+          "text": "The over/under-invoicing mechanism works by misrepresenting the price of goods: over-invoicing lets the seller gain excess value from the payment, while under-invoicing lets the buyer gain excess value; these techniques rely on collusion between buyer and seller, sometimes because both parties are controlled by the same persons.",
+          "chunk_ids": [
+            4557
+          ]
+        },
+        {
+          "text": "Multiple invoicing, in which more than one invoice is issued for the same goods, allows a seller to justify receipt of multiple payments, and is harder to detect if the colluding parties use more than one financial institution.",
+          "chunk_ids": [
+            4557
+          ]
+        },
+        {
+          "text": "The underlying principle \u2014 using a commodity as currency to move value across borders through the legitimate trade system rather than by transferring funds between the parties \u2014 is documented in a terrorist financing case where goods were shipped to an importer who then paid the value in cash to operatives of the same terrorist organisation in the destination country.",
+          "chunk_ids": [
+            208
+          ]
+        },
+        {
+          "text": "Beyond value transfer, terrorists have used EPOMs for operational procurement of equipment, weapons, chemicals and 3D-printing material, partly because of the discretion these platforms offer compared with buying such items in a physical shop, and to sell items (including low-value items) to finance projects and operations.",
+          "chunk_ids": [
+            2123
+          ]
+        },
+        {
+          "text": "Social media platforms are increasingly integrating e-commerce functionality allowing direct transactions within the platform (for example Instagram Shopping Tags and Facebook Marketplace), which FATF discusses under trade-enabled fraud.",
+          "chunk_ids": [
+            2109
+          ]
+        },
+        {
+          "text": "A documented case involved an individual arrested in August 2023 for terrorist financing in support of ISIL who operated multiple e-commerce accounts under various aliases alongside several bank accounts, and received funds through platforms known to facilitate the sale of weapons and from individuals linked to ISIL networks in Syria.",
+          "chunk_ids": [
+            2124
+          ]
+        },
+        {
+          "text": "Relevant detection indicators include vague goods descriptions, inconsistent pricing, missing or counterfeit trade documents, issuing multiple invoices for the same shipment with differing descriptions or values, indications that traded items are stolen or looted, payment for goods made by a third party, and a company whose online presence is inconsistent with its purported business activities.",
+          "chunk_ids": [
+            2211
+          ]
+        }
+      ],
+      "refusal_reason": "",
+      "iterations": 3,
+      "searches": 4,
+      "retrieved_chunk_ids": [
+        172,
+        200,
+        208,
+        1136,
+        2089,
+        2101,
+        2103,
+        2107,
+        2109,
+        2122,
+        2123,
+        2124,
+        2128,
+        2177,
+        2186,
+        2204,
+        2209,
+        2211,
+        2213,
+        3291,
+        3963,
+        3964,
+        4557,
+        5835,
+        5920,
+        7222
+      ],
+      "input_tokens": 127,
+      "output_tokens": 2358,
+      "cache_read_tokens": 11826,
+      "usd": 0.16504,
+      "latency_ms": 32466.6,
+      "error": "",
+      "trace": [
+        {
+          "step": "search",
+          "iteration": 1,
+          "query": "online marketplace used to transfer value terrorist financing",
+          "k": 8,
+          "returned_chunk_ids": [
+            3963,
+            2186,
+            2123,
+            3964,
+            2089,
+            2177,
+            2109,
+            208
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 1,
+          "query": "e-commerce platform fictitious sale of goods value transfer",
+          "k": 8,
+          "returned_chunk_ids": [
+            2124,
+            2123,
+            1136,
+            4557,
+            7222,
+            3291,
+            5835,
+            200
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 2,
+          "query": "EPOMs risk indicators complicit online shop fronts over-invoicing terrorist",
+          "k": 8,
+          "returned_chunk_ids": [
+            2123,
+            2122,
+            2204,
+            2209,
+            2211,
+            2213,
+            172,
+            2089
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 2,
+          "query": "social media marketplace trade enabled fraud direct transactions within platform terrorist financing",
+          "k": 8,
+          "returned_chunk_ids": [
+            2109,
+            5920,
+            2124,
+            2103,
+            2107,
+            2128,
+            2101,
+            3964
+          ]
+        },
+        {
+          "step": "answer",
+          "iteration": 3,
+          "claims": 10
+        }
+      ]
+    }
+  ],
+  "written_at": "2026-08-30T11:35:39+00:00"
+}

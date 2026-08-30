@@ -75,6 +75,14 @@ eval-answers:  ## M4: groundedness, citation validity, refusal accuracy
 eval-ablation:  ## Compare tagged benchmark runs (embedding-model ablation)
 	$(RUN) aml_agent.evaluation.ablation bge-base bge-m3
 
+.PHONY: contextualize
+contextualize:  ## Build a contextualised chunk profile (costs money; prints an estimate first)
+	$(RUN) aml_agent.ingest.contextualize --model claude-haiku-4-5
+
+.PHONY: contextualize-estimate
+contextualize-estimate:  ## Print the cost of contextualising without spending anything
+	$(RUN) aml_agent.ingest.contextualize --dry-run --model claude-haiku-4-5
+
 .PHONY: eval-sweep
 eval-sweep:  ## Sweep reranker candidate counts: ceiling vs achieved vs latency
 	$(RUN) aml_agent.evaluation.candidate_sweep

@@ -1,0 +1,596 @@
+{
+  "trace_id": "2a1a733f9832",
+  "question": "What signs in a trade finance file suggest the two counterparties to the deal are not genuinely independent of one another?",
+  "outcome": "answered",
+  "summary": "The FATF/Egmont \"Trade-Based Money Laundering: Risk Indicators\" paper sets out a group of \"structural risk indicators\" relating to how a trade entity is constituted and registered. These cover unusually complex/illogical corporate structures (e.g. shell companies or companies in high-risk jurisdictions), registration or offices in jurisdictions with weak AML/CFT compliance, registration at likely mass-registration addresses, and business activity inconsistent with the stated address. A footnote to the mass-registration indicator adds that such addresses may include that of a trust and company service provider managing a number of shell companies for its customers. Further structural indicators concern staffing levels inconsistent with trading volume, names copying well-known corporations, unexplained dormancy and non-compliance with routine business obligations such as VAT filing. The paper stresses that a single indicator does not alone warrant suspicion.",
+  "citations": [
+    {
+      "chunk_id": 18,
+      "title": "Trade-Based Money Laundering: Risk Indicators",
+      "publisher": "FATF / Egmont Group of Financial Intelligence Units",
+      "page": 4,
+      "source_url": "https://www.fatf-gafi.org/content/dam/fatf-gafi/reports/Trade-Based-Money-Laundering-Risk-Indicators.pdf",
+      "section_heading": null
+    },
+    {
+      "chunk_id": 19,
+      "title": "Trade-Based Money Laundering: Risk Indicators",
+      "publisher": "FATF / Egmont Group of Financial Intelligence Units",
+      "page": 5,
+      "source_url": "https://www.fatf-gafi.org/content/dam/fatf-gafi/reports/Trade-Based-Money-Laundering-Risk-Indicators.pdf",
+      "section_heading": null
+    },
+    {
+      "chunk_id": 17,
+      "title": "Trade-Based Money Laundering: Risk Indicators",
+      "publisher": "FATF / Egmont Group of Financial Intelligence Units",
+      "page": 3,
+      "source_url": "https://www.fatf-gafi.org/content/dam/fatf-gafi/reports/Trade-Based-Money-Laundering-Risk-Indicators.pdf",
+      "section_heading": null
+    },
+    {
+      "chunk_id": 16,
+      "title": "Trade-Based Money Laundering: Risk Indicators",
+      "publisher": "FATF / Egmont Group of Financial Intelligence Units",
+      "page": 3,
+      "source_url": "https://www.fatf-gafi.org/content/dam/fatf-gafi/reports/Trade-Based-Money-Laundering-Risk-Indicators.pdf",
+      "section_heading": null
+    }
+  ],
+  "refusal_reason": "",
+  "attempts": 2,
+  "searches": 12,
+  "input_tokens": 517,
+  "output_tokens": 5952,
+  "agent_usd": 0.50422,
+  "validation_usd": 0.12454,
+  "total_usd": 0.62876,
+  "latency_ms": 133600.2,
+  "validation": {
+    "passed": true,
+    "citation_validity": 1.0,
+    "groundedness": 1.0,
+    "checked_support": true,
+    "usd": 0.03982,
+    "verdicts": [
+      {
+        "claim": "The FATF/Egmont Trade-Based Money Laundering risk indicators include a structural indicator that the corporate structure of a trade entity appears unusually complex and illogical, such as the involvement of shell companies or companies registered in high-risk jurisdictions.",
+        "chunk_ids": [
+          18
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states verbatim: \"The corporate structure of a trade entity appears unusually complex and illogical, such as the involvement of shell companies or companies registered in high-risk jurisdictions\" under 'Structural risk indicators'."
+      },
+      {
+        "claim": "A further structural indicator is that a trade entity is registered or has offices in a jurisdiction with weak AML/CFT compliance.",
+        "chunk_ids": [
+          18
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage explicitly lists under structural risk indicators: \"A trade entity is registered or has offices in a jurisdiction with weak AML/CFT compliance.\""
+      },
+      {
+        "claim": "Another structural indicator is registration at an address likely to be a mass registration address, e.g. high-density residential buildings, post-box addresses, commercial buildings or industrial complexes, especially where there is no reference to a specific unit.",
+        "chunk_ids": [
+          18
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states verbatim: \"A trade entity is registered at an address that is likely to be a mass registration address, e.g. high-density residential buildings, post-box addresses, commercial buildings or industrial complexes, especially when there is no reference to a specific unit,\" matching the claim exactly."
+      },
+      {
+        "claim": "A footnote to the mass-registration-address indicator states that this may also include the address of a trust and company service provider that manages a number of shell companies on behalf of its customers.",
+        "chunk_ids": [
+          19
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage contains footnote 4 stating \"This may also include the address of a trust and company service provider that manages a number of shell companies on behalf of its customers,\" matching the claim exactly."
+      },
+      {
+        "claim": "A further structural indicator is that the business activity of a trade entity does not appear appropriate for the stated address, e.g. the entity appears to use residential properties without a commercial rationale.",
+        "chunk_ids": [
+          18
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage explicitly states this as a structural risk indicator: \"The business activity of a trade entity does not appear to be appropriate for the stated address, e.g. a trade entity appears to use residential properties, without having a commercial or industrial space, with no reasonable explanation.\""
+      },
+      {
+        "claim": "Additional structural indicators include a trade entity maintaining a minimal number of working staff inconsistent with its volume of traded commodities, a name that copies or closely resembles that of a well-known corporation, unexplained periods of dormancy, and non-compliance with regular business obligations such as filing VAT returns.",
+        "chunk_ids": [
+          19
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage lists exactly these four indicators verbatim: minimal staff inconsistent with trade volume, a name copying/similar to a well-known corporation, unexplained periods of dormancy, and non-compliance with regular business obligations like filing VAT returns."
+      },
+      {
+        "claim": "FATF/Egmont note that the existence of a single indicator in relation to a customer or transaction may not alone warrant suspicion of TBML, though it could prompt further monitoring and examination, and the occurrence of several indicators could warrant closer examination.",
+        "chunk_ids": [
+          17
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states nearly verbatim: \"The existence of a single indicator...may not alone warrant suspicion of TBML...but it could prompt further monitoring and examination...Similarly, the occurrence of several indicators could also warrant closer examination.\""
+      },
+      {
+        "claim": "The indicators are derived from a sampling of data received by FATF and the Egmont Group during the TBML project and are expressly not a conclusive list.",
+        "chunk_ids": [
+          16
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states \"derived from a sampling of the data received by the FATF and the Egmont Group of FIUs in the course of the Trade-Based Money Laundering (TBML) project\" and explicitly says \"By no means is this a conclusive list,\" matching the claim."
+      }
+    ]
+  },
+  "drafts": [
+    {
+      "trace_id": "2a1a733f9832",
+      "question": "What signs in a trade finance file suggest the two counterparties to the deal are not genuinely independent of one another?",
+      "outcome": "answered",
+      "summary": "Guidance treats \"counterparties that are not truly independent\" as the core enabling condition for value-transfer TBML: over/under/multiple invoicing only works if buyer and seller are complicit, and complicity most often arises because the same person or group controls both sides. In a trade finance file, the signs cluster into (a) ownership/control links (same controllers, same or agent-only addresses, mutual directors/owners, opaque ownership of the counterparty), (b) behaviour that only makes sense if the parties are not adversarial (willingness to accept or waive documentary discrepancies, pricing not in line with market or with previous comparable deals, recycled documentation, inability to explain the commercial rationale), and (c) the surrounding structure (shell companies, mass-registration or residential addresses, no real trading presence, unexplained third parties settling invoices). No single indicator is conclusive; each is a prompt for further examination.",
+      "claims": [
+        {
+          "text": "Mispricing techniques in trade finance (over-, under- and multiple invoicing) generally rely on collusion between seller and buyer, because the intended outcome is a benefit in excess of what would be expected from an arm's length transaction, and that collusion may arise because both parties are controlled by the same persons.",
+          "chunk_ids": [
+            4557
+          ]
+        },
+        {
+          "text": "Many TBML techniques require both buyer and seller to be complicit, sometimes meaning that the same person or group of persons exercises control over the different parties to a transaction; obtaining beneficial ownership information on the customer's counterparties can help a financial institution detect this, though such information is often unavailable where the counterparty is not a customer or sits in a jurisdiction without a beneficial ownership registry.",
+          "chunk_ids": [
+            217
+          ]
+        },
+        {
+          "text": "EBA guidance lists as indications that buyer and seller may be colluding: the buyer and seller being controlled by the same person; the transacting businesses having the same address, providing only a registered agent's address, or having other address inconsistencies; and the buyer being willing or keen to accept or waive discrepancies in the documentation.",
+          "chunk_ids": [
+            2724
+          ]
+        },
+        {
+          "text": "Related risk factors in the same EBA list include the buyer's legal structure not allowing identification of its owners, or the buyer using agents or third parties to represent its rights and interests, and the customer being unable to explain the rationale of the export process or the content of the underlying LC/BC documents.",
+          "chunk_ids": [
+            2724
+          ]
+        },
+        {
+          "text": "A transaction that is highly structured, fragmented or complex, involving multiple parties without apparent legitimate justification, and the use of copy documents where originals would be expected, are treated as increased-risk factors in trade finance.",
+          "chunk_ids": [
+            2723
+          ]
+        },
+        {
+          "text": "Trade finance terminology defines a 'Related Party' as a person or entity that is a subsidiary or associate, or that has a relationship to the customer that is not at arm's length.",
+          "chunk_ids": [
+            4582
+          ]
+        },
+        {
+          "text": "Trade finance terminology defines a 'Connected Party' as a person or entity that has some connection with the customer through mutual managers, directors, owners or partners.",
+          "chunk_ids": [
+            4576
+          ]
+        },
+        {
+          "text": "FATF/Egmont structural risk indicators include a trade entity whose corporate structure appears unusually complex and illogical, such as involving shell companies or companies registered in high-risk jurisdictions; registration at a likely mass-registration address (post-box addresses, high-density residential or commercial buildings without a unit reference, including the address of a trust and company service provider managing many shell companies); and business activity that does not fit the stated address.",
+          "chunk_ids": [
+            18
+          ]
+        },
+        {
+          "text": "Further entity-level indicators include a trade entity with minimal staff inconsistent with its volume of traded commodities, unexplained periods of dormancy, non-compliance with regular business obligations such as VAT returns, and a name copying that of a well-known corporation to appear connected to it.",
+          "chunk_ids": [
+            19
+          ]
+        },
+        {
+          "text": "Document-level indicators pointing to non-arm's-length dealing include contradictions between the name of the exporting entity and the name of the recipient of payment, differing prices on invoices and underlying contracts, and fees or prices that do not seem in line with commercial considerations, are inconsistent with market value, or fluctuate significantly from previous comparable transactions.",
+          "chunk_ids": [
+            20
+          ]
+        },
+        {
+          "text": "Data points that can expose a fabricated or non-independent trading relationship include use of a personal email address instead of a legitimate business email, obvious recycling of previous documentation with few or no edits (even the date), and the complete lack of any trading presence of the exporter, such as use of residential rather than business premises.",
+          "chunk_ids": [
+            185
+          ]
+        },
+        {
+          "text": "Payment for imported commodities made by an entity other than the consignee, with no clear economic reason (for example by a shell or front company not involved in the trade transaction), is an FATF/Egmont risk indicator.",
+          "chunk_ids": [
+            21
+          ]
+        },
+        {
+          "text": "An 'Unexplained Third Party' is defined as a person or entity appearing in a transaction or payment instruction where there has been no previous identification of that person or entity in the structure or documentation of the transaction.",
+          "chunk_ids": [
+            4585
+          ]
+        },
+        {
+          "text": "The UK national risk assessment notes TBML schemes in which an unrelated third party, usually a shell or shelf company, receives payment from the importer although its relationship with the exporter is unclear, with heightened risk where that third party is in a jurisdiction with limited compliance oversight.",
+          "chunk_ids": [
+            5842
+          ]
+        },
+        {
+          "text": "Determining whether over- or under-invoicing exists cannot easily be done from trade documents alone, since most products are not publicly traded and banks lack business information such as volume discounting or specific quality; however, where unit pricing appears manifestly unusual this may prompt enquiries under the bank's risk-based approach.",
+          "chunk_ids": [
+            4558
+          ]
+        },
+        {
+          "text": "A single risk indicator does not alone warrant suspicion, but it may prompt further monitoring and examination, and the occurrence of several indicators warrants closer examination in light of the totality of the customer profile.",
+          "chunk_ids": [
+            17,
+            18
+          ]
+        }
+      ],
+      "refusal_reason": "",
+      "iterations": 6,
+      "searches": 10,
+      "retrieved_chunk_ids": [
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        172,
+        185,
+        192,
+        198,
+        200,
+        201,
+        202,
+        203,
+        206,
+        217,
+        934,
+        943,
+        946,
+        1449,
+        2210,
+        2721,
+        2722,
+        2723,
+        2724,
+        2729,
+        2936,
+        3290,
+        3302,
+        3303,
+        3360,
+        4301,
+        4555,
+        4556,
+        4557,
+        4558,
+        4574,
+        4576,
+        4577,
+        4582,
+        4584,
+        4585,
+        4628,
+        4632,
+        4633,
+        4634,
+        4635,
+        4638,
+        4639,
+        4640,
+        5377,
+        5386,
+        5387,
+        5840,
+        5842,
+        5873,
+        6768,
+        6772,
+        7958
+      ],
+      "input_tokens": 119,
+      "output_tokens": 4438,
+      "cache_read_tokens": 91102,
+      "usd": 0.41118,
+      "latency_ms": 63144.6,
+      "error": "",
+      "trace": [
+        {
+          "step": "search",
+          "iteration": 1,
+          "query": "trade finance red flags counterparties related parties not at arm's length",
+          "k": 8,
+          "returned_chunk_ids": [
+            4582,
+            4635,
+            4555,
+            934,
+            2722,
+            3302,
+            3303,
+            4556
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 1,
+          "query": "trade-based money laundering collusion between buyer and seller common ownership",
+          "k": 8,
+          "returned_chunk_ids": [
+            4557,
+            4556,
+            4584,
+            202,
+            2724,
+            201,
+            1449,
+            5873
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 2,
+          "query": "TBML risk indicators shell company same address common directors shared ownership importer exporter",
+          "k": 8,
+          "returned_chunk_ids": [
+            185,
+            198,
+            206,
+            16,
+            3303,
+            4301,
+            17,
+            192
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 2,
+          "query": "letter of credit red flag discrepancies waived amendments unusual willingness beneficiary applicant related",
+          "k": 8,
+          "returned_chunk_ids": [
+            2729,
+            4582,
+            4577,
+            4574,
+            946,
+            943,
+            934,
+            2936
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 3,
+          "query": "risk indicators trade entities directors officers appear to be nominees business relationship between importer and exporter",
+          "k": 10,
+          "returned_chunk_ids": [
+            18,
+            2210,
+            20,
+            19,
+            17,
+            4639,
+            4640,
+            2721,
+            21,
+            2724
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 3,
+          "query": "invoice price inconsistent with market value goods over-invoicing indicator trade transaction lacks commercial rationale",
+          "k": 8,
+          "returned_chunk_ids": [
+            4557,
+            20,
+            4558,
+            200,
+            2723,
+            19,
+            18,
+            172
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 4,
+          "query": "circular trading same goods repeatedly traded between same parties round tripping",
+          "k": 8,
+          "returned_chunk_ids": [
+            5387,
+            5840,
+            2723,
+            4557,
+            5386,
+            5377,
+            19,
+            2210
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 4,
+          "query": "receivables purchase risk indicators counterparty related to customer common shareholders fictitious receivables",
+          "k": 8,
+          "returned_chunk_ids": [
+            4639,
+            4633,
+            4638,
+            4635,
+            4640,
+            4634,
+            4582,
+            4632
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 5,
+          "query": "same individual signs documents on behalf of both parties identical contact details telephone email trade documents",
+          "k": 8,
+          "returned_chunk_ids": [
+            6768,
+            2723,
+            6772,
+            217,
+            3360,
+            4628,
+            3290,
+            7958
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 5,
+          "query": "payment made by third party unrelated to transaction settlement of invoice by unconnected entity trade finance",
+          "k": 6,
+          "returned_chunk_ids": [
+            4576,
+            5842,
+            1449,
+            203,
+            4585,
+            4557
+          ]
+        },
+        {
+          "step": "answer",
+          "iteration": 6,
+          "claims": 16
+        }
+      ]
+    },
+    {
+      "trace_id": "9821d87b9e44",
+      "question": "Your draft was REJECTED by citation validation. The following claims did not survive:\n\n- Claim: FATF/Egmont structural risk indicators include a trade entity whose corporate structure appears unusually complex and illogical, such as involving shell companies or companies registered in high-risk jurisdictions; registration at a likely mass-registration address (post-box addresses, high-density residential or commercial buildings without a unit reference, including the address of a trust and company service provider managing many shell companies); and business activity that does not fit the stated address.\n  Cited: [18]\n  Problem: The passage supports the complex/illogical structure, mass-registration address, and mismatched business activity indicators, but it does not mention 'the address of a trust and company service provider managing many shell companies' as an example, so that added specific is unsupported.\n\nSearch for evidence that actually supports these claims and answer again, or drop the claims you cannot support. If the corpus does not support them at all, call refuse instead of weakening the wording until it passes.",
+      "outcome": "answered",
+      "summary": "The FATF/Egmont \"Trade-Based Money Laundering: Risk Indicators\" paper sets out a group of \"structural risk indicators\" relating to how a trade entity is constituted and registered. These cover unusually complex/illogical corporate structures (e.g. shell companies or companies in high-risk jurisdictions), registration or offices in jurisdictions with weak AML/CFT compliance, registration at likely mass-registration addresses, and business activity inconsistent with the stated address. A footnote to the mass-registration indicator adds that such addresses may include that of a trust and company service provider managing a number of shell companies for its customers. Further structural indicators concern staffing levels inconsistent with trading volume, names copying well-known corporations, unexplained dormancy and non-compliance with routine business obligations such as VAT filing. The paper stresses that a single indicator does not alone warrant suspicion.",
+      "claims": [
+        {
+          "text": "The FATF/Egmont Trade-Based Money Laundering risk indicators include a structural indicator that the corporate structure of a trade entity appears unusually complex and illogical, such as the involvement of shell companies or companies registered in high-risk jurisdictions.",
+          "chunk_ids": [
+            18
+          ]
+        },
+        {
+          "text": "A further structural indicator is that a trade entity is registered or has offices in a jurisdiction with weak AML/CFT compliance.",
+          "chunk_ids": [
+            18
+          ]
+        },
+        {
+          "text": "Another structural indicator is registration at an address likely to be a mass registration address, e.g. high-density residential buildings, post-box addresses, commercial buildings or industrial complexes, especially where there is no reference to a specific unit.",
+          "chunk_ids": [
+            18
+          ]
+        },
+        {
+          "text": "A footnote to the mass-registration-address indicator states that this may also include the address of a trust and company service provider that manages a number of shell companies on behalf of its customers.",
+          "chunk_ids": [
+            19
+          ]
+        },
+        {
+          "text": "A further structural indicator is that the business activity of a trade entity does not appear appropriate for the stated address, e.g. the entity appears to use residential properties without a commercial rationale.",
+          "chunk_ids": [
+            18
+          ]
+        },
+        {
+          "text": "Additional structural indicators include a trade entity maintaining a minimal number of working staff inconsistent with its volume of traded commodities, a name that copies or closely resembles that of a well-known corporation, unexplained periods of dormancy, and non-compliance with regular business obligations such as filing VAT returns.",
+          "chunk_ids": [
+            19
+          ]
+        },
+        {
+          "text": "FATF/Egmont note that the existence of a single indicator in relation to a customer or transaction may not alone warrant suspicion of TBML, though it could prompt further monitoring and examination, and the occurrence of several indicators could warrant closer examination.",
+          "chunk_ids": [
+            17
+          ]
+        },
+        {
+          "text": "The indicators are derived from a sampling of data received by FATF and the Egmont Group during the TBML project and are expressly not a conclusive list.",
+          "chunk_ids": [
+            16
+          ]
+        }
+      ],
+      "refusal_reason": "",
+      "iterations": 2,
+      "searches": 2,
+      "retrieved_chunk_ids": [
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        2205,
+        2211,
+        3226,
+        4074,
+        4075,
+        5900,
+        8920,
+        8979,
+        9160
+      ],
+      "input_tokens": 398,
+      "output_tokens": 1514,
+      "cache_read_tokens": 2550,
+      "usd": 0.09305,
+      "latency_ms": 19151.5,
+      "error": "",
+      "trace": [
+        {
+          "step": "search",
+          "iteration": 1,
+          "query": "trade-based money laundering risk indicators corporate structure shell company registered address",
+          "k": 8,
+          "returned_chunk_ids": [
+            18,
+            19,
+            20,
+            16,
+            17,
+            2211,
+            3226,
+            21
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 1,
+          "query": "mass registration address post-box high-density residential building without unit number",
+          "k": 8,
+          "returned_chunk_ids": [
+            18,
+            4075,
+            5900,
+            2205,
+            4074,
+            8920,
+            9160,
+            8979
+          ]
+        },
+        {
+          "step": "answer",
+          "iteration": 2,
+          "claims": 8
+        }
+      ]
+    }
+  ],
+  "written_at": "2026-08-30T11:38:01+00:00"
+}

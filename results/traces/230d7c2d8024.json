@@ -1,0 +1,433 @@
+{
+  "trace_id": "230d7c2d8024",
+  "question": "What factors influence the commission rate a professional money launderer charges a criminal client, and in what forms do PMLs actually take that commission?",
+  "outcome": "answered",
+  "summary": "The FATF's Professional Money Laundering report is the corpus source on this. It says a set of overlapping factors set the fee/commission: the complexity of the scheme, the methods used, the launderer's knowledge of the predicate offence, and the level of risk the PML assumes \u2014 with rates further influenced by the countries/regions involved, the PML's reputation, the total amount laundered, the denomination of banknotes in cash cases, and how quickly the client wants the funds moved or concealed (tighter deadlines mean a higher commission). On the form of payment, the corpus is thinner: the defining feature of a PML is providing laundering services \"in exchange for a commission, fee or other type of profit\", and PMLs who are embedded in or close to an organised crime group may instead take a portion of the group's proceeds rather than a discrete fee. PMLs record commissions received in their own coded internal accounting systems. The corpus does not set out a fuller itemised list of payment forms (e.g. payment in kind).",
+  "citations": [
+    {
+      "chunk_id": 1128,
+      "title": "Professional Money Laundering",
+      "publisher": "FATF",
+      "page": 13,
+      "source_url": "https://www.fatf-gafi.org/content/dam/fatf-gafi/reports/Professional-Money-Laundering.pdf",
+      "section_heading": "10 \u2502 PROFESSIONAL MONEY LAUNDERING"
+    },
+    {
+      "chunk_id": 1127,
+      "title": "Professional Money Laundering",
+      "publisher": "FATF",
+      "page": 12,
+      "source_url": "https://www.fatf-gafi.org/content/dam/fatf-gafi/reports/Professional-Money-Laundering.pdf",
+      "section_heading": "10 \u2502 PROFESSIONAL MONEY LAUNDERING"
+    },
+    {
+      "chunk_id": 1132,
+      "title": "Professional Money Laundering",
+      "publisher": "FATF",
+      "page": 16,
+      "source_url": "https://www.fatf-gafi.org/content/dam/fatf-gafi/reports/Professional-Money-Laundering.pdf",
+      "section_heading": "14 \u2502 PROFESSIONAL MONEY LAUNDERING"
+    },
+    {
+      "chunk_id": 1129,
+      "title": "Professional Money Laundering",
+      "publisher": "FATF",
+      "page": 14,
+      "source_url": "https://www.fatf-gafi.org/content/dam/fatf-gafi/reports/Professional-Money-Laundering.pdf",
+      "section_heading": "12 \u2502 PROFESSIONAL MONEY LAUNDERING"
+    }
+  ],
+  "refusal_reason": "",
+  "attempts": 1,
+  "searches": 12,
+  "input_tokens": 130,
+  "output_tokens": 3442,
+  "agent_usd": 0.37784,
+  "validation_usd": 0.04285,
+  "total_usd": 0.42069,
+  "latency_ms": 81065.1,
+  "validation": {
+    "passed": true,
+    "citation_validity": 1.0,
+    "groundedness": 1.0,
+    "checked_support": true,
+    "usd": 0.04285,
+    "verdicts": [
+      {
+        "claim": "According to FATF, a number of different and overlapping factors affect the fee paid to professional money launderers (PMLs) or the commission they receive.",
+        "chunk_ids": [
+          1128
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states verbatim: \"A number of different and overlapping factors affect the fee paid to PMLs or the commission they receive for their services.\""
+      },
+      {
+        "claim": "The fee often depends on the complexity of the scheme, the methods used, and the PML's knowledge of the predicate offence.",
+        "chunk_ids": [
+          1128
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states \"The fee will often depend on the complexity of the scheme, methods used and knowledge of the predicate offence,\" directly matching the claim."
+      },
+      {
+        "claim": "The rate may change based on the level of risk the PML assumes, and commission rates are often influenced by the countries or regions involved in the scheme.",
+        "chunk_ids": [
+          1128
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states verbatim: \"The rate may change based on the level of risk that PMLs assume... commission rates are often influenced by the countries or regions involved in the scheme.\""
+      },
+      {
+        "claim": "Additional factors influencing the commission rate include the reputation of the individual PML, the total amount of funds laundered, and, in cash cases, the denomination (value) of the banknotes.",
+        "chunk_ids": [
+          1128
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage lists exactly these factors: \"the reputation of the individual PML; the total amount of funds laundered; the denomination (i.e. value) of the banknotes (in cases involving cash)\"."
+      },
+      {
+        "claim": "The amount of time the client requests for moving or concealing the funds also affects the rate: if the laundering must be done in a shorter time period, the commission is higher.",
+        "chunk_ids": [
+          1128
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states \"the amount of time requested by a client to move or conceal funds (for example, if the laundering needs to be done in a shorter time period, the commission will be higher)\"."
+      },
+      {
+        "claim": "The defining characteristic of professional money laundering is the provision of money laundering services in exchange for a commission, fee or other type of profit.",
+        "chunk_ids": [
+          1127
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states \"The main characteristic that makes PML unique is the provision of ML services in exchange for a commission, fee or other type of profit,\" directly supporting the claim."
+      },
+      {
+        "claim": "The extent of a PML's involvement in a scheme depends on the needs of the criminal group, the complexity of the laundering operation to be executed, and the risks and costs associated with that involvement.",
+        "chunk_ids": [
+          1132
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states verbatim: 'The extent to which PMLs get involved in ML schemes depends on the needs of the criminal group, the complexity of the laundering operation that they wish to execute, as well as the risks and costs associated with such involvement.'"
+      },
+      {
+        "claim": "Some PMLs receive a portion of the proceeds of the criminal group rather than a discrete fee or commission.",
+        "chunk_ids": [
+          1132
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states PMLs may \"receive a portion of the proceeds of the group, rather than a fee or commission,\" directly matching the claim."
+      },
+      {
+        "claim": "PMLs maintain their own accounting systems \u2014 electronic spreadsheets (e.g. password-protected Excel files) or paper records \u2014 that track clients under code names, funds laundered, origin and destination of funds, dates, and commissions received, and these records are a valuable resource for investigators.",
+        "chunk_ids": [
+          1129
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states PMLs use spreadsheets tracking clients by code names, funds laundered, origin/destination, dates, and commissions, stored electronically (e.g. password-protected Excel) or on paper, and that \"these records represent an invaluable resource for investigators,\" matching all elements of the claim."
+      }
+    ]
+  },
+  "drafts": [
+    {
+      "trace_id": "230d7c2d8024",
+      "question": "What factors influence the commission rate a professional money launderer charges a criminal client, and in what forms do PMLs actually take that commission?",
+      "outcome": "answered",
+      "summary": "The FATF's Professional Money Laundering report is the corpus source on this. It says a set of overlapping factors set the fee/commission: the complexity of the scheme, the methods used, the launderer's knowledge of the predicate offence, and the level of risk the PML assumes \u2014 with rates further influenced by the countries/regions involved, the PML's reputation, the total amount laundered, the denomination of banknotes in cash cases, and how quickly the client wants the funds moved or concealed (tighter deadlines mean a higher commission). On the form of payment, the corpus is thinner: the defining feature of a PML is providing laundering services \"in exchange for a commission, fee or other type of profit\", and PMLs who are embedded in or close to an organised crime group may instead take a portion of the group's proceeds rather than a discrete fee. PMLs record commissions received in their own coded internal accounting systems. The corpus does not set out a fuller itemised list of payment forms (e.g. payment in kind).",
+      "claims": [
+        {
+          "text": "According to FATF, a number of different and overlapping factors affect the fee paid to professional money launderers (PMLs) or the commission they receive.",
+          "chunk_ids": [
+            1128
+          ]
+        },
+        {
+          "text": "The fee often depends on the complexity of the scheme, the methods used, and the PML's knowledge of the predicate offence.",
+          "chunk_ids": [
+            1128
+          ]
+        },
+        {
+          "text": "The rate may change based on the level of risk the PML assumes, and commission rates are often influenced by the countries or regions involved in the scheme.",
+          "chunk_ids": [
+            1128
+          ]
+        },
+        {
+          "text": "Additional factors influencing the commission rate include the reputation of the individual PML, the total amount of funds laundered, and, in cash cases, the denomination (value) of the banknotes.",
+          "chunk_ids": [
+            1128
+          ]
+        },
+        {
+          "text": "The amount of time the client requests for moving or concealing the funds also affects the rate: if the laundering must be done in a shorter time period, the commission is higher.",
+          "chunk_ids": [
+            1128
+          ]
+        },
+        {
+          "text": "The defining characteristic of professional money laundering is the provision of money laundering services in exchange for a commission, fee or other type of profit.",
+          "chunk_ids": [
+            1127
+          ]
+        },
+        {
+          "text": "The extent of a PML's involvement in a scheme depends on the needs of the criminal group, the complexity of the laundering operation to be executed, and the risks and costs associated with that involvement.",
+          "chunk_ids": [
+            1132
+          ]
+        },
+        {
+          "text": "Some PMLs receive a portion of the proceeds of the criminal group rather than a discrete fee or commission.",
+          "chunk_ids": [
+            1132
+          ]
+        },
+        {
+          "text": "PMLs maintain their own accounting systems \u2014 electronic spreadsheets (e.g. password-protected Excel files) or paper records \u2014 that track clients under code names, funds laundered, origin and destination of funds, dates, and commissions received, and these records are a valuable resource for investigators.",
+          "chunk_ids": [
+            1129
+          ]
+        }
+      ],
+      "refusal_reason": "",
+      "iterations": 8,
+      "searches": 12,
+      "retrieved_chunk_ids": [
+        201,
+        203,
+        205,
+        208,
+        214,
+        215,
+        1121,
+        1122,
+        1124,
+        1125,
+        1127,
+        1128,
+        1129,
+        1130,
+        1132,
+        1135,
+        1136,
+        1137,
+        1145,
+        1146,
+        1147,
+        1149,
+        1150,
+        1156,
+        1165,
+        2701,
+        2708,
+        2724,
+        2735,
+        2755,
+        3295,
+        3297,
+        5330,
+        5826,
+        5843,
+        5878,
+        5897,
+        6346,
+        6728,
+        7332,
+        7334,
+        7948
+      ],
+      "input_tokens": 130,
+      "output_tokens": 3442,
+      "cache_read_tokens": 123302,
+      "usd": 0.37784,
+      "latency_ms": 61504.1,
+      "error": "",
+      "trace": [
+        {
+          "step": "search",
+          "iteration": 1,
+          "query": "professional money launderer commission fee percentage charged",
+          "k": 5,
+          "returned_chunk_ids": [
+            1128,
+            1122,
+            1121,
+            1132,
+            1127
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 1,
+          "query": "professional money laundering networks typology controllers",
+          "k": 5,
+          "returned_chunk_ids": [
+            5826,
+            1129,
+            1125,
+            1122,
+            1137
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 2,
+          "query": "commission may be paid in kind goods drugs percentage of funds laundered PML",
+          "k": 5,
+          "returned_chunk_ids": [
+            1128,
+            1136,
+            1150,
+            205,
+            1132
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 2,
+          "query": "fee depends on complexity of scheme risk assumed commission rate cash denomination shorter time period",
+          "k": 5,
+          "returned_chunk_ids": [
+            2755,
+            2708,
+            2735,
+            5897,
+            5878
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 3,
+          "query": "PML commission paid in form of real estate luxury goods share of laundered funds up front",
+          "k": 5,
+          "returned_chunk_ids": [
+            1128,
+            1136,
+            1135,
+            1150,
+            1146
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 3,
+          "query": "PMLs keep records accounting ledgers code names commissions received bookkeeping",
+          "k": 5,
+          "returned_chunk_ids": [
+            1128,
+            1129,
+            1165,
+            6728,
+            1132
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 4,
+          "query": "launderer takes commission in kind narcotics or a share of illicit goods rather than cash payment",
+          "k": 5,
+          "returned_chunk_ids": [
+            201,
+            203,
+            3297,
+            3295,
+            7332
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 4,
+          "query": "PML sophisticated methods use of new technologies specialisation commission percentage of amount laundered ranges",
+          "k": 8,
+          "returned_chunk_ids": [
+            1128,
+            1127,
+            1132,
+            1129,
+            1125,
+            1122,
+            1147,
+            205
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 5,
+          "query": "commission deducted directly from the laundered funds before transfer to client",
+          "k": 8,
+          "returned_chunk_ids": [
+            1128,
+            1146,
+            1145,
+            5843,
+            1136,
+            1156,
+            1135,
+            208
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 5,
+          "query": "\"knowledge of the predicate offence\" higher commission risk premium launderer",
+          "k": 8,
+          "returned_chunk_ids": [
+            215,
+            214,
+            1128,
+            5330,
+            1149,
+            2724,
+            7334,
+            6346
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 6,
+          "query": "PML members of criminal organisation salary portion of proceeds rather than fee",
+          "k": 8,
+          "returned_chunk_ids": [
+            1132,
+            1122,
+            1128,
+            1124,
+            1127,
+            1130,
+            1129,
+            1150
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 7,
+          "query": "\"the commission will be higher\" laundering shorter time period",
+          "k": 6,
+          "returned_chunk_ids": [
+            7948,
+            1128,
+            2755,
+            2701,
+            2735,
+            5826
+          ]
+        },
+        {
+          "step": "answer",
+          "iteration": 8,
+          "claims": 9
+        }
+      ]
+    }
+  ],
+  "written_at": "2026-08-30T11:33:08+00:00"
+}

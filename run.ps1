@@ -89,6 +89,8 @@ switch ($Target) {
     'report'         { Invoke-App @('aml_agent.evaluation.report') }
     'eval-analysis'  { Invoke-App @('aml_agent.evaluation.analysis') }
     'eval-sweep'     { Invoke-App @('aml_agent.evaluation.candidate_sweep') }
+    'contextualize'  { Invoke-App @('aml_agent.ingest.contextualize', '--model', 'claude-haiku-4-5') }
+    'contextualize-estimate' { Invoke-App @('aml_agent.ingest.contextualize', '--dry-run', '--model', 'claude-haiku-4-5') }
     'eval-ablation'  { Invoke-App @('aml_agent.evaluation.ablation', 'bge-base', 'bge-m3') }
     'judge-audit'    { Invoke-App @('aml_agent.evaluation.judge_audit') }
     'judge-audit-score' { Invoke-App @('aml_agent.evaluation.judge_audit', '--score') }
