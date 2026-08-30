@@ -14,6 +14,7 @@ with a decimal point. So two things are true of this module by design:
 
 from __future__ import annotations
 
+import json
 from dataclasses import dataclass
 from typing import Any, cast
 
@@ -71,6 +72,53 @@ version, or support it for a different scope — treat it as unsupported and nam
 it.
 
 Call record_judgement exactly once."""
+
+
+def _recover_overflow(value: Any) -> tuple[list[str], str]:
+    """Coerce `unsupported_assertions` into a list, recovering a swallowed reason.
+
+    The schema says array of strings. Two things the model actually did:
+
+    1. Returned the array as a JSON-encoded STRING. Iterating that yields one
+       entry per character — a single judged answer became 2,173 "unsupported
+       assertions", each one letter long, in a report meant for a human.
+    2. Serialised the *whole remainder of the tool-call object* into this one
+       field: the array, then `, "reason": "..."`. The reason field then came
+       back empty, so the judge's explanation vanished from the audit file
+       exactly where a grader most needs it.
+
+    Both are recoverable without another API call, because the information is
+    all there — only mis-split. Returns (assertions, recovered_reason), where
+    the reason is empty unless it had been swallowed.
+    """
+    if isinstance(value, list):
+        return [str(x) for x in value], ""
+    if not isinstance(value, str):
+        return [], ""
+
+    text = value.strip()
+    if not text:
+        return [], ""
+    if not text.startswith("["):
+        return [text], ""
+
+    try:
+        head, consumed = json.JSONDecoder().raw_decode(text)
+    except json.JSONDecodeError:
+        return [text], ""
+
+    items = [str(x) for x in head] if isinstance(head, list) else [str(head)]
+
+    # Anything after the array is the rest of the object that leaked in with
+    # it. Wrapping it in braces makes it parseable again.
+    remainder = text[consumed:].strip().lstrip(",").strip()
+    if not remainder:
+        return items, ""
+    try:
+        recovered = json.loads("{" + remainder + "}")
+    except json.JSONDecodeError:
+        return items, ""
+    return items, str(recovered.get("reason", "")) if isinstance(recovered, dict) else ""
 
 
 @dataclass
@@ -148,10 +196,13 @@ class GroundednessJudge:
         for block in response.content:
             if block.type == "tool_use" and block.name == "record_judgement":
                 data = cast(dict[str, Any], block.input)
+                unsupported, recovered_reason = _recover_overflow(
+                    data.get("unsupported_assertions")
+                )
                 return Judgement(
                     grounded=bool(data.get("grounded")),
-                    unsupported=[str(x) for x in (data.get("unsupported_assertions") or [])],
-                    reason=str(data.get("reason", "")),
+                    unsupported=unsupported,
+                    reason=str(data.get("reason", "")) or recovered_reason,
                     usd=spend,
                 )
 

@@ -598,3 +598,49 @@ document uncached, would have cost roughly ten times as much.
 **Recorded rather than adjusted** because the direction is the useful part: a
 token estimate built on characters-per-token will under-predict on dense
 technical text, and anything derived from it should be treated as a floor.
+
+---
+
+## M4 — the judge audit file was 2,717 lines of single letters
+
+`results/judge_agreement.md` — the file a human is supposed to read to grade
+the judge — contained, for one case, **2,173 "unsupported assertions", each one
+character long**:
+
+```
+Unsupported assertions named:
+- [
+- "
+- H
+- a
+- v
+- e
+```
+
+Its "Judge reasoning" section was blank.
+
+**Cause.** `unsupported_assertions` is specified as an array of strings. For
+this one response the model serialised the **entire remainder of the tool-call
+object** into that single field as a string — the array *and* the trailing
+`, "reason": "..."`. The code then did `[str(x) for x in value]`, which
+iterates a string one character at a time. The blank reasoning had the same
+cause: `reason` was empty because its content had been swallowed into the field
+before it.
+
+**Why it was invisible.** The `grounded` boolean parsed correctly, so every
+metric was right — groundedness 0.731 is unaffected. Nothing errored. The only
+symptom was in a file nobody had opened yet, and it was found by reading the
+artifact rather than by any check.
+
+**Fix.** `_recover_overflow()` parses the leading JSON array with `raw_decode`
+and re-parses whatever follows it as the tail of the object, recovering both
+the real assertions and the lost reasoning. No API call was needed: the
+information was all present, only mis-split. The stored row was repaired in
+place, and the file went from 2,717 lines to 549.
+
+**The pattern, for the third time.** This is the same failure as the bare-string
+claim that crashed a run and the `str`-instead-of-`list` in the same family: a
+tool schema constrains the model, it does not guarantee it, and Python happily
+iterates a string as a sequence of characters rather than failing. Every place
+this codebase reads a model-supplied list now parses defensively, and each has a
+regression test built from the response that actually broke it.
