@@ -85,7 +85,6 @@ def build(
     reading: str = "",
 ) -> str:
     runs = {tag: _load(tag) for tag in tags}
-    profile = runs[tags[0]].get("authoring_profile", "t480")
 
     out: list[str] = [
         f"# {title}",

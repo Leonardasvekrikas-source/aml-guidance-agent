@@ -18,10 +18,9 @@ Written to results/candidate_sweep.json and summarised on stdout.
 from __future__ import annotations
 
 import json
+import sys
 import time
 from typing import Any
-
-import sys
 
 from ..config import DEFAULT_PROFILE, settings
 from ..retrieval import build_retrievers
