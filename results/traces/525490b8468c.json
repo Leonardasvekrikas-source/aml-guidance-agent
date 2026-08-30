@@ -1,0 +1,654 @@
+{
+  "trace_id": "525490b8468c",
+  "question": "Apart from checking price and quantity discrepancies, what practical checks on the paperwork a bank receives to pay a trade transaction have actually helped identify TBML?",
+  "outcome": "answered",
+  "summary": "Beyond price and quantity mismatches, the corpus describes a set of documentary checks that have actually surfaced TBML. The core technique is cross-document consistency: comparing names, goods descriptions, ports, transhipment points and vessel details across the contract, invoice, transport and insurance documents, and against what the bank already knows of the customer's business \u2014 plus checking that documents presented match what was screened at issuance. Physical-plausibility and external-verification checks matter too: container tracking, International Maritime Bureau bill-of-lading and shipping checks, and whether weights/volumes fit the shipping method. Authenticity and \"document hygiene\" checks have proved productive in real cases: counterfeit or resubmitted documents, copies where originals are expected, documents obviously recycled from a previous transaction with the date unchanged, personal rather than business email addresses, residential exporter addresses, and invoices signed by people who do not work at the company. Insurance anomalies, export-licence/dual-use requirements, illogical or last-minute payment instructions, unexplained third-party funding and connected drawer/drawee are further flags. The guidance is also candid about limits: documentary trade is paper-based, automated monitoring is largely infeasible, banks deal only in documents and are generally not equipped to judge over/under-invoicing, and multiple invoicing is hard to spot when colluding parties spread it across several institutions.",
+  "citations": [
+    {
+      "chunk_id": 20,
+      "title": "Trade-Based Money Laundering: Risk Indicators",
+      "publisher": "FATF / Egmont Group of Financial Intelligence Units",
+      "page": 6,
+      "source_url": "https://www.fatf-gafi.org/content/dam/fatf-gafi/reports/Trade-Based-Money-Laundering-Risk-Indicators.pdf",
+      "section_heading": null
+    },
+    {
+      "chunk_id": 2723,
+      "title": "Guidelines under Articles 17 and 18(4) of Directive (EU) 2015/849 on customer due diligence and the factors credit and financial institutions should consider when assessing the money laundering and terrorist financing risk associated with individual business relationships and occasional transactions ('The ML/TF Risk Factors Guidelines'), repealing and replacing Guidelines JC/2017/37 \u2014 EBA/GL/2021/02 (consolidated version)",
+      "publisher": "European Banking Authority (EBA)",
+      "page": 82,
+      "source_url": "https://www.eba.europa.eu/sites/default/files/document_library/Publications/Guidelines/2023/EBA-GL-2023-03/1061654/Guidelines%20ML%20TF%20Risk%20Factors_conslidated.pdf.pdf",
+      "section_heading": "13.7 Banks that are party to trade finance transactions often have access only to partial"
+    },
+    {
+      "chunk_id": 2726,
+      "title": "Guidelines under Articles 17 and 18(4) of Directive (EU) 2015/849 on customer due diligence and the factors credit and financial institutions should consider when assessing the money laundering and terrorist financing risk associated with individual business relationships and occasional transactions ('The ML/TF Risk Factors Guidelines'), repealing and replacing Guidelines JC/2017/37 \u2014 EBA/GL/2021/02 (consolidated version)",
+      "publisher": "European Banking Authority (EBA)",
+      "page": 85,
+      "source_url": "https://www.eba.europa.eu/sites/default/files/document_library/Publications/Guidelines/2023/EBA-GL-2023-03/1061654/Guidelines%20ML%20TF%20Risk%20Factors_conslidated.pdf.pdf",
+      "section_heading": "13.21 Checks on other parties to the transaction may include:"
+    },
+    {
+      "chunk_id": 185,
+      "title": "Trade-Based Money Laundering: Trends and Developments",
+      "publisher": "FATF / Egmont Group of Financial Intelligence Units",
+      "page": 15,
+      "source_url": "https://www.fatf-gafi.org/content/dam/fatf-gafi/reports/Trade-Based-Money-Laundering-Trends-and-Developments.pdf",
+      "section_heading": "19.67 trillion, driven, in part, by a significant growth of"
+    },
+    {
+      "chunk_id": 207,
+      "title": "Trade-Based Money Laundering: Trends and Developments",
+      "publisher": "FATF / Egmont Group of Financial Intelligence Units",
+      "page": 34,
+      "source_url": "https://www.fatf-gafi.org/content/dam/fatf-gafi/reports/Trade-Based-Money-Laundering-Trends-and-Developments.pdf",
+      "section_heading": "19.67 trillion, driven, in part, by a significant growth of"
+    },
+    {
+      "chunk_id": 4594,
+      "title": "The Wolfsberg Group, ICC and BAFT Trade Finance Principles (2019 amendment)",
+      "publisher": "The Wolfsberg Group, International Chamber of Commerce (ICC) and BAFT",
+      "page": 39,
+      "source_url": "https://db.wolfsberg-group.org/assets/5c770f68-6277-4443-931b-7750478f08e7/Trade%20Finance%20Principles.pdf",
+      "section_heading": "PUBLIC"
+    },
+    {
+      "chunk_id": 4593,
+      "title": "The Wolfsberg Group, ICC and BAFT Trade Finance Principles (2019 amendment)",
+      "publisher": "The Wolfsberg Group, International Chamber of Commerce (ICC) and BAFT",
+      "page": 38,
+      "source_url": "https://db.wolfsberg-group.org/assets/5c770f68-6277-4443-931b-7750478f08e7/Trade%20Finance%20Principles.pdf",
+      "section_heading": "38 Trade Finance Principles"
+    },
+    {
+      "chunk_id": 4615,
+      "title": "The Wolfsberg Group, ICC and BAFT Trade Finance Principles (2019 amendment)",
+      "publisher": "The Wolfsberg Group, International Chamber of Commerce (ICC) and BAFT",
+      "page": 57,
+      "source_url": "https://db.wolfsberg-group.org/assets/5c770f68-6277-4443-931b-7750478f08e7/Trade%20Finance%20Principles.pdf",
+      "section_heading": "PUBLIC"
+    },
+    {
+      "chunk_id": 4644,
+      "title": "The Wolfsberg Group, ICC and BAFT Trade Finance Principles (2019 amendment)",
+      "publisher": "The Wolfsberg Group, International Chamber of Commerce (ICC) and BAFT",
+      "page": 82,
+      "source_url": "https://db.wolfsberg-group.org/assets/5c770f68-6277-4443-931b-7750478f08e7/Trade%20Finance%20Principles.pdf",
+      "section_heading": "PUBLIC"
+    },
+    {
+      "chunk_id": 4557,
+      "title": "The Wolfsberg Group, ICC and BAFT Trade Finance Principles (2019 amendment)",
+      "publisher": "The Wolfsberg Group, International Chamber of Commerce (ICC) and BAFT",
+      "page": 12,
+      "source_url": "https://db.wolfsberg-group.org/assets/5c770f68-6277-4443-931b-7750478f08e7/Trade%20Finance%20Principles.pdf",
+      "section_heading": "PUBLIC"
+    },
+    {
+      "chunk_id": 4600,
+      "title": "The Wolfsberg Group, ICC and BAFT Trade Finance Principles (2019 amendment)",
+      "publisher": "The Wolfsberg Group, International Chamber of Commerce (ICC) and BAFT",
+      "page": 44,
+      "source_url": "https://db.wolfsberg-group.org/assets/5c770f68-6277-4443-931b-7750478f08e7/Trade%20Finance%20Principles.pdf",
+      "section_heading": "PUBLIC"
+    },
+    {
+      "chunk_id": 4588,
+      "title": "The Wolfsberg Group, ICC and BAFT Trade Finance Principles (2019 amendment)",
+      "publisher": "The Wolfsberg Group, International Chamber of Commerce (ICC) and BAFT",
+      "page": 34,
+      "source_url": "https://db.wolfsberg-group.org/assets/5c770f68-6277-4443-931b-7750478f08e7/Trade%20Finance%20Principles.pdf",
+      "section_heading": "PUBLIC"
+    },
+    {
+      "chunk_id": 199,
+      "title": "Trade-Based Money Laundering: Trends and Developments",
+      "publisher": "FATF / Egmont Group of Financial Intelligence Units",
+      "page": 27,
+      "source_url": "https://www.fatf-gafi.org/content/dam/fatf-gafi/reports/Trade-Based-Money-Laundering-Trends-and-Developments.pdf",
+      "section_heading": "19.67 trillion, driven, in part, by a significant growth of"
+    }
+  ],
+  "refusal_reason": "",
+  "attempts": 1,
+  "searches": 8,
+  "input_tokens": 135,
+  "output_tokens": 4730,
+  "agent_usd": 0.35938,
+  "validation_usd": 0.10934,
+  "total_usd": 0.46871,
+  "latency_ms": 105583.1,
+  "validation": {
+    "passed": true,
+    "citation_validity": 1.0,
+    "groundedness": 1.0,
+    "checked_support": true,
+    "usd": 0.10934,
+    "verdicts": [
+      {
+        "claim": "Cross-document consistency checks are a recognised TBML risk indicator, including contradictions between the name of the exporting entity and the name of the recipient of the payment, and differing prices between invoices and underlying contracts.",
+        "chunk_ids": [
+          20
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage lists \"Inconsistencies across contracts, invoices or other trade documents, e.g. contradictions between the name of the exporting entity and the name of the recipient of the payment; differing prices on invoices and underlying contracts\" as a trade document risk indicator, matching the claim."
+      },
+      {
+        "claim": "Vague or generic descriptions of the traded commodities in contracts, invoices or other trade documents are a TBML risk indicator.",
+        "chunk_ids": [
+          20
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage explicitly lists \"Contracts, invoices, or other trade documents have vague descriptions of the traded commodities\" as one of the trade document risk indicators."
+      },
+      {
+        "claim": "Trade or customs documents that are missing, appear to be counterfeits, include false or misleading information, or are a resubmission of previously rejected documents are TBML risk indicators.",
+        "chunk_ids": [
+          20
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage explicitly lists as a risk indicator: \"Trade or customs documents supporting the transaction are missing, appear to be counterfeits, include false or misleading information, are a resubmission of previously rejected documents, or are frequently modified or amended.\""
+      },
+      {
+        "claim": "The use of copy documents in situations where original documentation would be expected, without reasonable explanation, is a trade finance ML/TF risk factor under the EBA guidelines.",
+        "chunk_ids": [
+          2723
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage explicitly lists 'Copy documents are used in situations where original documentation would be expected, without reasonable explanation' as a risk factor under a section discussing factors that may contribute to increasing risk in trade-related transactions, under the EBA ML/TF Risk Factors Guidelines."
+      },
+      {
+        "claim": "Banks should look for significant discrepancies between the description of the type, quantity or quality of goods across key documents \u2014 invoices, insurance documents and transport documents \u2014 and the actual goods shipped so far as known.",
+        "chunk_ids": [
+          2723
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage explicitly lists as a risk factor: 'There are significant discrepancies in documentation, for example between the description of the type, quantity or quality of goods in key documents (i.e. invoices, insurance and transport documents) and actual goods shipped, to the extent that this is known,' which directly matches the claim."
+      },
+      {
+        "claim": "Whether the type, quantity and value of goods is consistent with the bank's own knowledge of the buyer's business is a stated risk factor.",
+        "chunk_ids": [
+          2723
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "Passage states as a risk factor: \"The type, quantity and value of goods is inconsistent with the bank's knowledge of the buyer's business,\" which matches the claim."
+      },
+      {
+        "claim": "Insurance anomalies are a documentary red flag: the agreed value of goods or shipment being over- or under-insured, or multiple insurances being used.",
+        "chunk_ids": [
+          2723
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage explicitly lists 'The agreed value of goods or shipment is over- or under-insured or multiple insurances are used' as a risk-increasing factor, matching the claim."
+      },
+      {
+        "claim": "Whether the goods require export licences, such as specific export authorisations for dual-use items, is a documentary risk factor banks should consider.",
+        "chunk_ids": [
+          2723
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage lists as a risk-increasing factor: \"The goods transacted require export licenses, such as specific export authorizations for dual-use items that are goods, software and technology that can be used for both civilian and military applications,\" directly supporting the claim."
+      },
+      {
+        "claim": "Banks can verify documentary information against third-party or open-source data, for example the International Maritime Bureau for warning notices, bills of lading, shipping and pricing checks, or shipping lines' free container tracking services, to confirm the information provided and that the transaction's purpose is legitimate.",
+        "chunk_ids": [
+          2726
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states almost verbatim: \"using third party or open source data sources, for example the International Maritime Bureau (for warning notices, bills of lading, shipping and pricing checks) or shipping lines\u2019 free container tracking service to verify the information provided and to check that the purpose of the transaction is legitimate.\""
+      },
+      {
+        "claim": "Checking that the weights and volumes of goods being shipped are consistent with the shipping method is a recommended transaction check.",
+        "chunk_ids": [
+          2726
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage lists under 'Checks on transactions may include' the item 'checking that the weights and volumes of goods being shipped are consistent with the shipping method.'"
+      },
+      {
+        "claim": "Because LCs and bills for collection are largely paper-based and accompanied by invoices, bills of lading and manifests, automated transaction monitoring may not be feasible; the processing bank should assess these documents for consistency with the terms of the trade transaction and require staff to use professional expertise and judgement.",
+        "chunk_ids": [
+          2726
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states almost verbatim: \"Since LCs and BCs are largely paper-based and accompanied by trade-related documents (e.g. invoices, bills of lading and manifests), automated transaction monitoring may not be feasible. The processing bank should assess these documents for consistency with the terms of the trade transaction and require staff to use professional expertise and judgement,\" matching the claim."
+      },
+      {
+        "claim": "FATF/Egmont identify specific data points in trade documentation that can be used to spot TBML: use of a personal email address instead of a legitimate business email, obvious recycling of previous documentation with few or no edits (including something as basic as the date), and the complete lack of any trading presence for the exporter, such as use of residential rather than business premises.",
+        "chunk_ids": [
+          185
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage lists exactly these three data points verbatim: personal email address use, recycling of previous documentation including the date, and complete lack of trading presence/residential premises for exporters, matching the claim precisely."
+      },
+      {
+        "claim": "In a New Zealand case, banks supplied the FIU with the invoices given to them as justification for payments; the invoices were clearly fraudulent, depicted the goods as 'ceramic tiles' rather than the actual fruit exports, and were 'signed' by a purported manager who enquiries showed was not employed at the company.",
+        "chunk_ids": [
+          207
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states banks \"supplied the FIU with invoices which were provided to them as justification for the payments \u2013 these invoices were clearly fraudulent and depicted the transactions as payments for export of 'ceramic tiles'... The invoices were 'signed' by the purported manager of the NZ company, but enquiries determined there was no one by that name employed at the company,\" matching all elements of the claim."
+      },
+      {
+        "claim": "At the presentation stage of a documentary credit, banks should screen all names and parties related to the transaction against current applicable lists, assess the extent to which the documents presented match the information already checked in the DC, and check the received documents against the risk indicators or scenarios the bank has determined to apply.",
+        "chunk_ids": [
+          4594
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "Passage explicitly lists these three elements under Stage 2 (reviewing documents presented under the DC): \"The screening of all names and parties related to the transaction against current applicable lists\", \"The extent to which documents presented match the information already checked in the DC at the time of presentation\", and \"Checking of the received documents against any Risk indicators or scenarios that Bank A has determined to apply in its RBA.\""
+      },
+      {
+        "claim": "At the DC application stage, review should cover the goods involved, the country where goods are shipped from, disclosed transhipment points and destination points, and all other names appearing in the DC, against sanctions and terrorist lists and high-risk country ratings.",
+        "chunk_ids": [
+          4593
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage lists exactly these items under 'Sanctions and Terrorist lists which may affect' (goods, shipment/transhipment/destination countries, all other names) and separately lists high-risk country ratings for Bank B/Party Y location and transportation of goods, matching the claim."
+      },
+      {
+        "claim": "For bills for collection, Wolfsberg/ICC/BAFT list documentary and transactional red flags including illogical payment instructions or last-minute changes, third parties funding or part-funding the collection value, a connected drawer and drawee, and goods descriptions that differ significantly between documents.",
+        "chunk_ids": [
+          4615
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage lists these exact BC (bills for collection) red flags: illogical payment instructions/last-minute changes, third parties funding/part-funding the settlement account, connected drawer or drawee, and goods descriptions differing significantly, matching the claim."
+      },
+      {
+        "claim": "For bank-to-bank trade loans, banks should require a minimum information set on the underlying trade transaction before lending, including names and addresses of borrower, buyer and seller, port of loading, port of discharge, shipment date, description of goods and vessel name.",
+        "chunk_ids": [
+          4644
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states \"Banks should establish a requirement for minimum information from Borrower on the underlying trade finance transaction before any loan is made\" and lists exactly the items in the claim: Name/Address of Borrower, Buyer, Seller, Port of Loading, Port of Discharge, Shipment date, Description of Goods, Vessel name."
+      },
+      {
+        "claim": "Multiple invoicing \u2014 issuing more than one invoice for the same goods to justify receipt of multiple payments \u2014 is a recognised TBML method and is harder to detect if the colluding parties use more than one financial institution.",
+        "chunk_ids": [
+          4557
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage explicitly states \"By issuing more than one invoice for the same goods a seller can justify the receipt of multiple payments. This will be harder to detect if the colluding parties use more than one FI to facilitate the payments and or transactions,\" directly supporting the claim."
+      },
+      {
+        "claim": "Wolfsberg/ICC/BAFT caution that banks deal only in documents, rarely have the opportunity to review an overall trade financing process in complete detail, and are not generally equipped to determine whether transactions involve over- or under-invoicing or other misrepresentation of value.",
+        "chunk_ids": [
+          4600
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states banks deal only in documents, it is \"extremely rare for any one Bank to have the opportunity to review an overall trade financing process in complete detail,\" and \"Banks are not generally equipped to make this assessment\" regarding over- or under-invoicing or misrepresentation of value."
+      },
+      {
+        "claim": "Documentary trade monitoring resists standard patterning techniques because of the range of variation in normal trading patterns and the significant presence of paper documents, so manual input is still needed even in transaction monitoring.",
+        "chunk_ids": [
+          4588
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states nearly verbatim: \"it is difficult, if not impossible, to introduce any standard patterning techniques... due to the range of variations... present even in normal trading patterns. The significant presence of paper documents... will continue to see a need for manual input even in transaction monitoring.\""
+      },
+      {
+        "claim": "Freight forwarders and customs brokers can access and review documentation containing indications of TBML, including commercial invoices \u2014 which must state the parties, the goods and the harmonised commodity description and coding system, and may carry a statement certifying the invoice is true \u2014 and the bill of lading, which acts as receipt, evidence of the carriage contract and document of title.",
+        "chunk_ids": [
+          199
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states freight forwarders can access documentation including commercial invoices (with parties, goods, harmonised commodity description and coding system, and an optional certifying statement) and the bill of lading (receipt, evidence of carriage contract, and document of title), matching the claim's details."
+      }
+    ]
+  },
+  "drafts": [
+    {
+      "trace_id": "525490b8468c",
+      "question": "Apart from checking price and quantity discrepancies, what practical checks on the paperwork a bank receives to pay a trade transaction have actually helped identify TBML?",
+      "outcome": "answered",
+      "summary": "Beyond price and quantity mismatches, the corpus describes a set of documentary checks that have actually surfaced TBML. The core technique is cross-document consistency: comparing names, goods descriptions, ports, transhipment points and vessel details across the contract, invoice, transport and insurance documents, and against what the bank already knows of the customer's business \u2014 plus checking that documents presented match what was screened at issuance. Physical-plausibility and external-verification checks matter too: container tracking, International Maritime Bureau bill-of-lading and shipping checks, and whether weights/volumes fit the shipping method. Authenticity and \"document hygiene\" checks have proved productive in real cases: counterfeit or resubmitted documents, copies where originals are expected, documents obviously recycled from a previous transaction with the date unchanged, personal rather than business email addresses, residential exporter addresses, and invoices signed by people who do not work at the company. Insurance anomalies, export-licence/dual-use requirements, illogical or last-minute payment instructions, unexplained third-party funding and connected drawer/drawee are further flags. The guidance is also candid about limits: documentary trade is paper-based, automated monitoring is largely infeasible, banks deal only in documents and are generally not equipped to judge over/under-invoicing, and multiple invoicing is hard to spot when colluding parties spread it across several institutions.",
+      "claims": [
+        {
+          "text": "Cross-document consistency checks are a recognised TBML risk indicator, including contradictions between the name of the exporting entity and the name of the recipient of the payment, and differing prices between invoices and underlying contracts.",
+          "chunk_ids": [
+            20
+          ]
+        },
+        {
+          "text": "Vague or generic descriptions of the traded commodities in contracts, invoices or other trade documents are a TBML risk indicator.",
+          "chunk_ids": [
+            20
+          ]
+        },
+        {
+          "text": "Trade or customs documents that are missing, appear to be counterfeits, include false or misleading information, or are a resubmission of previously rejected documents are TBML risk indicators.",
+          "chunk_ids": [
+            20
+          ]
+        },
+        {
+          "text": "The use of copy documents in situations where original documentation would be expected, without reasonable explanation, is a trade finance ML/TF risk factor under the EBA guidelines.",
+          "chunk_ids": [
+            2723
+          ]
+        },
+        {
+          "text": "Banks should look for significant discrepancies between the description of the type, quantity or quality of goods across key documents \u2014 invoices, insurance documents and transport documents \u2014 and the actual goods shipped so far as known.",
+          "chunk_ids": [
+            2723
+          ]
+        },
+        {
+          "text": "Whether the type, quantity and value of goods is consistent with the bank's own knowledge of the buyer's business is a stated risk factor.",
+          "chunk_ids": [
+            2723
+          ]
+        },
+        {
+          "text": "Insurance anomalies are a documentary red flag: the agreed value of goods or shipment being over- or under-insured, or multiple insurances being used.",
+          "chunk_ids": [
+            2723
+          ]
+        },
+        {
+          "text": "Whether the goods require export licences, such as specific export authorisations for dual-use items, is a documentary risk factor banks should consider.",
+          "chunk_ids": [
+            2723
+          ]
+        },
+        {
+          "text": "Banks can verify documentary information against third-party or open-source data, for example the International Maritime Bureau for warning notices, bills of lading, shipping and pricing checks, or shipping lines' free container tracking services, to confirm the information provided and that the transaction's purpose is legitimate.",
+          "chunk_ids": [
+            2726
+          ]
+        },
+        {
+          "text": "Checking that the weights and volumes of goods being shipped are consistent with the shipping method is a recommended transaction check.",
+          "chunk_ids": [
+            2726
+          ]
+        },
+        {
+          "text": "Because LCs and bills for collection are largely paper-based and accompanied by invoices, bills of lading and manifests, automated transaction monitoring may not be feasible; the processing bank should assess these documents for consistency with the terms of the trade transaction and require staff to use professional expertise and judgement.",
+          "chunk_ids": [
+            2726
+          ]
+        },
+        {
+          "text": "FATF/Egmont identify specific data points in trade documentation that can be used to spot TBML: use of a personal email address instead of a legitimate business email, obvious recycling of previous documentation with few or no edits (including something as basic as the date), and the complete lack of any trading presence for the exporter, such as use of residential rather than business premises.",
+          "chunk_ids": [
+            185
+          ]
+        },
+        {
+          "text": "In a New Zealand case, banks supplied the FIU with the invoices given to them as justification for payments; the invoices were clearly fraudulent, depicted the goods as 'ceramic tiles' rather than the actual fruit exports, and were 'signed' by a purported manager who enquiries showed was not employed at the company.",
+          "chunk_ids": [
+            207
+          ]
+        },
+        {
+          "text": "At the presentation stage of a documentary credit, banks should screen all names and parties related to the transaction against current applicable lists, assess the extent to which the documents presented match the information already checked in the DC, and check the received documents against the risk indicators or scenarios the bank has determined to apply.",
+          "chunk_ids": [
+            4594
+          ]
+        },
+        {
+          "text": "At the DC application stage, review should cover the goods involved, the country where goods are shipped from, disclosed transhipment points and destination points, and all other names appearing in the DC, against sanctions and terrorist lists and high-risk country ratings.",
+          "chunk_ids": [
+            4593
+          ]
+        },
+        {
+          "text": "For bills for collection, Wolfsberg/ICC/BAFT list documentary and transactional red flags including illogical payment instructions or last-minute changes, third parties funding or part-funding the collection value, a connected drawer and drawee, and goods descriptions that differ significantly between documents.",
+          "chunk_ids": [
+            4615
+          ]
+        },
+        {
+          "text": "For bank-to-bank trade loans, banks should require a minimum information set on the underlying trade transaction before lending, including names and addresses of borrower, buyer and seller, port of loading, port of discharge, shipment date, description of goods and vessel name.",
+          "chunk_ids": [
+            4644
+          ]
+        },
+        {
+          "text": "Multiple invoicing \u2014 issuing more than one invoice for the same goods to justify receipt of multiple payments \u2014 is a recognised TBML method and is harder to detect if the colluding parties use more than one financial institution.",
+          "chunk_ids": [
+            4557
+          ]
+        },
+        {
+          "text": "Wolfsberg/ICC/BAFT caution that banks deal only in documents, rarely have the opportunity to review an overall trade financing process in complete detail, and are not generally equipped to determine whether transactions involve over- or under-invoicing or other misrepresentation of value.",
+          "chunk_ids": [
+            4600
+          ]
+        },
+        {
+          "text": "Documentary trade monitoring resists standard patterning techniques because of the range of variation in normal trading patterns and the significant presence of paper documents, so manual input is still needed even in transaction monitoring.",
+          "chunk_ids": [
+            4588
+          ]
+        },
+        {
+          "text": "Freight forwarders and customs brokers can access and review documentation containing indications of TBML, including commercial invoices \u2014 which must state the parties, the goods and the harmonised commodity description and coding system, and may carry a statement certifying the invoice is true \u2014 and the bill of lading, which acts as receipt, evidence of the carriage contract and document of title.",
+          "chunk_ids": [
+            199
+          ]
+        }
+      ],
+      "refusal_reason": "",
+      "iterations": 5,
+      "searches": 8,
+      "retrieved_chunk_ids": [
+        16,
+        17,
+        19,
+        20,
+        181,
+        184,
+        185,
+        198,
+        199,
+        200,
+        207,
+        208,
+        231,
+        233,
+        930,
+        933,
+        934,
+        938,
+        2047,
+        2204,
+        2721,
+        2722,
+        2723,
+        2726,
+        3303,
+        4064,
+        4535,
+        4547,
+        4557,
+        4565,
+        4567,
+        4569,
+        4574,
+        4576,
+        4582,
+        4585,
+        4587,
+        4588,
+        4593,
+        4594,
+        4597,
+        4600,
+        4602,
+        4613,
+        4615,
+        4628,
+        4642,
+        4643,
+        4644,
+        5841
+      ],
+      "input_tokens": 135,
+      "output_tokens": 4730,
+      "cache_read_tokens": 57540,
+      "usd": 0.35938,
+      "latency_ms": 62608.5,
+      "error": "",
+      "trace": [
+        {
+          "step": "search",
+          "iteration": 1,
+          "query": "trade-based money laundering document examination red flags bill of lading",
+          "k": 8,
+          "returned_chunk_ids": [
+            934,
+            933,
+            199,
+            17,
+            2726,
+            2204,
+            930,
+            181
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 1,
+          "query": "trade finance documentary credit inconsistencies checks banks",
+          "k": 8,
+          "returned_chunk_ids": [
+            4587,
+            2722,
+            2721,
+            4643,
+            4585,
+            4574,
+            4615,
+            4628
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 2,
+          "query": "TBML risk indicators trade documents shipping documentation inconsistencies vessel container",
+          "k": 10,
+          "returned_chunk_ids": [
+            16,
+            200,
+            20,
+            19,
+            198,
+            233,
+            185,
+            17,
+            199,
+            231
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 2,
+          "query": "duplicate invoice double financing same shipment presented multiple banks",
+          "k": 8,
+          "returned_chunk_ids": [
+            4557,
+            5841,
+            208,
+            4585,
+            207,
+            3303,
+            938,
+            4576
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 3,
+          "query": "trade documents counterfeit missing false misleading resubmission previously rejected shipping route landlocked",
+          "k": 8,
+          "returned_chunk_ids": [
+            20,
+            2723,
+            2047,
+            4557,
+            200,
+            185,
+            4064,
+            184
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 3,
+          "query": "Wolfsberg trade finance red flags document review goods description vessel name port sanctions dual-use",
+          "k": 8,
+          "returned_chunk_ids": [
+            4644,
+            4535,
+            181,
+            4565,
+            4642,
+            4569,
+            4567,
+            4547
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 4,
+          "query": "processing bank assess documents consistency terms of trade transaction professional judgement identify red flags letters of credit",
+          "k": 8,
+          "returned_chunk_ids": [
+            4582,
+            2722,
+            4613,
+            2726,
+            4587,
+            2721,
+            4600,
+            4588
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 4,
+          "query": "documentary credit lifecycle controls reviewing stage documents presented against goods ports vessel name AML checks",
+          "k": 8,
+          "returned_chunk_ids": [
+            4593,
+            4602,
+            4615,
+            4594,
+            4588,
+            4597,
+            4644,
+            4574
+          ]
+        },
+        {
+          "step": "answer",
+          "iteration": 5,
+          "claims": 21
+        }
+      ]
+    }
+  ],
+  "written_at": "2026-08-30T11:11:48+00:00"
+}

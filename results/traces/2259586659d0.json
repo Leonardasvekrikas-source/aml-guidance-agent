@@ -1,0 +1,486 @@
+{
+  "trace_id": "2259586659d0",
+  "question": "Which of the foundational TBML techniques identified in the 2006 FATF report does NOT depend on misrepresenting the price of the goods, and how do criminals use several financial institutions to keep it from being spotted?",
+  "outcome": "answered",
+  "summary": "Of the foundational TBML techniques traced back to the FATF 2006 study, multiple invoicing is the one whose description does not turn on the price stated for the goods: it works by issuing more than one invoice for the same goods, so the seller can justify receiving multiple payments. Industry guidance (Wolfsberg/ICC/BAFT) notes explicitly that this will be harder to detect if the colluding parties use more than one financial institution to facilitate the payments. By contrast, over- and under-invoicing are defined by misrepresenting the price of the good or service in order to transfer value. Guidance also notes that these techniques are combined in practice (e.g. multiple invoices used alongside phantom shipping) and that no single authority or organisation has full sight of the threat.",
+  "citations": [
+    {
+      "chunk_id": 200,
+      "title": "Trade-Based Money Laundering: Trends and Developments",
+      "publisher": "FATF / Egmont Group of Financial Intelligence Units",
+      "page": 28,
+      "source_url": "https://www.fatf-gafi.org/content/dam/fatf-gafi/reports/Trade-Based-Money-Laundering-Trends-and-Developments.pdf",
+      "section_heading": "19.67 trillion, driven, in part, by a significant growth of"
+    },
+    {
+      "chunk_id": 4557,
+      "title": "The Wolfsberg Group, ICC and BAFT Trade Finance Principles (2019 amendment)",
+      "publisher": "The Wolfsberg Group, International Chamber of Commerce (ICC) and BAFT",
+      "page": 12,
+      "source_url": "https://db.wolfsberg-group.org/assets/5c770f68-6277-4443-931b-7750478f08e7/Trade%20Finance%20Principles.pdf",
+      "section_heading": "PUBLIC"
+    },
+    {
+      "chunk_id": 5840,
+      "title": "National Risk Assessment of Money Laundering and Terrorist Financing 2025",
+      "publisher": "HM Treasury and Home Office",
+      "page": 43,
+      "source_url": "https://assets.publishing.service.gov.uk/media/6877be59760bf6cedaf5bd4f/National_Risk_Assessment_of_Money_Laundering_and_Terrorist_Financing_2025_FINAL.pdf",
+      "section_heading": "3.74 Criminals can exploit the international trade system to disguise criminal"
+    },
+    {
+      "chunk_id": 201,
+      "title": "Trade-Based Money Laundering: Trends and Developments",
+      "publisher": "FATF / Egmont Group of Financial Intelligence Units",
+      "page": 29,
+      "source_url": "https://www.fatf-gafi.org/content/dam/fatf-gafi/reports/Trade-Based-Money-Laundering-Trends-and-Developments.pdf",
+      "section_heading": "19.67 trillion, driven, in part, by a significant growth of"
+    }
+  ],
+  "refusal_reason": "",
+  "attempts": 2,
+  "searches": 10,
+  "input_tokens": 750,
+  "output_tokens": 4938,
+  "agent_usd": 0.41351,
+  "validation_usd": 0.07407,
+  "total_usd": 0.48757,
+  "latency_ms": 101040.1,
+  "validation": {
+    "passed": true,
+    "citation_validity": 1.0,
+    "groundedness": 1.0,
+    "checked_support": true,
+    "usd": 0.03974,
+    "verdicts": [
+      {
+        "claim": "The FATF 2006 report identified several techniques that form the foundation of TBML, among them over- and under-invoicing of goods and services, whose key element is the misrepresentation of the price of the good or service in order to transfer value, with importer and exporter complicit in the misrepresentation.",
+        "chunk_ids": [
+          200
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage explicitly states \"The FATF 2006 report identified several techniques that form the foundation of TBML\" and lists \"Over- and under- invoicing of goods and services: The key element of this technique is the misrepresentation of the price of the good or service, in order to transfer value... the critical enabling aspect is that the importer and exporter are complicit in the misrepresentation,\" matching the claim closely."
+      },
+      {
+        "claim": "Multiple invoicing is described as issuing more than one invoice for the same goods, so that a seller can justify the receipt of multiple payments.",
+        "chunk_ids": [
+          4557
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states verbatim: \"By issuing more than one invoice for the same goods a seller can justify the receipt of multiple payments.\""
+      },
+      {
+        "claim": "The UK National Risk Assessment separately lists 'issuing multiple invoices for the same transaction to justify multiple payments for the same shipment of goods or delivery of services' alongside, and distinct from, over- and under-invoicing (which involves misrepresentation of the price) and mis-stating the quality or type of good.",
+        "chunk_ids": [
+          5840
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage lists as separate bullet points: mis-declaration/over-under-invoicing (price misrepresentation), mis-stating quality or type of good, and 'Issuing multiple invoices for the same transaction to justify multiple payments for the same shipment of goods or delivery of services' as distinct items."
+      },
+      {
+        "claim": "In the Wolfsberg/ICC/BAFT table of methods, over-invoicing and under-invoicing are each defined by misrepresenting the price of the goods in the invoice and other documentation (above or below true value), whereas multiple invoicing is defined by the issuing of more than one invoice for the same goods.",
+        "chunk_ids": [
+          4557
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states exactly this: Over Invoicing/Under Invoicing are defined as \"misrepresenting the price of the goods in the invoice and other documentation (stating it at above/below the true value)\" and Multiple Invoicing as \"issuing more than one invoice for the same goods.\""
+      },
+      {
+        "claim": "Multiple invoicing will be harder to detect if the colluding parties use more than one financial institution to facilitate the payments.",
+        "chunk_ids": [
+          4557
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states verbatim: \"This will be harder to detect if the colluding parties use more than one FI to facilitate the payments and or transactions,\" directly matching the claim."
+      },
+      {
+        "claim": "These techniques rely generally on collusion between seller and buyer, which may arise because both parties are controlled by the same persons.",
+        "chunk_ids": [
+          4557
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states nearly verbatim: \"these techniques rely upon collusion between the seller and buyer... The collusion may arise because both parties are controlled by the same persons.\""
+      },
+      {
+        "claim": "In practice criminals mix these methods within one scheme; for example, more sophisticated money laundering networks may use phantom shipping in conjunction with multiple invoices, with an initial shipment of real goods creating a veneer of legitimacy and subsequent trading using multiple invoices for phantom shipments as cover for the transfer of funds.",
+        "chunk_ids": [
+          201
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states nearly verbatim: \"criminals can mix these methods in one scheme... more sophisticated ML networks may use phantom shipping in conjunction with multiple invoices. One shipment may involve the movement of actual goods to create a veneer of legitimacy... with subsequent trading may uses multiple invoices for phantom shipments, serving as a cover for the transfer of funds.\""
+      },
+      {
+        "claim": "Criminals can take advantage of the fact that no single authority or organisation has full sight of the trade-based money laundering threat.",
+        "chunk_ids": [
+          5840
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage directly states \"Criminals can also take advantage of the fact that no single authority or organisation has full sight of the threat,\" matching the claim."
+      }
+    ]
+  },
+  "drafts": [
+    {
+      "trace_id": "2259586659d0",
+      "question": "Which of the foundational TBML techniques identified in the 2006 FATF report does NOT depend on misrepresenting the price of the goods, and how do criminals use several financial institutions to keep it from being spotted?",
+      "outcome": "answered",
+      "summary": "The odd one out is multiple invoicing. Unlike over- and under-invoicing \u2014 whose defining feature, per FATF, is misrepresenting the price of the good or service to transfer value \u2014 multiple invoicing works by issuing more than one invoice for the same goods, allowing the seller to justify receiving several payments for a single shipment. The stated price can be perfectly genuine; it is the duplication of the payment leg that moves the illicit value. Detection depends on someone noticing that the same shipment has been paid for repeatedly, so launderers spread the duplicate invoices and payments across more than one financial institution: each bank sees only one apparently normal, well-documented trade payment, and no institution has sight of the full set. The Wolfsberg/ICC/BAFT Trade Finance Principles note this explicitly, and add that value-misrepresentation generally cannot be identified from trade documents alone, since most goods lack publicly available market prices. FATF also observes that these 2006-era techniques are routinely combined \u2014 e.g. multiple invoices layered on top of phantom shipments.",
+      "claims": [
+        {
+          "text": "The FATF 2006 report identified several techniques that form the foundation of TBML, including over- and under-invoicing of goods and services, whose key element is the misrepresentation of the price of the good or service in order to transfer value, with importer and exporter complicit in the misrepresentation.",
+          "chunk_ids": [
+            200
+          ]
+        },
+        {
+          "text": "Multiple invoicing is the foundational technique that does not rely on misstating price: by issuing more than one invoice for the same goods, a seller can justify the receipt of multiple payments for a single shipment, so the invoiced unit price can be entirely accurate.",
+          "chunk_ids": [
+            4557,
+            5840
+          ]
+        },
+        {
+          "text": "Multiple invoicing is harder to detect if the colluding parties use more than one financial institution to facilitate the payments, since no single institution sees the full set of duplicate payments.",
+          "chunk_ids": [
+            4557
+          ]
+        },
+        {
+          "text": "Techniques such as over/under invoicing rely on collusion between buyer and seller, and financial institutions generally cannot determine whether misrepresentation of value exists from the trade documents alone, because most products are not traded in public markets and there are no publicly available market prices.",
+          "chunk_ids": [
+            4557,
+            4558
+          ]
+        },
+        {
+          "text": "In practice criminals mix these foundational techniques within one scheme; for example, sophisticated ML networks may use phantom shipping in conjunction with multiple invoices, with an initial shipment of real goods providing a veneer of legitimacy and subsequent trades using multiple invoices for phantom shipments as cover for fund transfers.",
+          "chunk_ids": [
+            201
+          ]
+        },
+        {
+          "text": "The techniques first identified in the 2006 FATF study continue to be exploited because they are highly flexible and adaptable despite changes in global trading patterns.",
+          "chunk_ids": [
+            172
+          ]
+        }
+      ],
+      "refusal_reason": "",
+      "iterations": 4,
+      "searches": 4,
+      "retrieved_chunk_ids": [
+        172,
+        184,
+        200,
+        201,
+        207,
+        208,
+        217,
+        227,
+        655,
+        1151,
+        2171,
+        2179,
+        2723,
+        4557,
+        4558,
+        5840,
+        5841,
+        8923
+      ],
+      "input_tokens": 148,
+      "output_tokens": 1927,
+      "cache_read_tokens": 24831,
+      "usd": 0.15438,
+      "latency_ms": 31199.0,
+      "error": "",
+      "trace": [
+        {
+          "step": "search",
+          "iteration": 1,
+          "query": "multiple invoicing same goods shipment trade-based money laundering technique",
+          "k": 8,
+          "returned_chunk_ids": [
+            200,
+            4557,
+            5840,
+            201,
+            208,
+            2179,
+            1151,
+            207
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 1,
+          "query": "over-invoicing under-invoicing over-shipment under-shipment falsely described goods basic techniques",
+          "k": 8,
+          "returned_chunk_ids": [
+            200,
+            4557,
+            4558,
+            2723,
+            172,
+            5840,
+            184,
+            217
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 2,
+          "query": "multiple invoicing more than one financial institution facilitate payments harder to detect",
+          "k": 8,
+          "returned_chunk_ids": [
+            4557,
+            8923,
+            172,
+            2171,
+            227,
+            5840,
+            5841,
+            655
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 3,
+          "query": "Multiple invoicing of goods and services: justify multiple payments for the same shipment, use of several financial institutions",
+          "k": 6,
+          "returned_chunk_ids": [
+            4557,
+            200,
+            2723,
+            5840,
+            201,
+            207
+          ]
+        },
+        {
+          "step": "answer",
+          "iteration": 4,
+          "claims": 6
+        }
+      ]
+    },
+    {
+      "trace_id": "77d38e4cec38",
+      "question": "Which of the foundational TBML techniques identified in the 2006 FATF report does NOT depend on misrepresenting the price of the goods, and how do criminals use several financial institutions to keep it from being spotted?\n\nYour draft was REJECTED by citation validation. The following claims did not survive:\n\n- Claim: Multiple invoicing is the foundational technique that does not rely on misstating price: by issuing more than one invoice for the same goods, a seller can justify the receipt of multiple payments for a single shipment, so the invoiced unit price can be entirely accurate.\n  Cited: [4557, 5840]\n  Problem: The passage describes multiple invoicing as \"issuing more than one invoice for the same goods... to justify the receipt of multiple payments,\" but it never states this is \"foundational\" relative to other techniques or that the invoiced unit price \"can be entirely accurate\" / does not rely on misstating price - those are added specifics not found in the text.\n\n- Claim: Multiple invoicing is harder to detect if the colluding parties use more than one financial institution to facilitate the payments, since no single institution sees the full set of duplicate payments.\n  Cited: [4557]\n  Problem: The passage states multiple invoicing 'will be harder to detect if the colluding parties use more than one FI to facilitate the payments,' but does not provide the added reasoning that 'no single institution sees the full set of duplicate payments.'\n\nSearch for evidence that actually supports these claims and answer again, or drop the claims you cannot support. If the corpus does not support them at all, call refuse instead of weakening the wording until it passes.",
+      "outcome": "answered",
+      "summary": "Of the foundational TBML techniques traced back to the FATF 2006 study, multiple invoicing is the one whose description does not turn on the price stated for the goods: it works by issuing more than one invoice for the same goods, so the seller can justify receiving multiple payments. Industry guidance (Wolfsberg/ICC/BAFT) notes explicitly that this will be harder to detect if the colluding parties use more than one financial institution to facilitate the payments. By contrast, over- and under-invoicing are defined by misrepresenting the price of the good or service in order to transfer value. Guidance also notes that these techniques are combined in practice (e.g. multiple invoices used alongside phantom shipping) and that no single authority or organisation has full sight of the threat.",
+      "claims": [
+        {
+          "text": "The FATF 2006 report identified several techniques that form the foundation of TBML, among them over- and under-invoicing of goods and services, whose key element is the misrepresentation of the price of the good or service in order to transfer value, with importer and exporter complicit in the misrepresentation.",
+          "chunk_ids": [
+            200
+          ]
+        },
+        {
+          "text": "Multiple invoicing is described as issuing more than one invoice for the same goods, so that a seller can justify the receipt of multiple payments.",
+          "chunk_ids": [
+            4557
+          ]
+        },
+        {
+          "text": "The UK National Risk Assessment separately lists 'issuing multiple invoices for the same transaction to justify multiple payments for the same shipment of goods or delivery of services' alongside, and distinct from, over- and under-invoicing (which involves misrepresentation of the price) and mis-stating the quality or type of good.",
+          "chunk_ids": [
+            5840
+          ]
+        },
+        {
+          "text": "In the Wolfsberg/ICC/BAFT table of methods, over-invoicing and under-invoicing are each defined by misrepresenting the price of the goods in the invoice and other documentation (above or below true value), whereas multiple invoicing is defined by the issuing of more than one invoice for the same goods.",
+          "chunk_ids": [
+            4557
+          ]
+        },
+        {
+          "text": "Multiple invoicing will be harder to detect if the colluding parties use more than one financial institution to facilitate the payments.",
+          "chunk_ids": [
+            4557
+          ]
+        },
+        {
+          "text": "These techniques rely generally on collusion between seller and buyer, which may arise because both parties are controlled by the same persons.",
+          "chunk_ids": [
+            4557
+          ]
+        },
+        {
+          "text": "In practice criminals mix these methods within one scheme; for example, more sophisticated money laundering networks may use phantom shipping in conjunction with multiple invoices, with an initial shipment of real goods creating a veneer of legitimacy and subsequent trading using multiple invoices for phantom shipments as cover for the transfer of funds.",
+          "chunk_ids": [
+            201
+          ]
+        },
+        {
+          "text": "Criminals can take advantage of the fact that no single authority or organisation has full sight of the trade-based money laundering threat.",
+          "chunk_ids": [
+            5840
+          ]
+        }
+      ],
+      "refusal_reason": "",
+      "iterations": 4,
+      "searches": 6,
+      "retrieved_chunk_ids": [
+        20,
+        21,
+        172,
+        176,
+        179,
+        182,
+        185,
+        189,
+        199,
+        200,
+        201,
+        206,
+        207,
+        210,
+        217,
+        234,
+        934,
+        1151,
+        1171,
+        2207,
+        2721,
+        2722,
+        2723,
+        2751,
+        3143,
+        4103,
+        4556,
+        4557,
+        4558,
+        4563,
+        5840,
+        5842,
+        6351,
+        8911,
+        8923
+      ],
+      "input_tokens": 602,
+      "output_tokens": 3011,
+      "cache_read_tokens": 30233,
+      "usd": 0.25913,
+      "latency_ms": 39975.5,
+      "error": "",
+      "trace": [
+        {
+          "step": "search",
+          "iteration": 1,
+          "query": "multiple invoicing more than one financial institution harder to detect",
+          "k": 8,
+          "returned_chunk_ids": [
+            4557,
+            8923,
+            934,
+            234,
+            8911,
+            200,
+            3143,
+            189
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 1,
+          "query": "basic techniques trade-based money laundering over-invoicing under-invoicing multiple invoicing over-shipment falsely described goods",
+          "k": 8,
+          "returned_chunk_ids": [
+            200,
+            4557,
+            5840,
+            172,
+            4558,
+            1151,
+            2723,
+            201
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 2,
+          "query": "multiple invoicing of goods and services key element is not the misrepresentation of price but the repeated invoicing of the same shipment",
+          "k": 8,
+          "returned_chunk_ids": [
+            200,
+            4557,
+            4558,
+            199,
+            5840,
+            2723,
+            5842,
+            172
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 2,
+          "query": "justify multiple payments same shipment number of financial institutions used to make payments legitimate explanations for repeat payments",
+          "k": 8,
+          "returned_chunk_ids": [
+            207,
+            2207,
+            2751,
+            1171,
+            206,
+            4103,
+            6351,
+            21
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 3,
+          "query": "launderers need not misrepresent price multiple invoicing same goods invoiced more than once additional payments financial institutions",
+          "k": 10,
+          "returned_chunk_ids": [
+            4557,
+            200,
+            2722,
+            5840,
+            4563,
+            4558,
+            217,
+            4556,
+            2721,
+            20
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 3,
+          "query": "FATF 2006 report foundation TBML techniques over- and under-shipment phantom shipping multiple invoicing description",
+          "k": 10,
+          "returned_chunk_ids": [
+            200,
+            4557,
+            172,
+            185,
+            179,
+            182,
+            201,
+            199,
+            210,
+            176
+          ]
+        },
+        {
+          "step": "answer",
+          "iteration": 4,
+          "claims": 8
+        }
+      ]
+    }
+  ],
+  "written_at": "2026-08-30T11:09:59+00:00"
+}

@@ -1,0 +1,117 @@
+{
+  "generated_at": "2026-08-30T11:12:12+00:00",
+  "settings": {
+    "embedding_model": "BAAI/bge-m3",
+    "embedding_key": "bge-m3",
+    "embedding_column": "embedding_lg",
+    "reranker_model": "BAAI/bge-reranker-v2-m3",
+    "rerank_candidates": 50,
+    "embedding_dim": 1024,
+    "anthropic_model": "claude-opus-5",
+    "grader_model": "claude-sonnet-5",
+    "chunk_profiles": [
+      {
+        "name": "t256",
+        "target_tokens": 256,
+        "overlap_tokens": 48
+      },
+      {
+        "name": "t480",
+        "target_tokens": 480,
+        "overlap_tokens": 64
+      },
+      {
+        "name": "t1024",
+        "target_tokens": 1024,
+        "overlap_tokens": 128
+      }
+    ]
+  },
+  "counts": {
+    "questions": 4,
+    "answerable": 3,
+    "unanswerable": 1,
+    "answered": 3,
+    "judged": 3
+  },
+  "metrics": {
+    "groundedness": 1.0,
+    "citation_validity": 1.0,
+    "refusal_accuracy": 1.0,
+    "answer_rate": 1.0,
+    "median_latency_ms": 101040.1,
+    "median_searches": 8
+  },
+  "per_question": [
+    {
+      "question_id": "a01",
+      "question": "A trading company's account keeps receiving large incoming wires that are broken up and pushed out the same day to accounts with no obvious commercial link, so the balance sits near zero overnight. Which trade-based laundering indicator does that pattern correspond to?",
+      "answerable": true,
+      "outcome": "answered",
+      "attempts": 1,
+      "searches": 3,
+      "latency_ms": 56122.9,
+      "input_tokens": 158,
+      "output_tokens": 1466,
+      "trace_id": "f028be2321fd",
+      "citation_validity": 1.0,
+      "judge": {
+        "grounded": true,
+        "unsupported_assertions": [],
+        "reason": "Chunk 21 explicitly describes the 'pay-through' or 'transit' account indicator with rapid high-volume transactions and small end-of-day balance, and lists the sub-bullet about incoming wire transfers being split and forwarded to non-related multiple accounts. Chunks 16/17 support the caveat that a single indicator does not alone warrant suspicion but could prompt further monitoring.",
+        "error": ""
+      }
+    },
+    {
+      "question_id": "a02",
+      "question": "Which of the foundational TBML techniques identified in the 2006 FATF report does NOT depend on misrepresenting the price of the goods, and how do criminals use several financial institutions to keep it from being spotted?",
+      "answerable": true,
+      "outcome": "answered",
+      "attempts": 2,
+      "searches": 10,
+      "latency_ms": 101040.1,
+      "input_tokens": 750,
+      "output_tokens": 4938,
+      "trace_id": "2259586659d0",
+      "citation_validity": 1.0,
+      "judge": {
+        "grounded": true,
+        "unsupported_assertions": [],
+        "reason": "Chunk 200 states multiple invoicing 'doesn't require the misrepresentation of the price' and centers on reuse of documentation to justify multiple payments, and notes documents are reused across multiple FIs making detection harder (matching chunk 4557's 'harder to detect if colluding parties use more than one FI'). Chunks 200-201 and 5840 confirm over/under-invoicing involves price misrepresentation, and that techniques are combined (phantom shipping with multiple invoices) and that no single authority has full sight (chunk 5840).",
+        "error": ""
+      }
+    },
+    {
+      "question_id": "a03",
+      "question": "Apart from checking price and quantity discrepancies, what practical checks on the paperwork a bank receives to pay a trade transaction have actually helped identify TBML?",
+      "answerable": true,
+      "outcome": "answered",
+      "attempts": 1,
+      "searches": 8,
+      "latency_ms": 105583.1,
+      "input_tokens": 135,
+      "output_tokens": 4730,
+      "trace_id": "525490b8468c",
+      "citation_validity": 1.0,
+      "judge": {
+        "grounded": true,
+        "unsupported_assertions": [],
+        "reason": "All specific claims (cross-document consistency checks, IMB/container tracking, counterfeit/resubmitted documents, personal email addresses, residential exporter addresses, unnamed signatories, insurance anomalies, export licence/dual-use checks, illogical/last-minute payment instructions, unexplained third-party funding, connected drawer/drawee, and the limits of manual paper-based review and inability to detect over/under-invoicing) are directly stated in the supplied passages (chunks 20, 4185/4726, 4593-4600, 4613-4615, 4600). No assertion goes beyond what the passages support.",
+        "error": ""
+      }
+    },
+    {
+      "question_id": "u01",
+      "question": "In the FCA's enforcement action over the Russian \"mirror trading\" scheme, what financial penalty was imposed on Deutsche Bank, and what specific AML systems and controls failings did the Final Notice identify?",
+      "answerable": false,
+      "outcome": "refused",
+      "attempts": 1,
+      "searches": 6,
+      "latency_ms": 18862.6,
+      "input_tokens": 150,
+      "output_tokens": 1006,
+      "trace_id": "661f567b481d",
+      "citation_validity": null
+    }
+  ]
+}

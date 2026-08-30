@@ -189,6 +189,15 @@ class Settings:
     # --- generation ---
     anthropic_api_key: str = field(default_factory=lambda: _env("ANTHROPIC_API_KEY", ""))
     anthropic_model: str = field(default_factory=lambda: _env("ANTHROPIC_MODEL", "claude-opus-5"))
+    # The support check and the groundedness judge are narrow classifiers -
+    # one claim, one passage, one boolean - not open-ended reasoning, and
+    # they run once per claim and once per answer respectively. Running them
+    # on the drafting model is most of the bill for no measured benefit.
+    #
+    # This is a claim that has to be checked rather than assumed, which is
+    # exactly what `make judge-audit` measures: if a cheaper judge disagrees
+    # with a human more often, the disagreement rate says so.
+    grader_model: str = field(default_factory=lambda: _env("GRADER_MODEL", "claude-sonnet-5"))
     # Required only for identity-linked API keys, which must name the
     # workspace a request acts in. Ordinary keys ignore this.
     anthropic_workspace_id: str = field(default_factory=lambda: _env("ANTHROPIC_WORKSPACE_ID", ""))
@@ -242,6 +251,7 @@ class Settings:
             "rerank_candidates": self.rerank_candidates,
             "embedding_dim": self.embedding_dim,
             "anthropic_model": self.anthropic_model,
+            "grader_model": self.grader_model,
             "chunk_profiles": [asdict(p) for p in CHUNK_PROFILES],
         }
 

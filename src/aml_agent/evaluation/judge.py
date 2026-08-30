@@ -91,7 +91,7 @@ class Judgement:
 class GroundednessJudge:
     def __init__(self, client: anthropic.Anthropic | None = None, model: str | None = None):
         self.client = client
-        self.model = model or settings.anthropic_model
+        self.model = model or settings.grader_model
 
     def _get_client(self) -> anthropic.Anthropic:
         if self.client is None:

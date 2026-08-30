@@ -1,0 +1,503 @@
+{
+  "trace_id": "60b6a10e08c9",
+  "question": "What indicators suggest trade-based money laundering in invoice documentation?",
+  "outcome": "answered",
+  "summary": "The corpus (principally the FATF/Egmont TBML Risk Indicators and TBML Trends and Developments reports, the Wolfsberg/ICC/BAFT Trade Finance Principles, and the EBA ML/TF Risk Factors Guidelines) identifies a cluster of invoice-documentation indicators of trade-based money laundering. The core techniques are misrepresentation of the price, quantity or quality of goods \u2014 over-invoicing, under-invoicing, multiple invoicing for the same goods, and phantom shipping where no goods move at all. The corresponding documentary red flags are: inconsistencies across invoices, contracts and other trade documents (including mismatches between the exporter's name and the payee); prices out of line with market value or with previous comparable deals; vague or generic descriptions of the goods; and missing, counterfeit, false or resubmitted trade/customs documents. Related flags include use of copy documents where originals would be expected, recycled documentation with few or no edits, goods whose type/quantity/value do not match what is known of the buyer's business, and settlement of invoices by previously unknown third parties. Guidance also cautions that a single indicator is not itself suspicion, and that over-/under-invoicing generally cannot be confirmed from trade documents alone.",
+  "citations": [
+    {
+      "chunk_id": 4557,
+      "title": "The Wolfsberg Group, ICC and BAFT Trade Finance Principles (2019 amendment)",
+      "publisher": "The Wolfsberg Group, International Chamber of Commerce (ICC) and BAFT",
+      "page": 12,
+      "source_url": "https://db.wolfsberg-group.org/assets/5c770f68-6277-4443-931b-7750478f08e7/Trade%20Finance%20Principles.pdf",
+      "section_heading": "PUBLIC"
+    },
+    {
+      "chunk_id": 4558,
+      "title": "The Wolfsberg Group, ICC and BAFT Trade Finance Principles (2019 amendment)",
+      "publisher": "The Wolfsberg Group, International Chamber of Commerce (ICC) and BAFT",
+      "page": 12,
+      "source_url": "https://db.wolfsberg-group.org/assets/5c770f68-6277-4443-931b-7750478f08e7/Trade%20Finance%20Principles.pdf",
+      "section_heading": "PUBLIC"
+    },
+    {
+      "chunk_id": 201,
+      "title": "Trade-Based Money Laundering: Trends and Developments",
+      "publisher": "FATF / Egmont Group of Financial Intelligence Units",
+      "page": 29,
+      "source_url": "https://www.fatf-gafi.org/content/dam/fatf-gafi/reports/Trade-Based-Money-Laundering-Trends-and-Developments.pdf",
+      "section_heading": "19.67 trillion, driven, in part, by a significant growth of"
+    },
+    {
+      "chunk_id": 20,
+      "title": "Trade-Based Money Laundering: Risk Indicators",
+      "publisher": "FATF / Egmont Group of Financial Intelligence Units",
+      "page": 6,
+      "source_url": "https://www.fatf-gafi.org/content/dam/fatf-gafi/reports/Trade-Based-Money-Laundering-Risk-Indicators.pdf",
+      "section_heading": null
+    },
+    {
+      "chunk_id": 2211,
+      "title": "Comprehensive Update on Terrorist Financing Risks",
+      "publisher": "FATF",
+      "page": 131,
+      "source_url": "https://www.fatf-gafi.org/content/dam/fatf-gafi/publications/Comprehensive-Update-on-Terrorist-Financing-Risks-2025.pdf.coredownload.inline.pdf",
+      "section_heading": "416 Due to the gamut of products and services available, these indicators cannot easily"
+    },
+    {
+      "chunk_id": 2723,
+      "title": "Guidelines under Articles 17 and 18(4) of Directive (EU) 2015/849 on customer due diligence and the factors credit and financial institutions should consider when assessing the money laundering and terrorist financing risk associated with individual business relationships and occasional transactions ('The ML/TF Risk Factors Guidelines'), repealing and replacing Guidelines JC/2017/37 \u2014 EBA/GL/2021/02 (consolidated version)",
+      "publisher": "European Banking Authority (EBA)",
+      "page": 82,
+      "source_url": "https://www.eba.europa.eu/sites/default/files/document_library/Publications/Guidelines/2023/EBA-GL-2023-03/1061654/Guidelines%20ML%20TF%20Risk%20Factors_conslidated.pdf.pdf",
+      "section_heading": "13.7 Banks that are party to trade finance transactions often have access only to partial"
+    },
+    {
+      "chunk_id": 185,
+      "title": "Trade-Based Money Laundering: Trends and Developments",
+      "publisher": "FATF / Egmont Group of Financial Intelligence Units",
+      "page": 15,
+      "source_url": "https://www.fatf-gafi.org/content/dam/fatf-gafi/reports/Trade-Based-Money-Laundering-Trends-and-Developments.pdf",
+      "section_heading": "19.67 trillion, driven, in part, by a significant growth of"
+    },
+    {
+      "chunk_id": 206,
+      "title": "Trade-Based Money Laundering: Trends and Developments",
+      "publisher": "FATF / Egmont Group of Financial Intelligence Units",
+      "page": 33,
+      "source_url": "https://www.fatf-gafi.org/content/dam/fatf-gafi/reports/Trade-Based-Money-Laundering-Trends-and-Developments.pdf",
+      "section_heading": "19.67 trillion, driven, in part, by a significant growth of"
+    },
+    {
+      "chunk_id": 203,
+      "title": "Trade-Based Money Laundering: Trends and Developments",
+      "publisher": "FATF / Egmont Group of Financial Intelligence Units",
+      "page": 30,
+      "source_url": "https://www.fatf-gafi.org/content/dam/fatf-gafi/reports/Trade-Based-Money-Laundering-Trends-and-Developments.pdf",
+      "section_heading": "19.67 trillion, driven, in part, by a significant growth of"
+    },
+    {
+      "chunk_id": 17,
+      "title": "Trade-Based Money Laundering: Risk Indicators",
+      "publisher": "FATF / Egmont Group of Financial Intelligence Units",
+      "page": 3,
+      "source_url": "https://www.fatf-gafi.org/content/dam/fatf-gafi/reports/Trade-Based-Money-Laundering-Risk-Indicators.pdf",
+      "section_heading": null
+    }
+  ],
+  "refusal_reason": "",
+  "attempts": 1,
+  "searches": 6,
+  "input_tokens": 103,
+  "output_tokens": 2668,
+  "agent_usd": 0.22601,
+  "validation_usd": 0.08429,
+  "total_usd": 0.3103,
+  "latency_ms": 80361.6,
+  "validation": {
+    "passed": true,
+    "citation_validity": 1.0,
+    "groundedness": 1.0,
+    "checked_support": true,
+    "usd": 0.08429,
+    "verdicts": [
+      {
+        "claim": "Trade finance is misused to move value by misrepresenting the price, quality or quantity of goods, typically requiring collusion between buyer and seller (who may be controlled by the same persons).",
+        "chunk_ids": [
+          4557
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states trade finance is used \"to obscure the illegal movement of funds includes methods to misrepresent the price, quality or quantity of goods,\" that \"these techniques rely upon collusion between the seller and buyer,\" and \"the collusion may arise because both parties are controlled by the same persons.\""
+      },
+      {
+        "claim": "Over-invoicing involves stating the price of goods above true value in the invoice and other documentation so the seller gains excess value on payment; under-invoicing states it below true value so the buyer gains excess value.",
+        "chunk_ids": [
+          4557
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states verbatim: \"Over Invoicing By misrepresenting the price of the goods... stating it at above the true value... the seller gains excess value\" and \"Under Invoicing... stating it as below the true value... the buyer gains excess value,\" matching the claim exactly."
+      },
+      {
+        "claim": "Multiple invoicing \u2014 issuing more than one invoice for the same goods \u2014 lets a seller justify receipt of multiple payments, and is harder to detect if colluding parties use more than one financial institution.",
+        "chunk_ids": [
+          4557
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states verbatim: \"By issuing more than one invoice for the same goods a seller can justify the receipt of multiple payments. This will be harder to detect if the colluding parties use more than one FI to facilitate the payments and or transactions.\""
+      },
+      {
+        "claim": "Phantom shipping is where no goods are shipped at all and the documentation is completely falsified.",
+        "chunk_ids": [
+          4558
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states verbatim: 'Phantom Shipping No goods are shipped and all documentation is completely falsified.'"
+      },
+      {
+        "claim": "Sophisticated laundering networks combine techniques, for example using phantom shipping together with multiple invoices, sometimes shipping real goods once to create a veneer of legitimacy before covering later fund transfers with invoices for phantom shipments.",
+        "chunk_ids": [
+          201
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "Passage states \"more sophisticated ML networks may use phantom shipping in conjunction with multiple invoices\" and describes \"one shipment may involve the movement of actual goods to create a veneer of legitimacy... with subsequent trading may uses multiple invoices for phantom shipments, serving as a cover for the transfer of funds,\" directly matching the claim."
+      },
+      {
+        "claim": "A key documentary indicator is inconsistency across contracts, invoices or other trade documents \u2014 for example contradiction between the name of the exporting entity and the name of the recipient of payment, differing prices on invoices versus underlying contracts, or discrepancies between the quantity, quality, volume or value of the actual commodities and their descriptions.",
+        "chunk_ids": [
+          20
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage explicitly lists \"Inconsistencies across contracts, invoices or other trade documents, e.g. contradictions between the name of the exporting entity and the name of the recipient of the payment; differing prices on invoices and underlying contracts; or discrepancies between the quantity, quality, volume, or value of the actual commodities and their descriptions\" as a trade document risk indicator, matching the claim."
+      },
+      {
+        "claim": "Invoices or other trade documents showing fees or prices not in line with commercial considerations, inconsistent with market value, or significantly fluctuating from previous comparable transactions are a TBML risk indicator.",
+        "chunk_ids": [
+          20
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage explicitly states \"Contracts, invoices, or other trade documents display fees or prices that do not seem to be in line with commercial considerations, are inconsistent with market value, or significantly fluctuate from previous comparable transactions\" as a listed risk indicator."
+      },
+      {
+        "claim": "Vague or generic descriptions of the traded commodities in contracts or invoices are a TBML risk indicator.",
+        "chunk_ids": [
+          20
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage explicitly lists \"Contracts, invoices, or other trade documents have vague descriptions of the traded commodities, e.g. the subject of the contract is only described generically or non-specifically\" as a risk indicator."
+      },
+      {
+        "claim": "Trade or customs documents that are missing, appear to be counterfeit, include false or misleading information, or are a resubmission of previously rejected documents are TBML risk indicators.",
+        "chunk_ids": [
+          20
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage explicitly lists \"Trade or customs documents supporting the transaction are missing, appear to be counterfeits, include false or misleading information, are a resubmission of previously rejected documents...\" under trade document risk indicators."
+      },
+      {
+        "claim": "The FATF terrorist financing update similarly lists vague descriptions, inconsistent pricing, and missing or counterfeit trade documents, and issuing multiple invoices for the same shipment with different descriptions of goods, values or numbers of items shipped, as indicators.",
+        "chunk_ids": [
+          2211
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage explicitly lists \"Vague descriptions, inconsistent pricing, and missing or counterfeit trade documents\" (h) and \"Issuing multiple invoices for same shipment with different descriptions of goods, their value, or number of items shipped\" (m) as indicators."
+      },
+      {
+        "claim": "The EBA guidelines flag significant discrepancies in documentation \u2014 for example between the description of type, quantity or quality of goods in invoices, insurance and transport documents and the goods actually shipped \u2014 as a trade finance risk factor.",
+        "chunk_ids": [
+          2723
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states \"There are significant discrepancies in documentation, for example between the description of the type, quantity or quality of goods in key documents (i.e. invoices, insurance and transport documents) and actual goods shipped\" as a risk factor, matching the claim."
+      },
+      {
+        "claim": "The EBA guidelines also flag use of copy documents where original documentation would be expected without reasonable explanation, and type/quantity/value of goods inconsistent with the bank's knowledge of the buyer's business.",
+        "chunk_ids": [
+          2723
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage explicitly lists \"Copy documents are used in situations where original documentation would be expected, without reasonable explanation\" and \"The type, quantity and value of goods is inconsistent with the bank's knowledge of the buyer's business\" as risk factors."
+      },
+      {
+        "claim": "Because trade documents are not always standardised and are not necessarily verified by financial institutions, TBML can be carried out through fictitious or false invoicing; useful checkable data points include use of a personal rather than business email address, obvious recycling of previous documentation with few or no edits (such as the date), and absence of any trading presence for the exporter.",
+        "chunk_ids": [
+          185
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states \"documents are not always standardised, increasing the risk of TBML exploitation through fictitious or false invoicing\" and lists the exact three data points cited: \"Use of a personal email address in lieu of a legitimate business email,\" \"the obvious recycling of previous documentation with few or no edits, including something as basic as the date,\" and \"the complete lack of any trading presence of the exporter.\""
+      },
+      {
+        "claim": "Third-party intermediaries facilitating invoice settlement is a long-standing TBML feature, in which a previously unknown third party \u2014 often based in a jurisdiction with beneficial ownership secrecy \u2014 pays for goods, and receiving firms may not question the sudden expansion of the trade relationship.",
+        "chunk_ids": [
+          206,
+          203
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage explicitly states this technique 'has remained a constant feature of TBML schemes' since 2006, that the third-party 'may be based in locations with beneficial ownership secrecy provisions,' and that 'unsuspecting firms receiving payment may not question why their trade relationship has suddenly expanded to incorporate a previously unknown third-party.'"
+      },
+      {
+        "claim": "Guidance cautions that over- or under-invoicing (and other misrepresentation of value) generally cannot be identified from the trade documents alone, and that most products are not traded on public markets so external price data is unavailable; however, manifestly unusual unit pricing may prompt enquiries under a risk-based approach.",
+        "chunk_ids": [
+          4558
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage directly states this, quoting: 'cannot easily be identified based on the trade documents alone,' 'most products are not traded in public markets and therefore there are no publicly available market prices,' and 'there may be situations where unit pricing appears manifestly unusual, which may prompt appropriate enquiries to be made based on the FI's RBA.'"
+      },
+      {
+        "claim": "FATF notes that a single risk indicator does not alone warrant suspicion of TBML, though it may prompt further monitoring and examination, and the occurrence of several indicators warrants closer examination.",
+        "chunk_ids": [
+          17
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states \"The existence of a single indicator...may not alone warrant suspicion of TBML...but it could prompt further monitoring and examination, as appropriate. Similarly, the occurrence of several indicators could also warrant closer examination,\" directly matching the claim."
+      }
+    ]
+  },
+  "drafts": [
+    {
+      "trace_id": "60b6a10e08c9",
+      "question": "What indicators suggest trade-based money laundering in invoice documentation?",
+      "outcome": "answered",
+      "summary": "The corpus (principally the FATF/Egmont TBML Risk Indicators and TBML Trends and Developments reports, the Wolfsberg/ICC/BAFT Trade Finance Principles, and the EBA ML/TF Risk Factors Guidelines) identifies a cluster of invoice-documentation indicators of trade-based money laundering. The core techniques are misrepresentation of the price, quantity or quality of goods \u2014 over-invoicing, under-invoicing, multiple invoicing for the same goods, and phantom shipping where no goods move at all. The corresponding documentary red flags are: inconsistencies across invoices, contracts and other trade documents (including mismatches between the exporter's name and the payee); prices out of line with market value or with previous comparable deals; vague or generic descriptions of the goods; and missing, counterfeit, false or resubmitted trade/customs documents. Related flags include use of copy documents where originals would be expected, recycled documentation with few or no edits, goods whose type/quantity/value do not match what is known of the buyer's business, and settlement of invoices by previously unknown third parties. Guidance also cautions that a single indicator is not itself suspicion, and that over-/under-invoicing generally cannot be confirmed from trade documents alone.",
+      "claims": [
+        {
+          "text": "Trade finance is misused to move value by misrepresenting the price, quality or quantity of goods, typically requiring collusion between buyer and seller (who may be controlled by the same persons).",
+          "chunk_ids": [
+            4557
+          ]
+        },
+        {
+          "text": "Over-invoicing involves stating the price of goods above true value in the invoice and other documentation so the seller gains excess value on payment; under-invoicing states it below true value so the buyer gains excess value.",
+          "chunk_ids": [
+            4557
+          ]
+        },
+        {
+          "text": "Multiple invoicing \u2014 issuing more than one invoice for the same goods \u2014 lets a seller justify receipt of multiple payments, and is harder to detect if colluding parties use more than one financial institution.",
+          "chunk_ids": [
+            4557
+          ]
+        },
+        {
+          "text": "Phantom shipping is where no goods are shipped at all and the documentation is completely falsified.",
+          "chunk_ids": [
+            4558
+          ]
+        },
+        {
+          "text": "Sophisticated laundering networks combine techniques, for example using phantom shipping together with multiple invoices, sometimes shipping real goods once to create a veneer of legitimacy before covering later fund transfers with invoices for phantom shipments.",
+          "chunk_ids": [
+            201
+          ]
+        },
+        {
+          "text": "A key documentary indicator is inconsistency across contracts, invoices or other trade documents \u2014 for example contradiction between the name of the exporting entity and the name of the recipient of payment, differing prices on invoices versus underlying contracts, or discrepancies between the quantity, quality, volume or value of the actual commodities and their descriptions.",
+          "chunk_ids": [
+            20
+          ]
+        },
+        {
+          "text": "Invoices or other trade documents showing fees or prices not in line with commercial considerations, inconsistent with market value, or significantly fluctuating from previous comparable transactions are a TBML risk indicator.",
+          "chunk_ids": [
+            20
+          ]
+        },
+        {
+          "text": "Vague or generic descriptions of the traded commodities in contracts or invoices are a TBML risk indicator.",
+          "chunk_ids": [
+            20
+          ]
+        },
+        {
+          "text": "Trade or customs documents that are missing, appear to be counterfeit, include false or misleading information, or are a resubmission of previously rejected documents are TBML risk indicators.",
+          "chunk_ids": [
+            20
+          ]
+        },
+        {
+          "text": "The FATF terrorist financing update similarly lists vague descriptions, inconsistent pricing, and missing or counterfeit trade documents, and issuing multiple invoices for the same shipment with different descriptions of goods, values or numbers of items shipped, as indicators.",
+          "chunk_ids": [
+            2211
+          ]
+        },
+        {
+          "text": "The EBA guidelines flag significant discrepancies in documentation \u2014 for example between the description of type, quantity or quality of goods in invoices, insurance and transport documents and the goods actually shipped \u2014 as a trade finance risk factor.",
+          "chunk_ids": [
+            2723
+          ]
+        },
+        {
+          "text": "The EBA guidelines also flag use of copy documents where original documentation would be expected without reasonable explanation, and type/quantity/value of goods inconsistent with the bank's knowledge of the buyer's business.",
+          "chunk_ids": [
+            2723
+          ]
+        },
+        {
+          "text": "Because trade documents are not always standardised and are not necessarily verified by financial institutions, TBML can be carried out through fictitious or false invoicing; useful checkable data points include use of a personal rather than business email address, obvious recycling of previous documentation with few or no edits (such as the date), and absence of any trading presence for the exporter.",
+          "chunk_ids": [
+            185
+          ]
+        },
+        {
+          "text": "Third-party intermediaries facilitating invoice settlement is a long-standing TBML feature, in which a previously unknown third party \u2014 often based in a jurisdiction with beneficial ownership secrecy \u2014 pays for goods, and receiving firms may not question the sudden expansion of the trade relationship.",
+          "chunk_ids": [
+            206,
+            203
+          ]
+        },
+        {
+          "text": "Guidance cautions that over- or under-invoicing (and other misrepresentation of value) generally cannot be identified from the trade documents alone, and that most products are not traded on public markets so external price data is unavailable; however, manifestly unusual unit pricing may prompt enquiries under a risk-based approach.",
+          "chunk_ids": [
+            4558
+          ]
+        },
+        {
+          "text": "FATF notes that a single risk indicator does not alone warrant suspicion of TBML, though it may prompt further monitoring and examination, and the occurrence of several indicators warrants closer examination.",
+          "chunk_ids": [
+            17
+          ]
+        }
+      ],
+      "refusal_reason": "",
+      "iterations": 4,
+      "searches": 6,
+      "retrieved_chunk_ids": [
+        16,
+        17,
+        19,
+        20,
+        171,
+        176,
+        185,
+        199,
+        200,
+        201,
+        203,
+        204,
+        206,
+        229,
+        233,
+        933,
+        934,
+        936,
+        2204,
+        2211,
+        2723,
+        3302,
+        3303,
+        3358,
+        3361,
+        3998,
+        3999,
+        4557,
+        4558,
+        4582,
+        4613,
+        5386,
+        5900,
+        5901
+      ],
+      "input_tokens": 103,
+      "output_tokens": 2668,
+      "cache_read_tokens": 28114,
+      "usd": 0.22601,
+      "latency_ms": 48496.0,
+      "error": "",
+      "trace": [
+        {
+          "step": "search",
+          "iteration": 1,
+          "query": "trade-based money laundering invoice red flags",
+          "k": 8,
+          "returned_chunk_ids": [
+            3302,
+            933,
+            936,
+            3358,
+            934,
+            3361,
+            2204,
+            3303
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 1,
+          "query": "over-invoicing under-invoicing misrepresentation of value goods",
+          "k": 8,
+          "returned_chunk_ids": [
+            4557,
+            200,
+            4558,
+            5900,
+            204,
+            2723,
+            5386,
+            5901
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 2,
+          "query": "TBML risk indicators trade documents discrepancies bill of lading",
+          "k": 8,
+          "returned_chunk_ids": [
+            16,
+            199,
+            20,
+            17,
+            229,
+            185,
+            176,
+            171
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 2,
+          "query": "multiple invoicing phantom shipping falsified documentation shipment",
+          "k": 8,
+          "returned_chunk_ids": [
+            4557,
+            200,
+            4558,
+            201,
+            233,
+            199,
+            3998,
+            3999
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 3,
+          "query": "trade document and commodity risk indicators counterfeit customs documents missing",
+          "k": 6,
+          "returned_chunk_ids": [
+            20,
+            19,
+            2211,
+            4613,
+            199,
+            5386
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 3,
+          "query": "invoice amount inconsistent payment settlement third party trade finance red flag",
+          "k": 6,
+          "returned_chunk_ids": [
+            4582,
+            203,
+            4557,
+            3361,
+            206,
+            20
+          ]
+        },
+        {
+          "step": "answer",
+          "iteration": 4,
+          "claims": 16
+        }
+      ]
+    }
+  ],
+  "written_at": "2026-08-30T10:56:04+00:00"
+}

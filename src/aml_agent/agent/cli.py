@@ -45,7 +45,9 @@ def main() -> int:
         f"\n[trace {result.trace_id}] attempts={result.attempts} "
         f"searches={result.total_searches} "
         f"tokens_in={result.total_input_tokens} tokens_out={result.total_output_tokens} "
-        f"{result.latency_ms / 1000:.1f}s"
+        f"{result.latency_ms / 1000:.1f}s  "
+        f"${result.agent_usd + result.validation_usd:.4f} "
+        f"(agent ${result.agent_usd:.4f} + validation ${result.validation_usd:.4f})"
     )
     if validation:
         print(

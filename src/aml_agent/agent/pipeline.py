@@ -43,6 +43,7 @@ class PipelineResult:
     attempts: int = 0
     validation: ValidationReport | None = None
     agent_results: list[AgentResult] = field(default_factory=list)
+    validation_usd: float = 0.0
     latency_ms: float = 0.0
 
     @property
@@ -57,6 +58,11 @@ class PipelineResult:
     def total_output_tokens(self) -> int:
         return sum(r.output_tokens for r in self.agent_results)
 
+    @property
+    def agent_usd(self) -> float:
+        """Cost of the agent loop only. Validation adds its own on top."""
+        return sum(r.usd for r in self.agent_results)
+
     def to_dict(self) -> dict[str, Any]:
         return {
             "trace_id": self.trace_id,
@@ -69,6 +75,9 @@ class PipelineResult:
             "searches": self.total_searches,
             "input_tokens": self.total_input_tokens,
             "output_tokens": self.total_output_tokens,
+            "agent_usd": round(self.agent_usd, 5),
+            "validation_usd": round(self.validation_usd, 5),
+            "total_usd": round(self.agent_usd + self.validation_usd, 5),
             "latency_ms": round(self.latency_ms, 1),
             "validation": self.validation.to_dict() if self.validation else None,
             "drafts": [r.to_dict() for r in self.agent_results],
@@ -117,6 +126,7 @@ class Pipeline:
 
             report = self.validator.validate(draft)
             outcome.validation = report
+            outcome.validation_usd += report.usd
 
             if report.passed:
                 outcome.outcome = "answered"

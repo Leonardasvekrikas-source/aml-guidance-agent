@@ -44,6 +44,7 @@ import anthropic
 
 from ..agent.loop import AgentResult, Claim
 from ..config import settings
+from ..cost import usd
 from ..llm import make_client
 from ..retrieval.base import Hit
 
@@ -119,6 +120,9 @@ class ClaimVerdict:
 class ValidationReport:
     verdicts: list[ClaimVerdict] = field(default_factory=list)
     checked_support: bool = True
+    # Validation calls a model once per claim, so its cost is real and is
+    # reported separately from the agent loop rather than folded in.
+    usd: float = 0.0
 
     @property
     def passed(self) -> bool:
@@ -169,6 +173,7 @@ class ValidationReport:
             "citation_validity": round(self.citation_validity(), 4),
             "groundedness": round(self.groundedness(), 4),
             "checked_support": self.checked_support,
+            "usd": round(self.usd, 5),
             "verdicts": [v.to_dict() for v in self.verdicts],
         }
 
@@ -181,8 +186,9 @@ class Validator:
         check_support: bool = True,
     ):
         self.client = client
-        self.model = model or settings.anthropic_model
+        self.model = model or settings.grader_model
         self.check_support = check_support
+        self._spend = 0.0
 
     def _client(self) -> anthropic.Anthropic:
         if self.client is None:
@@ -191,11 +197,13 @@ class Validator:
 
     def validate(self, result: AgentResult) -> ValidationReport:
         report = ValidationReport(checked_support=self.check_support)
+        self._spend = 0.0
 
         for claim in result.claims:
             verdict = self._validate_claim(claim, result)
             report.verdicts.append(verdict)
 
+        report.usd = self._spend
         return report
 
     def _validate_claim(self, claim: Claim, result: AgentResult) -> ClaimVerdict:
@@ -273,6 +281,12 @@ class Validator:
             # A validator that fails open would silently disable the check that
             # justifies this project. Fail closed and say so.
             return False, f"support check could not run ({type(exc).__name__}); failing closed"
+
+        self._spend += usd(
+            self.model,
+            response.usage.input_tokens,
+            response.usage.output_tokens,
+        )
 
         for block in response.content:
             if block.type == "tool_use" and block.name == "record_support":

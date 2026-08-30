@@ -1,0 +1,239 @@
+{
+  "trace_id": "394a547c48ce",
+  "question": "A trading company's account keeps receiving large incoming wires that are broken up and pushed out the same day to accounts with no obvious commercial link, so the balance sits near zero overnight. Which trade-based laundering indicator does that pattern correspond to?",
+  "outcome": "answered",
+  "summary": "This pattern matches the FATF/Egmont TBML risk indicator for a trade entity's account operating as a \"pay-through\" or \"transit\" account \u2014 high-volume, rapid movement of funds leaving a small end-of-day balance without clear business reasons. The specific sub-indicator listed is that incoming wire transfers to a trade-related account are split and forwarded to non-related multiple accounts with little or no connection to commercial activity. As with all these indicators, a single occurrence does not itself establish TBML but should prompt further monitoring and examination.",
+  "citations": [
+    {
+      "chunk_id": 21,
+      "title": "Trade-Based Money Laundering: Risk Indicators",
+      "publisher": "FATF / Egmont Group of Financial Intelligence Units",
+      "page": 8,
+      "source_url": "https://www.fatf-gafi.org/content/dam/fatf-gafi/reports/Trade-Based-Money-Laundering-Risk-Indicators.pdf",
+      "section_heading": null
+    },
+    {
+      "chunk_id": 16,
+      "title": "Trade-Based Money Laundering: Risk Indicators",
+      "publisher": "FATF / Egmont Group of Financial Intelligence Units",
+      "page": 3,
+      "source_url": "https://www.fatf-gafi.org/content/dam/fatf-gafi/reports/Trade-Based-Money-Laundering-Risk-Indicators.pdf",
+      "section_heading": null
+    },
+    {
+      "chunk_id": 17,
+      "title": "Trade-Based Money Laundering: Risk Indicators",
+      "publisher": "FATF / Egmont Group of Financial Intelligence Units",
+      "page": 3,
+      "source_url": "https://www.fatf-gafi.org/content/dam/fatf-gafi/reports/Trade-Based-Money-Laundering-Risk-Indicators.pdf",
+      "section_heading": null
+    }
+  ],
+  "refusal_reason": "",
+  "attempts": 1,
+  "searches": 3,
+  "input_tokens": 158,
+  "output_tokens": 1279,
+  "agent_usd": 0.11537,
+  "validation_usd": 0.02849,
+  "total_usd": 0.14386,
+  "latency_ms": 41323.8,
+  "validation": {
+    "passed": true,
+    "citation_validity": 1.0,
+    "groundedness": 1.0,
+    "checked_support": true,
+    "usd": 0.02849,
+    "verdicts": [
+      {
+        "claim": "The FATF/Egmont Group Trade-Based Money Laundering: Risk Indicators paper lists an indicator that an account of a trade entity appears to be a \"pay-through\" or \"transit\" account, characterised by rapid movement of high-volume transactions and a small end-of-day balance without clear business reasons.",
+        "chunk_ids": [
+          21
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage directly states \"An account of a trade entity appears to be a 'pay-through' or 'transit' account with a rapid movement of high-volume transactions and a small end-of-day balance without clear business reasons,\" matching the claim exactly."
+      },
+      {
+        "claim": "A specific sub-indicator under that pay-through/transit account heading is that incoming wire transfers to a trade-related account are split and forwarded to non-related multiple accounts that have little or no connection to commercial activity.",
+        "chunk_ids": [
+          21
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage lists under the pay-through/transit account bullet: \"Incoming wire transfers to a trade-related account are split and forwarded to non-related multiple accounts that have little or no connection to commercial activity,\" matching the claim exactly."
+      },
+      {
+        "claim": "Another sub-indicator of the same pay-through/transit pattern is an account showing frequent cash deposits that are subsequently transferred to persons or entities in free trade zones or offshore jurisdictions without a business relationship to the account holder.",
+        "chunk_ids": [
+          21
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states as a sub-bullet under the pay-through/transit account indicator: \"An account displays frequent deposits in cash which are subsequently transferred to persons or entities in free trade zones or offshore jurisdictions without a business relationship to the account holder,\" which directly matches the claim."
+      },
+      {
+        "claim": "Related account-activity indicators in the same list include an unexpectedly high number or value of transactions inconsistent with the client's stated business activity, and transaction activity that increases quickly and significantly in volume then goes dormant after a short period.",
+        "chunk_ids": [
+          21
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage explicitly lists both indicators: 'an unexpectedly high number or value of transactions that are inconsistent with the stated business activity of the client' and 'Transaction activity associated with a trade entity increases in volume quickly and significantly, and then goes dormant after a short period of time.'"
+      },
+      {
+        "claim": "These risk indicators were derived from a sampling of data received by the FATF and the Egmont Group of FIUs during the TBML project, and the list is explicitly not conclusive.",
+        "chunk_ids": [
+          16
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "Passage states \"derived from a sampling of the data received by the FATF and the Egmont Group of FIUs in the course of the Trade-Based Money Laundering (TBML) project\" and \"By no means is this a conclusive list.\""
+      },
+      {
+        "claim": "The guidance cautions that the existence of a single indicator may not alone warrant suspicion of TBML, but could prompt further monitoring and examination, while the occurrence of several indicators could warrant closer examination.",
+        "chunk_ids": [
+          17
+        ],
+        "citation_ok": true,
+        "support_ok": true,
+        "detail": "The passage states verbatim: \"The existence of a single indicator... may not alone warrant suspicion of TBML... but it could prompt further monitoring and examination, as appropriate. Similarly, the occurrence of several indicators could also warrant closer examination.\""
+      }
+    ]
+  },
+  "drafts": [
+    {
+      "trace_id": "394a547c48ce",
+      "question": "A trading company's account keeps receiving large incoming wires that are broken up and pushed out the same day to accounts with no obvious commercial link, so the balance sits near zero overnight. Which trade-based laundering indicator does that pattern correspond to?",
+      "outcome": "answered",
+      "summary": "This pattern matches the FATF/Egmont TBML risk indicator for a trade entity's account operating as a \"pay-through\" or \"transit\" account \u2014 high-volume, rapid movement of funds leaving a small end-of-day balance without clear business reasons. The specific sub-indicator listed is that incoming wire transfers to a trade-related account are split and forwarded to non-related multiple accounts with little or no connection to commercial activity. As with all these indicators, a single occurrence does not itself establish TBML but should prompt further monitoring and examination.",
+      "claims": [
+        {
+          "text": "The FATF/Egmont Group Trade-Based Money Laundering: Risk Indicators paper lists an indicator that an account of a trade entity appears to be a \"pay-through\" or \"transit\" account, characterised by rapid movement of high-volume transactions and a small end-of-day balance without clear business reasons.",
+          "chunk_ids": [
+            21
+          ]
+        },
+        {
+          "text": "A specific sub-indicator under that pay-through/transit account heading is that incoming wire transfers to a trade-related account are split and forwarded to non-related multiple accounts that have little or no connection to commercial activity.",
+          "chunk_ids": [
+            21
+          ]
+        },
+        {
+          "text": "Another sub-indicator of the same pay-through/transit pattern is an account showing frequent cash deposits that are subsequently transferred to persons or entities in free trade zones or offshore jurisdictions without a business relationship to the account holder.",
+          "chunk_ids": [
+            21
+          ]
+        },
+        {
+          "text": "Related account-activity indicators in the same list include an unexpectedly high number or value of transactions inconsistent with the client's stated business activity, and transaction activity that increases quickly and significantly in volume then goes dormant after a short period.",
+          "chunk_ids": [
+            21
+          ]
+        },
+        {
+          "text": "These risk indicators were derived from a sampling of data received by the FATF and the Egmont Group of FIUs during the TBML project, and the list is explicitly not conclusive.",
+          "chunk_ids": [
+            16
+          ]
+        },
+        {
+          "text": "The guidance cautions that the existence of a single indicator may not alone warrant suspicion of TBML, but could prompt further monitoring and examination, while the occurrence of several indicators could warrant closer examination.",
+          "chunk_ids": [
+            17
+          ]
+        }
+      ],
+      "refusal_reason": "",
+      "iterations": 3,
+      "searches": 3,
+      "retrieved_chunk_ids": [
+        15,
+        16,
+        17,
+        21,
+        169,
+        171,
+        933,
+        934,
+        935,
+        937,
+        938,
+        952,
+        1155,
+        2204,
+        2210,
+        3302,
+        3303,
+        3358,
+        7274,
+        7316,
+        7327,
+        7328
+      ],
+      "input_tokens": 158,
+      "output_tokens": 1279,
+      "cache_read_tokens": 12225,
+      "usd": 0.11537,
+      "latency_ms": 30055.2,
+      "error": "",
+      "trace": [
+        {
+          "step": "search",
+          "iteration": 1,
+          "query": "pass-through account funds transferred out same day balance near zero",
+          "k": 8,
+          "returned_chunk_ids": [
+            21,
+            937,
+            7316,
+            7327,
+            1155,
+            7328,
+            938,
+            7274
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 1,
+          "query": "trade-based money laundering red flag indicators shell company wire transfers",
+          "k": 8,
+          "returned_chunk_ids": [
+            3303,
+            3302,
+            2204,
+            934,
+            935,
+            933,
+            952,
+            3358
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 2,
+          "query": "FATF Egmont trade-based money laundering risk indicators account and payment activity category",
+          "k": 8,
+          "returned_chunk_ids": [
+            15,
+            16,
+            21,
+            17,
+            2210,
+            169,
+            2204,
+            171
+          ]
+        },
+        {
+          "step": "answer",
+          "iteration": 3,
+          "claims": 6
+        }
+      ]
+    }
+  ],
+  "written_at": "2026-08-30T10:57:13+00:00"
+}

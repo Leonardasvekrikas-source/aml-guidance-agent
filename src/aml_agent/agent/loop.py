@@ -25,11 +25,17 @@ from typing import Any, cast
 import anthropic
 
 from ..config import settings
+from ..cost import usd
 from ..llm import make_client
 from ..retrieval.base import Hit, Retriever
 from .tools import SEARCH_TOOL, run_search
 
-MAX_ITERATIONS = 6
+# Raised from 6 after measurement: the agent issues one to two searches per
+# iteration, so a question needing several reformulations plus a final
+# answer could hit the cap while still searching, and be recorded as a
+# refusal it never actually made. The cap exists to bound cost, not to
+# decide questions.
+MAX_ITERATIONS = 10
 MAX_TOKENS = 8000
 
 SYSTEM_PROMPT = """You answer questions about anti-money-laundering typologies \
@@ -119,6 +125,50 @@ REFUSE_TOOL: dict[str, Any] = {
 
 TOOLS = [SEARCH_TOOL, ANSWER_TOOL, REFUSE_TOOL]
 
+# --- prompt caching -------------------------------------------------------
+#
+# By the eighth search this conversation carries tens of thousands of tokens,
+# and almost all of it is byte-identical to the previous request: the same
+# tools, the same system prompt, and every earlier search result. Without
+# caching that prefix is paid for again on every turn, which is most of the
+# cost of a question.
+#
+# The prefix is rendered tools -> system -> messages, so a breakpoint is placed
+# at the end of the system prompt (everything before it is static and cached
+# for the whole run) and another is moved forward onto the newest tool results
+# each turn, so the previous turn's write becomes this turn's read.
+#
+# Caching is a PREFIX match: any byte change before a breakpoint invalidates
+# everything after it. That is why the system prompt is a module constant and
+# the tool list is never reordered.
+CACHED_SYSTEM = [
+    {
+        "type": "text",
+        "text": SYSTEM_PROMPT,
+        "cache_control": {"type": "ephemeral"},
+    }
+]
+
+
+def _move_cache_breakpoint(messages: list[Any]) -> None:
+    """Keep exactly one moving breakpoint, on the latest content.
+
+    The API allows at most four breakpoints, so old ones are cleared as the
+    conversation grows rather than accumulating until a request is rejected.
+    """
+    for message in messages:
+        content = message.get("content")
+        if isinstance(content, list):
+            for block in content:
+                if isinstance(block, dict):
+                    block.pop("cache_control", None)
+
+    for message in reversed(messages):
+        content = message.get("content")
+        if isinstance(content, list) and content and isinstance(content[-1], dict):
+            content[-1]["cache_control"] = {"type": "ephemeral"}
+            return
+
 
 @dataclass
 class Claim:
@@ -141,8 +191,26 @@ class AgentResult:
     trace: list[dict[str, Any]] = field(default_factory=list)
     input_tokens: int = 0
     output_tokens: int = 0
+    cache_write_tokens: int = 0
+    cache_read_tokens: int = 0
+    model: str = ""
     latency_ms: float = 0.0
+    # The conversation as it stood when the loop finished. Kept in memory
+    # so a rejected draft can be corrected in place rather than restarted;
+    # deliberately not written to the trace, where it would duplicate every
+    # search result already recorded step by step.
+    messages: list[Any] = field(default_factory=list)
     error: str = ""
+
+    @property
+    def usd(self) -> float:
+        return usd(
+            self.model,
+            self.input_tokens,
+            self.output_tokens,
+            self.cache_write_tokens,
+            self.cache_read_tokens,
+        )
 
     @property
     def answered(self) -> bool:
@@ -161,6 +229,8 @@ class AgentResult:
             "retrieved_chunk_ids": sorted(self.retrieved_chunk_ids),
             "input_tokens": self.input_tokens,
             "output_tokens": self.output_tokens,
+            "cache_read_tokens": self.cache_read_tokens,
+            "usd": round(self.usd, 5),
             "latency_ms": round(self.latency_ms, 1),
             "error": self.error,
             "trace": self.trace,
@@ -180,12 +250,22 @@ class AgentLoop:
         self.model = model or settings.anthropic_model
         self.max_iterations = max_iterations
 
-    def run(self, question: str) -> AgentResult:
+    def run(self, question: str, resume: AgentResult | None = None) -> AgentResult:
+        """Answer a question, optionally continuing a previous attempt.
+
+        ``resume`` carries the conversation from a draft that validation
+        rejected. Continuing it matters for both correctness and cost: a
+        restarted loop throws away every passage it already retrieved and has
+        to find them again, which in practice exhausted the iteration budget
+        re-searching for evidence it had already seen. Continuing means the
+        agent only has to fix the claim it was told about.
+        """
         started = time.perf_counter()
         result = AgentResult(
             question=question,
             trace_id=uuid.uuid4().hex[:12],
             outcome="error",
+            model=self.model,
         )
         messages: list[Any] = [{"role": "user", "content": question}]
 
@@ -204,14 +284,26 @@ class AgentLoop:
                 break
 
             result.iterations += 1
+            _move_cache_breakpoint(messages)
 
             try:
                 # Tool and message payloads are plain dicts matching the
                 # documented wire format; the SDK types them as TypedDicts.
+                # Prompt caching. Each iteration re-sends every previous
+                # search result, so by the eighth search the conversation is
+                # tens of thousands of tokens and most of it is byte-identical
+                # to the previous request. Caching turns that repeated prefix
+                # into cache reads at a tenth of the input price.
+                #
+                # The prefix order is tools -> system -> messages, and all
+                # three are stable here: the tool list never changes and the
+                # system prompt is a constant, so the cache breakpoint moves
+                # forward with the conversation instead of being invalidated
+                # by it.
                 response = self.client.messages.create(
                     model=self.model,
                     max_tokens=MAX_TOKENS,
-                    system=SYSTEM_PROMPT,
+                    system=CACHED_SYSTEM,  # type: ignore[arg-type]
                     tools=TOOLS,  # type: ignore[arg-type]  # plain dicts, not SDK TypedDicts
                     messages=messages,
                 )
@@ -223,6 +315,11 @@ class AgentLoop:
 
             result.input_tokens += response.usage.input_tokens
             result.output_tokens += response.usage.output_tokens
+            # Cache fields are absent on responses that used no caching.
+            result.cache_write_tokens += (
+                getattr(response.usage, "cache_creation_input_tokens", 0) or 0
+            )
+            result.cache_read_tokens += getattr(response.usage, "cache_read_input_tokens", 0) or 0
 
             # A safety refusal is a different thing from the agent choosing to
             # refuse because the corpus is silent. Conflating them would
@@ -333,5 +430,6 @@ class AgentLoop:
             if tool_results:
                 messages.append({"role": "user", "content": tool_results})
 
+        result.messages = messages
         result.latency_ms = (time.perf_counter() - started) * 1000.0
         return result

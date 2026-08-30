@@ -1,0 +1,300 @@
+{
+  "trace_id": "ab854debda16",
+  "question": "Apart from checking price and quantity discrepancies, what practical checks on the paperwork a bank receives to pay a trade transaction have actually helped identify TBML?",
+  "outcome": "refused",
+  "summary": "",
+  "citations": [],
+  "refusal_reason": "Reached the 6-iteration cap without reaching an answer.",
+  "attempts": 1,
+  "searches": 12,
+  "input_tokens": 137,
+  "output_tokens": 2025,
+  "agent_usd": 0.35277,
+  "validation_usd": 0.0,
+  "total_usd": 0.35277,
+  "latency_ms": 36077.1,
+  "validation": null,
+  "drafts": [
+    {
+      "trace_id": "ab854debda16",
+      "question": "Apart from checking price and quantity discrepancies, what practical checks on the paperwork a bank receives to pay a trade transaction have actually helped identify TBML?",
+      "outcome": "exhausted",
+      "summary": "",
+      "claims": [],
+      "refusal_reason": "Reached the 6-iteration cap without reaching an answer.",
+      "iterations": 6,
+      "searches": 12,
+      "retrieved_chunk_ids": [
+        17,
+        18,
+        19,
+        20,
+        184,
+        185,
+        190,
+        193,
+        199,
+        200,
+        201,
+        203,
+        208,
+        217,
+        231,
+        233,
+        930,
+        933,
+        934,
+        2204,
+        2205,
+        2209,
+        2210,
+        2211,
+        2721,
+        2722,
+        2723,
+        2724,
+        2726,
+        2916,
+        3156,
+        3162,
+        3167,
+        3296,
+        3302,
+        3358,
+        3361,
+        3904,
+        3905,
+        3906,
+        4554,
+        4557,
+        4558,
+        4573,
+        4574,
+        4577,
+        4578,
+        4585,
+        4588,
+        4593,
+        4594,
+        4597,
+        4602,
+        4603,
+        4613,
+        4615,
+        4628,
+        4899,
+        5383,
+        5841,
+        5842,
+        5962,
+        6365,
+        6768,
+        7261,
+        7279,
+        7601,
+        7977
+      ],
+      "input_tokens": 137,
+      "output_tokens": 2025,
+      "cache_read_tokens": 89276,
+      "usd": 0.35277,
+      "latency_ms": 36077.1,
+      "error": "",
+      "trace": [
+        {
+          "step": "search",
+          "iteration": 1,
+          "query": "trade-based money laundering red flags documentation checks",
+          "k": 8,
+          "returned_chunk_ids": [
+            3302,
+            933,
+            3361,
+            934,
+            2204,
+            3358,
+            2722,
+            930
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 1,
+          "query": "bill of lading inconsistencies trade finance document examination",
+          "k": 8,
+          "returned_chunk_ids": [
+            199,
+            20,
+            4613,
+            4578,
+            2726,
+            4585,
+            19,
+            4573
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 2,
+          "query": "vessel tracking container number verification shipping route inconsistent port",
+          "k": 8,
+          "returned_chunk_ids": [
+            19,
+            2726,
+            20,
+            18,
+            4615,
+            3904,
+            3905,
+            2723
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 2,
+          "query": "counterfeit trade documents altered invoice detection case study",
+          "k": 8,
+          "returned_chunk_ids": [
+            4557,
+            5383,
+            7279,
+            7261,
+            5962,
+            4573,
+            20,
+            203
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 3,
+          "query": "letter of credit amendments unusual terms vessel name goods description checks bank controls",
+          "k": 8,
+          "returned_chunk_ids": [
+            4615,
+            4602,
+            4628,
+            2723,
+            4574,
+            2726,
+            4588,
+            4597
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 3,
+          "query": "phantom shipment no goods shipped detection customs data comparison",
+          "k": 8,
+          "returned_chunk_ids": [
+            233,
+            200,
+            201,
+            2211,
+            4558,
+            231,
+            7601,
+            208
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 4,
+          "query": "trade finance AML controls thematic review banks document checkers training deficiencies",
+          "k": 8,
+          "returned_chunk_ids": [
+            7977,
+            3167,
+            4603,
+            6365,
+            3156,
+            3906,
+            4602,
+            3162
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 4,
+          "query": "payment to third party not named in trade documents beneficiary differs exporter indicator",
+          "k": 8,
+          "returned_chunk_ids": [
+            2721,
+            4615,
+            5842,
+            2210,
+            4554,
+            4628,
+            184,
+            5841
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 5,
+          "query": "shipment size inconsistent with scale of exporter business; goods do not match transport method risk indicator",
+          "k": 8,
+          "returned_chunk_ids": [
+            2723,
+            2211,
+            2724,
+            2721,
+            200,
+            185,
+            17,
+            2209
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 5,
+          "query": "documentary credit presentation of documents review escalation unusual features level 1 detection",
+          "k": 8,
+          "returned_chunk_ids": [
+            4577,
+            4593,
+            4588,
+            4899,
+            4573,
+            4594,
+            2916,
+            6768
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 6,
+          "query": "resubmission of previously rejected documents; shipment routed through high-risk jurisdiction transhipment risk indicator",
+          "k": 6,
+          "returned_chunk_ids": [
+            2723,
+            20,
+            185,
+            2209,
+            2205,
+            2211
+          ]
+        },
+        {
+          "step": "search",
+          "iteration": 6,
+          "query": "harmonised system code misclassification goods description commodity code TBML",
+          "k": 6,
+          "returned_chunk_ids": [
+            199,
+            200,
+            3296,
+            217,
+            190,
+            193
+          ]
+        },
+        {
+          "step": "halt",
+          "reason": "iteration cap reached"
+        }
+      ]
+    }
+  ],
+  "written_at": "2026-08-30T10:59:31+00:00"
+}

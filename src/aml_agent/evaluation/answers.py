@@ -65,6 +65,9 @@ def evaluate(profile: str = DEFAULT_PROFILE, limit: int | None = None) -> dict[s
             "input_tokens": result.total_input_tokens,
             "output_tokens": result.total_output_tokens,
             "trace_id": result.trace_id,
+            "agent_usd": round(result.agent_usd, 5),
+            "validation_usd": round(result.validation_usd, 5),
+            "total_usd": round(result.agent_usd + result.validation_usd, 5),
             "citation_validity": (
                 result.validation.citation_validity() if result.validation else None
             ),
@@ -104,6 +107,7 @@ def summarise(rows: list[dict[str, Any]]) -> dict[str, Any]:
     correct_refusals = [r for r in unanswerable if r["outcome"] == "refused"]
 
     latencies = sorted(r["latency_ms"] for r in rows if r["latency_ms"])
+    costs = sorted(r.get("total_usd", 0.0) for r in rows)
     searches = [r["searches"] for r in rows]
 
     return {
@@ -133,6 +137,8 @@ def summarise(rows: list[dict[str, Any]]) -> dict[str, Any]:
             "answer_rate": (len(answered) / len(answerable) if answerable else None),
             "median_latency_ms": latencies[len(latencies) // 2] if latencies else None,
             "median_searches": sorted(searches)[len(searches) // 2] if searches else None,
+            "median_usd_per_question": (costs[len(costs) // 2] if costs else None),
+            "total_usd": round(sum(costs), 4),
         },
         "per_question": rows,
     }
@@ -169,6 +175,8 @@ def main() -> int:
         value = metrics[key]
         print(f"  {label:<22}{'n/a' if value is None else f'{value:.3f}'}")
     print(f"  {'median latency':<22}{(metrics['median_latency_ms'] or 0) / 1000:.1f}s")
+    print(f"  {'median $/question':<22}${metrics['median_usd_per_question'] or 0:.4f}")
+    print(f"  {'total spend':<22}${metrics['total_usd'] or 0:.2f}")
     print(f"  {'median searches':<22}{metrics['median_searches']}")
     print("=" * 60)
     print(f"\nwrote {output}")
