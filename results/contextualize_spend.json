@@ -1,10 +1,10 @@
 {
   "profile": "t480ctx",
   "model": "claude-haiku-4-5",
-  "calls": 8,
-  "input_tokens": 84589,
-  "output_tokens": 10646,
-  "cache_write_tokens": 115592,
-  "cache_read_tokens": 311895,
-  "usd": 0.3135
+  "calls": 131,
+  "input_tokens": 1362747,
+  "output_tokens": 167817,
+  "cache_write_tokens": 1330497,
+  "cache_read_tokens": 8431124,
+  "usd": 4.7081
 }

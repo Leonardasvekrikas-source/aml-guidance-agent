@@ -236,3 +236,37 @@ change rather than assumed to still hold.
 
 **Cost.** 687 ms median at 50 candidates against 187 ms at 10, for 5 points of
 recall.
+
+---
+
+## Contextual retrieval, and batching as the thing that made it affordable
+
+**Chosen because** it moved the number that the candidate sweep had identified
+as the binding constraint. The first-stage ceiling — the fraction of gold
+passages that reach the candidate pool, which the reranker cannot exceed — went
+from 0.917 to 0.983, and final recall@5 from 0.883 to 0.950.
+
+**The implementation decision that mattered was cost, not quality.** Done the
+obvious way — one model call per chunk carrying the whole document — this is
+2,864 calls at roughly 40,000 tokens each. Two changes made it affordable:
+caching the document so it is read at a tenth of input price, and situating 24
+chunks per call so that cached read is amortised across a batch. The dominant
+cost term scales with the number of batches, not the number of chunks, which is
+why moving from 12 to 24 per call roughly halved the bill. $4.71 for the corpus.
+
+**The second-order benefit was larger than expected.** Re-sweeping the
+candidate count afterwards, 25 candidates on the contextualised profile beat 50
+on the plain one — 0.950 against 0.883 — at roughly half the latency. Better
+first-stage retrieval let the expensive second stage do less work, which is not
+what the change was made for.
+
+**Cost of the approach.** A second copy of the corpus, and a build step that
+costs money and has to be re-run whenever chunking changes. For a corpus this
+size that is a few dollars; for a corpus that changes daily it would need
+incremental rebuilds, which this does not implement.
+
+**Different context.** If the corpus were mostly self-contained documents —
+support tickets, product descriptions — chunks would lose far less by being
+extracted and the gain would be much smaller. This corpus is long regulatory
+reports where a passage three pages in is meaningless alone, which is the
+condition the technique is for.

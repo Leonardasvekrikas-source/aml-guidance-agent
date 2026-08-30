@@ -21,6 +21,8 @@ import json
 import time
 from typing import Any
 
+import sys
+
 from ..config import DEFAULT_PROFILE, settings
 from ..retrieval import build_retrievers
 from ..retrieval.rerank import RerankedRetriever
@@ -32,16 +34,20 @@ TOP_K = 5
 
 
 def main() -> int:
+    profile = DEFAULT_PROFILE
+    if "--profile" in sys.argv:
+        profile = sys.argv[sys.argv.index("--profile") + 1]
+
     questions = load_questions()
     answerable = [q for q in questions if q.answerable]
 
-    problems = resolve_gold_ids(answerable, DEFAULT_PROFILE)
+    problems = resolve_gold_ids(answerable, profile)
     if problems:
         for problem in problems:
             print(f"  {problem}")
         return 1
 
-    retrievers = build_retrievers(DEFAULT_PROFILE, with_reranker=False)
+    retrievers = build_retrievers(profile, with_reranker=False)
     first_stage = retrievers["hybrid"]
 
     rows: list[dict[str, Any]] = []
@@ -90,12 +96,13 @@ def main() -> int:
         )
 
     settings.results_dir.mkdir(parents=True, exist_ok=True)
-    output = settings.results_dir / "candidate_sweep.json"
+    suffix = "" if profile == DEFAULT_PROFILE else f"_{profile}"
+    output = settings.results_dir / f"candidate_sweep{suffix}.json"
     output.write_text(
         json.dumps(
             {
                 "settings": settings.provenance(),
-                "profile": DEFAULT_PROFILE,
+                "profile": profile,
                 "top_k": TOP_K,
                 "questions": len(answerable),
                 "sweep": rows,

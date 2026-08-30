@@ -92,6 +92,7 @@ switch ($Target) {
     'contextualize'  { Invoke-App @('aml_agent.ingest.contextualize', '--model', 'claude-haiku-4-5') }
     'contextualize-estimate' { Invoke-App @('aml_agent.ingest.contextualize', '--dry-run', '--model', 'claude-haiku-4-5') }
     'eval-ablation'  { Invoke-App @('aml_agent.evaluation.ablation', 'bge-base', 'bge-m3') }
+    'eval-contextual' { Invoke-App @('aml_agent.evaluation.ablation', 'plain', 'ctx', '--out', 'contextual_retrieval.md', '--title', 'Contextual retrieval', '--reading-file', 'results/notes/contextual_reading.md') }
     'eval-rebuild'   { Invoke-App @('aml_agent.evaluation.rebuild') }
     'judge-audit'    { Invoke-App @('aml_agent.evaluation.judge_audit') }
     'judge-audit-score' { Invoke-App @('aml_agent.evaluation.judge_audit', '--score') }

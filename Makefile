@@ -71,6 +71,10 @@ eval-retrieval:  ## M1: recall@5, recall@10, MRR for BM25 / dense / hybrid
 eval-answers:  ## M4: groundedness, citation validity, refusal accuracy
 	$(RUN) aml_agent.evaluation.answers
 
+.PHONY: eval-contextual
+eval-contextual:  ## Compare plain vs contextualised chunks (exact gold)
+	$(RUN) aml_agent.evaluation.ablation plain ctx --out contextual_retrieval.md --title "Contextual retrieval" --reading-file results/notes/contextual_reading.md
+
 .PHONY: eval-ablation
 eval-ablation:  ## Compare tagged benchmark runs (embedding-model ablation)
 	$(RUN) aml_agent.evaluation.ablation bge-base bge-m3

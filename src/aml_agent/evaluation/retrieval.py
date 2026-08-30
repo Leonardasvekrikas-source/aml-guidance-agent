@@ -32,13 +32,28 @@ MAX_K = 10
 AUTHORING_PROFILE = DEFAULT_PROFILE
 
 
+def shares_boundaries(profile: str) -> bool:
+    """Whether exact chunk-id gold is meaningful for this profile.
+
+    Exact gold identifies a specific chunk, so it only transfers to a profile
+    whose chunk boundaries are identical to the one the questions were authored
+    against. A contextualised profile qualifies: it prepends a sentence to each
+    chunk before embedding but splits the document in exactly the same places,
+    so chunk_index still refers to the same passage.
+
+    The chunk *ids* differ — they are separate rows — which is why gold is
+    re-resolved per profile rather than resolved once and reused.
+    """
+    return profile in {AUTHORING_PROFILE, f"{AUTHORING_PROFILE}ctx"}
+
+
 def evaluate_profile(
     profile: str,
     questions: list,
     location: dict[int, tuple[str, int | None, int | None]],
 ) -> dict[str, Any]:
     answerable = [q for q in questions if q.answerable]
-    exact_applies = profile == AUTHORING_PROFILE
+    exact_applies = shares_boundaries(profile)
 
     retrievers = build_retrievers(profile)
     per_retriever: dict[str, Any] = {}
@@ -178,13 +193,33 @@ def main() -> int:
     )
 
     profiles = [p.name for p in CHUNK_PROFILES]
+    if "--include-ctx" in sys.argv:
+        profiles.append(f"{AUTHORING_PROFILE}ctx")
     if "--profile" in sys.argv:
         profiles = [sys.argv[sys.argv.index("--profile") + 1]]
 
     results: dict[str, Any] = {}
     for profile in profiles:
-        results[profile] = evaluate_profile(profile, questions, location)
+        profile_location = location
+        if shares_boundaries(profile) and profile != AUTHORING_PROFILE:
+            # Same boundaries, different rows: re-point gold at this profile's
+            # chunk ids before scoring it.
+            problems = resolve_gold_ids(answerable, profile)
+            if problems:
+                print(f"skipping {profile}: gold does not resolve there")
+                for problem in problems[:3]:
+                    print(f"  {problem}")
+                continue
+            profile_location = resolve_gold(
+                [g for q in answerable for g in q.gold_chunk_ids], profile
+            )
+
+        results[profile] = evaluate_profile(profile, questions, profile_location)
         print()
+
+        if shares_boundaries(profile) and profile != AUTHORING_PROFILE:
+            # Restore the authoring profile's gold ids for any later profile.
+            resolve_gold_ids(answerable, AUTHORING_PROFILE)
 
     settings.results_dir.mkdir(parents=True, exist_ok=True)
     # --tag writes to a suffixed file so an ablation can keep each run's full
